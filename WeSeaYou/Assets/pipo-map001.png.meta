@@ -126,7 +126,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 33
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -785,7 +785,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pipo-map001_0: -5269519099407390509
+      pipo-map001_1: -5416332936090888234
+      pipo-map001_10: -1454110987623436608
+      pipo-map001_11: 1234680100110115839
+      pipo-map001_12: -906371866236501745
+      pipo-map001_13: 8977247530602722876
+      pipo-map001_14: -7843651101061779845
+      pipo-map001_15: 8961045491855331264
+      pipo-map001_16: -6112096410542862560
+      pipo-map001_17: 6931905326759082842
+      pipo-map001_18: 1699883463429247414
+      pipo-map001_19: -8995321347379898099
+      pipo-map001_2: -2437364280568402399
+      pipo-map001_20: -3267411329243721955
+      pipo-map001_21: 6468115666481314835
+      pipo-map001_22: -3251396133706481436
+      pipo-map001_23: -2814365639321644721
+      pipo-map001_24: 8829211628340851727
+      pipo-map001_25: 4286670320623476122
+      pipo-map001_3: -5527016534212105731
+      pipo-map001_4: 3718245889279279847
+      pipo-map001_5: 4683098383065996822
+      pipo-map001_6: -5717687907839241153
+      pipo-map001_7: 1424697382229734607
+      pipo-map001_8: -6312613804429686609
+      pipo-map001_9: -246798103857957779
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
