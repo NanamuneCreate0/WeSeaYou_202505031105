@@ -51,6 +51,7 @@ public class FastTravelController : MonoBehaviour
 
         if (IsFastTraveling)
         {
+            //選択肢の仕様
             if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
             {
                 //選択肢がうごく
@@ -67,7 +68,7 @@ public class FastTravelController : MonoBehaviour
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
                 //行先更新
-                SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
+                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
             {
@@ -85,13 +86,14 @@ public class FastTravelController : MonoBehaviour
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
                 //行先更新
-                SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
+                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
 
             //決定
             if (Input.GetKeyDown(KeyCode.O))
             {
-                ChangeScene();
+                //ChangeScene();
+                ChoosingFastTravelText.SendMessage("ExcuteCommand");
             }
         }
 
@@ -100,26 +102,24 @@ public class FastTravelController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneToChange = "ActionScene01";
-            ChangeScene();
+            SceneManager.LoadScene(SceneToChange);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SceneToChange = "ActionScene02";
-            ChangeScene();
+            SceneManager.LoadScene(SceneToChange);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SceneToChange = "ActionScene03";
-            ChangeScene();
+            SceneManager.LoadScene(SceneToChange);
         }
     }
 
+    /*
     void ChangeScene()
     {
         SceneManager.LoadScene(SceneToChange);
     }
-    void SetChoice()
-    {
-
-    }
+    */
 }
