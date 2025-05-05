@@ -35,7 +35,9 @@ public class FastTravelController : MonoBehaviour
 
                 //最初の選択肢に合わせる
                 ChoosingFastTravelText=FastTravelTexts[0];
-                SetCursor();//カーソルの位置を合わせる
+                //カーソル合わせる
+                MyCursor.transform.position = ChoosingFastTravelText.transform.position;
+                //行先更新
                 SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
 ;            }
             else if (IsFastTraveling)
@@ -51,11 +53,38 @@ public class FastTravelController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                Debug.Log("af");
-
                 //選択肢がうごく
-                ChoosingFastTravelText = FastTravelTexts[1];//まだ全然動かないけど、試験的に、二番目の選択肢に行く
-                SetCursor();//カーソルの位置を合わせる
+                int a;
+                a = FastTravelTexts.IndexOf(ChoosingFastTravelText);
+                if (a + 1 < FastTravelTexts.Count)
+                {
+                    ChoosingFastTravelText = FastTravelTexts[a + 1];
+                }
+                else if (a + 1 == FastTravelTexts.Count)
+                {
+                    ChoosingFastTravelText = FastTravelTexts[0];
+                }
+                //カーソル合わせる
+                MyCursor.transform.position = ChoosingFastTravelText.transform.position;
+                //行先更新
+                SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                //選択肢がうごく
+                int a;
+                a = FastTravelTexts.IndexOf(ChoosingFastTravelText);
+                if (a == 0)
+                {
+                    ChoosingFastTravelText = FastTravelTexts[FastTravelTexts.Count - 1];
+                }
+                else
+                {
+                    ChoosingFastTravelText = FastTravelTexts[a - 1];
+                }
+                //カーソル合わせる
+                MyCursor.transform.position = ChoosingFastTravelText.transform.position;
+                //行先更新
                 SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
 
@@ -89,10 +118,8 @@ public class FastTravelController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneToChange);
     }
-
-    void SetCursor()
+    void SetChoice()
     {
-        MyCursor.transform.position = ChoosingFastTravelText.transform.position;
-        //カーソルの位置うごかす
+
     }
 }
