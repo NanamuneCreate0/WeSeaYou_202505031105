@@ -51,7 +51,7 @@ public class FastTravelController : MonoBehaviour
 
         if (IsFastTraveling)
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
             {
                 //選択肢がうごく
                 int a;
@@ -69,7 +69,7 @@ public class FastTravelController : MonoBehaviour
                 //行先更新
                 SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
             {
                 //選択肢がうごく
                 int a;
