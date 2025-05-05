@@ -902,7 +902,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1012052056
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4788,7 +4788,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1203409820
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5282,8 +5282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b96d162b9a7be74aa442c2083f71185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyMainCamera: {fileID: 0}
-  MyPlayerController: {fileID: 0}
+  MyMainCamera: {fileID: 1989927216}
+  MyPlayerController: {fileID: 2137306464}
 --- !u!1 &2137306463
 GameObject:
   m_ObjectHideFlags: 0
