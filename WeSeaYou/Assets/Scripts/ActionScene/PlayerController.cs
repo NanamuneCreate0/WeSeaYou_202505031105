@@ -46,8 +46,5 @@ public class PlayerController : MonoBehaviour
             HandlingPlayer.transform.Translate(new Vector3(Time.deltaTime * -PlayerSpeed, 0, 0));
         }
 
-        //“–‚½‚è”»’è‚¯‚·
-        //
-
     }
 }
