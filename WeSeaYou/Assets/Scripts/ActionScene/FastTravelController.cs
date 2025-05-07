@@ -67,7 +67,7 @@ public class FastTravelController : MonoBehaviour
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
                 //行先更新
-                SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
+                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
             {
@@ -85,13 +85,14 @@ public class FastTravelController : MonoBehaviour
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
                 //行先更新
-                SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
+                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
 
             //決定
             if (Input.GetKeyDown(KeyCode.O))
             {
-                ChangeScene();
+                //ChangeScene();
+                ChoosingFastTravelText.SendMessage("ExcuteCommand");
             }
         }
 
