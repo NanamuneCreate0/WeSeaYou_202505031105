@@ -5,7 +5,7 @@ public class MainCamera : MonoBehaviour
     [SerializeField]
     GameObject MyMainCamera;
     [SerializeField]
-    PlayerController MyPlayerController;
+    PlayerSwitcher MyPlayerSwitcher;
 
     const float PlayerSpeed=4;
 
@@ -18,7 +18,7 @@ public class MainCamera : MonoBehaviour
     {
         //ÉJÉÅÉâí«è]
         //MyMainCamera.transform.position = new Vector3(MyPlayerController.HandlingPlayer.transform.position.x, MyPlayerController.HandlingPlayer.transform.position.y, -1);
-        Vector3 vec = new Vector3(MyPlayerController.HandlingPlayer.transform.position.x, MyPlayerController.HandlingPlayer.transform.position.y, -1);
+        Vector3 vec = new Vector3(MyPlayerSwitcher.HandlingPlayer.transform.position.x, MyPlayerSwitcher.HandlingPlayer.transform.position.y, -1);
         MyMainCamera.transform.position = MyMainCamera.transform.position * Mathf.Pow(0.1f, Time.deltaTime) + vec * (1 - Mathf.Pow(0.1f, Time.deltaTime));
     }
 }
