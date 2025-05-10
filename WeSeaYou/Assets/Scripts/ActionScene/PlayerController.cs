@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     GameObject MyPlayer1;
     [SerializeField]
     GameObject MyPlayer2;
-    const float PlayerSpeed = 4;
+    const float PlayerSpeed = 6;
     void Start()
     {
         
