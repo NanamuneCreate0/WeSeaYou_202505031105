@@ -10,8 +10,8 @@ public class PlayerSwitcher : MonoBehaviour
     void Start()
     {
         HandlingPlayer = MyUtyu;
-        MyChikyu.GetComponent<ChikyuController>().IsHandlingPlayer = false;
-        MyUtyu.GetComponent<UtyuController>().IsHandlingPlayer = true;
+        MyChikyu.GetComponent<ChikyuWalk>().IsHandlingPlayer = false;
+        MyUtyu.GetComponent<UtyuWalk>().IsHandlingPlayer = true;
     }
     void Update()
     {
@@ -21,14 +21,14 @@ public class PlayerSwitcher : MonoBehaviour
             if (HandlingPlayer == MyUtyu)
             {
                 HandlingPlayer = MyChikyu;
-                MyUtyu.GetComponent<UtyuController>().IsHandlingPlayer = false;
-                MyChikyu.GetComponent<ChikyuController>().IsHandlingPlayer = true;
+                MyUtyu.GetComponent<UtyuWalk>().IsHandlingPlayer = false;
+                MyChikyu.GetComponent<ChikyuWalk>().IsHandlingPlayer = true;
             }
             else if (HandlingPlayer == MyChikyu)
             {
                 HandlingPlayer = MyUtyu;
-                MyChikyu.GetComponent<ChikyuController>().IsHandlingPlayer = false;
-                MyUtyu.GetComponent<UtyuController>().IsHandlingPlayer = true;
+                MyChikyu.GetComponent<ChikyuWalk>().IsHandlingPlayer = false;
+                MyUtyu.GetComponent<UtyuWalk>().IsHandlingPlayer = true;
             }
         }
     }
