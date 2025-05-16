@@ -22,7 +22,7 @@ public class SceneMoveController : MonoBehaviour
     {
         if (collision.gameObject.tag == "player")
         {
-            GameObject director = GameObject.Find("fade_out");
+            GameObject director = GameObject.Find("FadeoutDirector");
             director.GetComponent<Fadeout>().Fade();
             Invoke(nameof(load), 2.0f);
         }
