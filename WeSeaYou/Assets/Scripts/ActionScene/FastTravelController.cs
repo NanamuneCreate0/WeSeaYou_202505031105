@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class FastTravelController : MonoBehaviour
 {
     [SerializeField]
+    GameModeController MyGameModeController;
+    [SerializeField]
     GameObject MyFastTravelUI;
     [SerializeField]
     List<GameObject> FastTravelTexts=new List<GameObject>();
@@ -14,7 +16,7 @@ public class FastTravelController : MonoBehaviour
     GameObject MyCursor;
 
     GameObject ChoosingFastTravelText;
-    bool IsFastTraveling;
+    //bool MyGameModeController.GameMode;
     string SceneToChange;
     void Start()
     {
@@ -26,9 +28,9 @@ public class FastTravelController : MonoBehaviour
         //Menu出現
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!IsFastTraveling)
+            if (MyGameModeController.GameMode=="Action")
             {
-                IsFastTraveling = true;
+                MyGameModeController.GameMode = "Debug";
 
                 Debug.Log("FastTravelMenu");
                 MyFastTravelUI.SetActive(true);
@@ -40,16 +42,16 @@ public class FastTravelController : MonoBehaviour
                 //行先更新
                 SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
 ;            }
-            else if (IsFastTraveling)
+            else if (MyGameModeController.GameMode=="Debug")
             {
-                IsFastTraveling = false;
+                MyGameModeController.GameMode = "Action";
 
                 MyFastTravelUI.SetActive(false);
             }
         }
 
 
-        if (IsFastTraveling)
+        if (MyGameModeController.GameMode=="Debug")
         {
             if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
             {
@@ -66,8 +68,6 @@ public class FastTravelController : MonoBehaviour
                 }
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
-                //行先更新
-                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
             if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
             {
@@ -84,14 +84,11 @@ public class FastTravelController : MonoBehaviour
                 }
                 //カーソル合わせる
                 MyCursor.transform.position = ChoosingFastTravelText.transform.position;
-                //行先更新
-                //SceneToChange = ChoosingFastTravelText.GetComponent<Text>().text;
             }
 
             //決定
             if (Input.GetKeyDown(KeyCode.O))
             {
-                //ChangeScene();
                 ChoosingFastTravelText.SendMessage("ExcuteCommand");
             }
         }

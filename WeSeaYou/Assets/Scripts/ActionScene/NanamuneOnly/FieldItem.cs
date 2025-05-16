@@ -9,7 +9,7 @@ public class FieldItem : MonoBehaviour
 
     void Update()
     {
-        if (isTouching&&Input.GetKeyDown(KeyCode.R))
+        if (isTouching&&Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("GetItem");
             PublicStaticStatus.ItemList.Add(MyItem);

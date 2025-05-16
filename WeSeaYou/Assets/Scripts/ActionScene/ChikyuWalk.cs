@@ -52,7 +52,6 @@ public class ChikyuWalk : MonoBehaviour
             //if (direction == 1) { playerSpeed.x = moveSpeed; }
             //if (direction == 2) { playerSpeed.x = -moveSpeed; }
             float num0 = Vector3.Distance(transform.position, MyUtyu.transform.position);
-            Debug.Log(num0);
             if (direction == 1)
             {
                 if (transform.position.x - MyUtyu.transform.position.x < 0)
