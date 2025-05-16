@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemDisplayer : MonoBehaviour
 {
@@ -16,17 +18,36 @@ public class ItemDisplayer : MonoBehaviour
 
     public void SetItemDisplay()
     {
-        Debug.Log("set");
+        //Debug.Log("set");
+        StartCoroutine("ChangeColor");
+    }
 
-        /*foreach (Transform tf in transform)
+    IEnumerator ChangeColor()
+    {
+
+        //ÉZÉãÇÃêîÇçáÇÌÇπÇÈ
+        if (PublicStaticStatus.ItemList.Count != transform.childCount)
         {
-            GameObject.Destroy(tf.gameObject);
-        }*/
-        foreach (Item item in PublicStaticStatus.ItemList)
+            //Debug.Log(PublicStaticStatus.ItemList.Count);
+            //Debug.Log(transform.childCount);
+            for (int i = 0; i < 30; i++)
+            {
+                if (PublicStaticStatus.ItemList.Count > transform.childCount)
+                {
+                    Instantiate(MyItemDisplayerCell, transform);
+                }
+                if (PublicStaticStatus.ItemList.Count < transform.childCount)
+                {
+                    Destroy(transform.GetChild(0).gameObject);
+                }
+            }
+
+        }
+        yield return null;
+        for (int i = 0; i < PublicStaticStatus.ItemList.Count; ++i)
         {
-            Debug.Log(item);
-            Instantiate(MyItemDisplayerCell, Vector3.zero, Quaternion.identity, transform);
-            MyItemDisplayerCell.GetComponent<Image>().sprite = item.sprite;
+            //Debug.Log(PublicStaticStatus.ItemList[i]);
+            transform.GetChild(i).GetComponent<Image>().sprite = PublicStaticStatus.ItemList[i].sprite;
         }
     }
 }

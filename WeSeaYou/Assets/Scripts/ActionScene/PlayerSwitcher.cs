@@ -9,9 +9,9 @@ public class PlayerSwitcher : MonoBehaviour
     GameObject MyChikyu;
     void Start()
     {
-        HandlingPlayer = MyUtyu;
-        MyChikyu.GetComponent<ChikyuWalk>().IsHandlingPlayer = false;
-        MyUtyu.GetComponent<UtyuWalk>().IsHandlingPlayer = true;
+        HandlingPlayer = MyChikyu;
+        MyChikyu.GetComponent<ChikyuWalk>().IsHandlingPlayer = true;
+        MyUtyu.GetComponent<UtyuWalk>().IsHandlingPlayer = false;
     }
     void Update()
     {
