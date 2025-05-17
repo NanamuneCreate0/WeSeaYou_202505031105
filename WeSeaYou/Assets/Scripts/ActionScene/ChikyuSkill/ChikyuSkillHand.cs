@@ -9,7 +9,8 @@ public class ChikyuSkillHand : MonoBehaviour
     public List<Item> FirstHandItems_Test = new List<Item>();
     public List<Item> HandItems = new List<Item>();
 
-    public int BiginningOfHilightedRange=0;
+    public int HilightStart=0;
+    public int isMoving = 0;//0:ê√é~//1:ç∂//2:âE
 
     [SerializeField]
     List<GameObject> HandDisplayCells = new List<GameObject>();
@@ -23,7 +24,6 @@ public class ChikyuSkillHand : MonoBehaviour
 
     float offSetAngle;
     float lastOffsetAngle;
-    int isMoving=0;//0:ê√é~//1:ç∂//2:âE
     float wayToMove;
     float timer;
 
@@ -38,7 +38,7 @@ public class ChikyuSkillHand : MonoBehaviour
 
     void Update()
     {
-        if (isMoving == 0 && Input.GetKeyDown(KeyCode.A))
+        if (isMoving == 0 && Input.GetKeyDown(KeyCode.D))
         {
             GameObject go = Instantiate(HandDisplayCell, transform);
             HandDisplayCells.Add(go);
@@ -51,7 +51,7 @@ public class ChikyuSkillHand : MonoBehaviour
             wayToMove = +angleDistance;
             isMoving = 1;
         }
-        if (isMoving == 0 && Input.GetKeyDown(KeyCode.D))
+        if (isMoving == 0 && Input.GetKeyDown(KeyCode.A))
         {
             GameObject go = Instantiate(HandDisplayCell, transform);
             HandDisplayCells.Insert(0, go);//Ç±ÇÃìÒÇ¬
@@ -118,70 +118,36 @@ public class ChikyuSkillHand : MonoBehaviour
         }
     }
 
-    void SetItem(int num)
+    void SetItem(int num0)
     {
-        if (num == 0)
+        if (num0 == 0)
         {
             for (int i = 0; i < HandDisplayCells.Count; i++)
             {
                 HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i].sprite;
             }
         }
-        if (num == 1)
+        if (num0 == 1)
         {
-            BiginningOfHilightedRange++;
-            if (BiginningOfHilightedRange == HandItems.Count) BiginningOfHilightedRange=0;
+            HilightStart++;
+            if (HilightStart == HandItems.Count) HilightStart=0;
 
             for (int i = 0; i < HandDisplayCells.Count ; i++)
             {
-                int num1;
-                num1= (i + BiginningOfHilightedRange - 1)% HandItems.Count;
+                int num1= (i + HilightStart - 1)% HandItems.Count;
                 if (num1 < 0) { num1 += HandItems.Count; }
-                //if (i + BiginningOfHilightedRange - 1 < 0) { num1 = i + BiginningOfHilightedRange - 1 + HandItems.Count; }
-                //else if(i + BiginningOfHilightedRange - 1 >= HandItems.Count) { num1= i + BiginningOfHilightedRange - 1 - HandItems.Count; }
-                //else { num1 = i + BiginningOfHilightedRange - 1; }
                 HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[num1].sprite;
-                /*try
-                {
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[num].sprite;
-                }
-                catch (System.ArgumentOutOfRangeException e)
-                {
-                    Debug.Log(e.Message);
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i + BiginningOfHilightedRange - 1+HandItems.Count].sprite;
-                }*/
             }
         }
-        if (num == -1)
+        if (num0 == -1)
         {
-            BiginningOfHilightedRange--;
-            if (BiginningOfHilightedRange <0) BiginningOfHilightedRange+=HandItems.Count;
-            //if (BiginningOfHilightedRange ==0) BiginningOfHilightedRange=HandItems.Count-1;
-            //else if (BiginningOfHilightedRange >0) BiginningOfHilightedRange--;
-            //Debug.Log(BiginningOfHilightedRange);
-
+            HilightStart--;
+            if (HilightStart <0) HilightStart+=HandItems.Count;
             for (int i = 0; i < HandDisplayCells.Count; i++)
             {
-                int num1;
-                num1= (i + BiginningOfHilightedRange)%HandItems.Count;
-                //if (i + BiginningOfHilightedRange >= HandItems.Count) { num1 = i + BiginningOfHilightedRange - HandItems.Count; }
-                //else { num1 = i + BiginningOfHilightedRange; }
+                int num1= (i + HilightStart)%HandItems.Count;
                 HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[num1].sprite;
             }
-
-            /*for (int i = 0; i < HandDisplayCells.Count ; i++)
-            {
-                //HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i+ BiginningOfHilightedRange].sprite;
-                try
-                {
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i + BiginningOfHilightedRange].sprite;
-                }
-                catch (System.ArgumentOutOfRangeException e)
-                {
-                    Debug.Log(e.Message);
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i + BiginningOfHilightedRange-HandItems.Count].sprite;
-                }
-            }*/
         }
     }
 
