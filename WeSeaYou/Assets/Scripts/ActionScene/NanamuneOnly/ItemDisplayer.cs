@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 public class ItemDisplayer : MonoBehaviour
 {
     [SerializeField]
-    GameObject MyItemDisplayerCell;
+    GameObject MyItemDisplayCell;
     void Start()
     {
         
@@ -19,10 +19,10 @@ public class ItemDisplayer : MonoBehaviour
     public void SetItemDisplay()
     {
         //Debug.Log("set");
-        StartCoroutine("ChangeColor");
+        StartCoroutine("ExcuteSetItemDisplay");
     }
 
-    IEnumerator ChangeColor()
+    IEnumerator ExcuteSetItemDisplay()
     {
 
         //ƒZƒ‹‚Ì”‚ð‡‚í‚¹‚é
@@ -34,7 +34,7 @@ public class ItemDisplayer : MonoBehaviour
             {
                 if (PublicStaticStatus.ItemList.Count > transform.childCount)
                 {
-                    Instantiate(MyItemDisplayerCell, transform);
+                    Instantiate(MyItemDisplayCell, transform);
                 }
                 if (PublicStaticStatus.ItemList.Count < transform.childCount)
                 {
