@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceb789d8faa09b4ca35913a6e2af4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyItemDisplayerCell: {fileID: 4939462119722710560, guid: 02b8b5aa66ed13741953dd69a434f4a1, type: 3}
+  MyItemDisplayCell: {fileID: 0}
 --- !u!114 &351447758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentStage: 0
+  debugItems: []
 --- !u!4 &373834023
 Transform:
   m_ObjectHideFlags: 0
@@ -6107,6 +6108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9252719fbc110214c83367c11bbdd904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MyGameModeController: {fileID: 0}
   MyFastTravelUI: {fileID: 1508122452}
   FastTravelTexts:
   - {fileID: 1667081212}
@@ -6912,11 +6914,11 @@ Transform:
   m_GameObject: {fileID: 1961005706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -102.719666, y: -194.11697, z: -4.6420665}
+  m_LocalPosition: {x: 445.78033, y: 52.883026, z: -4.6420665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2130922534}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130922530
 GameObject:
@@ -7017,7 +7019,6 @@ RectTransform:
   - {fileID: 1349422514}
   - {fileID: 351447755}
   - {fileID: 1866230235}
-  - {fileID: 1961005708}
   - {fileID: 1910180316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7122,3 +7123,4 @@ SceneRoots:
   - {fileID: 1737187084}
   - {fileID: 2130922534}
   - {fileID: 966251207}
+  - {fileID: 1961005708}
