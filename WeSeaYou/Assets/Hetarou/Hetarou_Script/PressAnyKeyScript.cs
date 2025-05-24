@@ -4,6 +4,7 @@ public class SaveButtonScript : MonoBehaviour
 {
     [SerializeField]
     GameObject ButtonCanvas;
+
     public bool Menu = false;
     void Start()
     {
@@ -12,11 +13,9 @@ public class SaveButtonScript : MonoBehaviour
 
     void Update()
     {
-        ButtonCanvas.SetActive(Menu);
-    }
+        if (Input.anyKeyDown && Menu == false) Menu = true;
+        else if(Input.GetKeyDown(KeyCode.Escape) && Menu == true) Menu = false;
 
-    public void OnSaveMenu()
-    {
-        Menu = true;
+        ButtonCanvas.SetActive(Menu);
     }
 }
