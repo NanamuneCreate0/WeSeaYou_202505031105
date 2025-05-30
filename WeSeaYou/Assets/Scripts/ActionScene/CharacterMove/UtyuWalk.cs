@@ -9,8 +9,9 @@ public class UtyuWalk : MonoBehaviour
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float jumpPower;  //ジャンプ力
     [SerializeField] GameObject MyChikyu;
-    const float CloseDistance = 0.3f;
-    const float BigCloseDistance = 1.7f;
+    [SerializeField] Animator MyAnimator;
+    const float CloseDistance = 1f;
+    const float BigCloseDistance = 4f;
     const float ConfortDistance = 3;
     const float MaxConfortDistance = 6;
 
@@ -120,7 +121,8 @@ public class UtyuWalk : MonoBehaviour
             }
             if (CloseDistance < num1 && num1 < BigCloseDistance)
             {
-                playerSpeed.x = Mathf.Sign(MyChikyu.transform.position.x - transform.position.x) * moveSpeed * Mathf.Pow((num1 - CloseDistance) / (BigCloseDistance - CloseDistance), 1.15f);
+                playerSpeed.x = Mathf.Sign(MyChikyu.transform.position.x - transform.position.x) * moveSpeed 
+                    * Mathf.Pow((num1 - CloseDistance) / (BigCloseDistance - CloseDistance), 0.3f);//0.5fが1fだとバネと同じ、0だと等速
             }
             if (BigCloseDistance <= num1)
             {

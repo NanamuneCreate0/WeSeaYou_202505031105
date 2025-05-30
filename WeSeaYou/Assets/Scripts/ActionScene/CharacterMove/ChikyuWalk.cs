@@ -9,8 +9,9 @@ public class ChikyuWalk : MonoBehaviour
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float jumpPower;  //ジャンプ力
     [SerializeField] GameObject MyUtyu;
-    const float CloseDistance = 0.3f;
-    const float BigCloseDistance = 1.7f;
+    [SerializeField] Animator MyAnimator;
+    const float CloseDistance = 1f;
+    const float BigCloseDistance = 4f;
     const float ConfortDistance = 3;
     const float MaxConfortDistance = 6;
 
@@ -35,20 +36,22 @@ public class ChikyuWalk : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.D))
             {
                 direction = 1;
+                MyAnimator.SetTrigger("WalkRight");
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 direction = 2;
+                MyAnimator.SetTrigger("WalkLeft");
             }
             if (Input.GetKeyUp(KeyCode.D) && direction == 1)
             {
-                direction = 0; if (Input.GetKey(KeyCode.A)) { direction = 2; }
+                direction = 0; if (Input.GetKey(KeyCode.A)) { direction = 2; MyAnimator.SetTrigger("WalkLeft"); }
             }
             if (Input.GetKeyUp(KeyCode.A) && direction == 2)
             {
-                direction = 0; if (Input.GetKey(KeyCode.D)) { direction = 1; }
+                direction = 0; if (Input.GetKey(KeyCode.D)) { direction = 1; MyAnimator.SetTrigger("WalkRight"); }
             }
-            if (direction == 0) { playerSpeed.x = 0; }
+            if (direction == 0) { playerSpeed.x = 0; MyAnimator.SetTrigger("StandRight"); }
             //if (direction == 1) { playerSpeed.x = moveSpeed; }
             //if (direction == 2) { playerSpeed.x = -moveSpeed; }
             float num0 = Vector3.Distance(transform.position, MyUtyu.transform.position);
@@ -98,6 +101,7 @@ public class ChikyuWalk : MonoBehaviour
             }
             // キャラクターを動かす
             rb.linearVelocityX = playerSpeed.x;
+            MyAnimator.SetFloat("Speed", playerSpeed.x);
 
             // ジャンプ
             if (Input.GetKeyDown(KeyCode.Space))
@@ -120,7 +124,8 @@ public class ChikyuWalk : MonoBehaviour
             }
             if (CloseDistance < num1 && num1 < BigCloseDistance)
             {
-                playerSpeed.x = Mathf.Sign(MyUtyu.transform.position.x-transform.position.x) *moveSpeed * Mathf.Pow((num1-CloseDistance) / (BigCloseDistance - CloseDistance), 1.15f);
+                playerSpeed.x = Mathf.Sign(MyUtyu.transform.position.x-transform.position.x) 
+                    *moveSpeed * Mathf.Pow((num1-CloseDistance) / (BigCloseDistance - CloseDistance), 0.3f);
             }
             if (BigCloseDistance <= num1)
             {
