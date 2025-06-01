@@ -13,6 +13,9 @@ public class ChikyuSkillMixtureIndex : ScriptableObject
 
     //素材選択→Didtionary更新&可素材摘出。更新とは、「その素材が引かれたDidtionary生成（その素材を含まない物ははじく）」
 
+    /// <summary>
+    /// 実際つかうのはAllDictionary(_AtStage2とか)と、PossibleDictionary(これを使って合成可能性素材以外をNotAvailableにする)
+    /// </summary>
     public int[] RequiredMaterialsArray = new int[ChikyuSkillCursor.ItemVariety];
     public int[] RequiredMaterialsLeftArray = new int[ChikyuSkillCursor.ItemVariety];
     public Item MixtureItem;

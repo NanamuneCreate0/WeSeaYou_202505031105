@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChikyuSkillController : MonoBehaviour
+public class ChikyuSkillActivator : MonoBehaviour
 {
     [SerializeField]
     GameModeController MyGameModeController;

@@ -12,21 +12,29 @@ public class ChikyuSkillCursor : MonoBehaviour
     //public static List<ChikyuSkillMixtureIndex> InitialMixtureDictionary_Chapter1 = new List<ChikyuSkillMixtureIndex>();//èëÇ´ä∑Ç¶ÇÍÇƒÇµÇ‹Ç§Ç™ì«Ç›çûÇ›êÍóp
     //public static List<ChikyuSkillMixtureIndex> MixtureDictionary_Chapter1 = new List<ChikyuSkillMixtureIndex>();
 
+
+    public int CursorMode = 0;//0:HandìÆÇ©Ç∑//1:åàíËÉ{É^Éì
     [SerializeField]
-    ChikyuSkillHand MyChikyuSkillHand;
+    RectTransform ChikyuSkillCursorImage;
+    [SerializeField]
+    RectTransform ChikyuSkillConfirmButton;
+    RectTransform rect;
+
     void Start()
     {
-        
+        rect=GetComponent<RectTransform>();
+        ChangeCursorMode(0);
     }
-    void Update()
+    public void ChangeCursorMode(int num)
     {
-        if(MyChikyuSkillHand.isMoving==0)
+        if (num == 0)
         {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                int num= (MyChikyuSkillHand.HilightStart + 2)% MyChikyuSkillHand.HandItems.Count;
-                Debug.Log(MyChikyuSkillHand.HandItems[num].itemName + " Chosen");
-            }
+            rect.localPosition=ChikyuSkillCursorImage.localPosition;
         }
+        else if (num == 1)
+        {
+            rect.localPosition = ChikyuSkillConfirmButton.localPosition;
+        }
+        CursorMode = num;
     }
 }
