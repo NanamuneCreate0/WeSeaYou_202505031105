@@ -755,9 +755,9 @@ GameObject:
   - component: {fileID: 352208607}
   - component: {fileID: 352208606}
   - component: {fileID: 352208605}
-  - component: {fileID: 352208604}
   - component: {fileID: 352208609}
   - component: {fileID: 352208610}
+  - component: {fileID: 352208604}
   m_Layer: 6
   m_Name: Utyu
   m_TagString: player
@@ -777,12 +777,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f74ad6cf2c7e648952fd88d3d2ec17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsHandlingPlayer: 0
-  IsGrounding: 0
+  AnotherWalkComponentName: ChikyWalk
   moveSpeed: 3
   jumpPower: 16
-  MyChikyu: {fileID: 1412286266}
-  MyAnimator: {fileID: 0}
+  MyAnother: {fileID: 1412286266}
+  MyAnimator: {fileID: 352208610}
+  IsHandlingPlayer: 0
 --- !u!50 &352208605
 Rigidbody2D:
   serializedVersion: 5
@@ -974,7 +974,7 @@ Animator:
   m_GameObject: {fileID: 352208603}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 468f303483494fe4b82dcb6f171f535a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1268,51 +1268,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa3b8fb2441872418dedc4ad22300d1, type: 3}
---- !u!1 &555260939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 555260941}
-  - component: {fileID: 555260940}
-  m_Layer: 0
-  m_Name: TestAAA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &555260940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555260939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc650da8a3219d54d9779346e9944b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  test: {fileID: 4939462119722710560, guid: 02b8b5aa66ed13741953dd69a434f4a1, type: 3}
---- !u!4 &555260941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555260939}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 613.875, y: 250.625, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564678825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,116 +1851,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa3b8fb2441872418dedc4ad22300d1, type: 3}
---- !u!1 &860573991
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 860573994}
-  - component: {fileID: 860573993}
-  - component: {fileID: 860573992}
-  m_Layer: 0
-  m_Name: Test_walk_01_12
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &860573992
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860573991}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 468f303483494fe4b82dcb6f171f535a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!212 &860573993
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860573991}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -5834270216272494752, guid: 65d7fed05fb6ba5499a794cab0bb25f2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.96}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &860573994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860573991}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5279813, y: 0.99865, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &883686359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,8 +1990,8 @@ Transform:
   m_GameObject: {fileID: 990649867}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.75, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1412286271}
@@ -3379,9 +3224,9 @@ GameObject:
   - component: {fileID: 1412286271}
   - component: {fileID: 1412286270}
   - component: {fileID: 1412286268}
-  - component: {fileID: 1412286267}
   - component: {fileID: 1412286272}
   - component: {fileID: 1412286273}
+  - component: {fileID: 1412286274}
   m_Layer: 6
   m_Name: Chikyu
   m_TagString: player
@@ -3389,24 +3234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1412286267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412286266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55ad8de07cef6a9458de3cd616cf9caf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsHandlingPlayer: 0
-  IsGrounding: 0
-  moveSpeed: 3
-  jumpPower: 16
-  MyUtyu: {fileID: 352208603}
-  MyAnimator: {fileID: 1412286273}
 --- !u!50 &1412286268
 Rigidbody2D:
   serializedVersion: 5
@@ -3564,6 +3391,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1412286274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412286266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ad8de07cef6a9458de3cd616cf9caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnotherWalkComponentName: UtyuWalk
+  moveSpeed: 3
+  jumpPower: 16
+  MyAnother: {fileID: 352208603}
+  MyAnimator: {fileID: 1412286273}
+  IsHandlingPlayer: 0
 --- !u!1 &1562056492
 GameObject:
   m_ObjectHideFlags: 0
@@ -8486,5 +8331,3 @@ SceneRoots:
   - {fileID: 2038828964}
   - {fileID: 2122777380}
   - {fileID: 1100857532}
-  - {fileID: 555260941}
-  - {fileID: 860573994}
