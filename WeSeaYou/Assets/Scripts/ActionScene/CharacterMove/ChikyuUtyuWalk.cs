@@ -135,7 +135,7 @@ public class ChikyuUtyuWalk : MonoBehaviour
             }
 
             rb.linearVelocityX = playerSpeed.x;
-            Debug.Log(playerSpeed.x);
+            //Debug.Log(playerSpeed.x);
             if (playerSpeed.x<0.2)
             {
                 if(MyAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name=="WalkLeft")
