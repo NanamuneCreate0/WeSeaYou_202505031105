@@ -1,11 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnyPressKeyScript : MonoBehaviour
 {
-    [SerializeField]
-    GameObject PressAnyKeyUI;
-
-    public bool PressAnyKey = true;
+   
     void Start()
     {
 
@@ -13,9 +11,16 @@ public class AnyPressKeyScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown && PressAnyKey == true) PressAnyKey = false;
-        else if (Input.GetKeyDown(KeyCode.Escape) && PressAnyKey == false) PressAnyKey = true;
+        if (Input.anyKeyDown)
+        {
+            GameObject director = GameObject.Find("FadeoutDirector");
+            director.GetComponent<Fadeout>().Fade();
+            Invoke(nameof(load), 2.0f);
+        }
+    }
 
-        PressAnyKeyUI.SetActive(PressAnyKey);
+    public void load()
+    {
+        SceneManager.LoadScene("StartScene02");
     }
 }

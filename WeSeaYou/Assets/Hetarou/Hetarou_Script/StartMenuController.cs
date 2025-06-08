@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,7 +24,8 @@ public class StartMenuScript : MonoBehaviour
         //最初の選択肢に合わせる
         ChoosingChoiceObject = ChoiceObject[0];
         //カーソル合わせる
-        MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+        //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+        StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
     }
 
     void Update()
@@ -33,7 +35,7 @@ public class StartMenuScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
 
-
+            EndBox();
             //選択肢がうごく
             if (a + 1 < ChoiceObject.Count)
             {
@@ -46,11 +48,13 @@ public class StartMenuScript : MonoBehaviour
 
             }
             //カーソル合わせる
-            MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+            //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+            StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
         }
         //上↑
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
+            EndBox();
             //選択肢がうごく
             if (a == 0)
             {
@@ -63,7 +67,9 @@ public class StartMenuScript : MonoBehaviour
 
             }
             //カーソル合わせる
-            MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+            //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+            StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
+
         }
 
         if(Input.GetKeyDown(KeyCode.V))
@@ -76,9 +82,16 @@ public class StartMenuScript : MonoBehaviour
 
     public void StartBox(int a)
     {
-        ChoosingChoiceObject = ChoiceObject[a-5];
+        ChoosingChoiceObject = ChoiceObject[a];
+        ChoosingChoiceObject.GetComponent<Image>().color = new Color32(255, 255, 255, 125);//色を変えるスクリプト
         MyCursor.transform.position = ChoosingChoiceObject.transform.position;
     }
+
+    public void EndBox()
+    {
+        ChoosingChoiceObject.GetComponent<Image>().color = new Color32(0, 0, 0, 125);
+    }
+
     public void ChoosingStartBox(int b)
     {
         switch (b)
