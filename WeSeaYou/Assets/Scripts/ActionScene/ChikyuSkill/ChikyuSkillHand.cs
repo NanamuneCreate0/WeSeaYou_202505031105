@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ChikyuSkillHand : MonoBehaviour
 {
-    //public List<Item> FirstHandItems_Test = new List<Item>();
     public List<Item> HandItems = new List<Item>();
 
     public int HilightStart=0;
@@ -31,7 +30,7 @@ public class ChikyuSkillHand : MonoBehaviour
     float wayToMove;
     float timer;
 
-    void Start()
+    public void ActivationStart()
     {
         //foreach(var item in FirstHandItems_Test) { HandItems.Add(item); }//テストとして10個アイテムを持つ
         HandItems.Clear();
@@ -44,8 +43,8 @@ public class ChikyuSkillHand : MonoBehaviour
 
     void Update()
     {
-        //ボタン押せるのはCursorModeが「Hand動かす」ときだけ
-        if (MyChikyuSkillCursor.CursorMode == 0)
+        //ボタン押せるのはMixing合成が行われていないとき
+        if (!MyChikyuSkillTable.IsMixing)
         {
             //決定
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
@@ -55,7 +54,6 @@ public class ChikyuSkillHand : MonoBehaviour
                 {
                     Debug.Log(HandItems[num].itemName + " Chosen");
                     SubmitItem(HandItems[num]);
-
                 }
                 else if (HandItems[num] == null)
                 {

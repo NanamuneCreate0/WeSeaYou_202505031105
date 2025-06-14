@@ -5,11 +5,17 @@ public class FieldItem : MonoBehaviour
     [SerializeField]
     Item MyItem;
 
+    GameModeController MyGameModeController;
+
     bool isTouching = false;
+    void Start()
+    {
+        MyGameModeController = GameObject.Find("GameModeController").GetComponent<GameModeController>();
+    }
 
     void Update()
     {
-        if (isTouching&&Input.GetKeyDown(KeyCode.C))
+        if (isTouching&&Input.GetKeyDown(KeyCode.C)&&MyGameModeController.GameMode=="Action")
         {
             Debug.Log("GetItem");
             PublicStaticStatus.ItemList.Add(MyItem);

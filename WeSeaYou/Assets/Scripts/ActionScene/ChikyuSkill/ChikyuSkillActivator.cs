@@ -6,6 +6,10 @@ public class ChikyuSkillActivator : MonoBehaviour
     GameModeController MyGameModeController;
     [SerializeField]
     GameObject MyChikyuSkillUI;
+    [SerializeField]
+    ChikyuSkillHand MyChikyuSkillHand;
+    [SerializeField]
+    ChikyuSkillTable MyChikyuSkillTable;
 
     void Start()
     {
@@ -23,6 +27,8 @@ public class ChikyuSkillActivator : MonoBehaviour
                 Debug.Log("ChikyuSkill");
                 MyGameModeController.GameMode = "ChikyuSkill";
                 MyChikyuSkillUI.SetActive(true);
+                MyChikyuSkillHand.ActivationStart();
+                MyChikyuSkillTable.ActivationStart();
             }
             else if (MyGameModeController.GameMode == "ChikyuSkill")
             {

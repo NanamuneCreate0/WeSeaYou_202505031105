@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be95aff982cad34298c96a5c72d3504, type: 3}
-  m_Name: Shield
+  m_Script: {fileID: 11500000, guid: b7313aac34b27b647ae27f39e42f030d, type: 3}
+  m_Name: SwordKyeIsAx
   m_EditorClassIdentifier: 
-  itemName: Shield
-  sprite: {fileID: 2542939390634225140, guid: 319ff3eef5e767f4fb700ee8918bc359, type: 3}
+  RequiredMaterialsArray: 0100000003000000
+  MixtureItem: {fileID: 11400000, guid: 09bc7ca9dd1d7ba43892917b5cc12cfe, type: 2}
