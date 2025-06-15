@@ -3,7 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class AnyPressKeyScript : MonoBehaviour
 {
-   
+    [SerializeField]
+    GameObject StartMenu;
+    [SerializeField]
+    GameObject AnyPressText;
+
+    private bool Switch = true;
+
     void Start()
     {
 
@@ -11,16 +17,11 @@ public class AnyPressKeyScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && Switch == true)
         {
-            GameObject director = GameObject.Find("FadeoutDirector");
-            director.GetComponent<Fadeout>().Fade();
-            Invoke(nameof(load), 2.0f);
+            Switch = false;
+            StartMenu.SetActive(!Switch);
+            AnyPressText.SetActive(Switch);
         }
-    }
-
-    public void load()
-    {
-        SceneManager.LoadScene("StartScene02");
     }
 }

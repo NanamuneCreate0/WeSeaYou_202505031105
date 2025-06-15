@@ -10,19 +10,27 @@ public class StartMenuScript : MonoBehaviour
     [SerializeField]
     List<GameObject> ChoiceObject = new List<GameObject>();
     [SerializeField]
-    GameObject MyCursor;
+    List<GameObject> ChoiceMenuObject = new List<GameObject>();
+
+    [SerializeField]
+    GameObject AllStartMenuObject;
 
     GameObject ChoosingChoiceObject;
+
+    //GameObject ChoosingChoiceMenuObject;
 
     public int CurrentLoadNumber;
 
     public int a;
+
+    
     //bool MyGameModeController.GameMode;
     string SceneToChange;
     void Start()
     {
         //最初の選択肢に合わせる
         ChoosingChoiceObject = ChoiceObject[0];
+        //ChoosingChoiceMenuObject = ChoiceMenuObject[0];
         //カーソル合わせる
         //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
         StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
@@ -30,71 +38,95 @@ public class StartMenuScript : MonoBehaviour
 
     void Update()
     {
+        
         a = ChoiceObject.IndexOf(ChoosingChoiceObject);
+        //HoverDetector.SameTypeNumber = a;
         //下↓
+        //if (HoverDetector.IsChoosingMenu == false)
+        
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
+        Cursor.visible = false;        
+        EndBox1(ChoiceObject.IndexOf(ChoosingChoiceObject));
+        //選択肢がうごく
+        if (a + 1 < ChoiceObject.Count)
+        {
+            ChoosingChoiceObject = ChoiceObject[a + 1];
 
-            EndBox();
-            //選択肢がうごく
-            if (a + 1 < ChoiceObject.Count)
-            {
-                ChoosingChoiceObject = ChoiceObject[a + 1];
-
-            }
-            else if (a + 1 == ChoiceObject.Count)
-            {
-                ChoosingChoiceObject = ChoiceObject[0];
-
-            }
+        }
+        else if (a + 1 == ChoiceObject.Count)
+        {
+            ChoosingChoiceObject = ChoiceObject[0];
+        }
             //カーソル合わせる
             //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
             StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
-        }
-        //上↑
+            Debug.Log(a);
+        }    
+            //上↑
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            EndBox();
-            //選択肢がうごく
+            Cursor.visible = false;
+            EndBox1(ChoiceObject.IndexOf(ChoosingChoiceObject));
+                //選択肢がうごく
             if (a == 0)
             {
                 ChoosingChoiceObject = ChoiceObject[ChoiceObject.Count - 1];
-
             }
             else
             {
                 ChoosingChoiceObject = ChoiceObject[a - 1];
-
             }
             //カーソル合わせる
             //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
             StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
+            Debug.Log(a);
+        }
+        
 
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        if (mouseX != 0 || mouseY != 0)
+        {
+            Cursor.visible=true;
         }
 
         if(Input.GetKeyDown(KeyCode.V))
         {
-            ChoosingStartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
+            EndBox1(a);
+            ChoosingChoiceObject = ChoiceMenuObject[a];
+            ChoosingChoiceObject.SetActive(true);
+            AllStartMenuObject.SetActive(false);
         }
-
-  
     }
 
     public void StartBox(int a)
     {
         ChoosingChoiceObject = ChoiceObject[a];
         ChoosingChoiceObject.GetComponent<Image>().color = new Color32(255, 255, 255, 125);//色を変えるスクリプト
-        MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+        //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
+        Debug.Log(a);
     }
 
-    public void EndBox()
+    public void EndBox1(int a)
     {
-        ChoosingChoiceObject.GetComponent<Image>().color = new Color32(0, 0, 0, 125);
+        ChoosingChoiceObject = ChoiceObject[a];
+        EndBox2();
+    }
+
+    public void EndBox2()
+    {
+        Color32 color32 = new(0, 0, 0, 125);
+        ChoosingChoiceObject.GetComponent<Image>().color = color32;
     }
 
     public void ChoosingStartBox(int b)
     {
-        switch (b)
+        //ChoosingChoiceObject = ChoiceObject[b];
+        //ChoosingChoiceObject.SetActive(true);
+
+        /*switch (b)
         {
             case 0:
                 Debug.Log("はじめから");
@@ -111,7 +143,6 @@ public class StartMenuScript : MonoBehaviour
             case 4:
                 Debug.Log("終わる");
                 break;
-        }
-
+        }*/
     }
 }

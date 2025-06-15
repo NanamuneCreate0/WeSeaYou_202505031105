@@ -5,59 +5,55 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler//, IPointerClickHandler
+public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [SerializeField]
-    int LoadNumber;
     [SerializeField]
     int TypeNumber;
     [SerializeField]
     GameObject ChoosingMenuObject;
     [SerializeField]
-    GameObject ThisObject;
+    GameObject AllMenuObject;
+
     public bool ChoosingMenu;
+
     public static int SameTypeNumber;
-    public static bool cursor = true;
+    //public static bool IsChoosingMenu = false;
+    public static bool enter = false;
+    GameObject StartMenuObject;
+
+    void Start()
+    {
+        StartMenuObject = GameObject.Find("StartMenuObject");
+        Cursor.visible = false;
+    }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(SameTypeNumber == TypeNumber) ChoosingMenu = true;
-            else if(SameTypeNumber != TypeNumber) ChoosingMenu = false;
-
-            if (cursor == true && ChoosingMenu == false) cursor = false;
-            else if (cursor == false && ChoosingMenu == false) cursor = true;
-        }
-
-        ChoosingMenuObject.SetActive(ChoosingMenu);
-        ThisObject.SetActive(cursor);
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        StartMenuObject.GetComponent<StartMenuScript>().EndBox2();
+        enter = true;
         SameTypeNumber = TypeNumber;
-        cursor = true;
-        GameObject.Find("StartMenuObject").GetComponent<StartMenuScript>().StartBox(TypeNumber);
-
+        Debug.Log(SameTypeNumber);
+        StartMenuObject.GetComponent<StartMenuScript>().StartBox(TypeNumber);
     }
 
-    /*public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (SameTypeNumber == TypeNumber)
-        {
-            ChoosingMenu = true;
-            ChoosingMenuObject.SetActive(ChoosingMenu);
-            ThisObject.SetActive(SaveButtonScript.Menu);
-        }
-        
-    }*/
+        StartMenuObject.GetComponent<StartMenuScript>().EndBox1(TypeNumber);
+        ChoosingMenuObject.SetActive(true);
+        AllMenuObject.SetActive(false);
+    }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        enter = false;
         SameTypeNumber = 100;
-        GameObject.Find("StartMenuObject").GetComponent<StartMenuScript>().EndBox();
-        if (ChoosingMenu == true) cursor = false;
+        StartMenuObject.GetComponent<StartMenuScript>().EndBox1(TypeNumber);
+        
     }
 
 
