@@ -25,7 +25,7 @@ public class SaveLoadManager : MonoBehaviour
     private void Start()
     {
         StageName = SceneManager.GetActiveScene().name;
-        Debug.Log("現在のシーン名: " + StageName);
+        //Debug.Log("現在のシーン名: " + StageName);
     }
     private void Update()
     {
