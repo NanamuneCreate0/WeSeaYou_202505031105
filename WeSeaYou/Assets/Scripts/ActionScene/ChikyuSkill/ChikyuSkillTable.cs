@@ -10,12 +10,16 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class ChikyuSkillTable : MonoBehaviour
 {
     public List<Item> TableItems = new List<Item>();
-    public bool IsMixing=false;
+    public bool IsMixing = false;
 
     [SerializeField]
     GameObject ChikyuSkillTableCell;
     [SerializeField]
     GameModeController MyGameModeController;
+    [SerializeField]
+    ChikyuSkillHand MyChikyuSkillHand;
+
+    List<int> NumberOfSubmittedItem = new List<int>();
 
     public void ActivationStart()
     {
@@ -24,16 +28,16 @@ public class ChikyuSkillTable : MonoBehaviour
     }
 
     //アイテム取得時
-    public void GetItem(Item item)
+    public void ChatchSubmitItem(Item item, int num)
     {
         TableItems.Add(item);
+        NumberOfSubmittedItem.Add(num);
         SetItems();
-        if (TableItems.Count == 2)
+        if (TableItems.Count == 2)//アイテム2個なら合成
         {
             ExcuteMixItem();
         }
     }
-    //アイテム2個なら合成
     void ExcuteMixItem()
     {
         IsMixing = true;
@@ -44,16 +48,18 @@ public class ChikyuSkillTable : MonoBehaviour
 
     void Update()
     {
-        //選択とりやめ
-        if (!IsMixing)
+        if (!IsMixing && Input.GetKeyDown(KeyCode.Space) && TableItems.Count != 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && TableItems.Count != 0)
-            {
-                Debug.Log(TableItems[TableItems.Count - 1].name);
-                TableItems.RemoveAt(TableItems.Count - 1);
-                SetItems();
-            }
+            UnSubmitItem();
         }
+    }
+
+    void UnSubmitItem()
+    {
+        TableItems.RemoveAt(TableItems.Count - 1);
+        NumberOfSubmittedItem.RemoveAt(NumberOfSubmittedItem.Count - 1);
+        SetItems();
+        MyChikyuSkillHand.ChatchUndoSubmitItem();
     }
 
 
@@ -70,9 +76,9 @@ public class ChikyuSkillTable : MonoBehaviour
                 }
                 if (TableItems.Count < transform.childCount)
                 {
-                    if(transform.childCount-TableItems.Count>i)//i=0が一番満たしやすい。そこから差の数だけ減らす//まぁ差は1以上にはならないんですけどね
+                    if (transform.childCount - TableItems.Count > i)//i=0が一番満たしやすい。そこから差の数だけ減らす//まぁ差は1以上にはならないんですけどね
                     {
-                        Destroy(transform.GetChild(transform.childCount -1- i).gameObject);//Destroyの処理はUpdateの最後になるので注意してる
+                        Destroy(transform.GetChild(transform.childCount - 1 - i).gameObject);//Destroyの処理はUpdateの最後になるので注意してる
                     }
                 }
             }
@@ -80,20 +86,20 @@ public class ChikyuSkillTable : MonoBehaviour
         for (int i = 0; i < TableItems.Count; ++i)
         {
             transform.GetChild(i).GetComponent<Image>().sprite = TableItems[i].sprite;
-            Debug.Log(TableItems[i].name+" - OnTable");
+            Debug.Log(TableItems[i].name + " - OnTable");
         }
     }
 
     private IEnumerator MixItems()
     {
-        //この時点で結果は確定かな
+        Item item0 = FigureOutMixture(TableItems[0], TableItems[1]);
 
-        if (FigureOutMixture(TableItems[0], TableItems[1]) == null)
+        if (item0 == null)
         {
             Debug.Log("失敗");
-            // 1秒待つ  
-            yield return new WaitForSeconds(2.0f);
-            //失敗
+            yield return new WaitForSeconds(2.0f);// 数秒待つ
+            MyChikyuSkillHand.CommitHandItemValue();
+            MyChikyuSkillHand.SetItem(0);
             TableItems.Clear();
             SetItems();
             IsMixing = false;
@@ -102,9 +108,17 @@ public class ChikyuSkillTable : MonoBehaviour
         else
         {
             Debug.Log("成功");
-            // 1秒待つ  
-            yield return new WaitForSeconds(2.0f);
-            //失敗
+            yield return new WaitForSeconds(2.0f);// 数秒待つ
+
+            //アイテム操作
+            NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// 降順にソート
+            foreach (int i in NumberOfSubmittedItem)
+            {
+                PublicStaticStatus.ItemList.RemoveAt(i);
+            }
+
+            MyChikyuSkillHand.CommitHandItemValue();
+            MyChikyuSkillHand.SetItem(0);
             TableItems.Clear();
             SetItems();
             IsMixing = false;
@@ -112,24 +126,23 @@ public class ChikyuSkillTable : MonoBehaviour
         }
     }
 
-    Item FigureOutMixture(Item item0,Item item1)
+    Item FigureOutMixture(Item item0, Item item1)
     {
-        Debug.Log("FigureOutMixture(" + item0 + "," + item1+")");
-        int[] list=new int[2];
+        Debug.Log("FigureOutMixture(" + item0 + "," + item1 + ")");
+        Item[] list = new Item[2];
 
-        if (item0.ID < item1.ID) { list = new int[2] { item0.ID, item1.ID }; }
-        else if (item0.ID > item1.ID) { list = new int[2] { item1.ID, item0.ID }; }
+        if (item0.ID < item1.ID) { list = new Item[2] { item0, item1 }; }
+        else if (item0.ID > item1.ID) { list = new Item[2] { item1, item0 }; }
 
         foreach (ChikyuSkillMixtureIndex mixtureIndex in ChikyuSkillCursor.MixtureDictionary)
         {
             if (mixtureIndex.RequiredMaterialsArray[0] == list[0]
-                &&mixtureIndex.RequiredMaterialsArray[1] == list[1])
+                && mixtureIndex.RequiredMaterialsArray[1] == list[1])
             {
-                Debug.Log("success");
-                return(mixtureIndex.MixtureItem);
+                Debug.Log("successMix");
+                return (mixtureIndex.MixtureItem);
             }
         }
-
         return (null);
     }
 }

@@ -1144,6 +1144,7 @@ MonoBehaviour:
   IsMixing: 0
   ChikyuSkillTableCell: {fileID: 4660833753737335948, guid: a487f10cf9b63f549ac48bad0102efd2, type: 3}
   MyGameModeController: {fileID: 963019034}
+  MyChikyuSkillHand: {fileID: 1085519585}
 --- !u!1 &441234685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,6 +2225,7 @@ MonoBehaviour:
   HandDisplayCell: {fileID: 6739486651005672046, guid: 6aa3b8fb2441872418dedc4ad22300d1, type: 3}
   MyChikyuSkillTable: {fileID: 437836353}
   MyChikyuSkillCursor: {fileID: 0}
+  HandItemsBool: 
 --- !u!1 &1131162387
 GameObject:
   m_ObjectHideFlags: 0

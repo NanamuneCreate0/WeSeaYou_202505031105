@@ -1,12 +1,13 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChikyuSkillHand : MonoBehaviour
 {
-    public List<Item> HandItems = new List<Item>();
+    public List<Item> HandItems = new List<Item>();//nullも持つ
 
     public int HilightStart=0;
     public int isMoving = 0;//0:静止//1:左//2:右
@@ -25,6 +26,8 @@ public class ChikyuSkillHand : MonoBehaviour
     const float moveTime = 0.15f;
     const float FirstOffSetAngle = 162;
 
+
+    public List<bool> HandItemsBool = new List<bool>();
     float offSetAngle;
     float lastOffsetAngle;
     float wayToMove;
@@ -32,13 +35,22 @@ public class ChikyuSkillHand : MonoBehaviour
 
     public void ActivationStart()
     {
-        //foreach(var item in FirstHandItems_Test) { HandItems.Add(item); }//テストとして10個アイテムを持つ
-        HandItems.Clear();
-        foreach(Item item in PublicStaticStatus.ItemList) { HandItems.Add(item); }
-        for (int i = 0; i < HandDisplayCells.Count; i++) { if (HandItems.Count < 5) { HandItems.Add(null); } }//forじゃなくてwhileでもいい
+        CommitHandItemValue();
         offSetAngle = FirstOffSetAngle;
         SetCellPos();
         SetItem(0);
+    }
+
+    public void CommitHandItemValue()
+    {
+        HandItems.Clear();
+        HandItemsBool.Clear();
+        foreach (Item item in PublicStaticStatus.ItemList)
+        {
+            HandItems.Add(item);
+            HandItemsBool.Add(true);
+        }
+        for (int i = 0; i < HandDisplayCells.Count; i++) { if (HandItems.Count < 5) { HandItems.Add(null); } }//forじゃなくてwhileでもいい
     }
 
     void Update()
@@ -50,12 +62,15 @@ public class ChikyuSkillHand : MonoBehaviour
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
             {
                 int num = (HilightStart + 2) % HandItems.Count;
-                if (HandItems[num] != null)
+                if (num < 0) { num += HandItems.Count; }
+                if (HandItems[num] != null && HandItemsBool[num])
                 {
                     Debug.Log(HandItems[num].itemName + " Chosen");
-                    SubmitItem(HandItems[num]);
+                    HandItemsBool[num] = false;
+                    SubmitItem(HandItems[num],num);
+                    SetItem(0);
                 }
-                else if (HandItems[num] == null)
+                else
                 {
                     Debug.Log("null Chosen");
                 }
@@ -145,63 +160,54 @@ public class ChikyuSkillHand : MonoBehaviour
         }
     }
 
-    void SetItem(int num0)
+    public void SetItem(int num0)
     {
         if (num0 == 0)
         {
-            for (int i = 0; i < HandDisplayCells.Count; i++)
-            {
-                if(HandItems[i] != null)
-                {
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[i].sprite;
-                }
-                else if(HandItems[i] != null)
-                {
-                    //HandDisplayCells[i].GetComponent<Image>().sprite =//透明にするとか
-                }
-            }
+            PaintDisplayCell(HilightStart); ;
         }
         if (num0 == 1)
         {
             HilightStart++;
-            if (HilightStart == HandItems.Count) HilightStart=0;
+            if (HilightStart == HandItems.Count) HilightStart = 0;
 
-            for (int i = 0; i < HandDisplayCells.Count ; i++)
-            {
-                int num1= (i + HilightStart - 1)% HandItems.Count;
-                if (num1 < 0) { num1 += HandItems.Count; }
-                if (HandItems[num1] != null)
-                {
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[num1].sprite;
-                }
-                else if (HandItems[num1] != null)
-                {
-                    //HandDisplayCells[i].GetComponent<Image>().sprite =//透明にするとか
-                }
-            }
+            PaintDisplayCell(HilightStart - 1);
         }
         if (num0 == -1)
         {
             HilightStart--;
-            if (HilightStart <0) HilightStart+=HandItems.Count;
-            for (int i = 0; i < HandDisplayCells.Count; i++)
+            if (HilightStart < 0) HilightStart += HandItems.Count;
+
+            PaintDisplayCell(HilightStart);
+        }
+    }
+    void PaintDisplayCell(int RoughDifference_BetweenHandDisplayCellsAndHandItems)//負の数や大きな数でも対応できる//それ故Rough//DisplayCellはいつも左から右で0～
+    {
+        for (int i = 0; i < HandDisplayCells.Count; i++)
+        {
+            int num1 = (i + RoughDifference_BetweenHandDisplayCellsAndHandItems) % HandItems.Count;
+            if (num1 < 0) { num1 += HandItems.Count; }
+            Image img = HandDisplayCells[i].GetComponent<Image>();
+            if (HandItems[num1] != null)
             {
-                int num1= (i + HilightStart)%HandItems.Count;
-                if (num1 < 0) { num1 += HandItems.Count; }
-                if (HandItems[num1] != null)
-                {
-                    HandDisplayCells[i].GetComponent<Image>().sprite = HandItems[num1].sprite;
-                }
-                else if (HandItems[num1] != null)
-                {
-                    //HandDisplayCells[i].GetComponent<Image>().sprite =//透明にするとか
-                }
+                img.sprite = HandItems[num1].sprite;
+                if (!HandItemsBool[num1]) { img.color = Color.gray; }
+                else { img.color = Color.white; }
+            }
+            else if (HandItems[num1] == null)
+            {
+                img.sprite = null;//透明にするとか
             }
         }
     }
     
-    void SubmitItem(Item item)
+    void SubmitItem(Item item,int num)
     {
-        MyChikyuSkillTable.GetItem(item);
+        MyChikyuSkillTable.ChatchSubmitItem(item,num);
+    }
+    public void ChatchUndoSubmitItem()
+    {
+        CommitHandItemValue();
+        SetItem(0);
     }
 }
