@@ -16,7 +16,7 @@ public class ItemDisplayer : MonoBehaviour
     {
     }
 
-    public void SetItemDisplay()
+    public void SetItemDisplay(bool ExcuteSort)
     {
         //StartCoroutine("ExcuteSetItemDisplay");
         //ƒZƒ‹‚Ì”‚ğ‡‚í‚¹‚é
@@ -30,11 +30,15 @@ public class ItemDisplayer : MonoBehaviour
                 }
                 if (PublicStaticStatus.ItemList.Count < transform.childCount)
                 {
-                    Destroy(transform.GetChild(0).gameObject);
+                    if (transform.childCount - PublicStaticStatus.ItemList.Count > i)//i=0‚ªˆê”Ô–‚½‚µ‚â‚·‚¢B‚»‚±‚©‚ç·‚Ì”‚¾‚¯Œ¸‚ç‚·//‚Ü‚Ÿ·‚Í1ˆÈã‚É‚Í‚È‚ç‚È‚¢‚ñ‚Å‚·‚¯‚Ç‚Ë
+                    {
+                        Destroy(transform.GetChild(transform.childCount - 1 - i).gameObject);//Destroy‚Ìˆ—‚ÍUpdate‚ÌÅŒã‚É‚È‚é‚Ì‚Å’ˆÓ‚µ‚Ä‚é
+                    }
                 }
             }
 
         }
+        if (ExcuteSort) { PublicStaticStatus.ItemList.Sort((a, b) => a.ID.CompareTo(b.ID)); }
         for (int i = 0; i < PublicStaticStatus.ItemList.Count; ++i)
         {
             transform.GetChild(i).GetComponent<Image>().sprite = PublicStaticStatus.ItemList[i].sprite;

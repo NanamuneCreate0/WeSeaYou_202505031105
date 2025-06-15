@@ -15,15 +15,16 @@ public class ChikyuSkillTable : MonoBehaviour
     [SerializeField]
     GameObject ChikyuSkillTableCell;
     [SerializeField]
-    GameModeController MyGameModeController;
-    [SerializeField]
     ChikyuSkillHand MyChikyuSkillHand;
+    [SerializeField]
+    ItemDisplayer MyItemDisplayer;
 
     List<int> NumberOfSubmittedItem = new List<int>();
 
     public void ActivationStart()
     {
         TableItems.Clear();
+        NumberOfSubmittedItem.Clear();
         SetItems();
     }
 
@@ -41,8 +42,48 @@ public class ChikyuSkillTable : MonoBehaviour
     void ExcuteMixItem()
     {
         IsMixing = true;
-        MyGameModeController.SubGameMode = "ChikyuSkillMixing";
-        StartCoroutine(nameof(MixItems));
+        
+        Item item0 = FigureOutMixture(TableItems[0], TableItems[1]);
+
+        if (item0 == null)
+        {
+            Debug.Log("é∏îs");
+            //MyChikyuSkillHand.CommitHandItemValue();
+
+            TableItems.Clear();NumberOfSubmittedItem.Clear();
+            SetItems();
+
+            MyChikyuSkillHand.RefreshHandItemsBool();
+            MyChikyuSkillHand.SetItem(0);
+
+            IsMixing = false;
+        }
+        else if (item0 != null)
+        {
+            Debug.Log("ê¨å˜");
+            StartAnim_Mix(TableItems[0], TableItems[1]);
+            int CursorNum = NumberOfSubmittedItem[1];
+            //ÉAÉCÉeÉÄëÄçÏ
+            NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// ç~èáÇ…É\Å[Ég
+            foreach (int i in NumberOfSubmittedItem)
+            {
+                MyChikyuSkillHand.HandItems.RemoveAt(i);
+                MyChikyuSkillHand.HandItems.Insert(i,null);
+            }
+            MyChikyuSkillHand.HandItems[CursorNum]=item0;//Add(item0);//
+            MyChikyuSkillHand.ConfirmStaticItemList(false);
+            MyItemDisplayer.SetItemDisplay(false);
+
+            //MyChikyuSkillHand.CommitHandItemValue();
+            TableItems.Clear();NumberOfSubmittedItem.Clear();
+            SetItems();
+
+            MyChikyuSkillHand.RefreshHandItemsBool();
+            MyChikyuSkillHand.SetItem(0);
+
+
+            IsMixing = false;
+        }
     }
 
 
@@ -56,10 +97,10 @@ public class ChikyuSkillTable : MonoBehaviour
 
     void UnSubmitItem()
     {
-        TableItems.RemoveAt(TableItems.Count - 1);
-        NumberOfSubmittedItem.RemoveAt(NumberOfSubmittedItem.Count - 1);
+        TableItems.RemoveAt(TableItems.Count - 1);NumberOfSubmittedItem.RemoveAt(NumberOfSubmittedItem.Count - 1);
         SetItems();
-        MyChikyuSkillHand.ChatchUndoSubmitItem();
+        MyChikyuSkillHand.RefreshHandItemsBool();
+        MyChikyuSkillHand.SetItem(0);
     }
 
 
@@ -90,41 +131,6 @@ public class ChikyuSkillTable : MonoBehaviour
         }
     }
 
-    private IEnumerator MixItems()
-    {
-        Item item0 = FigureOutMixture(TableItems[0], TableItems[1]);
-
-        if (item0 == null)
-        {
-            Debug.Log("é∏îs");
-            yield return new WaitForSeconds(2.0f);// êîïbë“Ç¬
-            MyChikyuSkillHand.CommitHandItemValue();
-            MyChikyuSkillHand.SetItem(0);
-            TableItems.Clear();
-            SetItems();
-            IsMixing = false;
-            MyGameModeController.SubGameMode = "";
-        }
-        else
-        {
-            Debug.Log("ê¨å˜");
-            yield return new WaitForSeconds(2.0f);// êîïbë“Ç¬
-
-            //ÉAÉCÉeÉÄëÄçÏ
-            NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// ç~èáÇ…É\Å[Ég
-            foreach (int i in NumberOfSubmittedItem)
-            {
-                PublicStaticStatus.ItemList.RemoveAt(i);
-            }
-
-            MyChikyuSkillHand.CommitHandItemValue();
-            MyChikyuSkillHand.SetItem(0);
-            TableItems.Clear();
-            SetItems();
-            IsMixing = false;
-            MyGameModeController.SubGameMode = "";
-        }
-    }
 
     Item FigureOutMixture(Item item0, Item item1)
     {
@@ -139,10 +145,16 @@ public class ChikyuSkillTable : MonoBehaviour
             if (mixtureIndex.RequiredMaterialsArray[0] == list[0]
                 && mixtureIndex.RequiredMaterialsArray[1] == list[1])
             {
-                Debug.Log("successMix");
                 return (mixtureIndex.MixtureItem);
             }
         }
         return (null);
+    }
+
+    void StartAnim_Mix(Item item0, Item item1)
+    {
+        /*GameObject go=GameObject.Find("Anim_Mix");
+        go.transform.GetChild(0).GetComponent<Image>().sprite= item0.sprite;
+        go.transform.GetChild(1).GetComponent<Image>().sprite= item1.sprite;*/
     }
 }

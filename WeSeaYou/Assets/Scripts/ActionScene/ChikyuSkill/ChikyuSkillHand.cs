@@ -35,14 +35,6 @@ public class ChikyuSkillHand : MonoBehaviour
 
     public void ActivationStart()
     {
-        CommitHandItemValue();
-        offSetAngle = FirstOffSetAngle;
-        SetCellPos();
-        SetItem(0);
-    }
-
-    public void CommitHandItemValue()
-    {
         HandItems.Clear();
         HandItemsBool.Clear();
         foreach (Item item in PublicStaticStatus.ItemList)
@@ -50,8 +42,13 @@ public class ChikyuSkillHand : MonoBehaviour
             HandItems.Add(item);
             HandItemsBool.Add(true);
         }
-        for (int i = 0; i < HandDisplayCells.Count; i++) { if (HandItems.Count < 5) { HandItems.Add(null); } }//for‚¶‚á‚È‚­‚Äwhile‚Å‚à‚¢‚¢
+        for (int i = 0; i < HandDisplayCells.Count; i++) { if (HandItems.Count < 5) { HandItems.Add(null); HandItemsBool.Add(true); } }//for‚¶‚á‚È‚­‚Äwhile‚Å‚à‚¢‚¢
+        SetItem(0);
+
+        offSetAngle = FirstOffSetAngle;
+        SetCellPos();
     }
+
 
     void Update()
     {
@@ -181,7 +178,7 @@ public class ChikyuSkillHand : MonoBehaviour
             PaintDisplayCell(HilightStart);
         }
     }
-    void PaintDisplayCell(int RoughDifference_BetweenHandDisplayCellsAndHandItems)//•‰‚Ì”‚â‘å‚«‚È”‚Å‚à‘Î‰ž‚Å‚«‚é//‚»‚êŒÌRough//DisplayCell‚Í‚¢‚Â‚à¶‚©‚ç‰E‚Å0`
+    void PaintDisplayCell(int RoughDifference_BetweenHandDisplayCellsAndHandItems)//•‰‚Ì”‚â‘å‚«‚È”‚Å‚à‘Î‰ž‚Å‚«‚é//‚»‚êŒÌRough//DisplayCell‚ÍŠî–{¶‚©‚ç‰E‚Å0`
     {
         for (int i = 0; i < HandDisplayCells.Count; i++)
         {
@@ -196,7 +193,9 @@ public class ChikyuSkillHand : MonoBehaviour
             }
             else if (HandItems[num1] == null)
             {
-                img.sprite = null;//“§–¾‚É‚·‚é‚Æ‚©
+                img.sprite = null;
+                if (!HandItemsBool[num1]) { img.color = Color.gray; }
+                else { img.color = Color.white; }
             }
         }
     }
@@ -205,9 +204,23 @@ public class ChikyuSkillHand : MonoBehaviour
     {
         MyChikyuSkillTable.ChatchSubmitItem(item,num);
     }
-    public void ChatchUndoSubmitItem()
+
+    public void ConfirmStaticItemList(bool ExcuteSort)
     {
-        CommitHandItemValue();
-        SetItem(0);
+        PublicStaticStatus.ItemList.Clear();
+        for (int i = 0; i < HandItems.Count; i++)
+        {
+            if (HandItems[i] != null)
+            {
+                PublicStaticStatus.ItemList.Add(HandItems[i]);
+            }
+        }
+        if (ExcuteSort) { PublicStaticStatus.ItemList.Sort((a, b) => a.ID.CompareTo(b.ID)); }
+    }
+
+    public void RefreshHandItemsBool()
+    {
+        HandItemsBool.Clear();
+        for (int i = 0; i < HandItems.Count; i++) { HandItemsBool.Add(true); }
     }
 }
