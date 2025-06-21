@@ -87,7 +87,7 @@ public class StartMenuController : MonoBehaviour
             ChoosingLoadBox(a, b);
         }
 
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             if (ChoosingChoiceObject != BackButton)
             {

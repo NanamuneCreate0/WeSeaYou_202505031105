@@ -11,31 +11,14 @@ public class UItext : MonoBehaviour
 
     public int messageIndex;
     public int messageLength;
-    public string StageName;
+    //public string StageName;
     private bool isTyping = false;
 
-
+    [SerializeField]
+    string StageName;
     void Start()
     {
-
-
-        switch (PublicStaticStatus.CurrentStage)
-        {
-            case 0:
-                messageIndex = 0;
-                messageLength = 2;
-                StageName = "ActionScene01";
-                break;
-
-            case 1:
-                messageIndex = 2;
-                messageLength = 4;
-                StageName = "ActionScene02";
-                break;
-        }
         StartCoroutine(TypeMessage(messages[messageIndex]));
-
-
     }
 
     void Update()
@@ -47,7 +30,7 @@ public class UItext : MonoBehaviour
         {
             messageIndex++;
 
-            if (messageIndex < messageLength)
+            if (messageIndex < messages.Length)
             {
                 StartCoroutine(TypeMessage(messages[messageIndex]));
             }
