@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be95aff982cad34298c96a5c72d3504, type: 3}
-  m_Name: Shield
+  m_Name: Vase
   m_EditorClassIdentifier: 
-  itemName: Shield
-  sprite: {fileID: 2542939390634225140, guid: 319ff3eef5e767f4fb700ee8918bc359, type: 3}
-  ID: 2
+  itemName: Vase
+  sprite: {fileID: 1149520755, guid: a732dc72097d74b49b78f6a0bb268c69, type: 3}
+  ID: 9901

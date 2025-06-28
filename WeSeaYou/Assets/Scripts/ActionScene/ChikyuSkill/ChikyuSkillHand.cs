@@ -20,9 +20,11 @@ public class ChikyuSkillHand : MonoBehaviour
     ChikyuSkillTable MyChikyuSkillTable;
     [SerializeField]
     ChikyuSkillCursor MyChikyuSkillCursor;
+    [SerializeField]
+    Sprite NullItem;
 
     const float angleDistance = 36;
-    const float radius=100;
+    const float radius=210;
     const float moveTime = 0.15f;
     const float FirstOffSetAngle = 162;
 
@@ -193,7 +195,7 @@ public class ChikyuSkillHand : MonoBehaviour
             }
             else if (HandItems[num1] == null)
             {
-                img.sprite = null;
+                img.sprite = NullItem;
                 if (!HandItemsBool[num1]) { img.color = Color.gray; }
                 else { img.color = Color.white; }
             }

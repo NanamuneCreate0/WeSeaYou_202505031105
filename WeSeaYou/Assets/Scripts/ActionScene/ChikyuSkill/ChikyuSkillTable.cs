@@ -18,6 +18,8 @@ public class ChikyuSkillTable : MonoBehaviour
     ChikyuSkillHand MyChikyuSkillHand;
     [SerializeField]
     ItemDisplayer MyItemDisplayer;
+    [SerializeField]
+    Anim_ChikyuSkillMix MyAnim;
 
     List<int> NumberOfSubmittedItem = new List<int>();
 
@@ -48,6 +50,7 @@ public class ChikyuSkillTable : MonoBehaviour
         if (item0 == null)
         {
             Debug.Log("失敗");
+            MyAnim.StartAnim_MixFailuer(TableItems[0], TableItems[1]);
             //MyChikyuSkillHand.CommitHandItemValue();
 
             TableItems.Clear();NumberOfSubmittedItem.Clear();
@@ -61,7 +64,7 @@ public class ChikyuSkillTable : MonoBehaviour
         else if (item0 != null)
         {
             Debug.Log("成功");
-            StartAnim_Mix(TableItems[0], TableItems[1]);
+            MyAnim.StartAnim_Mix(TableItems[0], TableItems[1],item0);
             int CursorNum = NumberOfSubmittedItem[1];
             //アイテム操作
             NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// 降順にソート
@@ -109,6 +112,7 @@ public class ChikyuSkillTable : MonoBehaviour
     {
         if (TableItems.Count != transform.childCount)
         {
+
             for (int i = 0; i < 30; i++)
             {
                 if (TableItems.Count > transform.childCount)
@@ -151,10 +155,5 @@ public class ChikyuSkillTable : MonoBehaviour
         return (null);
     }
 
-    void StartAnim_Mix(Item item0, Item item1)
-    {
-        /*GameObject go=GameObject.Find("Anim_Mix");
-        go.transform.GetChild(0).GetComponent<Image>().sprite= item0.sprite;
-        go.transform.GetChild(1).GetComponent<Image>().sprite= item1.sprite;*/
-    }
+    
 }
