@@ -20,6 +20,8 @@ public class ChikyuSkillTable : MonoBehaviour
     ItemDisplayer MyItemDisplayer;
     [SerializeField]
     Anim_ChikyuSkillMix MyAnim;
+    [SerializeField]
+    Sprite Transparent;
 
     List<int> NumberOfSubmittedItem = new List<int>();
 
@@ -110,28 +112,17 @@ public class ChikyuSkillTable : MonoBehaviour
     //SetItem()
     void SetItems()
     {
-        if (TableItems.Count != transform.childCount)
+        for (int i = 0; i < 2; ++i)
         {
-
-            for (int i = 0; i < 30; i++)
+            if (TableItems.Count > i)
             {
-                if (TableItems.Count > transform.childCount)
-                {
-                    Instantiate(ChikyuSkillTableCell, transform);
-                }
-                if (TableItems.Count < transform.childCount)
-                {
-                    if (transform.childCount - TableItems.Count > i)//i=0‚ªˆê”Ô–‚½‚µ‚â‚·‚¢B‚»‚±‚©‚ç·‚Ì”‚¾‚¯Œ¸‚ç‚·//‚Ü‚Ÿ·‚Í1ˆÈã‚É‚Í‚È‚ç‚È‚¢‚ñ‚Å‚·‚¯‚Ç‚Ë
-                    {
-                        Destroy(transform.GetChild(transform.childCount - 1 - i).gameObject);//Destroy‚Ìˆ—‚ÍUpdate‚ÌÅŒã‚É‚È‚é‚Ì‚Å’ˆÓ‚µ‚Ä‚é
-                    }
-                }
+                transform.GetChild(i).GetComponent<Image>().sprite = TableItems[i].sprite;
+                Debug.Log(TableItems[i].name + " - OnTable");
             }
-        }
-        for (int i = 0; i < TableItems.Count; ++i)
-        {
-            transform.GetChild(i).GetComponent<Image>().sprite = TableItems[i].sprite;
-            Debug.Log(TableItems[i].name + " - OnTable");
+            else if (TableItems.Count <= i)
+            {
+                transform.GetChild(i).GetComponent<Image>().sprite = Transparent;
+            }
         }
     }
 
