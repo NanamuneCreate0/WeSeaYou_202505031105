@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class Anim_ChikyuSkillMix : MonoBehaviour
 {
+    [SerializeField]
+    PlayableDirector director;
     [SerializeField]
     GameObject AnimTable0;
     [SerializeField]
@@ -48,28 +51,12 @@ public class Anim_ChikyuSkillMix : MonoBehaviour
     }
     IEnumerator SmokeStart(Item item0, Item item1, Item item2)
     {
-        /*
-        Table0.SetActive(true); Table1.SetActive(true); Smoke.SetActive(true); MixedItem.SetActive(true); MixedItem.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-        Table0.GetComponent<Image>().sprite = item0.sprite;
-        Table1.GetComponent<Image>().sprite = item1.sprite;
+        AnimTable0.GetComponent<Image>().sprite = item0.sprite;
+        AnimTable1.GetComponent<Image>().sprite = item1.sprite;
         MixedItem.GetComponent<Image>().sprite = item2.sprite;
-
-        Table0.GetComponent<Animator>().SetTrigger("Start");//TableìÆÇ≠
-        Table1.GetComponent<Animator>().SetTrigger("Start");//TableìÆÇ≠
-        yield return new WaitForSeconds(1);
-        Smoke.GetComponent<Animator>().SetTrigger("Start");//SmokénÇ‹ÇÈ
-        yield return new WaitForSeconds(0.55f);//SmokeÇ™àÍñ Çï¢Ç§
-        Table0.SetActive(false); Table1.SetActive(false);//Tableè¡Ç¶ÇÈ
-        MixedItem.GetComponent<Image>().color = Color.white;//MixedItemèoåª
-        Twinkle.SetActive(true);
-        Twinkle.GetComponent<ParticleSystem>().Play();
-        yield return new WaitForSeconds(0.7f);
-        Smoke.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
-        MixedItem.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
-        Twinkle.SetActive(true);
-        */
+        yield return null;
+        director.Play();
+        /*
         Table0.SetActive(false); Table1.SetActive(false); AnimTable0.SetActive(true); AnimTable1.SetActive(true);
         PlusMark.SetActive(false); 
         AnimTable0.GetComponent<Image>().sprite = item0.sprite;
@@ -91,5 +78,6 @@ public class Anim_ChikyuSkillMix : MonoBehaviour
         Twinkle.SetActive(false);
         PlusMark.SetActive(true);
         Table0.SetActive(true); Table1.SetActive(true);
+        */
     }
 }
