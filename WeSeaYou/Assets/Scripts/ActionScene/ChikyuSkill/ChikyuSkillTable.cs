@@ -53,7 +53,6 @@ public class ChikyuSkillTable : MonoBehaviour
         {
             Debug.Log("失敗");
             MyAnim.StartAnim_MixFailuer(TableItems[0], TableItems[1]);
-            //MyChikyuSkillHand.CommitHandItemValue();
 
             TableItems.Clear();NumberOfSubmittedItem.Clear();
             SetItems();
@@ -67,8 +66,9 @@ public class ChikyuSkillTable : MonoBehaviour
         {
             Debug.Log("成功");
             MyAnim.StartAnim_Mix(TableItems[0], TableItems[1],item0);
-            int CursorNum = NumberOfSubmittedItem[1];
+
             //アイテム操作
+            int CursorNum = NumberOfSubmittedItem[1];
             NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// 降順にソート
             foreach (int i in NumberOfSubmittedItem)
             {
@@ -79,7 +79,6 @@ public class ChikyuSkillTable : MonoBehaviour
             MyChikyuSkillHand.ConfirmStaticItemList(false);
             MyItemDisplayer.SetItemDisplay(false);
 
-            //MyChikyuSkillHand.CommitHandItemValue();
             TableItems.Clear();NumberOfSubmittedItem.Clear();
             SetItems();
 

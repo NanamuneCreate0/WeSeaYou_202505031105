@@ -623,6 +623,26 @@ PlayableDirector:
     value: {fileID: 1625882821}
   - key: {fileID: 5366388320933291774, guid: 75bfdb244820fd041a514f36d6bcf568, type: 2}
     value: {fileID: 643425085}
+  - key: {fileID: 508614663781455389, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1059888985}
+  - key: {fileID: 376764183911651190, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 205734516}
+  - key: {fileID: 8307752026165124461, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1246576485}
+  - key: {fileID: -56520346078559002, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1298471097}
+  - key: {fileID: 3856221260997606406, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1625882817}
+  - key: {fileID: -4830710746744441457, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 643425081}
+  - key: {fileID: 6369922912566377853, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1625882821}
+  - key: {fileID: -6490504599182215761, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 643425085}
+  - key: {fileID: 9031350711833929309, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1562921354}
+  - key: {fileID: -4336911976773508459, guid: 6997ba8a39015bd42ac85418835cf8c3, type: 2}
+    value: {fileID: 1562921358}
   m_ExposedReferences:
     m_References:
     - c49ecc0ab31e61c4e92048db767027e8: {fileID: 205734516}
@@ -4995,6 +5015,7 @@ GameObject:
   - component: {fileID: 1562921357}
   - component: {fileID: 1562921356}
   - component: {fileID: 1562921355}
+  - component: {fileID: 1562921358}
   m_Layer: 5
   m_Name: MIxedItem
   m_TagString: Untagged
@@ -5060,6 +5081,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 153}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1562921358
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562921354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a77e5b3038d6ef49b7d8d6fc0571681, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1577837714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10153,15 +10196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94eac16713d43344b035ddceeae517a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  director: {fileID: 787399579}
+  MixDirector: {fileID: 787399579}
+  FailedDirector: {fileID: 121884578}
   AnimTable0: {fileID: 1625882817}
   AnimTable1: {fileID: 643425081}
-  Table0: {fileID: 205734516}
-  Table1: {fileID: 1246576485}
   MixedItem: {fileID: 1562921354}
-  Smoke: {fileID: 1330546398}
-  Twinkle: {fileID: 2124222046}
-  PlusMark: {fileID: 1298471097}
+  transparent: {fileID: 5293985529120920092, guid: fdde970769b816948a22f6b03edf85fe, type: 3}
 --- !u!1 &2124222046
 GameObject:
   m_ObjectHideFlags: 0
