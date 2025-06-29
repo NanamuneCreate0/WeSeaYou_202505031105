@@ -82,17 +82,8 @@ public class StartMenuScript : MonoBehaviour
             StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
             Debug.Log(a);
         }
-        
 
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
-        if (mouseX != 0 || mouseY != 0)
-        {
-            Cursor.visible=true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             EndBox1(a);
             ChoosingChoiceObject = ChoiceMenuObject[a];
