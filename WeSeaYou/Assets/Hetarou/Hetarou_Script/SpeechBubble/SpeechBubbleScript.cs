@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 public class SpeechBubbleScript : MonoBehaviour
 {
     public TMP_Text messageText;            // 表示用Text
+    [SerializeField, TextArea(1, 3)]
     public string[] messages;           // 表示したい文章リスト
     public float charDelay = 0.05f;     // 文字送りの速さ
 
@@ -54,7 +55,7 @@ public class SpeechBubbleScript : MonoBehaviour
                     case 1:
                     
                         SpeechBubble.GetComponent<RectTransform>().anchoredPosition 
-                            = new Vector2(ChikyuPos.x * 50 + 200, ChikyuPos.y * 50 + 50);
+                            = new Vector2(ChikyuPos.x * 50 + 240, ChikyuPos.y * 50 + 100);
                         break;
                 }
             }
