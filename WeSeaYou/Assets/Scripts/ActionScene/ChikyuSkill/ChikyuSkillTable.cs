@@ -18,6 +18,10 @@ public class ChikyuSkillTable : MonoBehaviour
     ChikyuSkillHand MyChikyuSkillHand;
     [SerializeField]
     ItemDisplayer MyItemDisplayer;
+    [SerializeField]
+    Anim_ChikyuSkillMix MyAnim;
+    [SerializeField]
+    Sprite Transparent;
 
     List<int> NumberOfSubmittedItem = new List<int>();
 
@@ -48,7 +52,7 @@ public class ChikyuSkillTable : MonoBehaviour
         if (item0 == null)
         {
             Debug.Log("失敗");
-            //MyChikyuSkillHand.CommitHandItemValue();
+            MyAnim.StartAnim_MixFailuer(TableItems[0], TableItems[1]);
 
             TableItems.Clear();NumberOfSubmittedItem.Clear();
             SetItems();
@@ -61,9 +65,10 @@ public class ChikyuSkillTable : MonoBehaviour
         else if (item0 != null)
         {
             Debug.Log("成功");
-            StartAnim_Mix(TableItems[0], TableItems[1]);
-            int CursorNum = NumberOfSubmittedItem[1];
+            MyAnim.StartAnim_Mix(TableItems[0], TableItems[1],item0);
+
             //アイテム操作
+            int CursorNum = NumberOfSubmittedItem[1];
             NumberOfSubmittedItem.Sort((a, b) => b.CompareTo(a));// 降順にソート
             foreach (int i in NumberOfSubmittedItem)
             {
@@ -74,7 +79,6 @@ public class ChikyuSkillTable : MonoBehaviour
             MyChikyuSkillHand.ConfirmStaticItemList(false);
             MyItemDisplayer.SetItemDisplay(false);
 
-            //MyChikyuSkillHand.CommitHandItemValue();
             TableItems.Clear();NumberOfSubmittedItem.Clear();
             SetItems();
 
@@ -107,27 +111,17 @@ public class ChikyuSkillTable : MonoBehaviour
     //SetItem()
     void SetItems()
     {
-        if (TableItems.Count != transform.childCount)
+        for (int i = 0; i < 2; ++i)
         {
-            for (int i = 0; i < 30; i++)
+            if (TableItems.Count > i)
             {
-                if (TableItems.Count > transform.childCount)
-                {
-                    Instantiate(ChikyuSkillTableCell, transform);
-                }
-                if (TableItems.Count < transform.childCount)
-                {
-                    if (transform.childCount - TableItems.Count > i)//i=0が一番満たしやすい。そこから差の数だけ減らす//まぁ差は1以上にはならないんですけどね
-                    {
-                        Destroy(transform.GetChild(transform.childCount - 1 - i).gameObject);//Destroyの処理はUpdateの最後になるので注意してる
-                    }
-                }
+                transform.GetChild(i).GetComponent<Image>().sprite = TableItems[i].sprite;
+                Debug.Log(TableItems[i].name + " - OnTable");
             }
-        }
-        for (int i = 0; i < TableItems.Count; ++i)
-        {
-            transform.GetChild(i).GetComponent<Image>().sprite = TableItems[i].sprite;
-            Debug.Log(TableItems[i].name + " - OnTable");
+            else if (TableItems.Count <= i)
+            {
+                transform.GetChild(i).GetComponent<Image>().sprite = Transparent;
+            }
         }
     }
 
@@ -151,10 +145,5 @@ public class ChikyuSkillTable : MonoBehaviour
         return (null);
     }
 
-    void StartAnim_Mix(Item item0, Item item1)
-    {
-        /*GameObject go=GameObject.Find("Anim_Mix");
-        go.transform.GetChild(0).GetComponent<Image>().sprite= item0.sprite;
-        go.transform.GetChild(1).GetComponent<Image>().sprite= item1.sprite;*/
-    }
+    
 }

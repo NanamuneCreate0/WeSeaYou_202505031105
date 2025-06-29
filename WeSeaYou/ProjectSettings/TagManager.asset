@@ -40,8 +40,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: -1Sorting
+    uniqueID: 3250125845
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: +1Sorting
+    uniqueID: 3392377357
     locked: 0
   m_RenderingLayers:
   - Default

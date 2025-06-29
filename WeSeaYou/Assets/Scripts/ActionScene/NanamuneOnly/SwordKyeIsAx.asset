@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SwordKyeIsAx
   m_EditorClassIdentifier: 
   RequiredMaterialsArray:
-  - {fileID: 11400000, guid: 7b2bc8208a42a9847bfd8198d561e65a, type: 2}
+  - {fileID: 11400000, guid: 2e0b8646e499acb4187ae69a2192d7aa, type: 2}
   - {fileID: 11400000, guid: a82a71724c9168447b5cc5edbefde277, type: 2}
   MixtureItem: {fileID: 11400000, guid: 09bc7ca9dd1d7ba43892917b5cc12cfe, type: 2}

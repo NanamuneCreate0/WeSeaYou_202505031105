@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be95aff982cad34298c96a5c72d3504, type: 3}
-  m_Name: Ax
+  m_Name: PurpleFlowerA
   m_EditorClassIdentifier: 
-  itemName: Ax
-  sprite: {fileID: -8744628963810201884, guid: e088d5048e10f4446a3dfb2794cad0bd, type: 3}
+  itemName: PurpleFlowerA
+  sprite: {fileID: -1888382819, guid: a732dc72097d74b49b78f6a0bb268c69, type: 3}
+  ID: 9911
