@@ -46,8 +46,12 @@ public class UItext : MonoBehaviour
                     if(step.FaceObject != null)
                     {
                         step.FaceObject.SetActive(true);
-                        step.NowFaceObject.SetActive(false);
                         Debug.Log($"カウント {step.triggerCount} に到達。{step.FaceObject.name} を表示！");
+                    }
+
+                    if (step.NowFaceObject != null)
+                    {
+                        step.NowFaceObject.SetActive(false);
                     }
 
                     if (step.StillObject != null)
