@@ -2124,6 +2124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChoiceObject:
+  - {fileID: 0}
+  - {fileID: 1282601055}
   - {fileID: 560895226}
   - {fileID: 2059756533}
   - {fileID: 1079786623}
@@ -2133,8 +2135,6 @@ MonoBehaviour:
   AllMenuObject: {fileID: 736389503}
   ThisTypeNumber: 1
   CurrentLoadNumber: 0
-  a: 0
-  b: 0
 --- !u!1 &994120251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,14 +3079,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0.07262372, b: 0.07262372, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b675bbf9d9eb8884d83da004c651d3d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
