@@ -141,7 +141,7 @@ public class StartMenuController : MonoBehaviour
             ChoosingLoadBox(a, b);
         }
         */
-        //カーソル合わせる
+        //マウス操作からカーソル操作に切り替える
         if (Cursor.visible == true && Input.anyKeyDown && !Input.GetMouseButtonDown(0))
         {
             Cursor.visible = false;
@@ -155,7 +155,8 @@ public class StartMenuController : MonoBehaviour
         {
             if (ChoosingChoiceObject != BackButton)
             {
-                Debug.Log(ChoosingNumber[a, b]);
+                //Debug.Log(ChoosingNumber[a, b]);
+                ExcuteLoad(a,b);
             }
 
             else if(ChoosingChoiceObject == BackButton)
@@ -176,7 +177,7 @@ public class StartMenuController : MonoBehaviour
 
     public void ChoosingLoadBox(int VerticalNumber, int HorizontalNumber)
     {
-        Debug.Log("" + a + "," + b + "," + ChoosingNumber[a, b]);
+        //Debug.Log("" + a + "," + b + "," + ChoosingNumber[a, b]);
         ChoosingChoiceObject = ChoiceObject[ChoosingNumber[VerticalNumber, HorizontalNumber]];
         Hilight();//選択中を分かりやすくする
     }
@@ -187,9 +188,42 @@ public class StartMenuController : MonoBehaviour
 
     }
 
-    public void GetLoad(int VerticalNumber, int HorizontalNumber)
+    int slot;
+    public void ExcuteLoad(int VerticalNumber, int HorizontalNumber)
     {
         Debug.Log(ChoosingNumber[VerticalNumber, HorizontalNumber]);
+        //ここでロードする
+        if (ChoosingNumber[VerticalNumber, HorizontalNumber] == 3)
+        {
+            slot = 1;
+
+        }
+        if (ChoosingNumber[VerticalNumber, HorizontalNumber] == 4)
+        {
+            slot = 2;
+        }
+        string key = $"PlayerUserData{slot}";
+        if (PlayerPrefs.HasKey(key))
+        {
+            //jsonデータにしたやつをここで元に戻す
+            string json = PlayerPrefs.GetString(key);
+            UserData data = JsonUtility.FromJson<UserData>(json);
+
+            //ここでロード
+            //Chikyu.transform.position = data.savedPosition;
+            //Utyu.transform.position = data.savedPosition;
+            //health = data.savedHealth;
+            //SceneManager.LoadScene(data.savedStageName);
+            Debug.Log(data.savedStageName);
+            //Debug.Log(data.savedStageName);
+            Debug.Log("セーブ" + slot + "をロードしました");
+            Debug.Log("場所は" + data.savedStageName);
+        }
+        else
+        {
+            Debug.Log("PlayerUserDataが存在しません");
+        }
+        SceneManager.LoadScene("ActionScene06");
     }
 
     public void Hilight()

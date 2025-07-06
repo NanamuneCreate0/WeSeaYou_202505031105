@@ -5,62 +5,65 @@ using UnityEngine.SceneManagement;
 [System.Serializable]//セーブしたい変数だとかをここのクラスに書く
 public class UserData
 {
-    public Vector3 savedPosition;
-    public float savedHealth;
+    //public Vector3 savedPosition;
+    //public float savedHealth;
     public string savedStageName;
 }
 
 public class SaveLoadManager : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
     GameObject Chikyu;
     [SerializeField]
     GameObject Utyu;
     //さっき書いた変数を再設定
     public static float speed = 5.0f;
-    public static float health = 100.0f;
+    public static float health = 100.0f;*/
     public static string StageName;
-    public Vector3 position;
+    //public Vector3 position;
 
     private void Start()
     {
-        StageName = SceneManager.GetActiveScene().name;
+        //StageName = SceneManager.GetActiveScene().name;
         //Debug.Log("現在のシーン名: " + StageName);
     }
     private void Update()
     {
-
+        /*
         if (Input.GetKeyDown(KeyCode.H))
         {
             health -= 1;
             Debug.Log(health);
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.K))
         {
+            //Debug.Log("k");
             OnSave(1);
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        /*if (Input.GetKeyDown(KeyCode.L))
         {
             OnLoad(1);
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.M))
         {
             OnSave(2);
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        /*if (Input.GetKeyDown(KeyCode.N))
         {
             OnLoad(2);
-        }
+        }*/
     }
     public void OnSave(int slot)
     {
+        string st = Random.Range(1, 100) + "stage";
+        Debug.Log(st);
         UserData data = new UserData()
         {
-            savedPosition = Chikyu.transform.position,
-            savedHealth = health,
-            savedStageName = StageName
+            //savedPosition = Chikyu.transform.position,
+            //savedHealth = health,
+            savedStageName =st//StageName
         };
 
 
@@ -84,12 +87,14 @@ public class SaveLoadManager : MonoBehaviour
             UserData data = JsonUtility.FromJson<UserData>(json);
 
             //ここでロード
-            Chikyu.transform.position = data.savedPosition;
-            Utyu.transform.position = data.savedPosition;
-            health = data.savedHealth;
+            //Chikyu.transform.position = data.savedPosition;
+            //Utyu.transform.position = data.savedPosition;
+            //health = data.savedHealth;
             //SceneManager.LoadScene(data.savedStageName);
+            Debug.Log(data.savedStageName);
             //Debug.Log(data.savedStageName);
             Debug.Log("セーブ" + slot + "をロードしました");
+            Debug.Log("場所は" + data.savedStageName);
         }
         else
         {
