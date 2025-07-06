@@ -80,7 +80,7 @@ public class StartMenuScript : MonoBehaviour
             //カーソル合わせる
             //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
             StartBox(ChoiceObject.IndexOf(ChoosingChoiceObject));
-            Debug.Log(a);
+            //Debug.Log(a);
         }
 
         if(Input.GetKeyDown(KeyCode.C))
@@ -97,7 +97,6 @@ public class StartMenuScript : MonoBehaviour
         ChoosingChoiceObject = ChoiceObject[a];
         ChoosingChoiceObject.GetComponent<Image>().color = new Color32(255, 255, 255, 125);//色を変えるスクリプト
         //MyCursor.transform.position = ChoosingChoiceObject.transform.position;
-        Debug.Log(a);
     }
 
     public void EndBox1(int a)

@@ -15,8 +15,8 @@ public class LoadSlotController : MonoBehaviour, IPointerEnterHandler, IPointerC
     GameObject LoaderCanvas;
 
     
-    public static int a;
-    public static int b; 
+    public int a;
+    public int b; 
 
     
     public void OnPointerEnter(PointerEventData eventData)
@@ -31,7 +31,7 @@ public class LoadSlotController : MonoBehaviour, IPointerEnterHandler, IPointerC
     {
         a = VerticalNumber;
         b = HorizontalNumber;
-        LoaderCanvas.GetComponent<StartMenuController>().GetLoad(a, b);
+        LoaderCanvas.GetComponent<StartMenuController>().ExcuteLoad(a, b);
     }
 
     public void OnPointerExit(PointerEventData eventData)
