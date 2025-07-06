@@ -5,14 +5,16 @@ public class MouseMoveScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
 {
     [SerializeField]
     GameObject MenuCommandAnim;
+    [SerializeField]
+    GameObject ChooseMenuObject;
 
+    public static GameObject ChosingMenuCommand;
     public static GameObject ChosingMenuObject;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -20,10 +22,17 @@ public class MouseMoveScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         MenuCommandAnim.SetActive(true);
-        if(ChosingMenuObject != null && ChosingMenuObject != MenuCommandAnim) 
-        ChosingMenuObject.SetActive(false);
+        if(ChooseMenuObject != null) ChooseMenuObject.SetActive(true);
 
-        ChosingMenuObject = MenuCommandAnim;
+        if (ChosingMenuCommand != null && ChosingMenuCommand != MenuCommandAnim)
+        {
+            ChosingMenuCommand.SetActive(false);
+            if(ChosingMenuObject != null)
+            ChosingMenuObject.SetActive(false);
+        }
+
+        ChosingMenuCommand = MenuCommandAnim;
+        ChosingMenuObject = ChooseMenuObject;
     }
 
     public void OnPointerClick(PointerEventData eventData)
