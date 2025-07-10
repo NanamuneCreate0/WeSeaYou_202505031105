@@ -11,6 +11,7 @@ public class ChikyuUtyuWalk : MonoBehaviour
     [SerializeField] GameObject MyAnother;
     [SerializeField] Animator MyAnimator;
     public bool IsHandlingPlayer;
+    public int direction = 0;//0:ê√é~//1:âE//2:ç∂
 
     const float CloseDistance = 1f;
     const float BigCloseDistance = 4f;
@@ -20,7 +21,6 @@ public class ChikyuUtyuWalk : MonoBehaviour
     Rigidbody2D rb;
     IsGroundingJudger isGroundingJudger;
     Vector3 playerSpeed;
-    int direction = 0;//0:ê√é~//1:âE//2:ç∂
     string LastAnim;
 
     void Start()
