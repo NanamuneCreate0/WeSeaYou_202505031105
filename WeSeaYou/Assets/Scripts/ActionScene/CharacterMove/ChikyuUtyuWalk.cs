@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class ChikyuUtyuWalk : MonoBehaviour
 {
+    [SerializeField] int ModeIControlable;
     [SerializeField] string AnotherWalkComponentName;
+    [SerializeField] PlayerSwitcher modeSwitcher;
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float jumpPower;  //ジャンプ力
     [SerializeField] GameObject MyAnother;
     [SerializeField] Animator MyAnimator;
-    public bool IsHandlingPlayer;
+    //public
+    bool IsHandlingPlayer;
     public int direction = 0;//0:静止//1:右//2:左
 
     const float CloseDistance = 1f;
@@ -158,6 +161,17 @@ public class ChikyuUtyuWalk : MonoBehaviour
             MyAnimator.SetFloat("AnimSpeed", MathF.Abs(playerSpeed.x / moveSpeed));
         }
 
+    }
+    public void  ModeChanged()
+    {
+        if (modeSwitcher.ControlMode == ModeIControlable)
+        {
+            IsHandlingPlayer = true;
+        }
+        else if(modeSwitcher.ControlMode != ModeIControlable)
+        {
+            IsHandlingPlayer =false;
+        }
     }
 
     public void IsHandling_Jump()

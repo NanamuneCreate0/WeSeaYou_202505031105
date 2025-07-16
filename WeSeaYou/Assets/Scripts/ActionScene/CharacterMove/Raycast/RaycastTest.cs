@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RaycastTest : MonoBehaviour
 {
+    public int ModeIControl;
     [SerializeField] float rayLength = 10f; // Å‘å‹——£
     [SerializeField] LayerMask groundLayer; // ’n–Ê‚ÌƒŒƒCƒ„[
 
