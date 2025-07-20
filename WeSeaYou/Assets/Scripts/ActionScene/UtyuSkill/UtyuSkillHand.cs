@@ -5,7 +5,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChikyuSkillHand : MonoBehaviour
+public class UtyuSkillHand : MonoBehaviour
 {
     public List<Item> HandItems = new List<Item>();//null‚à‚Â
 
@@ -16,7 +16,7 @@ public class ChikyuSkillHand : MonoBehaviour
     [SerializeField]
     GameObject HandDisplayCell;
     [SerializeField]
-    ChikyuSkillTable MyChikyuSkillTable;
+    UtyuSkillTable MyUtyuSkillTable;
     [SerializeField]
     Sprite NullItem;
 
@@ -65,11 +65,12 @@ public class ChikyuSkillHand : MonoBehaviour
     void Update()
     {
         //ƒ{ƒ^ƒ“‰Ÿ‚¹‚é‚Ì‚ÍMixing‡¬‚ªs‚í‚ê‚Ä‚¢‚È‚¢‚Æ‚«
-        if (!MyChikyuSkillTable.IsMixing)
+        if (true)
         {
             //Œˆ’è
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
             {
+                Debug.Log("UtyuSkill");
                 int num = (HilightStart + 2) % HandItems.Count;
                 if (num < 0) { num += HandItems.Count; }
                 if (HandItems[num] != null && HandItemsBool[num])
@@ -214,7 +215,7 @@ public class ChikyuSkillHand : MonoBehaviour
     
     void SubmitItem(Item item,int num)
     {
-        MyChikyuSkillTable.ChatchSubmitItem(item,num);
+        MyUtyuSkillTable.ChatchSubmitItem(item,num);
     }
 
     public void ConfirmStaticItemList(bool ExcuteSort)
