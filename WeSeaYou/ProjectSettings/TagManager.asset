@@ -6,6 +6,7 @@ TagManager:
   tags:
   - goal
   - player
+  - UtyuSkillItem
   layers:
   - Default
   - TransparentFX

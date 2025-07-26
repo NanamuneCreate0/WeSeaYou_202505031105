@@ -16,7 +16,9 @@ public class UtyuSkillHand : MonoBehaviour
     [SerializeField]
     GameObject HandDisplayCell;
     [SerializeField]
-    UtyuSkillTable MyUtyuSkillTable;
+    UtyuSkillOutput MyUtyuSkillTable;
+    [SerializeField]
+    ActionModeChanger MyActionModeChanger;
     [SerializeField]
     Sprite NullItem;
 
@@ -64,8 +66,7 @@ public class UtyuSkillHand : MonoBehaviour
 
     void Update()
     {
-        //ƒ{ƒ^ƒ“‰Ÿ‚¹‚é‚Ì‚ÍMixing‡¬‚ªs‚í‚ê‚Ä‚¢‚È‚¢‚Æ‚«
-        if (true)
+        if (MyActionModeChanger.ActionMode==11)
         {
             //Œˆ’è
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
