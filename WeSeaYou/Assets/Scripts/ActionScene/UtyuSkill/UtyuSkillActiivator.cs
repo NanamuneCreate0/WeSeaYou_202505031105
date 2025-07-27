@@ -12,14 +12,34 @@ public class UtyuSkillActivator : MonoBehaviour
     UtyuSkillHand MyUtyuSkillHand;
     [SerializeField]
     ItemDisplayer MyItemDisplayer;
-
-    void Start()
+    private void OnEnable()
     {
-
+        ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
+    }
+    private void OnDisable()
+    {
+        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
+    }
+    void GetActionModeChange(int a, int b)
+    {
+        Debug.Log("get");
+        if (a == 11 && b == 1)
+        {
+            MyUtyuSkillUI.SetActive(true);
+            MyUtyuSkillHand.ActivationStart();
+        }
+        if (a == 1 && b == 11)
+        {
+            MyUtyuSkillHand.ConfirmStaticItemList(true);
+            MyItemDisplayer.SetItemDisplay(true);
+            MyUtyuSkillHand.HilightStart = 0;
+            MyUtyuSkillUI.SetActive(false);
+        }
     }
 
     void Update()
     {
+        /*
         //Menuèoåª
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -27,21 +47,19 @@ public class UtyuSkillActivator : MonoBehaviour
             {
                 if (MyActionModeChanger.ActionMode == 1)
                 {
-                    //MyGameModeController.GameMode = "UtyuSkill";
-                    MyActionModeChanger.ActionMode = 11;
-                    MyUtyuSkillUI.SetActive(true);
-                    MyUtyuSkillHand.ActivationStart();
+                    MyActionModeChanger.ChangeActionMode(11, 1);
+                    //MyUtyuSkillUI.SetActive(true);
+                    //MyUtyuSkillHand.ActivationStart();
                 }
-                else if (MyActionModeChanger.ActionMode == 11) // (MyGameModeController.GameMode == "UtyuSkill")
+                else if (MyActionModeChanger.ActionMode == 11)
                 {
-                    //MyGameModeController.GameMode = "Action";
-                    MyActionModeChanger.ActionMode = 1;
-                    MyUtyuSkillHand.ConfirmStaticItemList(true);
-                    MyItemDisplayer.SetItemDisplay(true);
-                    MyUtyuSkillHand.HilightStart = 0;
-                    MyUtyuSkillUI.SetActive(false);
+                    MyActionModeChanger.ChangeActionMode(1, 11);
+                    //MyUtyuSkillHand.ConfirmStaticItemList(true);
+                    //MyItemDisplayer.SetItemDisplay(true);
+                    //MyUtyuSkillHand.HilightStart = 0;
+                    //MyUtyuSkillUI.SetActive(false);
                 }
             }
-        }
+        }*/
     }
 }
