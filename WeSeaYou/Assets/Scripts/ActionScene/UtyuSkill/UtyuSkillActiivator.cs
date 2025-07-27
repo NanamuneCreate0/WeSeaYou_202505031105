@@ -22,7 +22,6 @@ public class UtyuSkillActivator : MonoBehaviour
     }
     void GetActionModeChange(int a, int b)
     {
-        Debug.Log("get");
         if (a == 11 && b == 1)
         {
             MyUtyuSkillUI.SetActive(true);
@@ -30,36 +29,12 @@ public class UtyuSkillActivator : MonoBehaviour
         }
         if (a == 1 && b == 11)
         {
-            MyUtyuSkillHand.ConfirmStaticItemList(true);
-            MyItemDisplayer.SetItemDisplay(true);
-            MyUtyuSkillHand.HilightStart = 0;
+            MyUtyuSkillHand.OnDisableAndReset();
             MyUtyuSkillUI.SetActive(false);
         }
     }
 
     void Update()
     {
-        /*
-        //Menuèoåª
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (MyGameModeController.GameMode == "Action")
-            {
-                if (MyActionModeChanger.ActionMode == 1)
-                {
-                    MyActionModeChanger.ChangeActionMode(11, 1);
-                    //MyUtyuSkillUI.SetActive(true);
-                    //MyUtyuSkillHand.ActivationStart();
-                }
-                else if (MyActionModeChanger.ActionMode == 11)
-                {
-                    MyActionModeChanger.ChangeActionMode(1, 11);
-                    //MyUtyuSkillHand.ConfirmStaticItemList(true);
-                    //MyItemDisplayer.SetItemDisplay(true);
-                    //MyUtyuSkillHand.HilightStart = 0;
-                    //MyUtyuSkillUI.SetActive(false);
-                }
-            }
-        }*/
     }
 }

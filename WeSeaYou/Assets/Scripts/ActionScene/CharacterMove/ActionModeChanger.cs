@@ -31,12 +31,10 @@ public class ActionModeChanger : MonoBehaviour
                 if (ActionMode == 0)
                 {
                     ChangeActionMode(1, 0);
-                    //ActionMode = 1;
                 }
                 else if (ActionMode == 1)
                 {
                     ChangeActionMode(0, 1);
-                    //ActionMode = 0;
                 }
                 mainCamera.ModeChanged();
                 MyUtyu.GetComponent<UtyuWalk>().ModeChanged();
@@ -62,6 +60,7 @@ public class ActionModeChanger : MonoBehaviour
                     ChangeActionMode(1, 11);
                 }
 
+                //ChangeActionMode(21,11)‚ÍUtyuSkillOutput‚Å‘JˆÚ
                 else if (ActionMode == 21)
                 {
                         ChangeActionMode(11, 21);
@@ -74,7 +73,6 @@ public class ActionModeChanger : MonoBehaviour
 
     public void ChangeActionMode(int a,int b)
     {
-        Debug.Log("invoke");
         if(ActionMode==b)
         {
             ActionMode = a;

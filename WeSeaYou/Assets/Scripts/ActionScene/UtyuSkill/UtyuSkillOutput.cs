@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UtyuSkillOutput : MonoBehaviour
 {
+    public Item TableItem;
     [SerializeField]
     ActionModeChanger MyActionModeChanger;
     [SerializeField]
@@ -10,9 +11,10 @@ public class UtyuSkillOutput : MonoBehaviour
     [SerializeField]
     GameObject MyUtyuSkillUI;
     [SerializeField]
+    UtyuSkillHand MyUtyuSkillHand;
+    [SerializeField]
     GameObject MyUtyu;
     const float moveSpeed = 5;
-    Item TableItem;
     int NumberOfSubmittedItem;
     GameObject HandlingObj;
     private void OnEnable()
@@ -32,7 +34,6 @@ public class UtyuSkillOutput : MonoBehaviour
             MyActionModeChanger.ChangeActionMode(21, 11);
             MyUtyuSkillUI.SetActive(false);
         }
-        Debug.Log("ここで" + TableItem.name + "動かす");
         GameObject go = Instantiate(UtyuSkillItem, transform.position, Quaternion.identity);
         go.GetComponent<SpriteRenderer>().sprite = TableItem.sprite;
         HandlingObj = go;
@@ -45,25 +46,8 @@ public class UtyuSkillOutput : MonoBehaviour
     
     void Update_Outputing()
     {
-        /*
-        //入力取得（-1〜1の範囲）
-        float horizontal = Input.GetAxis("Horizontal");// 左右(A,D or ←,→)
-        float vertical = Input.GetAxis("Vertical");//上下(W,S or ↑,↓)
-        //移動方向ベクトル
-        Vector2 move = new Vector2(horizontal, vertical);
-
-        //移動（時間に依存しないようにdeltaTimeを掛ける）
-        HandlingObj.transform.Translate(move * moveSpeed * Time.deltaTime);*/
         HandlingObj.transform.position=new Vector2 (MyUtyu.transform.position.x, HandlingObj.transform.position.y+ Input.GetAxis("Vertical")*moveSpeed*Time.deltaTime);
 
-        //UtyuSkill実行終わらせる
-        /*if (MyActionModeChanger.ActionMode == 21)
-        {
-            if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Space))
-            {
-                MyActionModeChanger.ChangeActionMode(11, 21);
-            }
-        }*/
     }
     void GetActionModeChange(int a,int b)
     {

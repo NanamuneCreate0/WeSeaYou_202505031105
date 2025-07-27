@@ -25,7 +25,6 @@ public class ChikyuSkillActivator : MonoBehaviour
     }
     void GetActionModeChange(int a, int b)
     {
-        Debug.Log("get");
         if(a==10&&b==0)
         {
             MyChikyuSkillUI.SetActive(true);
@@ -46,30 +45,5 @@ public class ChikyuSkillActivator : MonoBehaviour
 
     void Update()
     {
-        //Menuèoåª
-        /*
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if(MyGameModeController.GameMode == "Action")
-            {
-                if (MyActionModeChanger.ActionMode == 0)
-                {
-                    //MyActionModeChanger.ActionMode = 10;
-                    MyActionModeChanger.ChangeActionMode(10, 0);
-                    //MyChikyuSkillUI.SetActive(true);
-                    //MyChikyuSkillHand.ActivationStart();
-                    //MyChikyuSkillTable.ActivationStart();
-                }
-                else if (MyActionModeChanger.ActionMode == 10) // (MyGameModeController.GameMode == "ChikyuSkill")
-                {
-                    //MyActionModeChanger.ActionMode = 0;
-                    MyActionModeChanger.ChangeActionMode(0, 10);
-                    //MyChikyuSkillHand.ConfirmStaticItemList(true);
-                    //MyItemDisplayer.SetItemDisplay(true);
-                    //MyChikyuSkillHand.HilightStart = 0;
-                    //MyChikyuSkillUI.SetActive(false);
-                }
-            }
-        }*/
     }
 }
