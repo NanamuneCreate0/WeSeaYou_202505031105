@@ -11,6 +11,8 @@ public class UtyuSkillItemEventListener : MonoBehaviour
     UtyuSkillHand MyUtyuSkillHand;
     [SerializeField]
     UtyuSkillOutput MyUtyuSkillOutput;
+    [SerializeField]
+    MonoBehaviour component;
 
     const float requiredTime = 3f;
     const string targetTag = "UtyuSkillItem";
@@ -34,7 +36,6 @@ public class UtyuSkillItemEventListener : MonoBehaviour
                 Activate();
                 isTouching = false;
             }
-
         }
     }
 
@@ -58,18 +59,28 @@ public class UtyuSkillItemEventListener : MonoBehaviour
 
     private void Activate()
     {
-        Debug.Log("3ïbà»è„êGÇÍÇƒÇ¢ÇΩÇÃÇ≈ãNìÆÅI");
         if(MyUtyuSkillOutput.TableItem==requiredItem)
         {
+            Debug.Log("ãNìÆê¨å˜");
+            MyUtyuSkillOutput.LoseItem();
             MyActionModeChanger.ChangeActionMode(1, 21);
             MyUtyuSkillHand.OnDisableAndReset();
             MyUtyuSkillUI.SetActive(false);
             Destroy(MyUtyuSkillItem);
+
+            ExcuteEvent();
         }
         else
         {
+            Debug.Log("ãNìÆé∏îs");
             MyActionModeChanger.ChangeActionMode(11, 21);
         }
-
+    }
+    void ExcuteEvent()
+    {
+        if(component is UtyuSkillEventInterface ef)
+        {
+            ef.OnActivate();
+        }
     }
 }

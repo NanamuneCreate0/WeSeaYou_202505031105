@@ -39,6 +39,14 @@ public class UtyuSkillOutput : MonoBehaviour
         HandlingObj = go;
     }
 
+    public void LoseItem()
+    {
+        Debug.Log(NumberOfSubmittedItem);
+        MyUtyuSkillHand.HandItems.RemoveAt(NumberOfSubmittedItem);
+        MyUtyuSkillHand.ConfirmStaticItemList(false);
+        //MyUtyuSkillHand.SetItem(0);//どうせ消える
+    }
+
     void Update()
     {
         if (MyActionModeChanger.ActionMode == 21) { Update_Outputing(); }

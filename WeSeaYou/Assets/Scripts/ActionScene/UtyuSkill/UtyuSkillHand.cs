@@ -12,7 +12,7 @@ public class UtyuSkillHand : MonoBehaviour
     public int HilightStart=0;
     public int isMoving = 0;//0:ê√é~//1:ç∂//2:âE
 
-    List<GameObject> HandDisplayCells = new List<GameObject>();//CellÇÃÇ›ÇÃGameObjectÅiå≈íËÅj
+    List<GameObject> HandDisplayCells = new List<GameObject>();//CellÇÃÇ›ÇÃGameObject
     [SerializeField]
     GameObject HandDisplayCell;
     [SerializeField]
@@ -28,8 +28,6 @@ public class UtyuSkillHand : MonoBehaviour
     const float radius=210;
     const float moveTime = 0.15f;
     const float FirstOffSetAngle = 162;
-
-
     float offSetAngle;
     float lastOffsetAngle;
     float wayToMove;
