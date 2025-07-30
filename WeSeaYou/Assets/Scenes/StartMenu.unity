@@ -1505,6 +1505,8 @@ MonoBehaviour:
   VerticalNumber: 0
   HorizontalNumber: 0
   LoaderCanvas: {fileID: 943742069}
+  a: 0
+  b: 0
 --- !u!61 &560895228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2383,6 +2385,8 @@ MonoBehaviour:
   VerticalNumber: 1
   HorizontalNumber: 0
   LoaderCanvas: {fileID: 943742069}
+  a: 0
+  b: 0
 --- !u!61 &1079786625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3376,6 +3380,8 @@ MonoBehaviour:
   VerticalNumber: 1
   HorizontalNumber: 1
   LoaderCanvas: {fileID: 943742069}
+  a: 0
+  b: 0
 --- !u!61 &1536938298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4138,6 +4144,8 @@ MonoBehaviour:
   VerticalNumber: 0
   HorizontalNumber: 1
   LoaderCanvas: {fileID: 943742069}
+  a: 0
+  b: 0
 --- !u!61 &2059756535
 BoxCollider2D:
   m_ObjectHideFlags: 0

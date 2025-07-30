@@ -29,6 +29,10 @@ public class SpeechBubbleScript : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        
+    }
     void Update()
     {
         ChikyuPos = Chikyu.transform.position;

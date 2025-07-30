@@ -13,11 +13,9 @@ public class LoadSlotController : MonoBehaviour, IPointerEnterHandler, IPointerC
     int HorizontalNumber;
     [SerializeField]
     GameObject LoaderCanvas;
-
     
     public int a;
     public int b; 
-
     
     public void OnPointerEnter(PointerEventData eventData)
     {
