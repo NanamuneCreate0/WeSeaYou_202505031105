@@ -3,11 +3,11 @@ using UnityEngine.EventSystems;
 
 public class MouseMoveScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [SerializeField]
-    GameObject MenuCommandAnim;
+    //[SerializeField]
+    //GameObject MenuCommandAnim;
     [SerializeField]
     GameObject ChooseMenuObject;
-
+    
     public static GameObject ChosingMenuCommand;
     public static GameObject ChosingMenuObject;
     void Start()
@@ -21,17 +21,21 @@ public class MouseMoveScript : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        MenuCommandAnim.SetActive(true);
-        if(ChooseMenuObject != null) ChooseMenuObject.SetActive(true);
+        //MenuCommandAnim.SetActive(true);
+        /*if(ChooseMenuObject != null) ChooseMenuObject.SetActive(true);
 
         if (ChosingMenuCommand != null && ChosingMenuCommand != MenuCommandAnim)
         {
             ChosingMenuCommand.SetActive(false);
             if(ChosingMenuObject != null)
             ChosingMenuObject.SetActive(false);
-        }
+        }*/
+        ChooseMenuObject.SetActive(true);
+        if (ChosingMenuObject != null && ChosingMenuObject != ChooseMenuObject)
+            ChosingMenuObject.SetActive(false);
 
-        ChosingMenuCommand = MenuCommandAnim;
+
+        //ChosingMenuCommand = MenuCommandAnim;
         ChosingMenuObject = ChooseMenuObject;
     }
 
