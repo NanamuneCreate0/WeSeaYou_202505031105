@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class ChikyuUtyuWalk : MonoBehaviour
 {
+    [SerializeField] int ModeIControlable;
     [SerializeField] string AnotherWalkComponentName;
+    [SerializeField] ActionModeChanger controlModeChanger;
     [SerializeField] float moveSpeed;  //移動速度
     [SerializeField] float jumpPower;  //ジャンプ力
     [SerializeField] GameObject MyAnother;
     [SerializeField] Animator MyAnimator;
-    public bool IsHandlingPlayer;
+    //public
+    bool IsControlable;
+    public int direction = 0;//0:静止//1:右//2:左
 
     const float CloseDistance = 1f;
     const float BigCloseDistance = 4f;
@@ -20,7 +24,6 @@ public class ChikyuUtyuWalk : MonoBehaviour
     Rigidbody2D rb;
     IsGroundingJudger isGroundingJudger;
     Vector3 playerSpeed;
-    int direction = 0;//0:静止//1:右//2:左
     string LastAnim;
 
     void Start()
@@ -29,10 +32,22 @@ public class ChikyuUtyuWalk : MonoBehaviour
         isGroundingJudger = transform.GetChild(0).GetComponent<IsGroundingJudger>();
     }
 
+    public void ModeChanged()
+    {
+        if (controlModeChanger.ActionMode == ModeIControlable)
+        {
+            IsControlable = true;
+        }
+        else if (controlModeChanger.ActionMode != ModeIControlable)
+        {
+            IsControlable = false;
+        }
+    }
+
     void Update()
     {
 
-        if (IsHandlingPlayer)
+        if (IsControlable)
         {
             //x軸
             if (Input.GetKeyDown(KeyCode.D))
@@ -115,7 +130,7 @@ public class ChikyuUtyuWalk : MonoBehaviour
                 MyAnother.GetComponent(Type.GetType(AnotherWalkComponentName)).SendMessage("IsNotHandling_Jump");
             }
         }
-        if (!IsHandlingPlayer)
+        if (!IsControlable)
         {
             //playerSpeed.x = Mathf.Sign(MyAnother.transform.position.x - transform.position.x) * moveSpeed;
             //rb.linearVelocityX = playerSpeed.x;

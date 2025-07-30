@@ -1,18 +1,15 @@
 using UnityEngine;
-using System;
 
-public class ChikyuSkillActivator : MonoBehaviour
+public class UtyuSkillActivator : MonoBehaviour
 {
     [SerializeField]
     GameModeController MyGameModeController;
     [SerializeField]
     ActionModeChanger MyActionModeChanger;
     [SerializeField]
-    GameObject MyChikyuSkillUI;
+    GameObject MyUtyuSkillUI;
     [SerializeField]
-    ChikyuSkillHand MyChikyuSkillHand;
-    [SerializeField]
-    ChikyuSkillTable MyChikyuSkillTable;
+    UtyuSkillHand MyUtyuSkillHand;
     [SerializeField]
     ItemDisplayer MyItemDisplayer;
     private void OnEnable()
@@ -25,22 +22,16 @@ public class ChikyuSkillActivator : MonoBehaviour
     }
     void GetActionModeChange(int a, int b)
     {
-        if(a==10&&b==0)
+        if (a == 11 && b == 1)
         {
-            MyChikyuSkillUI.SetActive(true);
-            MyChikyuSkillHand.ActivationStart();
-            MyChikyuSkillTable.ActivationStart();
+            MyUtyuSkillUI.SetActive(true);
+            MyUtyuSkillHand.ActivationStart();
         }
-        if (a == 0 && b == 10)
+        if (a == 1 && b == 11)
         {
-            MyItemDisplayer.SetItemDisplay(true);
-            MyChikyuSkillHand.HilightStart = 0;
-            MyChikyuSkillUI.SetActive(false);
+            MyUtyuSkillHand.OnDisableAndReset();
+            MyUtyuSkillUI.SetActive(false);
         }
-    }
-    void Start()
-    {
-        
     }
 
     void Update()

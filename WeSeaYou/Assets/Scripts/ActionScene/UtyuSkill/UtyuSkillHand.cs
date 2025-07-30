@@ -5,18 +5,22 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChikyuSkillHand : MonoBehaviour
+public class UtyuSkillHand : MonoBehaviour
 {
     public List<Item> HandItems = new List<Item>();//nullも持つ
 
     public int HilightStart=0;
     public int isMoving = 0;//0:静止//1:左//2:右
 
-    List<GameObject> HandDisplayCells = new List<GameObject>();//CellのみのGameObject（固定）
+    List<GameObject> HandDisplayCells = new List<GameObject>();//CellのみのGameObject
     [SerializeField]
     GameObject HandDisplayCell;
     [SerializeField]
-    ChikyuSkillTable MyChikyuSkillTable;
+    UtyuSkillOutput MyUtyuSkillTable;
+    [SerializeField]
+    ActionModeChanger MyActionModeChanger;
+    [SerializeField]
+    ItemDisplayer MyItemDisplayer;
     [SerializeField]
     Sprite NullItem;
 
@@ -24,9 +28,6 @@ public class ChikyuSkillHand : MonoBehaviour
     const float radius=210;
     const float moveTime = 0.15f;
     const float FirstOffSetAngle = 162;
-
-
-    public List<bool> HandItemsBool = new List<bool>();
     float offSetAngle;
     float lastOffsetAngle;
     float wayToMove;
@@ -35,11 +36,9 @@ public class ChikyuSkillHand : MonoBehaviour
     public void ActivationStart()
     {
         HandItems.Clear();
-        HandItemsBool.Clear();
         foreach (Item item in PublicStaticStatus.ItemList)
         {
             HandItems.Add(item);
-            HandItemsBool.Add(true);
         }
 
         for (int i = 0; i < 5; i++)
@@ -52,7 +51,7 @@ public class ChikyuSkillHand : MonoBehaviour
         }
         for (int i = 0; i < HandDisplayCells.Count; i++)
         {
-            if (HandItems.Count < 5) { HandItems.Add(null); HandItemsBool.Add(true); }
+            if (HandItems.Count < 5) { HandItems.Add(null); }
         }//forじゃなくてwhileでもいい
 
         SetItem(0);
@@ -61,21 +60,27 @@ public class ChikyuSkillHand : MonoBehaviour
         SetCellPos();
     }
 
+    public void OnDisableAndReset()
+    {
+        ConfirmStaticItemList(true);
+        MyItemDisplayer.SetItemDisplay(true);
+        HilightStart = 0;
+    }
+
 
     void Update()
     {
-        //ボタン押せるのはMixing合成が行われていないとき
-        if (!MyChikyuSkillTable.IsMixing)
+        if (MyActionModeChanger.ActionMode==11)
         {
             //決定
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
             {
+                Debug.Log("UtyuSkill");
                 int num = (HilightStart + 2) % HandItems.Count;
                 if (num < 0) { num += HandItems.Count; }
-                if (HandItems[num] != null && HandItemsBool[num])
+                if (HandItems[num] != null)
                 {
                     Debug.Log(HandItems[num].itemName + " Chosen");
-                    HandItemsBool[num] = false;
                     SubmitItem(HandItems[num],num);
                     SetItem(0);
                 }
@@ -175,7 +180,7 @@ public class ChikyuSkillHand : MonoBehaviour
         {
             PaintDisplayCell(HilightStart); ;
         }
-        if (num0 == 1)
+        if (num0 == +1)
         {
             HilightStart++;
             if (HilightStart == HandItems.Count) HilightStart = 0;
@@ -200,21 +205,23 @@ public class ChikyuSkillHand : MonoBehaviour
             if (HandItems[num1] != null)
             {
                 img.sprite = HandItems[num1].sprite;
+                /*
                 if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }
+                else { img.color = Color.white; }*/
             }
             else if (HandItems[num1] == null)
             {
                 img.sprite = NullItem;
+                /*
                 if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }
+                else { img.color = Color.white; }*/
             }
         }
     }
     
     void SubmitItem(Item item,int num)
     {
-        MyChikyuSkillTable.ChatchSubmitItem(item,num);
+        MyUtyuSkillTable.ChatchSubmitItem(item,num);
     }
 
     public void ConfirmStaticItemList(bool ExcuteSort)
@@ -230,9 +237,4 @@ public class ChikyuSkillHand : MonoBehaviour
         if (ExcuteSort) { PublicStaticStatus.ItemList.Sort((a, b) => a.ID.CompareTo(b.ID)); }
     }
 
-    public void RefreshHandItemsBool()
-    {
-        HandItemsBool.Clear();
-        for (int i = 0; i < HandItems.Count; i++) { HandItemsBool.Add(true); }
-    }
 }

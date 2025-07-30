@@ -6,11 +6,22 @@ public class MainCamera : MonoBehaviour
     [SerializeField]
     GameObject MyMainCamera;
     [SerializeField]
-    PlayerSwitcher MyPlayerSwitcher;
+    ActionModeChanger controlModeChanger;
+    [SerializeField]
+    GameObject MyChikyu;
+    [SerializeField]
+    GameObject MyUtyu;
+
+    GameObject ControlableChara;
 
     private Vector3 Misalignment { get { return new Vector3(0, 2f, 0); } }
 
     Vector3 LastPos;
+    public void ModeChanged()
+    {
+        if (controlModeChanger.ActionMode == 0) { ControlableChara = MyChikyu; }
+        if (controlModeChanger.ActionMode == 1) { ControlableChara = MyUtyu; }
+    }
     void Start()
     {
     }
@@ -18,8 +29,8 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         //ÉJÉÅÉâí«è]
-        //MyMainCamera.transform.position = new Vector3(MyPlayerController.HandlingPlayer.transform.position.x, MyPlayerController.HandlingPlayer.transform.position.y, -1);
-        Vector3 vec = new Vector3(MyPlayerSwitcher.HandlingPlayer.transform.position.x, MyPlayerSwitcher.HandlingPlayer.transform.position.y, -1)+Misalignment;
+        Vector3 vec = new Vector3(ControlableChara.transform.position.x, ControlableChara.transform.position.y, -1) + Misalignment;
         MyMainCamera.transform.position = MyMainCamera.transform.position * Mathf.Pow(0.1f, Time.deltaTime) + vec * (1 - Mathf.Pow(0.1f, Time.deltaTime));
     }
+
 }
