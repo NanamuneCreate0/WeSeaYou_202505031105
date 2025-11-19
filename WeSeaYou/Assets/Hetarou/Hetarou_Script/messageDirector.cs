@@ -61,6 +61,7 @@ public class UItext : MonoBehaviour
                     }
                 }
             }
+
             if (messageIndex < messages.Length)
             {
                 StartCoroutine(TypeMessage(messages[messageIndex]));
