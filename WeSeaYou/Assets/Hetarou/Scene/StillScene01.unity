@@ -266,7 +266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\n\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\n\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f1bb1a375104e04d8c1e5f1206dc06f, type: 2}
   m_sharedMaterial: {fileID: -5834896369168379862, guid: 3f1bb1a375104e04d8c1e5f1206dc06f, type: 2}
@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 889963451}
   - component: {fileID: 889963450}
   - component: {fileID: 889963449}
+  - component: {fileID: 889963452}
   m_Layer: 0
   m_Name: ScenarioManager
   m_TagString: Untagged
@@ -615,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cd5ca46ad7b7a4c80baacb39b3cc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: bee3a38425cf8944b803d36434d92640, type: 3}
+  csvFile: {fileID: 4900000, guid: eb13eb0211ad50c468e51c5678bb8433, type: 3}
   manager: {fileID: 889963450}
 --- !u!114 &889963450
 MonoBehaviour:
@@ -648,6 +649,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &889963452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889963447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19105, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &961779268
 GameObject:
   m_ObjectHideFlags: 0

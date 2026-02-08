@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class ScenarioManager : MonoBehaviour
@@ -24,6 +25,7 @@ public class ScenarioManager : MonoBehaviour
 
     void Update()
     {
+        //メインイベに入ったかどうかのフラグテスト
         if (Input.GetKeyDown(KeyCode.F))
         {
             StartCoroutine(StartScenario());
@@ -32,7 +34,25 @@ public class ScenarioManager : MonoBehaviour
         // クリックされたら「View」に表示を更新させる
         if (Input.GetMouseButtonDown(0))
         {
-            ShowNextLine();
+            //ShowNextLine();
+
+            ScenarioLine data = _csvData[_currentIndex];
+            switch (data.CommandType)
+            {
+                case "END":
+                    if (!string.IsNullOrEmpty(data.Parameters))
+                    {
+                        SceneManager.LoadScene(data.Parameters);
+                        return;
+                    }
+                    break;
+
+                default:
+                    ShowNextLine();
+                    break;
+
+
+            }
         }
     }
 
@@ -50,11 +70,17 @@ public class ScenarioManager : MonoBehaviour
 
     private void ShowNextLine()
     {
-        if (_csvData == null || _currentIndex >= _csvData.Count || !_modeScnario_test) return;
+        if (_csvData == null || !_modeScnario_test) return;
 
-        StartCoroutine(displayer.TypeMessage(_csvData[_currentIndex]));
-
-
-        _currentIndex++;
+        if (displayer.IsTyping)
+        {
+            displayer.Skip();
+            return;
+        }
+        else
+        {
+            displayer.PlayLine(_csvData[_currentIndex]);
+            _currentIndex++;
+        }
     }
 }

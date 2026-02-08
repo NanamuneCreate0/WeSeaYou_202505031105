@@ -25,13 +25,14 @@ public class ScenarioDisplayer : MonoBehaviour
     [SerializeField] private string StageName;
     [SerializeField] private float charDelay = 0.05f;                       // 文字送りの速さ
 
-    private bool isTyping = false;
+    private Coroutine _typingCoroutine;
     private int messageIndex;
 
+    public bool IsTyping { get; private set; } = false;
 
     void Start()
     {
-        StartCoroutine(StartScenario());
+        //StartCoroutine(StartScenario());
     }
 
     IEnumerator StartScenario()
@@ -40,9 +41,26 @@ public class ScenarioDisplayer : MonoBehaviour
         yield break;
     }
 
-    public IEnumerator TypeMessage(ScenarioLine line)
+    public void PlayLine(ScenarioLine line)
     {
-        isTyping = true;
+        // もし動いていたら一旦止める（連打対策）
+        if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
+        _typingCoroutine = StartCoroutine(TypeMessage(line));
+    }
+
+    // ★追加：一瞬で全表示にするメソッド
+    public void Skip()
+    {
+        if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
+
+        // 文字を最大まで表示
+        messageText.maxVisibleCharacters = messageText.textInfo.characterCount;
+        IsTyping = false;
+    }
+
+    private IEnumerator TypeMessage(ScenarioLine line)
+    {
+        IsTyping = true;
         messageText.maxVisibleCharacters = 0;
 
         NameText.text = line.Name;
@@ -57,7 +75,7 @@ public class ScenarioDisplayer : MonoBehaviour
             yield return new WaitForSeconds(charDelay);
         }
 
-        isTyping = false;
+        IsTyping = false;
     }
 
 }

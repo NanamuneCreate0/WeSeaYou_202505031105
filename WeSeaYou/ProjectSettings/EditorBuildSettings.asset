@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Hetarou/Scene/TestScene_Action.unity
+    guid: 0a16cc37939bbf1499e9e91c77b6eb3a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: dec719ccb25d5fa4d8c3c68bb5371d09, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
