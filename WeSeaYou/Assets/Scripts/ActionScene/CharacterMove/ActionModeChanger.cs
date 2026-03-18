@@ -5,7 +5,7 @@ public class ActionModeChanger : MonoBehaviour
 {
     public static event Action<int,int> ActionModeChangeEvent;
 
-    public int ActionMode=0;//0:地球君視点//1:宇宙君視点//2:おんぶ//3:手つなぎ//10:地球スキル//11:宇宙スキル//21:宇宙スキル機能中
+    public int ActionMode=0;//0:地球君視点//1:宇宙君視点//10:地球スキル//11:宇宙スキル//21:宇宙スキル機能中
     [SerializeField]
     GameObject MyUtyu;
     [SerializeField]
@@ -53,7 +53,7 @@ public class ActionModeChanger : MonoBehaviour
                     ChangeActionMode(0, 10);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 if (ActionMode == 0)
                 {

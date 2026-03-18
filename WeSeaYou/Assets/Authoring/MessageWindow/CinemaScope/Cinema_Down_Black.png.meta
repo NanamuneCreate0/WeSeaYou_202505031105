@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cinema_Down_Black_0: 5668016442845560503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

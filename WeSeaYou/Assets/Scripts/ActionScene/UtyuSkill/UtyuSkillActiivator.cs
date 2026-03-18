@@ -22,12 +22,12 @@ public class UtyuSkillActivator : MonoBehaviour
     }
     void GetActionModeChange(int a, int b)
     {
-        if (a == 11 && b == 1)
+        if (a == 11 && b == 0)
         {
             MyUtyuSkillUI.SetActive(true);
             MyUtyuSkillHand.ActivationStart();
         }
-        if (a == 1 && b == 11)
+        if (a == 0 && b == 11)
         {
             MyUtyuSkillHand.OnDisableAndReset();
             MyUtyuSkillUI.SetActive(false);
