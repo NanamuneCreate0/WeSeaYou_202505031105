@@ -140,7 +140,16 @@ public class ChikyuSkillTable : MonoBehaviour
                 && mixtureIndex.RequiredMaterialsArray[1] == list[1])
             {
                 //‡¬ƒuƒƒbƒN‚ªAbility‚½‚¿‚ğ‚Â
-
+                ItemData returnItem = mixtureIndex.MixtureItem;
+                if (returnItem.IsBlock)
+                {
+                    returnItem.MixedItem.AddRange(list[0].MixedItem);
+                    returnItem.MixedItem.AddRange(list[1].MixedItem);
+                }
+                else
+                {
+                    Debug.LogWarning("mixture NOT BLOCK");
+                }
 
                 return (mixtureIndex.MixtureItem);
             }

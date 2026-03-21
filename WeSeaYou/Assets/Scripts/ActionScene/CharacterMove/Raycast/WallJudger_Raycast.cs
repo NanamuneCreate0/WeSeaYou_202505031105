@@ -2,7 +2,7 @@ using UnityEngine;
 using static UnityEngine.UI.Image;
 
 public class WallJudger_Raycast : MonoBehaviour
-{
+{/*
     [SerializeField] LayerMask groundLayer;
     Vector2 direction;
     Vector2 instantOrigin;
@@ -91,5 +91,5 @@ public class WallJudger_Raycast : MonoBehaviour
             Debug.DrawLine(origin, origin + direction * rayLength, Color.red);
             return (true);
         }
-    }
+    }*/
 }

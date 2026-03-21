@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceb789d8faa09b4ca35913a6e2af4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyItemDisplayCell: {fileID: 0}
+  MyItemDisplayCell: {fileID: 4939462119722710560, guid: 02b8b5aa66ed13741953dd69a434f4a1, type: 3}
 --- !u!222 &11746483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1306,9 +1306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5505ebb5d6524a24094ffff7cd77c839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &254368796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGrounding: 1
+  CurrentGroundCollider: {fileID: 0}
 --- !u!61 &791045871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3482,14 +3480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ad8de07cef6a9458de3cd616cf9caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModeIControlable: 0
-  AnotherWalkComponentName: UtyuWalk
-  controlModeChanger: {fileID: 1648627202}
   moveSpeed: 3
   jumpPower: 16
-  MyAnother: {fileID: 1378621164}
-  MyAnimator: {fileID: 860304187}
-  direction: 0
+  animator: {fileID: 860304187}
 --- !u!95 &860304187
 Animator:
   serializedVersion: 7
@@ -5137,14 +5130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f74ad6cf2c7e648952fd88d3d2ec17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModeIControlable: 1
-  AnotherWalkComponentName: ChikyuWalk
-  controlModeChanger: {fileID: 1648627202}
   moveSpeed: 3
-  jumpPower: 16
-  MyAnother: {fileID: 860304185}
-  MyAnimator: {fileID: 1378621166}
-  direction: 0
+  jumpPower: 7
+  player: {fileID: 860304191}
 --- !u!95 &1378621166
 Animator:
   serializedVersion: 7
@@ -6048,8 +6036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActionMode: 0
-  MyUtyu: {fileID: 1378621164}
-  MyChikyu: {fileID: 860304185}
   mainCamera: {fileID: 1604964745}
   MyGameModeController: {fileID: 275050574}
 --- !u!4 &1648627203
@@ -6113,6 +6099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGrounding: 1
+  CurrentGroundCollider: {fileID: 0}
 --- !u!61 &1702720127
 BoxCollider2D:
   m_ObjectHideFlags: 0

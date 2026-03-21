@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +16,6 @@ public class TestObj_D : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump pressed");
+        //Debug.Log("Jump pressed");
     }
 }
