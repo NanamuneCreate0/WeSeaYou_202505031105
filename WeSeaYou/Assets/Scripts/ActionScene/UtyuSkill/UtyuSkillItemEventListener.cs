@@ -1,8 +1,9 @@
 using UnityEngine;
+using static ActionModeChanger;
 
 public class UtyuSkillItemEventListener : MonoBehaviour
 {
-    [SerializeField] Item requiredItem;
+    [SerializeField] ItemData requiredItem;
     [SerializeField]
     ActionModeChanger MyActionModeChanger;
     [SerializeField]
@@ -28,7 +29,7 @@ public class UtyuSkillItemEventListener : MonoBehaviour
 
             if (stayTime >= requiredTime)
             {
-                if (MyActionModeChanger.ActionMode != 21)
+                if (MyActionModeChanger.ActionMode != ActionModeType.UtyuSkillActive)
                 {
                     Debug.LogError("ActionModeWrong");
                 }
@@ -63,7 +64,7 @@ public class UtyuSkillItemEventListener : MonoBehaviour
         {
             Debug.Log("ãNìÆê¨å˜");
             MyUtyuSkillOutput.LoseItem();
-            MyActionModeChanger.ChangeActionMode(1, 21);
+            MyActionModeChanger.ChangeActionMode(ActionModeType.UtyuView, ActionModeType.UtyuSkillActive);
             MyUtyuSkillHand.OnDisableAndReset();
             MyUtyuSkillUI.SetActive(false);
             Destroy(MyUtyuSkillItem);
@@ -73,7 +74,7 @@ public class UtyuSkillItemEventListener : MonoBehaviour
         else
         {
             Debug.Log("ãNìÆé∏îs");
-            MyActionModeChanger.ChangeActionMode(11, 21);
+            MyActionModeChanger.ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.UtyuSkillActive);
         }
     }
     void ExcuteEvent()

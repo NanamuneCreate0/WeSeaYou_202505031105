@@ -8,7 +8,7 @@ public class SceneInitializer_ActionScene: MonoBehaviour
     int CurrentStage;
 
     [SerializeField]
-    List<Item> debugItems = new List<Item>();
+    List<ItemData> debugItems = new List<ItemData>();
     [SerializeField]
     List<ChikyuSkillMixtureIndex> indexes = new List<ChikyuSkillMixtureIndex>();
     void Start()
@@ -20,7 +20,7 @@ public class SceneInitializer_ActionScene: MonoBehaviour
     void DebugFunction()
     {
         //Item‘«‚·
-        foreach (Item item in debugItems)
+        foreach (ItemData item in debugItems)
         {
             PublicStaticStatus.ItemList.Add(item);
         }

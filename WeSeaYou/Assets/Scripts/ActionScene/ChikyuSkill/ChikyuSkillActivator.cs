@@ -23,15 +23,15 @@ public class ChikyuSkillActivator : MonoBehaviour
     {
         ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
     }
-    void GetActionModeChange(int a, int b)
+    void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
-        if(a==10&&b==0)
+        if(a== ActionModeChanger.ActionModeType.ChikyuSkill&& b== ActionModeChanger.ActionModeType.ChikyuView)
         {
             MyChikyuSkillUI.SetActive(true);
             MyChikyuSkillHand.ActivationStart();
             MyChikyuSkillTable.ActivationStart();
         }
-        if (a == 0 && b == 10)
+        if (a == ActionModeChanger.ActionModeType.ChikyuView && b == ActionModeChanger.ActionModeType.ChikyuSkill)
         {
             MyItemDisplayer.SetItemDisplay(true);
             MyChikyuSkillHand.HilightStart = 0;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UtyuSkillHand : MonoBehaviour
 {
-    public List<Item> HandItems = new List<Item>();//null‚à‚Â
+    public List<ItemData> HandItems = new List<ItemData>();//null‚à‚Â
 
     public int HilightStart=0;
     public int isMoving = 0;//0:Ã~//1:¶//2:‰E
@@ -36,7 +36,7 @@ public class UtyuSkillHand : MonoBehaviour
     public void ActivationStart()
     {
         HandItems.Clear();
-        foreach (Item item in PublicStaticStatus.ItemList)
+        foreach (ItemData item in PublicStaticStatus.ItemList)
         {
             HandItems.Add(item);
         }
@@ -70,7 +70,7 @@ public class UtyuSkillHand : MonoBehaviour
 
     void Update()
     {
-        if (MyActionModeChanger.ActionMode==11)
+        if (MyActionModeChanger.ActionMode== ActionModeChanger.ActionModeType.UtyuSkill)
         {
             //Œˆ’è
             if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
@@ -219,7 +219,7 @@ public class UtyuSkillHand : MonoBehaviour
         }
     }
     
-    void SubmitItem(Item item,int num)
+    void SubmitItem(ItemData item,int num)
     {
         MyUtyuSkillTable.ChatchSubmitItem(item,num);
     }

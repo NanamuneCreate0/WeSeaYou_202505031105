@@ -3,7 +3,7 @@ using UnityEngine;
 public class FieldItem : MonoBehaviour
 {
     [SerializeField]
-    Item MyItem;
+    ItemData MyItem;
 
     GameModeController MyGameModeController;
 

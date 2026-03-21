@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using static ActionModeChanger;
 
 public class UtyuSkillOutput : MonoBehaviour
 {
-    public Item TableItem;
+    public ItemData TableItem;
     [SerializeField]
     ActionModeChanger MyActionModeChanger;
     [SerializeField]
@@ -25,13 +26,13 @@ public class UtyuSkillOutput : MonoBehaviour
     {
         ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
     }
-    public void ChatchSubmitItem(Item item, int num)
+    public void ChatchSubmitItem(ItemData item, int num)
     {
         TableItem=item;
         NumberOfSubmittedItem=num;
-        if(MyActionModeChanger.ActionMode==11)
+        if(MyActionModeChanger.ActionMode== ActionModeType.UtyuSkill)
         {
-            MyActionModeChanger.ChangeActionMode(21, 11);
+            MyActionModeChanger.ChangeActionMode(ActionModeType.UtyuSkillActive, ActionModeType.UtyuSkill);
             MyUtyuSkillUI.SetActive(false);
         }
         GameObject go = Instantiate(UtyuSkillItem, transform.position, Quaternion.identity);
@@ -49,7 +50,7 @@ public class UtyuSkillOutput : MonoBehaviour
 
     void Update()
     {
-        if (MyActionModeChanger.ActionMode == 21) { Update_Outputing(); }
+        if (MyActionModeChanger.ActionMode == ActionModeType.UtyuSkillActive) { Update_Outputing(); }
     }
     
     void Update_Outputing()
@@ -57,9 +58,9 @@ public class UtyuSkillOutput : MonoBehaviour
         HandlingObj.transform.position=new Vector2 (MyUtyu.transform.position.x, HandlingObj.transform.position.y+ Input.GetAxis("Vertical")*moveSpeed*Time.deltaTime);
 
     }
-    void GetActionModeChange(int a,int b)
+    void GetActionModeChange(ActionModeType a, ActionModeType b)
     {
-        if(a == 11 && b == 21)
+        if(a == ActionModeType.UtyuSkill && b==ActionModeType.UtyuSkillActive)
         {
             Destroy(HandlingObj);
             MyUtyuSkillUI.SetActive(true);

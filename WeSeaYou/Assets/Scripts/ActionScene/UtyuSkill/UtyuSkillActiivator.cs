@@ -20,14 +20,14 @@ public class UtyuSkillActivator : MonoBehaviour
     {
         ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
     }
-    void GetActionModeChange(int a, int b)
+    void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
-        if (a == 11 && b == 0)
+        if (a == ActionModeChanger.ActionModeType.UtyuSkill && b == ActionModeChanger.ActionModeType.ChikyuView)
         {
             MyUtyuSkillUI.SetActive(true);
             MyUtyuSkillHand.ActivationStart();
         }
-        if (a == 0 && b == 11)
+        else if (a == ActionModeChanger.ActionModeType.ChikyuView && b == ActionModeChanger.ActionModeType.UtyuSkill)
         {
             MyUtyuSkillHand.OnDisableAndReset();
             MyUtyuSkillUI.SetActive(false);

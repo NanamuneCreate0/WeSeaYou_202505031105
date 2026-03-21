@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Index(ScObj)")]
 public class ChikyuSkillMixtureIndex : ScriptableObject
 {
-    public Item[] RequiredMaterialsArray = new Item[2];//•K‚¸¬‚³‚¢”Ô†‚ğÅ‰‚É‚·‚é
-    public Item MixtureItem;
+    public ItemData[] RequiredMaterialsArray = new ItemData[2];//•K‚¸¬‚³‚¢”Ô†‚ğÅ‰‚É‚·‚é
+    public ItemData MixtureItem;
 }
 
 

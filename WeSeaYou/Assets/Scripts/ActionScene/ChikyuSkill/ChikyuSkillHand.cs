@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ChikyuSkillHand : MonoBehaviour
 {
-    public List<Item> HandItems = new List<Item>();//null‚à‚Â
+    public List<ItemData> HandItems = new List<ItemData>();//null‚à‚Â
 
     public int HilightStart=0;
     public int isMoving = 0;//0:Ã~//1:¶//2:‰E
@@ -36,7 +36,7 @@ public class ChikyuSkillHand : MonoBehaviour
     {
         HandItems.Clear();
         HandItemsBool.Clear();
-        foreach (Item item in PublicStaticStatus.ItemList)
+        foreach (ItemData item in PublicStaticStatus.ItemList)
         {
             HandItems.Add(item);
             HandItemsBool.Add(true);
@@ -212,7 +212,7 @@ public class ChikyuSkillHand : MonoBehaviour
         }
     }
     
-    void SubmitItem(Item item,int num)
+    void SubmitItem(ItemData item,int num)
     {
         MyChikyuSkillTable.ChatchSubmitItem(item,num);
     }

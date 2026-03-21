@@ -19,8 +19,8 @@ public class MainCamera : MonoBehaviour
     Vector3 LastPos;
     public void ModeChanged()
     {
-        if (controlModeChanger.ActionMode == 0) { ControlableChara = MyChikyu; }
-        if (controlModeChanger.ActionMode == 1) { ControlableChara = MyUtyu; }
+        if (controlModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuView) { ControlableChara = MyChikyu; }
+        if (controlModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuView) { ControlableChara = MyUtyu; }
     }
     void Start()
     {

@@ -9,7 +9,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ChikyuSkillTable : MonoBehaviour
 {
-    public List<Item> TableItems = new List<Item>();
+    public List<ItemData> TableItems = new List<ItemData>();
     public bool IsMixing = false;
 
     [SerializeField]
@@ -33,7 +33,7 @@ public class ChikyuSkillTable : MonoBehaviour
     }
 
     //アイテム取得時
-    public void ChatchSubmitItem(Item item, int num)
+    public void ChatchSubmitItem(ItemData item, int num)
     {
         TableItems.Add(item);
         NumberOfSubmittedItem.Add(num);
@@ -47,7 +47,7 @@ public class ChikyuSkillTable : MonoBehaviour
     {
         IsMixing = true;
         
-        Item item0 = FigureOutMixture(TableItems[0], TableItems[1]);
+        ItemData item0 = FigureOutMixture(TableItems[0], TableItems[1]);
 
         if (item0 == null)
         {
@@ -126,19 +126,22 @@ public class ChikyuSkillTable : MonoBehaviour
     }
 
 
-    Item FigureOutMixture(Item item0, Item item1)
+    ItemData FigureOutMixture(ItemData item0, ItemData item1)
     {
         Debug.Log("FigureOutMixture(" + item0 + "," + item1 + ")");
-        Item[] list = new Item[2];
+        ItemData[] list = new ItemData[2];
 
-        if (item0.ID < item1.ID) { list = new Item[2] { item0, item1 }; }
-        else if (item0.ID > item1.ID) { list = new Item[2] { item1, item0 }; }
+        if (item0.ID < item1.ID) { list = new ItemData[2] { item0, item1 }; }
+        else if (item0.ID > item1.ID) { list = new ItemData[2] { item1, item0 }; }
 
         foreach (ChikyuSkillMixtureIndex mixtureIndex in ChikyuSkillCursor.MixtureDictionary)
         {
             if (mixtureIndex.RequiredMaterialsArray[0] == list[0]
                 && mixtureIndex.RequiredMaterialsArray[1] == list[1])
             {
+                //合成ブロックがAbilityたちを持つ
+
+
                 return (mixtureIndex.MixtureItem);
             }
         }

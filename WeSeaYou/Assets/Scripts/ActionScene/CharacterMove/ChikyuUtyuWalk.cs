@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChikyuUtyuWalk : MonoBehaviour
 {
-    [SerializeField] int ModeIControlable;
+    [SerializeField] ActionModeChanger.ActionModeType ModeIControlable;
     [SerializeField] string AnotherWalkComponentName;
     [SerializeField] ActionModeChanger controlModeChanger;
     [SerializeField] float moveSpeed;  //ˆÚ“®‘¬“x

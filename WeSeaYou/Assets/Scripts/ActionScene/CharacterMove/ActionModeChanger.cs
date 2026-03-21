@@ -3,9 +3,18 @@ using UnityEngine;
 
 public class ActionModeChanger : MonoBehaviour
 {
-    public static event Action<int,int> ActionModeChangeEvent;
+    public enum ActionModeType
+    {
+        ChikyuView = 0,   // 地球君視点
+        UtyuView = 1,     // 宇宙君視点（今回未使用だけど残すならOK）
+        ChikyuSkill = 10,
+        UtyuSkill = 11,
+        UtyuSkillActive = 21
+    }
 
-    public int ActionMode=0;//0:地球君視点//1:宇宙君視点//10:地球スキル//11:宇宙スキル//21:宇宙スキル機能中
+    public static event Action<ActionModeType, ActionModeType> ActionModeChangeEvent;
+    public ActionModeType ActionMode = ActionModeType.ChikyuView;
+
     [SerializeField]
     GameObject MyUtyu;
     [SerializeField]
@@ -16,7 +25,7 @@ public class ActionModeChanger : MonoBehaviour
     GameModeController MyGameModeController;
     void Start()
     {
-        ActionMode = 0;
+        ActionMode = ActionModeType.ChikyuView;
         mainCamera.ModeChanged();
         MyChikyu.GetComponent<ChikyuWalk>().ModeChanged();
         MyUtyu.GetComponent<UtyuWalk>().ModeChanged();
@@ -26,56 +35,39 @@ public class ActionModeChanger : MonoBehaviour
         //キャラの切り替え
         if (MyGameModeController.GameMode == "Action")
         {
-            /*
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                if (ActionMode == 0)
-                {
-                    ChangeActionMode(1, 0);
-                }
-                else if (ActionMode == 1)
-                {
-                    ChangeActionMode(0, 1);
-                }
-                mainCamera.ModeChanged();
-                MyUtyu.GetComponent<UtyuWalk>().ModeChanged();
-                MyChikyu.GetComponent<ChikyuWalk>().ModeChanged();
-            }
-            */
             if (Input.GetKeyDown(KeyCode.X))
             {
-                if (ActionMode == 0)
+                if (ActionMode == ActionModeType.ChikyuView)
                 {
-                    ChangeActionMode(10, 0);
+                    ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.ChikyuView);
                 }
-                else if (ActionMode == 10)
+                else if (ActionMode == ActionModeType.ChikyuSkill)
                 {
-                    ChangeActionMode(0, 10);
+                    ChangeActionMode(ActionModeType.ChikyuView, ActionModeType.ChikyuSkill);
                 }
             }
+
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                if (ActionMode == 0)
+                if (ActionMode == ActionModeType.ChikyuView)
                 {
-                    ChangeActionMode(11, 0);
+                    ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.ChikyuView);
                 }
-                else if (ActionMode == 11)
+                else if (ActionMode == ActionModeType.UtyuSkill)
                 {
-                    ChangeActionMode(0, 11);
+                    ChangeActionMode(ActionModeType.ChikyuView, ActionModeType.UtyuSkill);
                 }
-
-                //ChangeActionMode(21,11)はUtyuSkillOutputで遷移
-                else if (ActionMode == 21)
+                else if (ActionMode == ActionModeType.UtyuSkillActive)
                 {
-                    ChangeActionMode(11, 21);
+                    ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.UtyuSkillActive);
                 }
             }
         }
     }
 
-    public void ChangeActionMode(int a,int b)
+    public void ChangeActionMode(ActionModeType a, ActionModeType b)
     {
-        if(ActionMode==b)
+        if (ActionMode == b)
         {
             ActionMode = a;
         }
@@ -83,7 +75,8 @@ public class ActionModeChanger : MonoBehaviour
         {
             Debug.LogWarning("ChangeActionMode Failed");
         }
-        ActionModeChangeEvent?.Invoke(a,b);
+
+        ActionModeChangeEvent?.Invoke(a, b);
     }
 }
 /*
