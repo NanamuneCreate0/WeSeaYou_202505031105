@@ -87,7 +87,7 @@ public class UtyuWalk : MonoBehaviour
         float abs = Mathf.Abs(diff);
         // 閾値
         float stopDist = 0.5f;
-        float slowDist = 1f;
+        float slowDist = 2f;
         float speed = 0f;
         if (abs > slowDist)
         {
@@ -98,7 +98,7 @@ public class UtyuWalk : MonoBehaviour
         {
             // 中間：減速（線形）
             float t = (abs - stopDist) / (slowDist - stopDist); // 0～1
-            speed = moveSpeed * t;
+            speed = moveSpeed * t*t;
         }
         else
         {
@@ -114,6 +114,17 @@ public class UtyuWalk : MonoBehaviour
         if (IsWallAhead(dir) && abs > stopDist)
         {
             TryJump();
+        }
+
+        // 遠すぎたらワープ
+        float warpDist = 10f; // 10以上ならワープ
+        if (abs >= warpDist)
+        {
+            Vector2 warpOffset = new Vector2(-0.2f, 0.5f); // 左0.2、上0.5
+            transform.position = (Vector2)targetPos + warpOffset;
+
+            // 履歴を全消し
+            history.Clear();
         }
     }
     bool IsWallAhead(float dir)
