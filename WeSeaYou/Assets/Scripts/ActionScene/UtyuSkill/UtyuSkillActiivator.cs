@@ -10,8 +10,6 @@ public class UtyuSkillActivator : MonoBehaviour
     GameObject MyUtyuSkillUI;
     [SerializeField]
     UtyuSkillHand MyUtyuSkillHand;
-    [SerializeField]
-    ItemDisplayer MyItemDisplayer;
     private void OnEnable()
     {
         ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;

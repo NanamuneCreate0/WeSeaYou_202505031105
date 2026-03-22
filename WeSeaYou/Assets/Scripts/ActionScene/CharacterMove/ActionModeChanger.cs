@@ -26,9 +26,9 @@ public class ActionModeChanger : MonoBehaviour
     }
     void Update()
     {
-        //キャラの切り替え
         if (MyGameModeController.GameMode == "Action")
         {
+            //ChikyuSkillオンオフ
             if (Input.GetKeyDown(KeyCode.X))
             {
                 if (ActionMode == ActionModeType.ChikyuView)
@@ -41,6 +41,7 @@ public class ActionModeChanger : MonoBehaviour
                 }
             }
 
+            //UtyuSkillオンオフ
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 if (ActionMode == ActionModeType.ChikyuView)

@@ -1,7 +1,18 @@
-using NUnit.Framework;
+/*
+PubulicStaticStatus.ItemListがプレイヤーが持ってる所持アイテム。
+HandDisplayCellsはItemを表示する用の枠だね。回転するからこれが出てきたり消滅したりする。
+そしてHandItemはそこに表示されるアイテム。
+（あと、表示されるアイテムと同期して表示されるアイテムが選択可能かグレーで表示するためのリストが存在する。）
+
+所持アイテムと表示アイテムは違うリストで、所持アイテム→表示アイテム生成。表示アイテム→所持アイテムに戻すも行われてる（表示アイテムは空のスロットを含む。）
+
+
+右や左ボタンが押されるたびにアングルとハイライトがずれるというふうになってて、
+これは円形UIが回転する時、アングルを使いながら必要なオブジェクト以外は壊して、上半分のみを表示している設計。
+また円形UIが回転する時、ハイライトがずれて表示アイテムがその範囲表示される（アイテム数回すと一周）
+ */
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +21,7 @@ public class ChikyuSkillHand : MonoBehaviour
     public List<ItemData> HandItems = new List<ItemData>();//nullも持つ
 
     public int HilightStart=0;
-    public int isMoving = 0;//0:静止//1:左//2:右
+    //private int isMoving = 0;//0:静止//1:左//2:右
 
     List<GameObject> HandDisplayCells = new List<GameObject>();//CellのみのGameObject（固定）
     [SerializeField]
@@ -19,6 +30,14 @@ public class ChikyuSkillHand : MonoBehaviour
     ChikyuSkillTable MyChikyuSkillTable;
     [SerializeField]
     Sprite NullItem;
+
+    //長押し用
+    [SerializeField]
+    Image gaugeImage;
+    [SerializeField]
+    private BlockCreator blockCreater;
+    [SerializeField]
+    private ActionModeChanger actionModeChanger;
 
     const float angleDistance = 36;
     const float radius=210;
@@ -30,18 +49,23 @@ public class ChikyuSkillHand : MonoBehaviour
     float offSetAngle;
     float lastOffsetAngle;
     float wayToMove;
-    float timer;
+    float moveTimer;
 
+
+    const float chargeTime = 0.7f; // 満タンまでの時間
+    float currentCharge = 0f;
+    bool gaugeActive=false;
+
+    private enum Direction
+    {
+        Left = -1,
+        None = 0,
+        Right = 1
+    }
+    private Direction direction;
     public void ActivationStart()
     {
-        HandItems.Clear();
-        HandItemsBool.Clear();
-        foreach (ItemData item in PublicStaticStatus.ItemList)
-        {
-            HandItems.Add(item);
-            HandItemsBool.Add(true);
-        }
-
+        //HandDisplayCell関連
         for (int i = 0; i < 5; i++)
         {
             if(transform.childCount<5)
@@ -50,84 +74,119 @@ public class ChikyuSkillHand : MonoBehaviour
                 HandDisplayCells.Add(go);
             }
         }
-        for (int i = 0; i < HandDisplayCells.Count; i++)
+        offSetAngle = FirstOffSetAngle;
+        direction = Direction.None;
+        SetCellPos();
+
+        //HandItem関連
+        HandItems.Clear();
+        HandItemsBool.Clear();
+        foreach (ItemData item in PublicStaticStatus.ItemList)
+        {
+            HandItems.Add(item);
+            HandItemsBool.Add(true);
+        }
+        for (int i = 0; i < HandDisplayCells.Count; i++)//アイテム5個になるまでNullで埋める
         {
             if (HandItems.Count < 5) { HandItems.Add(null); HandItemsBool.Add(true); }
         }//forじゃなくてwhileでもいい
+        SetItem(direction);
 
-        SetItem(0);
+        //Blockを提出
+        if (HandItems[0].IsBlock ==true && HandItemsBool[0])
+        {
+            SubmitItem(HandItems[0], 0);
+            SetItem(direction);
+        }
+        else
+        {
+            Debug.LogWarning("1st Item should be Block");
+        }
 
-        offSetAngle = FirstOffSetAngle;
-        SetCellPos();
     }
-
 
     void Update()
     {
-        //ボタン押せるのはMixing合成が行われていないとき
-        if (!MyChikyuSkillTable.IsMixing)
+        //決定
+        if (Input.GetKeyDown(KeyCode.C) && direction == Direction.None)
         {
-            //決定
-            if (isMoving == 0 && Input.GetKeyDown(KeyCode.C))
+            int num = WrapIndex(HilightStart + 2, HandItems.Count);
+            if (HandItems[num] != null && HandItemsBool[num])
             {
-                int num = (HilightStart + 2) % HandItems.Count;
-                if (num < 0) { num += HandItems.Count; }
-                if (HandItems[num] != null && HandItemsBool[num])
-                {
-                    Debug.Log(HandItems[num].itemName + " Chosen");
-                    HandItemsBool[num] = false;
-                    SubmitItem(HandItems[num],num);
-                    SetItem(0);
-                }
-                else
-                {
-                    Debug.Log("null Chosen");
-                }
+                SubmitItem(HandItems[num], num);
+                SetItem(direction);
             }
-            //右に動かす
-            if (isMoving == 0 && Input.GetKeyDown(KeyCode.D))
+            else
             {
-                GameObject go = Instantiate(HandDisplayCell, transform);
-                HandDisplayCells.Add(go);
-                offSetAngle = FirstOffSetAngle;
-                SetCellPos();
-                SetItem(+1);
-
-                //動く用意
-                lastOffsetAngle = offSetAngle;
-                wayToMove = +angleDistance;
-                isMoving = 1;
+                Debug.Log("null Chosen");
+                gaugeActive = true;
             }
-            //左に動かす
-            else if (isMoving == 0 && Input.GetKeyDown(KeyCode.A))
-            {
-                GameObject go = Instantiate(HandDisplayCell, transform);
-                HandDisplayCells.Insert(0, go);//この二つ
-                offSetAngle = FirstOffSetAngle + angleDistance;//この二つが高速で処理されていい感じ
-                SetCellPos();
-                SetItem(-1);
-
-                //動く用意
-                lastOffsetAngle = offSetAngle;
-                wayToMove = -angleDistance;
-                isMoving = 2;
-            }
-            
         }
 
-        //「動く」ということ
-        if (isMoving == 1)
+        //長押し
+        if (Input.GetKey(KeyCode.C)&&gaugeActive)
         {
-            if (timer < moveTime)
+            currentCharge += Time.deltaTime;
+
+            // ゲージ更新
+            gaugeImage.fillAmount = currentCharge / chargeTime;
+
+            // 満タン
+            if (currentCharge >= chargeTime)
             {
-                timer += Time.deltaTime;
-                offSetAngle = lastOffsetAngle + (wayToMove * (timer / moveTime));
+                MyChikyuSkillTable.CatchSubmitDone();
+            }
+        }
+        else
+        {
+            gaugeActive=false;
+            currentCharge = 0f;
+            gaugeImage.fillAmount = 0f;
+        }
+
+        //右に動かす
+        if (direction == Direction.None && Input.GetKeyDown(KeyCode.D))
+        {
+            //動く用意とHandDisplayCell関連
+            direction = Direction.Left;
+            GameObject go = Instantiate(HandDisplayCell, transform);
+            HandDisplayCells.Add(go);
+            offSetAngle = FirstOffSetAngle;
+            lastOffsetAngle = offSetAngle;
+            wayToMove = +angleDistance;
+            SetCellPos();
+
+            SetItem(direction);
+        }
+        //左に動かす
+        else if (direction == Direction.None && Input.GetKeyDown(KeyCode.A))
+        {
+            //動く用意
+            direction = Direction.Right;
+            GameObject go = Instantiate(HandDisplayCell, transform);
+            HandDisplayCells.Insert(0, go);//この二つ
+            offSetAngle = FirstOffSetAngle + angleDistance;//この二つが高速で処理されていい感じ
+            lastOffsetAngle = offSetAngle;
+            wayToMove = -angleDistance;
+            SetCellPos();
+
+            SetItem(direction);
+        }
+
+
+        //「動く」ということ
+        if (direction == Direction.Left)
+        {
+            if (moveTimer < moveTime)
+            {
+                moveTimer += Time.deltaTime;
+                offSetAngle = lastOffsetAngle + (wayToMove * (moveTimer / moveTime));
                 SetCellPos();
             }
-            else if (timer >= moveTime)
+            else if (moveTimer >= moveTime)
             {
-                isMoving = 0;
-                timer = 0;
+                direction = Direction.None;
+                moveTimer = 0;
                 offSetAngle = lastOffsetAngle + wayToMove;
                 Destroy(HandDisplayCells[0]);
                 HandDisplayCells.RemoveAt(0);
@@ -135,21 +194,21 @@ public class ChikyuSkillHand : MonoBehaviour
                 SetCellPos();
             }
         }
-        if (isMoving == 2)
+        if (direction == Direction.Right)
         {
-            if (timer < moveTime)
+            if (moveTimer < moveTime)
             {
-                timer += Time.deltaTime;
-                offSetAngle = lastOffsetAngle + (wayToMove * (timer / moveTime));
+                moveTimer += Time.deltaTime;
+                offSetAngle = lastOffsetAngle + (wayToMove * (moveTimer / moveTime));
                 SetCellPos();
             }
-            else if (timer >= moveTime)
+            else if (moveTimer >= moveTime)
             {
-                isMoving = 0;
-                timer = 0;
+                direction = Direction.None;
+                moveTimer = 0;
                 offSetAngle = lastOffsetAngle + wayToMove;
                 Destroy(HandDisplayCells[HandDisplayCells.Count - 1]);
-                HandDisplayCells.RemoveAt(HandDisplayCells.Count-1);
+                HandDisplayCells.RemoveAt(HandDisplayCells.Count - 1);
                 offSetAngle = FirstOffSetAngle;
                 SetCellPos();
             }
@@ -158,8 +217,7 @@ public class ChikyuSkillHand : MonoBehaviour
     }
     void SetCellPos()//SetHandDisplayCellPosの省略
     {
-        //Debug.Log(HandDisplayCells.Count);//これがセルがいくつ表示されるかを決定している//これもconstにしたい
-        for (int i = 0; i < HandDisplayCells.Count; i++)
+        for (int i = 0; i < HandDisplayCells.Count; i++)//HandDisplayCells.Countは5か移動中は6
         {
             RectTransform HandDisplayCell = HandDisplayCells[i].transform as RectTransform;
             float currentAngle = angleDistance * -i + offSetAngle;
@@ -169,70 +227,52 @@ public class ChikyuSkillHand : MonoBehaviour
         }
     }
 
-    public void SetItem(int num0)
+    private void SetItem(Direction dir, int num = 0)
     {
-        if (num0 == 0)
+        if (direction == Direction.None)
         {
-            PaintDisplayCell(HilightStart); ;
+            HilightStart+=num;
+            WrapIndex(HilightStart, HandItems.Count);
+            PaintDisplayCell(HilightStart);
         }
-        if (num0 == 1)
+        else if (direction==Direction.Left)
         {
             HilightStart++;
-            if (HilightStart == HandItems.Count) HilightStart = 0;
-
+            WrapIndex(HilightStart, HandItems.Count);
             PaintDisplayCell(HilightStart - 1);
         }
-        if (num0 == -1)
+        else if (direction == Direction.Right)
         {
             HilightStart--;
-            if (HilightStart < 0) HilightStart += HandItems.Count;
-
+            WrapIndex(HilightStart, HandItems.Count);
             PaintDisplayCell(HilightStart);
         }
     }
-    void PaintDisplayCell(int RoughDifference_BetweenHandDisplayCellsAndHandItems)//負の数や大きな数でも対応できる//それ故Rough//DisplayCellは基本左から右で0～
+    void PaintDisplayCell(int HandItemsOffset)//HandDisplayCells_HandItems_RoughDifference//DisplayCellは基本左から右で0～
     {
         for (int i = 0; i < HandDisplayCells.Count; i++)
         {
-            int num1 = (i + RoughDifference_BetweenHandDisplayCellsAndHandItems) % HandItems.Count;
-            if (num1 < 0) { num1 += HandItems.Count; }
+            int itemIndex = WrapIndex(i + HandItemsOffset, HandItems.Count);
+
             Image img = HandDisplayCells[i].GetComponent<Image>();
-            if (HandItems[num1] != null)
-            {
-                img.sprite = HandItems[num1].sprite;
-                if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }
-            }
-            else if (HandItems[num1] == null)
-            {
-                img.sprite = NullItem;
-                if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }
-            }
+            ItemData item = HandItems[itemIndex];
+            bool selectable = HandItemsBool[itemIndex];
+            img.sprite = item != null ? item.sprite : NullItem;
+            img.color = selectable ? Color.white : Color.gray;
         }
     }
-    
+
     void SubmitItem(ItemData item,int num)
     {
-        MyChikyuSkillTable.ChatchSubmitItem(item,num);
+        HandItemsBool[num] = false;
+        MyChikyuSkillTable.CatchSubmitItem(item);
     }
 
-    public void ConfirmStaticItemList(bool ExcuteSort)
+    private int WrapIndex(int index, int count)
     {
-        PublicStaticStatus.ItemList.Clear();
-        for (int i = 0; i < HandItems.Count; i++)
-        {
-            if (HandItems[i] != null)
-            {
-                PublicStaticStatus.ItemList.Add(HandItems[i]);
-            }
-        }
-        if (ExcuteSort) { PublicStaticStatus.ItemList.Sort((a, b) => a.ID.CompareTo(b.ID)); }
-    }
-
-    public void RefreshHandItemsBool()
-    {
-        HandItemsBool.Clear();
-        for (int i = 0; i < HandItems.Count; i++) { HandItemsBool.Add(true); }
+        if (count <= 0) return 0; // 空リスト回避
+        int result = index % count;
+        if (result < 0) result += count;
+        return result;
     }
 }

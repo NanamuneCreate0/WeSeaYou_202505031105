@@ -13,8 +13,6 @@ public class ChikyuSkillActivator : MonoBehaviour
     ChikyuSkillHand MyChikyuSkillHand;
     [SerializeField]
     ChikyuSkillTable MyChikyuSkillTable;
-    [SerializeField]
-    ItemDisplayer MyItemDisplayer;
     private void OnEnable()
     {
         ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
@@ -28,22 +26,14 @@ public class ChikyuSkillActivator : MonoBehaviour
         if(a== ActionModeChanger.ActionModeType.ChikyuSkill&& b== ActionModeChanger.ActionModeType.ChikyuView)
         {
             MyChikyuSkillUI.SetActive(true);
-            MyChikyuSkillHand.ActivationStart();
             MyChikyuSkillTable.ActivationStart();
+            MyChikyuSkillHand.ActivationStart();//Table‚Ö‚Ì’ño‚ª‚ ‚é‚½‚ßHand‚ªŒãB’ño‚¾‚¯LateActivationStart()‚É•ª‚¯‚Ä‚à‚¢‚¢
         }
         if (a == ActionModeChanger.ActionModeType.ChikyuView && b == ActionModeChanger.ActionModeType.ChikyuSkill)
         {
-            MyItemDisplayer.SetItemDisplay(true);
+            //MyItemDisplayer.SetItemDisplay(true);
             MyChikyuSkillHand.HilightStart = 0;
             MyChikyuSkillUI.SetActive(false);
         }
-    }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
     }
 }

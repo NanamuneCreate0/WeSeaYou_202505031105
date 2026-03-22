@@ -9,8 +9,6 @@ public class SceneInitializer_ActionScene: MonoBehaviour
 
     [SerializeField]
     List<ItemData> debugItems = new List<ItemData>();
-    [SerializeField]
-    List<ChikyuSkillMixtureIndex> indexes = new List<ChikyuSkillMixtureIndex>();
     void Start()
     {
         PublicStaticStatus.CurrentStage = CurrentStage;
@@ -23,14 +21,6 @@ public class SceneInitializer_ActionScene: MonoBehaviour
         foreach (ItemData item in debugItems)
         {
             PublicStaticStatus.ItemList.Add(item);
-        }
-        GameObject.Find("ItemDisplayer").GetComponent<ItemDisplayer>().SetItemDisplay(true);
-
-        //Index‘«‚·
-        for (int i = 0; i < indexes.Count; i++)
-        {
-            ChikyuSkillCursor.MixtureDictionary.Add(indexes[i]);
-            //Debug.Log(indexes[i] + " - On Index");
         }
     }
 }

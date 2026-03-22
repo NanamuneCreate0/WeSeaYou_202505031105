@@ -19,7 +19,6 @@ public class FieldItem : MonoBehaviour
         {
             Debug.Log("GetItem");
             PublicStaticStatus.ItemList.Add(MyItem);
-            GameObject.Find("ItemDisplayer").GetComponent<ItemDisplayer>().SetItemDisplay(true);
             Destroy(gameObject);
         }
     }

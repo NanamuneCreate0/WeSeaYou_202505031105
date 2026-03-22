@@ -20,8 +20,6 @@ public class UtyuSkillHand : MonoBehaviour
     [SerializeField]
     ActionModeChanger MyActionModeChanger;
     [SerializeField]
-    ItemDisplayer MyItemDisplayer;
-    [SerializeField]
     Sprite NullItem;
 
     const float angleDistance = 36;
@@ -63,7 +61,6 @@ public class UtyuSkillHand : MonoBehaviour
     public void OnDisableAndReset()
     {
         ConfirmStaticItemList(true);
-        MyItemDisplayer.SetItemDisplay(true);
         HilightStart = 0;
     }
 
