@@ -45,10 +45,11 @@ public class UtyuWalk : MonoBehaviour
         recordTimer = 0f;
 
         // プレイヤーの接地情報取得
-        var playerGround = player.GetComponentInChildren<IsGroundingJudger>();
+        IsGroundingJudger playerGround = player.GetComponentInChildren<IsGroundingJudger>();
 
         if (playerGround != null && playerGround.IsGrounding)
         {
+            //接地している場合地面を記録
             Collider2D col = playerGround.CurrentGroundCollider;
 
             if (col != null)
@@ -60,6 +61,22 @@ public class UtyuWalk : MonoBehaviour
                 history.Enqueue(record);
             }
         }
+        else
+        {
+            //空中にいる場合下にRayint layerMask = ~LayerMask.GetMask("Player");
+            int layerMask = ~LayerMask.GetMask("Player");
+            RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.down, 7f, layerMask);
+
+            if (hit.collider != null)
+            {
+                GroundRecord record = new GroundRecord();
+                record.collider = hit.collider;
+                record.localPos = hit.collider.transform.InverseTransformPoint(hit.point);
+
+                history.Enqueue(record);
+            }
+        }
+
 
         // 古いデータ削除（0.5秒分だけ残す）
         int maxCount = Mathf.CeilToInt(DELAY / RECORD_INTERVAL);
@@ -132,24 +149,20 @@ public class UtyuWalk : MonoBehaviour
         Vector2 origin = (Vector2)transform.position + Vector2.down * 0.5f;
         Vector2 direction = new Vector2(dir, 0);
 
-        int layerMask = LayerMask.GetMask("Ground");
-
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 0.5f, layerMask);
+        int layerMask = ~LayerMask.GetMask("Player");
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 2f, layerMask);
 
         return hit.collider != null;
     }
 
     void TryJump()
     {
+        Debug.Log(isGroundingJudger.IsGrounding);
         if (isGroundingJudger.IsGrounding && Time.time - lastJumpTime >= 0.2f)
         {
+        Debug.Log("jump");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             lastJumpTime = Time.time;
         }
-    }
-
-    public void IsHandling_Jump()
-    {
-        TryJump();
     }
 }
