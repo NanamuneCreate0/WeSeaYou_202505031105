@@ -15,16 +15,20 @@ public class ChikyuWalk : MonoBehaviour
     [SerializeField] Animator animator;
 
     Rigidbody2D rb;
-    IsGroundingJudger grounding;
+    Collider2D myCol;
+    // ê⁄ínèÛë‘
+    public bool IsGrounding { get; private set; }
+    public Collider2D CurrentGroundCollider { get; private set; }
+    public Vector2 GroundPoint { get; private set; }
 
     Direction direction = Direction.None;
 
-    float inputX; // ì¸óÕílÇï€éù
+    float inputX;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        grounding = transform.GetChild(0).GetComponent<IsGroundingJudger>();
+        myCol = GetComponent<Collider2D>();
     }
 
     void OnEnable()
@@ -49,8 +53,24 @@ public class ChikyuWalk : MonoBehaviour
 
     void Update()
     {
+        UpdateGrounding();
         UpdateDirection();
         ApplyMovement();
+    }
+
+    // ===== ê⁄ínîªíË =====
+    void UpdateGrounding()
+    {
+        IsGrounding = GroundUtil.CheckGrounded(
+            myCol,
+            out Collider2D col,
+            out Vector2 point);
+
+        if (IsGrounding)
+        {
+            CurrentGroundCollider = col;
+            GroundPoint = point;
+        }
     }
 
     //InputSystem
@@ -60,7 +80,7 @@ public class ChikyuWalk : MonoBehaviour
     }
     void OnJump(InputAction.CallbackContext context)
     {
-        if (grounding.IsGrounding)
+        if (IsGrounding)
         {
             rb.AddForce(Vector2.up * jumpPower * 20f);
         }

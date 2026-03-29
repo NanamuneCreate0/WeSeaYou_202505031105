@@ -5,11 +5,16 @@ public class UtyuWalk : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
-
     [SerializeField] Transform player;
 
+
+    const float stopDist = 0.5f;
+    const float jumpDist = 1f;
+    const float slowDist = 2f;
+
     Rigidbody2D rb;
-    IsGroundingJudger isGroundingJudger;
+    Collider2D myCol;
+    ChikyuWalk playerWalk;
 
     // 履歴保存用
     class GroundRecord
@@ -17,9 +22,7 @@ public class UtyuWalk : MonoBehaviour
         public Collider2D collider;
         public Vector2 localPos;
     }
-
     Queue<GroundRecord> history = new Queue<GroundRecord>();
-
     float recordTimer = 0f;
     float lastJumpTime = -999f;
     const float RECORD_INTERVAL = 0.1f;
@@ -28,7 +31,8 @@ public class UtyuWalk : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        isGroundingJudger = transform.GetChild(0).GetComponent<IsGroundingJudger>();
+        myCol = GetComponent<Collider2D>();
+        playerWalk = player.GetComponent<ChikyuWalk>();
     }
 
     void Update()
@@ -44,26 +48,20 @@ public class UtyuWalk : MonoBehaviour
         if (recordTimer < RECORD_INTERVAL) return;
         recordTimer = 0f;
 
-        // プレイヤーの接地情報取得
-        IsGroundingJudger playerGround = player.GetComponentInChildren<IsGroundingJudger>();
 
-        if (playerGround != null && playerGround.IsGrounding)
+
+        if (playerWalk != null && playerWalk.IsGrounding)
         {
-            //接地している場合地面を記録
-            Collider2D col = playerGround.CurrentGroundCollider;
-
-            if (col != null)
-            {
                 GroundRecord record = new GroundRecord();
-                record.collider = col;
-                record.localPos = col.transform.InverseTransformPoint(player.position);
+                record.collider = playerWalk.CurrentGroundCollider;
+            record.localPos = record.collider.transform.InverseTransformPoint(player.position);
 
                 history.Enqueue(record);
-            }
+            
         }
         else
         {
-            //空中にいる場合下にRayint layerMask = ~LayerMask.GetMask("Player");
+            //空中にいる場合下にRay
             int layerMask = ~LayerMask.GetMask("Player");
             RaycastHit2D hit = Physics2D.Raycast(player.position, Vector2.down, 7f, layerMask);
 
@@ -101,21 +99,19 @@ public class UtyuWalk : MonoBehaviour
         //float dir = Mathf.Sign(targetPos.x - transform.position.x);
         //rb.linearVelocity = new Vector2(dir * moveSpeed, rb.linearVelocity.y);
         float diff = targetPos.x - transform.position.x;
-        float abs = Mathf.Abs(diff);
+        float absX = Mathf.Abs(diff);
         // 閾値
-        float stopDist = 0.5f;
-        float slowDist = 2f;
         float speed = 0f;
-        if (abs > slowDist)
+        if (absX > slowDist)
         {
             // 遠い：等速
             speed = moveSpeed;
         }
-        else if (abs > stopDist)
+        else if (absX > stopDist)
         {
             // 中間：減速（線形）
-            float t = (abs - stopDist) / (slowDist - stopDist); // 0～1
-            speed = moveSpeed * t*t;
+            float t = (absX - stopDist) / (slowDist - stopDist); // 0～1
+            speed = moveSpeed * t;
         }
         else
         {
@@ -128,13 +124,14 @@ public class UtyuWalk : MonoBehaviour
 
 
         // 壁判定
-        if (IsWallAhead(dir) && abs > stopDist)
+        if (IsWallAhead(dir) && absX > jumpDist)
         {
             TryJump();
         }
 
         // 遠すぎたらワープ
         float warpDist = 10f; // 10以上ならワープ
+        float abs = Vector2.Distance(transform.position, player.position);
         if (abs >= warpDist)
         {
             Vector2 warpOffset = new Vector2(-0.2f, 0.5f); // 左0.2、上0.5
@@ -146,21 +143,30 @@ public class UtyuWalk : MonoBehaviour
     }
     bool IsWallAhead(float dir)
     {
-        Vector2 origin = (Vector2)transform.position + Vector2.down * 0.5f;
+        Bounds bounds = myCol.bounds;
+        float x = dir > 0 ? bounds.max.x : bounds.min.x;
+        float y = bounds.min.y + bounds.size.y * 0.25f;
+        Vector2 origin = new Vector2(x, y);
         Vector2 direction = new Vector2(dir, 0);
 
+        // Player以外に当たる
         int layerMask = ~LayerMask.GetMask("Player");
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 2f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, 0.4f, layerMask);
 
-        return hit.collider != null;
+        // デバッグ
+        Debug.DrawRay(origin, direction * 0.4f, Color.blue);
+
+        return (hit.collider != null && hit.collider.attachedRigidbody != null);
     }
 
     void TryJump()
     {
-        Debug.Log(isGroundingJudger.IsGrounding);
-        if (isGroundingJudger.IsGrounding && Time.time - lastJumpTime >= 0.2f)
+        bool isGrounded = GroundUtil.CheckGrounded(
+            myCol,
+            out Collider2D col,
+            out Vector2 point);
+        if (isGrounded && Time.time - lastJumpTime >= 0.2f)
         {
-        Debug.Log("jump");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
             lastJumpTime = Time.time;
         }
