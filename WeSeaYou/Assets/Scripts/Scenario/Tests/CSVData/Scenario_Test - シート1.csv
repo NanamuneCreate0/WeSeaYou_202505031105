@@ -1,0 +1,13 @@
+ID,Command,Name,Message,Still,BGM,SE,Parameters
+1,TALK,,テスト,,,,
+2,TALK,,たとえ長い文章だったとしても、工夫すればどうとでもなるし気にしなくてよし！,,,,
+3,TALK,,スチルテスト,,,,
+4,TALK,,立ち絵の表示変更も,,,,
+5,TALK,,こんな感じでできる,,,,
+6,TALK,,選択肢テスト,,,,
+7,BRANCH,,A/B,,,,8/10
+8,TALK,,Aの選択肢が選ばれました,,,,
+9,SKIP,,,,,,11
+10,TALK,,Bの選択肢が選ばれました,,,,
+11,TALK,,じゃね～,,,,
+12,END,,,,,,TestScene_Action

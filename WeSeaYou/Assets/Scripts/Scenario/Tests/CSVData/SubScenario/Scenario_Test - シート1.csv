@@ -1,0 +1,13 @@
+ID,Command,Name,Message,Still,BGM,SE,Parameters
+1,MODECHANGE,Sea,,,,,SUB
+2,TALK,Mare,たとえ長い文章だったとしても、工夫すればどうとでもなるし気にしなくてよし！,,,,
+3,TALK,Sea,スチルテスト,,,,
+4,TALK,Mare,立ち絵の表示変更も,,,,
+5,TALK,Sea,こんな感じでできる,,,,
+6,TALK,Mare,選択肢テスト,,,,
+7,BRANCH,,A/B,,,,8/10
+8,TALK,Sea,Aの選択肢が選ばれました,,,,
+9,SKIP,,,,,,11
+10,TALK,Mare,Bの選択肢が選ばれました,,,,
+11,TALK,Sea,じゃね～,,,,
+12,END,,,,,,TestScene_Action

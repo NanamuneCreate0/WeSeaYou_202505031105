@@ -24,11 +24,14 @@ public class InputManager : MonoBehaviour
     void OnEnable()
     {
         actions.Player.Enable();
+        actions.UI.Enable();
     }
 
     void OnDisable()
     {
+        if (actions == null) return;
         actions.Player.Disable();
+        actions.UI.Disable();
     }
 }
 //Vector2 move =InputManager.Instance.Actions.Player.Move.ReadValue<Vector2>();

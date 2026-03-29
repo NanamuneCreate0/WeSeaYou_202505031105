@@ -25,14 +25,17 @@ public class ScenarioLoader : MonoBehaviour
         for (int i = 1; i < lines.Length; i++)
         {
             string[] values = lines[i].Split(',');
-            if (values.Length >= 4)
+            if (values.Length >= 5)
             {
                 ScenarioLine data = new ScenarioLine();
                 data.Id = int.Parse(values[0]);
-                data.Name = values[1];
-                data.CommandType = values[2];
+                data.CommandType = values[1];
+                data.Name = values[2];
                 data.Message = values[3];
                 data.StillName = values[4];
+                data.BGMName = values[5];
+                data.SEName = values[6];
+                data.Parameters = values[7];
                 lineList.Add(data);
             }
         }
