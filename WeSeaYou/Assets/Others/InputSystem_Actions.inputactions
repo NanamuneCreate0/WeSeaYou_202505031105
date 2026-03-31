@@ -87,22 +87,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RepulsionMode",
-                    "type": "Button",
-                    "id": "ff4983b3-ae71-42b7-aef4-d865377da990",
-                    "expectedControlType": "",
+                    "name": "SeaAction",
+                    "type": "Value",
+                    "id": "9c4e9dd9-398f-4b58-a058-f4a32a6da168",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AttractionMode",
-                    "type": "Button",
-                    "id": "53c9c365-afd1-43aa-a037-f80d47bd0722",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -140,31 +131,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "up",
-                    "id": "8180e8bd-4097-4f4e-ab88-4523101a6ce9",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "down",
                     "id": "320bffee-a40b-4347-ac70-c210eb8bc73a",
                     "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "1c5327b5-f71c-4f60-99c7-4e737386f1d1",
-                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -184,31 +153,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "2e46982e-44cc-431b-9f0b-c11910bf467a",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "right",
                     "id": "fcfe95b8-67b9-4526-84b5-5d0bc98d6400",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "77bff152-3580-4b21-b6de-dcd0c7e41164",
-                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -492,24 +439,57 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "325a84d6-94d2-4ac3-9086-4369a48b3e67",
-                    "path": "<Mouse>/leftButton",
+                    "name": "2D Vector",
+                    "id": "8e18ca03-302a-4d56-8c9c-584b37e5ddc1",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RepulsionMode",
-                    "isComposite": false,
+                    "action": "SeaAction",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "28fe9acd-b00d-41aa-b039-8fd560395006",
-                    "path": "<Mouse>/rightButton",
+                    "name": "Up",
+                    "id": "01853f36-29b5-44ee-999e-a486e327efe1",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "AttractionMode",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SeaAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "8e9179bf-1d75-429c-9fa0-8e27418da0c5",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SeaAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c0cfa248-caf4-44b6-acaf-380013860bc8",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "SeaAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5b16d9b8-d62c-4fb7-aa55-d357d8b6ad15",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "SeaAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -613,6 +593,15 @@
                     "name": "AdvanceText",
                     "type": "Button",
                     "id": "395afbd1-e01e-4538-a14e-7dd94712d3ac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ModeChanger",
+                    "type": "Button",
+                    "id": "7e844c63-b452-47c3-b61a-078c74059643",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1046,6 +1035,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "AdvanceText",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64b2ab57-f5ef-404a-897e-cea9d8c061b0",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModeChanger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18c58275-9f39-44ef-8379-ee879926b236",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ModeChanger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

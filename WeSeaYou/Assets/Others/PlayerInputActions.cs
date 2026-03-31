@@ -173,22 +173,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RepulsionMode"",
-                    ""type"": ""Button"",
-                    ""id"": ""ff4983b3-ae71-42b7-aef4-d865377da990"",
-                    ""expectedControlType"": """",
+                    ""name"": ""SeaAction"",
+                    ""type"": ""Value"",
+                    ""id"": ""9c4e9dd9-398f-4b58-a058-f4a32a6da168"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""AttractionMode"",
-                    ""type"": ""Button"",
-                    ""id"": ""53c9c365-afd1-43aa-a037-f80d47bd0722"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -226,31 +217,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""down"",
                     ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -270,31 +239,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
                     ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -578,24 +525,57 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""325a84d6-94d2-4ac3-9086-4369a48b3e67"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8e18ca03-302a-4d56-8c9c-584b37e5ddc1"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RepulsionMode"",
-                    ""isComposite"": false,
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""28fe9acd-b00d-41aa-b039-8fd560395006"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""name"": ""Up"",
+                    ""id"": ""01853f36-29b5-44ee-999e-a486e327efe1"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AttractionMode"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8e9179bf-1d75-429c-9fa0-8e27418da0c5"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c0cfa248-caf4-44b6-acaf-380013860bc8"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b16d9b8-d62c-4fb7-aa55-d357d8b6ad15"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""SeaAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -699,6 +679,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""AdvanceText"",
                     ""type"": ""Button"",
                     ""id"": ""395afbd1-e01e-4538-a14e-7dd94712d3ac"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ModeChanger"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e844c63-b452-47c3-b61a-078c74059643"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1134,6 +1123,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""AdvanceText"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64b2ab57-f5ef-404a-897e-cea9d8c061b0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18c58275-9f39-44ef-8379-ee879926b236"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1212,8 +1223,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_RepulsionMode = m_Player.FindAction("RepulsionMode", throwIfNotFound: true);
-        m_Player_AttractionMode = m_Player.FindAction("AttractionMode", throwIfNotFound: true);
+        m_Player_SeaAction = m_Player.FindAction("SeaAction", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1227,6 +1237,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_AdvanceText = m_UI.FindAction("AdvanceText", throwIfNotFound: true);
+        m_UI_ModeChanger = m_UI.FindAction("ModeChanger", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -1317,8 +1328,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_RepulsionMode;
-    private readonly InputAction m_Player_AttractionMode;
+    private readonly InputAction m_Player_SeaAction;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1367,13 +1377,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         /// <summary>
-        /// Provides access to the underlying input action "Player/RepulsionMode".
+        /// Provides access to the underlying input action "Player/SeaAction".
         /// </summary>
-        public InputAction @RepulsionMode => m_Wrapper.m_Player_RepulsionMode;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/AttractionMode".
-        /// </summary>
-        public InputAction @AttractionMode => m_Wrapper.m_Player_AttractionMode;
+        public InputAction @SeaAction => m_Wrapper.m_Player_SeaAction;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1427,12 +1433,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @RepulsionMode.started += instance.OnRepulsionMode;
-            @RepulsionMode.performed += instance.OnRepulsionMode;
-            @RepulsionMode.canceled += instance.OnRepulsionMode;
-            @AttractionMode.started += instance.OnAttractionMode;
-            @AttractionMode.performed += instance.OnAttractionMode;
-            @AttractionMode.canceled += instance.OnAttractionMode;
+            @SeaAction.started += instance.OnSeaAction;
+            @SeaAction.performed += instance.OnSeaAction;
+            @SeaAction.canceled += instance.OnSeaAction;
         }
 
         /// <summary>
@@ -1471,12 +1474,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @RepulsionMode.started -= instance.OnRepulsionMode;
-            @RepulsionMode.performed -= instance.OnRepulsionMode;
-            @RepulsionMode.canceled -= instance.OnRepulsionMode;
-            @AttractionMode.started -= instance.OnAttractionMode;
-            @AttractionMode.performed -= instance.OnAttractionMode;
-            @AttractionMode.canceled -= instance.OnAttractionMode;
+            @SeaAction.started -= instance.OnSeaAction;
+            @SeaAction.performed -= instance.OnSeaAction;
+            @SeaAction.canceled -= instance.OnSeaAction;
         }
 
         /// <summary>
@@ -1525,6 +1525,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_AdvanceText;
+    private readonly InputAction m_UI_ModeChanger;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -1580,6 +1581,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/AdvanceText".
         /// </summary>
         public InputAction @AdvanceText => m_Wrapper.m_UI_AdvanceText;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/ModeChanger".
+        /// </summary>
+        public InputAction @ModeChanger => m_Wrapper.m_UI_ModeChanger;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1639,6 +1644,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @AdvanceText.started += instance.OnAdvanceText;
             @AdvanceText.performed += instance.OnAdvanceText;
             @AdvanceText.canceled += instance.OnAdvanceText;
+            @ModeChanger.started += instance.OnModeChanger;
+            @ModeChanger.performed += instance.OnModeChanger;
+            @ModeChanger.canceled += instance.OnModeChanger;
         }
 
         /// <summary>
@@ -1683,6 +1691,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @AdvanceText.started -= instance.OnAdvanceText;
             @AdvanceText.performed -= instance.OnAdvanceText;
             @AdvanceText.canceled -= instance.OnAdvanceText;
+            @ModeChanger.started -= instance.OnModeChanger;
+            @ModeChanger.performed -= instance.OnModeChanger;
+            @ModeChanger.canceled -= instance.OnModeChanger;
         }
 
         /// <summary>
@@ -1852,19 +1863,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "RepulsionMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "SeaAction" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRepulsionMode(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "AttractionMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAttractionMode(InputAction.CallbackContext context);
+        void OnSeaAction(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1950,5 +1954,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAdvanceText(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ModeChanger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnModeChanger(InputAction.CallbackContext context);
     }
 }
