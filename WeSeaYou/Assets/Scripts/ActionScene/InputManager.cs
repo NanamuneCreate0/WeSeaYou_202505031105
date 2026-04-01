@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     {
         actions.Player.Enable();
         actions.UI.Enable();
+        actions.SeaSkill.Enable();
     }
 
     void OnDisable()
@@ -32,6 +33,7 @@ public class InputManager : MonoBehaviour
         if (actions == null) return;
         actions.Player.Disable();
         actions.UI.Disable();
+        actions.SeaSkill.Disable();
     }
 }
 //Vector2 move =InputManager.Instance.Actions.Player.Move.ReadValue<Vector2>();
