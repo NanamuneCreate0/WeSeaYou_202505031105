@@ -173,22 +173,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RepulsionMode"",
-                    ""type"": ""Button"",
-                    ""id"": ""ff4983b3-ae71-42b7-aef4-d865377da990"",
-                    ""expectedControlType"": """",
+                    ""name"": ""SeaAction"",
+                    ""type"": ""Value"",
+                    ""id"": ""9c4e9dd9-398f-4b58-a058-f4a32a6da168"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""AttractionMode"",
-                    ""type"": ""Button"",
-                    ""id"": ""53c9c365-afd1-43aa-a037-f80d47bd0722"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -226,31 +217,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""down"",
                     ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -270,31 +239,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
                     ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -578,24 +525,57 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""325a84d6-94d2-4ac3-9086-4369a48b3e67"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8e18ca03-302a-4d56-8c9c-584b37e5ddc1"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RepulsionMode"",
-                    ""isComposite"": false,
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""28fe9acd-b00d-41aa-b039-8fd560395006"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""name"": ""Up"",
+                    ""id"": ""01853f36-29b5-44ee-999e-a486e327efe1"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AttractionMode"",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8e9179bf-1d75-429c-9fa0-8e27418da0c5"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c0cfa248-caf4-44b6-acaf-380013860bc8"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SeaAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b16d9b8-d62c-4fb7-aa55-d357d8b6ad15"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""SeaAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -699,6 +679,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""AdvanceText"",
                     ""type"": ""Button"",
                     ""id"": ""395afbd1-e01e-4538-a14e-7dd94712d3ac"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ModeChanger"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e844c63-b452-47c3-b61a-078c74059643"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1134,6 +1123,193 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""AdvanceText"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64b2ab57-f5ef-404a-897e-cea9d8c061b0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18c58275-9f39-44ef-8379-ee879926b236"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChanger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""SeaSkill"",
+            ""id"": ""ccfe0ecd-688d-42e5-97f8-219a606eeba7"",
+            ""actions"": [
+                {
+                    ""name"": ""ModeChange"",
+                    ""type"": ""Button"",
+                    ""id"": ""93d72a16-92b9-4a03-b97f-6cbd769abe5a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SeaSkillAction"",
+                    ""type"": ""Value"",
+                    ""id"": ""330fd707-d873-48b1-9810-788ee22d74e8"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SelectRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb1c63a4-0063-466b-871e-b0d9170778ef"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SelectLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee1d481d-150c-4ae2-9e6d-e3776d0854e9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""96c65fbb-d254-4f3b-92fc-822d253c7ba5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5743b33-8595-4d2c-b60f-dcf62d0cbb1b"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ModeChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""9b0bf162-5b63-4180-b34c-ebd50162cd64"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeaSkillAction"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e25d077e-b0bf-406e-a5e3-64cfc4dba1f0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeaSkillAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c33423c6-8381-4756-b1d0-8a7d9f0a64d3"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeaSkillAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""39067627-35e2-4c97-970b-db33fa32cb21"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeaSkillAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f08aed88-b326-48a0-92ae-bf9910bd6c65"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeaSkillAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92519d72-50d3-4606-9682-45f0d3e9d1a8"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a5e6969-a1a5-48a3-a843-fc62e2403e1f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae5c48e0-3787-478e-989b-9e483d6a0853"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ca5c601-cd83-493d-b718-8a6e4d51c118"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1212,8 +1388,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_RepulsionMode = m_Player.FindAction("RepulsionMode", throwIfNotFound: true);
-        m_Player_AttractionMode = m_Player.FindAction("AttractionMode", throwIfNotFound: true);
+        m_Player_SeaAction = m_Player.FindAction("SeaAction", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1227,12 +1402,20 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_AdvanceText = m_UI.FindAction("AdvanceText", throwIfNotFound: true);
+        m_UI_ModeChanger = m_UI.FindAction("ModeChanger", throwIfNotFound: true);
+        // SeaSkill
+        m_SeaSkill = asset.FindActionMap("SeaSkill", throwIfNotFound: true);
+        m_SeaSkill_ModeChange = m_SeaSkill.FindAction("ModeChange", throwIfNotFound: true);
+        m_SeaSkill_SeaSkillAction = m_SeaSkill.FindAction("SeaSkillAction", throwIfNotFound: true);
+        m_SeaSkill_SelectRight = m_SeaSkill.FindAction("SelectRight", throwIfNotFound: true);
+        m_SeaSkill_SelectLeft = m_SeaSkill.FindAction("SelectLeft", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputActions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerInputActions.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_SeaSkill.enabled, "This will cause a leak and performance issues, PlayerInputActions.SeaSkill.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1317,8 +1500,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_RepulsionMode;
-    private readonly InputAction m_Player_AttractionMode;
+    private readonly InputAction m_Player_SeaAction;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1367,13 +1549,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         /// <summary>
-        /// Provides access to the underlying input action "Player/RepulsionMode".
+        /// Provides access to the underlying input action "Player/SeaAction".
         /// </summary>
-        public InputAction @RepulsionMode => m_Wrapper.m_Player_RepulsionMode;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/AttractionMode".
-        /// </summary>
-        public InputAction @AttractionMode => m_Wrapper.m_Player_AttractionMode;
+        public InputAction @SeaAction => m_Wrapper.m_Player_SeaAction;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1427,12 +1605,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @RepulsionMode.started += instance.OnRepulsionMode;
-            @RepulsionMode.performed += instance.OnRepulsionMode;
-            @RepulsionMode.canceled += instance.OnRepulsionMode;
-            @AttractionMode.started += instance.OnAttractionMode;
-            @AttractionMode.performed += instance.OnAttractionMode;
-            @AttractionMode.canceled += instance.OnAttractionMode;
+            @SeaAction.started += instance.OnSeaAction;
+            @SeaAction.performed += instance.OnSeaAction;
+            @SeaAction.canceled += instance.OnSeaAction;
         }
 
         /// <summary>
@@ -1471,12 +1646,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @RepulsionMode.started -= instance.OnRepulsionMode;
-            @RepulsionMode.performed -= instance.OnRepulsionMode;
-            @RepulsionMode.canceled -= instance.OnRepulsionMode;
-            @AttractionMode.started -= instance.OnAttractionMode;
-            @AttractionMode.performed -= instance.OnAttractionMode;
-            @AttractionMode.canceled -= instance.OnAttractionMode;
+            @SeaAction.started -= instance.OnSeaAction;
+            @SeaAction.performed -= instance.OnSeaAction;
+            @SeaAction.canceled -= instance.OnSeaAction;
         }
 
         /// <summary>
@@ -1525,6 +1697,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_AdvanceText;
+    private readonly InputAction m_UI_ModeChanger;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -1580,6 +1753,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/AdvanceText".
         /// </summary>
         public InputAction @AdvanceText => m_Wrapper.m_UI_AdvanceText;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/ModeChanger".
+        /// </summary>
+        public InputAction @ModeChanger => m_Wrapper.m_UI_ModeChanger;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1639,6 +1816,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @AdvanceText.started += instance.OnAdvanceText;
             @AdvanceText.performed += instance.OnAdvanceText;
             @AdvanceText.canceled += instance.OnAdvanceText;
+            @ModeChanger.started += instance.OnModeChanger;
+            @ModeChanger.performed += instance.OnModeChanger;
+            @ModeChanger.canceled += instance.OnModeChanger;
         }
 
         /// <summary>
@@ -1683,6 +1863,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @AdvanceText.started -= instance.OnAdvanceText;
             @AdvanceText.performed -= instance.OnAdvanceText;
             @AdvanceText.canceled -= instance.OnAdvanceText;
+            @ModeChanger.started -= instance.OnModeChanger;
+            @ModeChanger.performed -= instance.OnModeChanger;
+            @ModeChanger.canceled -= instance.OnModeChanger;
         }
 
         /// <summary>
@@ -1716,6 +1899,135 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // SeaSkill
+    private readonly InputActionMap m_SeaSkill;
+    private List<ISeaSkillActions> m_SeaSkillActionsCallbackInterfaces = new List<ISeaSkillActions>();
+    private readonly InputAction m_SeaSkill_ModeChange;
+    private readonly InputAction m_SeaSkill_SeaSkillAction;
+    private readonly InputAction m_SeaSkill_SelectRight;
+    private readonly InputAction m_SeaSkill_SelectLeft;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "SeaSkill".
+    /// </summary>
+    public struct SeaSkillActions
+    {
+        private @PlayerInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public SeaSkillActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "SeaSkill/ModeChange".
+        /// </summary>
+        public InputAction @ModeChange => m_Wrapper.m_SeaSkill_ModeChange;
+        /// <summary>
+        /// Provides access to the underlying input action "SeaSkill/SeaSkillAction".
+        /// </summary>
+        public InputAction @SeaSkillAction => m_Wrapper.m_SeaSkill_SeaSkillAction;
+        /// <summary>
+        /// Provides access to the underlying input action "SeaSkill/SelectRight".
+        /// </summary>
+        public InputAction @SelectRight => m_Wrapper.m_SeaSkill_SelectRight;
+        /// <summary>
+        /// Provides access to the underlying input action "SeaSkill/SelectLeft".
+        /// </summary>
+        public InputAction @SelectLeft => m_Wrapper.m_SeaSkill_SelectLeft;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_SeaSkill; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="SeaSkillActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(SeaSkillActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="SeaSkillActions" />
+        public void AddCallbacks(ISeaSkillActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SeaSkillActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SeaSkillActionsCallbackInterfaces.Add(instance);
+            @ModeChange.started += instance.OnModeChange;
+            @ModeChange.performed += instance.OnModeChange;
+            @ModeChange.canceled += instance.OnModeChange;
+            @SeaSkillAction.started += instance.OnSeaSkillAction;
+            @SeaSkillAction.performed += instance.OnSeaSkillAction;
+            @SeaSkillAction.canceled += instance.OnSeaSkillAction;
+            @SelectRight.started += instance.OnSelectRight;
+            @SelectRight.performed += instance.OnSelectRight;
+            @SelectRight.canceled += instance.OnSelectRight;
+            @SelectLeft.started += instance.OnSelectLeft;
+            @SelectLeft.performed += instance.OnSelectLeft;
+            @SelectLeft.canceled += instance.OnSelectLeft;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="SeaSkillActions" />
+        private void UnregisterCallbacks(ISeaSkillActions instance)
+        {
+            @ModeChange.started -= instance.OnModeChange;
+            @ModeChange.performed -= instance.OnModeChange;
+            @ModeChange.canceled -= instance.OnModeChange;
+            @SeaSkillAction.started -= instance.OnSeaSkillAction;
+            @SeaSkillAction.performed -= instance.OnSeaSkillAction;
+            @SeaSkillAction.canceled -= instance.OnSeaSkillAction;
+            @SelectRight.started -= instance.OnSelectRight;
+            @SelectRight.performed -= instance.OnSelectRight;
+            @SelectRight.canceled -= instance.OnSelectRight;
+            @SelectLeft.started -= instance.OnSelectLeft;
+            @SelectLeft.performed -= instance.OnSelectLeft;
+            @SelectLeft.canceled -= instance.OnSelectLeft;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="SeaSkillActions.UnregisterCallbacks(ISeaSkillActions)" />.
+        /// </summary>
+        /// <seealso cref="SeaSkillActions.UnregisterCallbacks(ISeaSkillActions)" />
+        public void RemoveCallbacks(ISeaSkillActions instance)
+        {
+            if (m_Wrapper.m_SeaSkillActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="SeaSkillActions.AddCallbacks(ISeaSkillActions)" />
+        /// <seealso cref="SeaSkillActions.RemoveCallbacks(ISeaSkillActions)" />
+        /// <seealso cref="SeaSkillActions.UnregisterCallbacks(ISeaSkillActions)" />
+        public void SetCallbacks(ISeaSkillActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SeaSkillActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SeaSkillActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="SeaSkillActions" /> instance referencing this action map.
+    /// </summary>
+    public SeaSkillActions @SeaSkill => new SeaSkillActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1852,19 +2164,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "RepulsionMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "SeaAction" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRepulsionMode(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "AttractionMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAttractionMode(InputAction.CallbackContext context);
+        void OnSeaAction(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1950,5 +2255,48 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAdvanceText(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ModeChanger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnModeChanger(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "SeaSkill" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="SeaSkillActions.AddCallbacks(ISeaSkillActions)" />
+    /// <seealso cref="SeaSkillActions.RemoveCallbacks(ISeaSkillActions)" />
+    public interface ISeaSkillActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "ModeChange" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnModeChange(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SeaSkillAction" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSeaSkillAction(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectLeft(InputAction.CallbackContext context);
     }
 }
