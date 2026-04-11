@@ -7,6 +7,7 @@ public class BlockCreator : MonoBehaviour
     [SerializeField] private GameObject mixtureParent;
     [SerializeField] private Vector2 spawnOffset = new Vector2(1f, 2f);
     private GameObject currentBlock;
+    private BlockAbilityExcuter blockAbilityExcuter;
 
     public void CreateBlock(ItemData item0, ItemData item1 = null, ItemData item2 = null)
     {
@@ -33,17 +34,20 @@ public class BlockCreator : MonoBehaviour
         Vector3 spawnPos = player.position + (Vector3)spawnOffset;
         GameObject parent = Instantiate( mixtureParent);
         parent.transform.position = spawnPos;
+        blockAbilityExcuter = parent.GetComponent<BlockAbilityExcuter>();
         currentBlock = parent;
+
         //Žq‚Æ‚µ‚Ä”z’u
         float spacing = 1f;
-
         for (int i = 0; i < items.Count; i++)
         {
-            GameObject child = Instantiate(items[i].prefab, parent.transform);
-
             // c•À‚Ñ
+            GameObject child = Instantiate(items[i].prefab, parent.transform);
             float offset = (i - (items.Count - 1) * 0.5f) * spacing;
             child.transform.localPosition = new Vector3(0, offset, 0);
+
+            //Ability
+            blockAbilityExcuter.BlockAbilities.Add(items[i].blockAbility);
         }
     }
 }

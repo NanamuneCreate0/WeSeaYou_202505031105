@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7464299067627256936}
   - component: {fileID: 7195387950128526231}
+  - component: {fileID: 5831728152848376017}
   m_Layer: 0
   m_Name: MixtureParent
   m_TagString: Untagged
@@ -59,3 +60,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5831728152848376017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149122198151503222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a832a1c4c1a94cb729abd148e6ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockAbilities: []

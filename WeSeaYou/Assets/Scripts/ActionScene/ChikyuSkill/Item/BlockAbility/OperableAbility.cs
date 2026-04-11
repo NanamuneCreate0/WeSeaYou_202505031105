@@ -1,10 +1,10 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "BlockAbility/PropellerAbility")]
-public class PropellerAbility : BlockAbility
+[CreateAssetMenu(menuName = "BlockAbility/OperableAbility")]
+public class OperableAbility : BlockAbility
 {
     public override void OnStart(BlockAbilityExcuter block)
     {
-        Debug.Log("Propeller");
+        Debug.Log("Operable");
     }
     public override void OnUpdate(BlockAbilityExcuter block)
     {

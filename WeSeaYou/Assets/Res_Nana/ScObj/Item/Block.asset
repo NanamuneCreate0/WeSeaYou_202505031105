@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be95aff982cad34298c96a5c72d3504, type: 3}
   m_Name: Block
   m_EditorClassIdentifier: 
-  itemName: 
+  ID: 1
+  itemName: OperableBlock
   sprite: {fileID: 6967881371962158837, guid: 11ea3c4c49794ce43a4f0ff9c20b40e3, type: 3}
   prefab: {fileID: 3725822034831598027, guid: 9e4a0c973f72ef1439ab7e67f8268917, type: 3}
+  blockAbility: {fileID: 11400000, guid: af12581e2a7685f4982bd74ff191d2ca, type: 2}
   IsBlock: 1
-  ID: 1
