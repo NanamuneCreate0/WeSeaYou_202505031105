@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 
 [System.Serializable]
-public class ScenarioLine
+public class ScenarioLine_Test
 {
     public int Id;
     public string CommandType;

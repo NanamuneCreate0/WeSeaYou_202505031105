@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScenarioLoader : MonoBehaviour
+public class ScenarioLoader_Test : MonoBehaviour
 {
     [SerializeField] private TextAsset csvFile;      // 読み込むCSVファイル
     [SerializeField] private ScenarioManager manager; // 渡し先のManager（演出家）
@@ -9,15 +9,15 @@ public class ScenarioLoader : MonoBehaviour
     void Start()
     {
         // 1. CSVを読み込んでリストを作る（前回のコードの流用）
-        List<ScenarioLine> loadedData = LoadCSV();
+        List<ScenarioLine_Test> loadedData = LoadCSV();
 
         // 2. 作ったリストを Manager に「はい、どうぞ！」と渡す
         manager.SetupData(loadedData);
     }
 
-    private List<ScenarioLine> LoadCSV()
+    private List<ScenarioLine_Test> LoadCSV()
     {
-        List<ScenarioLine> lineList = new List<ScenarioLine>();
+        List<ScenarioLine_Test> lineList = new List<ScenarioLine_Test>();
 
         // 改行で分割
         string[] lines = csvFile.text.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
@@ -27,7 +27,7 @@ public class ScenarioLoader : MonoBehaviour
             string[] values = lines[i].Split(',');
             if (values.Length >= 5)
             {
-                ScenarioLine data = new ScenarioLine();
+                ScenarioLine_Test data = new ScenarioLine_Test();
                 data.Id = int.Parse(values[0]);
                 data.CommandType = values[1];
                 data.Name = values[2];

@@ -1,0 +1,4 @@
+（No.）,カテゴリー (Category),表示(ID),数値 (Param),補足（Comment）,セリフ(ID),NAME,日本語 (JP)【1章】,英語 (EN),中国語 (CH)
+1,TEXT,-,-,-,CH11_MS_001,TESTER1,いろんな表示テストを開始,-,-
+2,PIC,PIC_FACE_SEA_S_○○,-,-,CH11_MS_001,TESTER1,いろんな表示テストを開始,-,-
+3,NON,-,-,-,CH11_MS_002,TESTER2,いろんな表示テストを開始,-,-

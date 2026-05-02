@@ -7,7 +7,7 @@ public class ScenarioView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI messageText;
 
     // u‰‰o‰Æv‚©‚çŒÄ‚Î‚ê‚é–½—ß
-    public void UpdateDisplay(ScenarioLine line)
+    public void UpdateDisplay(ScenarioLine_Test line)
     {
         nameText.text = line.Name;
         messageText.text = line.Message;       

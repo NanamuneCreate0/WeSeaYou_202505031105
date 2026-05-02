@@ -1,5 +1,5 @@
 ID,Command,Name,Message,Still,BGM,SE,Parameters
-1,TALK,テスター１,テスト,,,,
+1,TALK,テスター１,いろんな表示テスト,,,,
 2,TALK,テスター２,長い文章でも\n工夫すればどうとでもなるから\n気にしすぎることはないよ！！,,,,
 3,STILL,,,,,,EventCG_00_Test
 4,TALK,テスター１,スチルテスト,,,,
@@ -7,9 +7,10 @@ ID,Command,Name,Message,Still,BGM,SE,Parameters
 6,TALK,テスター１,立ち絵のちょっとした変更も,,,,
 7,TALK,テスター２,こんな感じでできるよ！,,,,
 8,TALK,テスター１,選択肢テスト,,,,
-9,BRANCH,,A/B,,,,10/12
+9,BRANCH,,A/B,,,,9/11
 10,TALK,アナウンス,Aの選択肢が選ばれました,,,,
 11,SKIP,,,,,,13
 12,TALK,アナウンス,Bの選択肢が選ばれました,,,,
-13,TALK,テスター２,じゃあね～！,,,,
-14,END,,,,,,TestScene_Action
+13,TALK,テスター２,ここからどんどんブラッシュアップしていくぞ～！,,,,
+14,TALK,テスター２,じゃあね～！,,,,
+15,END,,,,,,TestScene_Action

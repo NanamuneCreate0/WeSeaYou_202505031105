@@ -41,7 +41,7 @@ public class ScenarioDisplayer : MonoBehaviour
         yield break;
     }
 
-    public void PlayLine(ScenarioLine line)
+    public void PlayLine(ScenarioLine_Test line)
     {
         // ‚à‚µ“®‚¢‚Ä‚¢‚½‚çˆê’U~‚ß‚éi˜A‘Å‘Îôj
         if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
@@ -58,7 +58,7 @@ public class ScenarioDisplayer : MonoBehaviour
         IsTyping = false;
     }
 
-    private IEnumerator TypeMessage(ScenarioLine line)
+    private IEnumerator TypeMessage(ScenarioLine_Test line)
     {
         IsTyping = true;
         messageText.maxVisibleCharacters = 0;

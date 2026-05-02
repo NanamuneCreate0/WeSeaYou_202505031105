@@ -39,14 +39,14 @@ public class ScenarioManager : MonoBehaviour
     [SerializeField] private GameObject _cinemaScope_down;
     [SerializeField] private GameObject _still;
 
-    private List<ScenarioLine> _csvData;
+    private List<ScenarioLine_Test> _csvData;
     private Transform speakerTransform;
     private Image _stillImage;
     private bool _modeScnario_test = false;
     private int _currentIndex = 0;
 
     // Loader（読み込み担当）からデータを受け取るための入り口
-    public void SetupData(List<ScenarioLine> data)
+    public void SetupData(List<ScenarioLine_Test> data)
     {
         _csvData = data;
         _currentIndex = 0;
@@ -103,7 +103,7 @@ public class ScenarioManager : MonoBehaviour
     {
         if (_csvData == null || _currentIndex >= _csvData.Count || instance.CurrentState == GameMode.Action) return;
 
-        ScenarioLine data = _csvData[_currentIndex];
+        ScenarioLine_Test data = _csvData[_currentIndex];
         switch (data.CommandType)
         {
             case "MODECHANGE":
@@ -176,7 +176,7 @@ public class ScenarioManager : MonoBehaviour
         Onjump(nextIndex - 1);
     }
 
-    private void ExecuteTalkCommand(ScenarioLine data)
+    private void ExecuteTalkCommand(ScenarioLine_Test data)
     {
         // 1. 名簿の中から、CSVのSpeakerNameと一致するキャラクターを探す
         speakerTransform = GetCharacterTransform(data.Name);
@@ -186,8 +186,6 @@ public class ScenarioManager : MonoBehaviour
         }
         else if (instance.CurrentState == GameMode.SubScenario)
         {
-            
-
             if (speakerTransform != null)
             {
                 // 見つかったら、その人の頭上に吹き出しを出す！
@@ -257,7 +255,7 @@ public class ScenarioManager : MonoBehaviour
 
     // 喋り終わった、またはUIを消す時
 
-    private void ExecuteStillCommand(ScenarioLine data)
+    private void ExecuteStillCommand(ScenarioLine_Test data)
     {
         if (string.IsNullOrEmpty(data.Parameters))
         {

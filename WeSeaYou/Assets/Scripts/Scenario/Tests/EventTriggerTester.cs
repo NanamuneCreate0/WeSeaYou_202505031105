@@ -4,9 +4,9 @@ public class EventTriggerTester : MonoBehaviour
 {
     void Update()
     {
-        /*ƒCƒxƒ“ƒg”­‰Î‚ÌƒeƒXƒg‚ð‚±‚±‚Å‚â‚é
+        /*ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         ex)
-        if (Input.Get...)
+        if (Input.Get...())
         {
             ...
         }*/
