@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 
 public class AttractExecuter : MonoBehaviour, ISeaSkill
@@ -70,4 +70,4 @@ public class AttractExecuter : MonoBehaviour, ISeaSkill
         _isPulling = false;
         _attractAppearance.SetActive(false);
     }
-}
+}*/

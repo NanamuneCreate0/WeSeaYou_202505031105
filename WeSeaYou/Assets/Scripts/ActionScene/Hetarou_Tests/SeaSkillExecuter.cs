@@ -2,10 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
+public class SeaSkillExecuter : MonoBehaviour
 {
-    [SerializeField] private GameObject _effectObj;
-    [SerializeField] private GameObject _targettingObj;
+    [SerializeField] private GameObject _targettingObjPrefab;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private float _holdTimeLv1 = 1f;
@@ -20,16 +19,14 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
     private float _holdTime = 0f;
     private bool _hasJumped = false;
 
+    private GameObject _targettingObj;
     private List<Collider2D> _hitResults = new List<Collider2D>(); 
     private List<Collider2D> _candidates = new List<Collider2D>();
     private ContactFilter2D _contactFilter;
-    private Vector2 _currentSkillActionInput;
+    private Vector2 _currentSkillActionInput;//キーボードでいう矢印
     private Vector2 _currentSelectSeaItemInput;
     private bool _isSkill = false;
     private int _selectedIndex = 0;
-
-    private void OnSelectSeaItemRight(InputAction.CallbackContext _) => SelectRight();
-    private void OnSelectSeaItemLeft(InputAction.CallbackContext _) => SelectLeft();
     void Awake()
     {
         _contactFilter = new ContactFilter2D();
@@ -39,17 +36,14 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
 
     private void OnEnable()
     {
-        var selectRight = InputManager.Instance.actions.SeaSkill.SelectRight;
-        var selectLeft = InputManager.Instance.actions.SeaSkill.SelectLeft;
-
-        selectRight.started += OnSelectSeaItemRight;
-        selectLeft.started += OnSelectSeaItemLeft;
+        InputManager.Instance.actions.SeaSkill.SelectRight.started += SelectRight;
+        InputManager.Instance.actions.SeaSkill.SelectLeft.started += SelectLeft;
     }
 
     public void Execute()
     {
-        _effectObj.SetActive(true);
-        _targettingObj.SetActive(true);
+        _isSkill = true;
+        _targettingObj =Instantiate(_targettingObjPrefab);
         UpdateCandidates();
     }
 
@@ -57,7 +51,6 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
     {
         if (!_isSkill) return;
         _currentSkillActionInput = InputManager.Instance.actions.Player.SeaAction.ReadValue<Vector2>();
-        //HandleSelection(0);
         HandleHoldJump();
     }
 
@@ -85,7 +78,6 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
         _selectedIndex = Mathf.Clamp(_selectedIndex, 0,
             Mathf.Max(0, _candidates.Count - 1));
         SetTarget(_candidates[_selectedIndex].transform);
-        _isSkill = true;
     }
 
     private void SetTarget(Transform target)
@@ -94,14 +86,14 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
         _targettingObj.transform.SetParent(target);
     }
 
-    private void SelectRight()
+    private void SelectRight(InputAction.CallbackContext context)
     {
         if (!_isSkill) return;
         Debug.Log("右発火");
         HandleSelection(1);
     }
 
-    private void SelectLeft()
+    private void SelectLeft(InputAction.CallbackContext context)
     {
         if (!_isSkill) return;
         Debug.Log("左発火");
@@ -114,23 +106,6 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
         if (_candidates.Count == 0) return;
 
         int newIndex = _selectedIndex + addIndex;
-
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log(_selectedIndex);
-
-            //_selectedIndex = Mathf.Min(_selectedIndex + 1, _candidates.Count - 1);
-            newIndex = _selectedIndex + 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log(_selectedIndex);
-
-            //_selectedIndex = Mathf.Max(_selectedIndex - 1, 0);
-            newIndex = _selectedIndex - 1;
-        }*/
-
-        //else return;
 
         Debug.Log(newIndex);
         //動かした後、座標が変わっている可能性を考慮し、sortし直しておく
@@ -200,8 +175,7 @@ public class SeaSkillExecuter : MonoBehaviour, ISeaSkill
 
     public void End()
     {
-        _effectObj.SetActive(false);
-        _targettingObj.SetActive(false);
+        Destroy(_targettingObj);
         _isSkill = false;
     }
 }

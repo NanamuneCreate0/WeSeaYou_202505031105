@@ -1,4 +1,4 @@
-using EffekseerTool;
+/*using EffekseerTool;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -73,3 +73,4 @@ public class RepulseExecuter : MonoBehaviour, ISeaSkill
         _repulseAppearance.SetActive(false);
     }
 }
+*/
