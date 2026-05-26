@@ -28,7 +28,7 @@ public class SeaSkillActivator : MonoBehaviour
         if (isInSpecialMode)
         {
             Debug.Log("StartSeaSkill");
-            seaSkillExecuter.Execute();
+            seaSkillExecuter.ActivateSkill();
         }
         else
         {

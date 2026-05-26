@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +20,7 @@ public class SeaSkillExecuter : MonoBehaviour
     private bool _hasJumped = false;
 
     private GameObject _targettingObj;
-    private List<Collider2D> _hitResults = new List<Collider2D>(); 
+    private List<Collider2D> _hitResults = new List<Collider2D>();
     private List<Collider2D> _candidates = new List<Collider2D>();
     private ContactFilter2D _contactFilter;
     private Vector2 _currentSkillActionInput;//キーボードでいう矢印
@@ -43,23 +43,36 @@ public class SeaSkillExecuter : MonoBehaviour
     public void Execute()
     {
         _isSkill = true;
-        _targettingObj =Instantiate(_targettingObjPrefab);
+        _targettingObj = Instantiate(_targettingObjPrefab);
         UpdateCandidates();
     }
 
     void Update()
     {
         if (!_isSkill) return;
-        _currentSkillActionInput = InputManager.Instance.actions.Player.SeaAction.ReadValue<Vector2>();
-        HandleHoldJump();
     }
 
     void FixedUpdate()
     {
         if (!_isSkill) return;
+        _currentSkillActionInput = InputManager.Instance.actions.Player.SeaAction.ReadValue<Vector2>();
+        HandleHoldJump();
         Move(_candidates[_selectedIndex].transform);
     }
 
+    private void SelectRight(InputAction.CallbackContext context)
+    {
+        if (!_isSkill) return;
+        Debug.Log("右発火");
+        HandleSelection(1);
+    }
+
+    private void SelectLeft(InputAction.CallbackContext context)
+    {
+        if (!_isSkill) return;
+        Debug.Log("左発火");
+        HandleSelection(-1);
+    }
     private void UpdateCandidates()
     {
         _candidates.Clear();
@@ -86,19 +99,6 @@ public class SeaSkillExecuter : MonoBehaviour
         _targettingObj.transform.SetParent(target);
     }
 
-    private void SelectRight(InputAction.CallbackContext context)
-    {
-        if (!_isSkill) return;
-        Debug.Log("右発火");
-        HandleSelection(1);
-    }
-
-    private void SelectLeft(InputAction.CallbackContext context)
-    {
-        if (!_isSkill) return;
-        Debug.Log("左発火");
-        HandleSelection(-1);
-    }
 
     // 選択切り替え（Updateで呼ぶ）
     private void HandleSelection(int addIndex)
@@ -124,7 +124,7 @@ public class SeaSkillExecuter : MonoBehaviour
             _holdTime += Time.deltaTime;
             _hasJumped = true;
         }
-        else if(_hasJumped)
+        else if (_hasJumped)
         {
             Jump(_candidates[_selectedIndex].transform);
             _holdTime = 0f;
@@ -179,3 +179,4 @@ public class SeaSkillExecuter : MonoBehaviour
         _isSkill = false;
     }
 }
+*/
