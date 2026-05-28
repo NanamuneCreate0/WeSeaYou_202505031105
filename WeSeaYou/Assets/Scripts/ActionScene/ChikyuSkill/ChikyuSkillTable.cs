@@ -21,7 +21,7 @@ public class ChikyuSkillTable : MonoBehaviour
 
     public void CatchSubmitItem(ItemData item)
     {
-        Debug.Log("Catch "+item.name);
+        //Debug.Log("Catch "+item.name);
         TableItems.Add(item);
         SetItems();
         if (TableItems.Count == 3)//ƒAƒCƒeƒ€3ŒÂ‚È‚ç‡¬

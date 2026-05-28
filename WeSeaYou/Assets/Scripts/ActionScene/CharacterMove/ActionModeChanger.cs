@@ -6,7 +6,7 @@ public class ActionModeChanger : MonoBehaviour
     public enum ActionModeType
     {
         ChikyuView = 0,   // 地球君視点
-        UtyuView = 1,     // 宇宙君視点（今回未使用だけど残すならOK）
+        UtyuView = 1,     // 宇宙君視点（今回未使用だけど一応）
         ChikyuSkill = 10,
         UtyuSkill = 11,
         UtyuSkillActive = 21
@@ -28,12 +28,16 @@ public class ActionModeChanger : MonoBehaviour
     {
         if (MyGameModeController.GameMode == "Action")
         {
-            //ChikyuSkillオンオフ
             if (Input.GetKeyDown(KeyCode.X))
             {
+                //Debug.Log("x");
                 if (ActionMode == ActionModeType.ChikyuView)
                 {
                     ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.ChikyuView);
+                }
+                else if (ActionMode == ActionModeType.UtyuSkill)
+                {
+                    ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.UtyuSkill);
                 }
                 else if (ActionMode == ActionModeType.ChikyuSkill)
                 {
@@ -44,17 +48,18 @@ public class ActionModeChanger : MonoBehaviour
             //UtyuSkillオンオフ
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                //Debug.Log("z");
                 if (ActionMode == ActionModeType.ChikyuView)
                 {
                     ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.ChikyuView);
                 }
+                else if (ActionMode == ActionModeType.ChikyuSkill)
+                {
+                    ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.ChikyuSkill);
+                }
                 else if (ActionMode == ActionModeType.UtyuSkill)
                 {
                     ChangeActionMode(ActionModeType.ChikyuView, ActionModeType.UtyuSkill);
-                }
-                else if (ActionMode == ActionModeType.UtyuSkillActive)
-                {
-                    ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.UtyuSkillActive);
                 }
             }
         }
@@ -62,6 +67,9 @@ public class ActionModeChanger : MonoBehaviour
 
     public void ChangeActionMode(ActionModeType a, ActionModeType b)
     {
+        Debug.Log("配布"); 
+        Debug.Log(ActionModeChangeEvent?.GetInvocationList().Length);
+        ActionModeChangeEvent?.Invoke(a, b);
         if (ActionMode == b)
         {
             ActionMode = a;
@@ -70,7 +78,5 @@ public class ActionModeChanger : MonoBehaviour
         {
             Debug.LogWarning("ChangeActionMode Failed");
         }
-
-        ActionModeChangeEvent?.Invoke(a, b);
     }
 }

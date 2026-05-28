@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class TestBlock : MonoBehaviour, UtyuSkillEventInterface
 {
@@ -6,4 +6,4 @@ public class TestBlock : MonoBehaviour, UtyuSkillEventInterface
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
     }
-}
+}*/

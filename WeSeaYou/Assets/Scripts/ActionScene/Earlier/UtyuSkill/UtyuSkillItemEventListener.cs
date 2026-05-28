@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using static ActionModeChanger;
 
 public class UtyuSkillItemEventListener : MonoBehaviour
@@ -84,4 +84,4 @@ public class UtyuSkillItemEventListener : MonoBehaviour
             ef.OnActivate();
         }
     }
-}
+}*/

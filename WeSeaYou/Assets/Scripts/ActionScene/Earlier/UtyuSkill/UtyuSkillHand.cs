@@ -1,4 +1,4 @@
-using NUnit.Framework;
+/*using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
@@ -202,16 +202,16 @@ public class UtyuSkillHand : MonoBehaviour
             if (HandItems[num1] != null)
             {
                 img.sprite = HandItems[num1].sprite;
-                /*
-                if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }*/
+                
+                //if (!HandItemsBool[num1]) { img.color = Color.gray; }
+                //else { img.color = Color.white; }
             }
             else if (HandItems[num1] == null)
             {
                 img.sprite = NullItem;
-                /*
-                if (!HandItemsBool[num1]) { img.color = Color.gray; }
-                else { img.color = Color.white; }*/
+                ;
+                //if (!HandItemsBool[num1]) { img.color = Color.gray; }
+                //else { img.color = Color.white; }
             }
         }
     }
@@ -235,3 +235,4 @@ public class UtyuSkillHand : MonoBehaviour
     }
 
 }
+*/

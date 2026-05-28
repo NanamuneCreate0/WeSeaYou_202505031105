@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class UtyuSkillActivator : MonoBehaviour
 {
@@ -35,4 +35,4 @@ public class UtyuSkillActivator : MonoBehaviour
     void Update()
     {
     }
-}
+}*/

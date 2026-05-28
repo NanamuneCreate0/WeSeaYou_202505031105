@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using UnityEngine;
 using static ActionModeChanger;
 
@@ -66,4 +66,4 @@ public class UtyuSkillOutput : MonoBehaviour
             MyUtyuSkillUI.SetActive(true);
         }
     }
-}
+}*/

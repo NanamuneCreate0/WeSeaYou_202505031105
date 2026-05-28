@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class UtyuSkillItem : MonoBehaviour
 {
@@ -13,4 +13,4 @@ public class UtyuSkillItem : MonoBehaviour
     {
         
     }
-}
+}*/
