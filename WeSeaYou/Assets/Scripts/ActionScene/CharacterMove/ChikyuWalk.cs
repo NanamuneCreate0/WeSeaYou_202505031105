@@ -27,28 +27,22 @@ public class ChikyuWalk : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        myCol = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>(); 
+        myCol = GetComponentInChildren<Collider2D>();
     }
 
     void OnEnable()
     {
-        var player = InputManager.Instance.actions.Player;
-
-        player.Move.performed += OnMove;
-        player.Move.canceled += OnMove;
-
-        player.Jump.performed += OnJump;
+        InputManager.Instance.actions.Player.Move.performed += OnMove;
+        InputManager.Instance.actions.Player.Move.canceled += OnMove;
+        InputManager.Instance.actions.Player.Jump.performed += OnJump;
     }
 
     void OnDisable()
     {
-        var player = InputManager.Instance.actions.Player;
-
-        player.Move.performed -= OnMove;
-        player.Move.canceled -= OnMove;
-
-        player.Jump.performed -= OnJump;
+        InputManager.Instance.actions.Player.Move.performed -= OnMove;
+        InputManager.Instance.actions.Player.Move.canceled -= OnMove;
+        InputManager.Instance.actions.Player.Jump.performed -= OnJump;
     }
 
     void Update()

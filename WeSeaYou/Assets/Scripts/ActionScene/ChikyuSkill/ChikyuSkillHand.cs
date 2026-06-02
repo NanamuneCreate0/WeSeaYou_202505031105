@@ -14,6 +14,7 @@ HandDisplayCellsはItemを表示する用の枠だね。回転するからこれが出てきたり消滅した
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ChikyuSkillHand : MonoBehaviour
@@ -51,7 +52,6 @@ public class ChikyuSkillHand : MonoBehaviour
     float wayToMove;
     float moveTimer;
 
-
     const float chargeTime = 0.7f; // 満タンまでの時間
     float currentCharge = 0f;
     bool gaugeActive=false;
@@ -63,6 +63,23 @@ public class ChikyuSkillHand : MonoBehaviour
         Right = 1
     }
     private Direction direction;
+
+
+
+    private void OnEnable()
+    {
+        InputManager.Instance.actions.Player.Decide.started += OnDecideStarted;
+        InputManager.Instance.actions.Player.SkillSelectRight.started += OnMoveRight;
+        InputManager.Instance.actions.Player.SkillSelectLeft.started += OnMoveLeft;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Instance.actions.Player.Decide.started -= OnDecideStarted;
+        InputManager.Instance.actions.Player.SkillSelectRight.started -= OnMoveRight;
+        InputManager.Instance.actions.Player.SkillSelectLeft.started -= OnMoveLeft;
+    }
+
     public void ActivationStart()
     {
         //HandDisplayCell関連
@@ -104,10 +121,59 @@ public class ChikyuSkillHand : MonoBehaviour
         }
 
     }
+    private void OnDecideStarted(InputAction.CallbackContext ctx)
+    {
+        if (direction == Direction.None)
+        {
+            int num = WrapIndex(HilightStart + 2, HandItems.Count);
+            if (HandItems[num] != null && HandItemsBool[num])
+            {
+                SubmitItem(HandItems[num], num);
+                SetItem(direction);
+            }
+            else
+            {
+                gaugeActive = true;
+            }
+        }
+    }
 
+    private void OnMoveRight(InputAction.CallbackContext ctx)
+    {
+        if (direction == Direction.None)
+        {
+            //動く用意とHandDisplayCell関連
+            direction = Direction.Left;
+            GameObject go = Instantiate(HandDisplayCell, transform);
+            HandDisplayCells.Add(go);
+            offSetAngle = FirstOffSetAngle;
+            lastOffsetAngle = offSetAngle;
+            wayToMove = +angleDistance;
+            SetCellPos();
+
+            SetItem(direction);
+        }
+    }
+    private void OnMoveLeft(InputAction.CallbackContext ctx)
+    {
+        if (direction == Direction.None)
+        {
+            //動く用意
+            direction = Direction.Right;
+            GameObject go = Instantiate(HandDisplayCell, transform);
+            HandDisplayCells.Insert(0, go);//この二つ
+            offSetAngle = FirstOffSetAngle + angleDistance;//この二つが高速で処理されていい感じ
+            lastOffsetAngle = offSetAngle;
+            wayToMove = -angleDistance;
+            SetCellPos();
+
+            SetItem(direction);
+        }
+    }
     void Update()
     {
         //決定
+        /*
         if (Input.GetKeyDown(KeyCode.C) && direction == Direction.None)
         {
             int num = WrapIndex(HilightStart + 2, HandItems.Count);
@@ -121,9 +187,33 @@ public class ChikyuSkillHand : MonoBehaviour
                 Debug.Log("null Chosen");
                 gaugeActive = true;
             }
+        }*/
+
+        if (InputManager.Instance.actions.Player.Decide.IsPressed() && gaugeActive)
+            //学：startedやcanceledでdecidePressedを管理するのはキャッシュの思想。
+            //目まぐるしく状態が変化する場合、状態の取得は、状態の真実に従う
+        {
+            currentCharge += Time.deltaTime;
+
+            // ゲージ更新
+            gaugeImage.fillAmount = currentCharge / chargeTime;
+
+            // 満タン
+            if (currentCharge >= chargeTime)
+            {
+                currentCharge = 0;
+                MyChikyuSkillTable.CatchSubmitDone();
+            }
+        }
+        else
+        {
+            gaugeActive = false;
+            currentCharge = 0f;
+            gaugeImage.fillAmount = 0f;
         }
 
         //長押し
+        /*
         if (Input.GetKey(KeyCode.C)&&gaugeActive)
         {
             currentCharge += Time.deltaTime;
@@ -142,10 +232,10 @@ public class ChikyuSkillHand : MonoBehaviour
             gaugeActive=false;
             currentCharge = 0f;
             gaugeImage.fillAmount = 0f;
-        }
+        }*/
 
         //右に動かす
-        if (direction == Direction.None && Input.GetKeyDown(KeyCode.D))
+        /*if (direction == Direction.None && Input.GetKeyDown(KeyCode.D))
         {
             //動く用意とHandDisplayCell関連
             direction = Direction.Left;
@@ -171,7 +261,7 @@ public class ChikyuSkillHand : MonoBehaviour
             SetCellPos();
 
             SetItem(direction);
-        }
+        }*/
 
 
         //「動く」ということ

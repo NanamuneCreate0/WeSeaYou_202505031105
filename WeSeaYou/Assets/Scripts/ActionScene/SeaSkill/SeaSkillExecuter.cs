@@ -5,14 +5,14 @@ using static UnityEngine.GraphicsBuffer;
 
 public class SeaSkillExecuter : MonoBehaviour
 {
+    [SerializeField] public float SkillRadius { get; private set; } = 5f;
+    [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _targettingObjPrefab;
-    [SerializeField] private GameObject auraPrefab;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private float _holdTimeLv1 = 1f;
     [SerializeField] private float _holdTimeLv2 = 2f;
     [SerializeField] private float _holdTimeLv3 = 3f;
-    [SerializeField] private float _pullRadiusMax = 10f;
     [SerializeField] private LayerMask _targetLayer;
 
     private float _holdTime = 0f;
@@ -37,13 +37,13 @@ public class SeaSkillExecuter : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.Instance.actions.SeaSkill.SelectRight.started += SelectRight;
-        InputManager.Instance.actions.SeaSkill.SelectLeft.started += SelectLeft;
+        InputManager.Instance.actions.Player.SkillSelectRight.started += SelectRight;
+        InputManager.Instance.actions.Player.SkillSelectLeft.started += SelectLeft;
     }
     private void OnDisable()
     {
-        InputManager.Instance.actions.SeaSkill.SelectRight.started -= SelectRight;
-        InputManager.Instance.actions.SeaSkill.SelectLeft.started -= SelectLeft;
+        InputManager.Instance.actions.Player.SkillSelectRight.started -= SelectRight;
+        InputManager.Instance.actions.Player.SkillSelectLeft.started -= SelectLeft;
     }
 
     public void ActivateSkill()
@@ -51,10 +51,10 @@ public class SeaSkillExecuter : MonoBehaviour
         skillActivated = true;
         _targettingObj =Instantiate(_targettingObjPrefab);
         RefreshCandidates();
-        if (_candidates.Count == 0) { End(); }
+        if (_candidates.Count == 0) { EndSkill(); }
         else { SetFirstTarget(); }
     }
-    public void End()
+    public void EndSkill()
     {
         skillActivated = false;
         Destroy(_targettingObj);
@@ -62,35 +62,12 @@ public class SeaSkillExecuter : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (skillActivated)
-        {
-            _currentSkillActionInput = InputManager.Instance.actions.Player.SeaAction.ReadValue<Vector2>();
-            HandleHoldJump();
-            MoveTarget(target.transform);
-        }
+        if (!skillActivated) { return; }
+        _currentSkillActionInput = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        HandleHoldJump();
+        MoveTarget(target.transform);
+
     }
-    void RefreshCandidates()
-    {
-        _candidates.Clear();
-
-        int count = Physics2D.OverlapCircle(
-            transform.position,
-            _pullRadiusMax,
-            _contactFilter,
-            _hitResults);
-
-        for (int i = 0; i < count; i++)
-        {
-            Collider2D col = _hitResults[i];
-
-            if (col != null && col.CompareTag("UtyuSkillItem"))
-            {
-                _candidates.Add(col);
-            }
-        }
-    }
-
-
     void SetFirstTarget()
     {
         // ˆê”Ô‹ß‚¢‚Ìtarget‚É‚ ‚Ä‚Í‚ß‚é
@@ -114,6 +91,7 @@ public class SeaSkillExecuter : MonoBehaviour
 
     void SelectRight(InputAction.CallbackContext ctx)
     {
+        if (!skillActivated) { return; }
         RefreshCandidates();
         Debug.Log("SelectRightTarget");
         // ˆê”Ô‹ß‚¢¶‚ð’T‚·
@@ -142,6 +120,7 @@ public class SeaSkillExecuter : MonoBehaviour
     }
     void SelectLeft(InputAction.CallbackContext ctx)
     {
+        if (!skillActivated) { return; }
         RefreshCandidates();
         Debug.Log("SelectLeftTarget");
         // ˆê”Ô‹ß‚¢¶‚ð’T‚·
@@ -168,6 +147,28 @@ public class SeaSkillExecuter : MonoBehaviour
         //target‚É“–‚Ä‚Í‚ß‚é
         if (best != null) { target = best; }
         SetTarget(target.transform);
+    }
+
+    void RefreshCandidates()
+    {
+        _candidates.Clear();
+
+        int count = Physics2D.OverlapCircle(
+            _player.transform.position,
+            SkillRadius,
+            _contactFilter,
+            _hitResults);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider2D col = _hitResults[i];
+
+            if (col != null && col.CompareTag("UtyuSkillItem"))
+            {
+                _candidates.Add(col);
+            }
+        }
+        //Debug.Log(_candidates.Count);
     }
 
     private void SetTarget(Transform target)
@@ -226,7 +227,7 @@ public class SeaSkillExecuter : MonoBehaviour
 
     private void MoveTarget(Transform target)
     {
-        Vector2 input = InputManager.Instance.actions.Player.SeaAction.ReadValue<Vector2>();
+        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
 
         Vector3 moveDirection = new Vector3(input.x, 0, 0);
 

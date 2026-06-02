@@ -4,10 +4,10 @@ using static ActionModeChanger;
 
 public class SeaSkillActivator : MonoBehaviour
 {
-    [SerializeField] private SeaSkillExecuter seaSkillExecuter;
     [SerializeField] private ActionModeChanger actionModeChanger;
+    [SerializeField] private SeaSkillExecuter seaSkillExecuter;
+    [SerializeField] private SeaSkillAura seaSkillAura; 
 
-    private bool isInSpecialMode = false;
 
     private void OnEnable()
     {
@@ -19,37 +19,18 @@ public class SeaSkillActivator : MonoBehaviour
     }
     void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
-        Debug.Log(a + "宇宙うけとり" + b);
-        
         if (a == ActionModeChanger.ActionModeType.UtyuSkill)
         {
-            Debug.Log("UtyuSkillはじめ");
             if (b != ActionModeChanger.ActionModeType.ChikyuView && b != ActionModeChanger.ActionModeType.ChikyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
             seaSkillExecuter.ActivateSkill();
+            seaSkillAura.ActivateSkill();
         }
         if (b == ActionModeChanger.ActionModeType.UtyuSkill)
         {
-            Debug.Log("UtyuSkillおわり");
             if (a != ActionModeChanger.ActionModeType.ChikyuView && a != ActionModeChanger.ActionModeType.ChikyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
-            seaSkillExecuter.End();
+            seaSkillExecuter.EndSkill();
+            seaSkillAura.EndSkill();
         }
 
     }
-    /*private void OnSkillStarted(InputAction.CallbackContext _)
-    {
-        //if(actionModeChanger.ActionMode != ActionModeType.UtyuSkill)
-
-        isInSpecialMode = !isInSpecialMode;
-        if (isInSpecialMode)
-        {
-            Debug.Log("StartSeaSkill");
-            seaSkillExecuter.ActivateSkill();
-        }
-        else
-        {
-            Debug.Log("EndSeaSkill");
-            seaSkillExecuter.End();
-        }
-    }*/
-
 }

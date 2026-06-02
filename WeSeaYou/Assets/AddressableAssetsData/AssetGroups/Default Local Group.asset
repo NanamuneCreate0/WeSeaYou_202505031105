@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: d37252d2cd8fd6d4aacdc855efb0dfa5
   m_SerializeEntries:
+  - m_GUID: 005d2d8a2ee01574b94fb416768aa66d
+    m_Address: Assets/Scripts/ActionScene/SeaSkill/Aura.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 050d4d005fcc54e46b36c5849d5730b5
     m_Address: Assets/Res_Nana/Prefab/ActiveItem/Propeller.prefab
     m_ReadOnly: 0
