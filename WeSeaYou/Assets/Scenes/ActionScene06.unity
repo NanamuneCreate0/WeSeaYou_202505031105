@@ -461,10 +461,9 @@ MonoBehaviour:
   _player: {fileID: 860304185}
   _targettingObjPrefab: {fileID: 9059396016876354304, guid: 4f59bc5589c8f0b4d90272171f794bdd, type: 3}
   moveSpeed: 5
-  _jumpForce: 10
-  _holdTimeLv1: 1
-  _holdTimeLv2: 2
-  _holdTimeLv3: 3
+  _jumpForceLv0: 3
+  _jumpForceLv1: 6
+  _jumpForceLv2: 10
   _targetLayer:
     serializedVersion: 2
     m_Bits: 1

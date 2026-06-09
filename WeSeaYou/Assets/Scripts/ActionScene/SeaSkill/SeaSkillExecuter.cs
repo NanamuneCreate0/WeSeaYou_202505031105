@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.GraphicsBuffer;
 
 public class SeaSkillExecuter : MonoBehaviour
@@ -9,24 +10,28 @@ public class SeaSkillExecuter : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _targettingObjPrefab;
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float _jumpForce = 10f;
-    [SerializeField] private float _holdTimeLv1 = 1f;
-    [SerializeField] private float _holdTimeLv2 = 2f;
-    [SerializeField] private float _holdTimeLv3 = 3f;
+    [SerializeField] float _jumpForceLv0 = 3f;
+    [SerializeField] float _jumpForceLv1 = 6f;
+    [SerializeField] float _jumpForceLv2 = 10f;
     [SerializeField] private LayerMask _targetLayer;
 
-    private float _holdTime = 0f;
-    private bool _hasJumped = false;
-
+    //Main Obj or Status
+    private bool skillActivated = false;
+    private Collider2D target;
     private GameObject _targettingObj;
+
+    //Hit
     private List<Collider2D> _hitResults = new List<Collider2D>(); 
     private List<Collider2D> _candidates = new List<Collider2D>();
-    private Collider2D target;
     private ContactFilter2D _contactFilter;
-    private Vector2 _currentSkillActionInput;//キーボードでいう矢印
-    private Vector2 _currentSelectSeaItemInput;
-    private string targetTag;
-    private bool skillActivated = false;
+
+    //Move
+    private bool IsGrounding = false;
+    bool isCharging=false;
+    float chargeTime;
+    int chargeLevel;
+    const float level1Time = 0.75f;
+    const float level2Time = 1.5f;
 
     void Awake()
     {
@@ -63,9 +68,9 @@ public class SeaSkillExecuter : MonoBehaviour
     void FixedUpdate()
     {
         if (!skillActivated) { return; }
-        _currentSkillActionInput = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
-        HandleHoldJump();
-        MoveTarget(target.transform);
+
+        HandleJump();
+        HandleMove(target.transform);
 
     }
     void SetFirstTarget()
@@ -178,59 +183,78 @@ public class SeaSkillExecuter : MonoBehaviour
     }
 
 
-    private void HandleHoldJump()
+    private void HandleJump()
     {
-        if (_currentSkillActionInput.y > 0.5f)
+        Vector2 input=InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        IsGrounding = GroundUtil.CheckGrounded(
+            target,
+            out Collider2D col,
+            out Vector2 point);
+
+        if (!IsGrounding)
         {
-            _holdTime += Time.deltaTime;
-            _hasJumped = true;
+            isCharging = false;
+            chargeTime = 0f;
+            return;
         }
-        else if(_hasJumped)
+
+        bool downInput = input.y < -0.5f;
+
+        // 押し始め
+        if (downInput && !isCharging)
         {
-            Jump(target.transform);
-            _holdTime = 0f;
-            _hasJumped = false;
+            isCharging = true;
+            chargeTime = 0f;
         }
-        else
+
+        // 溜め中
+        if (downInput && isCharging)
         {
-            _holdTime = 0f;
-            _hasJumped = false;
+            chargeTime += Time.deltaTime;
+
+            if (chargeTime >= level2Time)
+            {
+                chargeLevel = 2;
+                _targettingObj.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else if (chargeTime >= level1Time)
+            {
+                chargeLevel = 1;
+                _targettingObj.GetComponent<SpriteRenderer>().color = Color.yellow;
+            }
+            else
+            {
+                chargeLevel = 0;
+            }
+        }
+
+        // 離した
+        if (!downInput && isCharging)
+        {
+            Debug.Log($"Jump Level : {chargeLevel}");
+            float jumpForce = chargeLevel switch
+            {
+                2 => _jumpForceLv2,
+                1 => _jumpForceLv1,
+                _ => _jumpForceLv0
+            };
+            isCharging = false;
+            chargeTime = 0f;
+            chargeLevel = 0;
+
+            _targettingObj.GetComponent<SpriteRenderer>().color = Color.blue;
+
+            target.GetComponent<Rigidbody2D>()
+                .AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
         }
     }
 
-    private void Jump(Transform target)
+    private void HandleMove(Transform target)
     {
-        Debug.Log("発火");
-        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
-        if (rb == null) return;
-
-        float _jumpForceOrigin = _jumpForce;
-
-        if (_holdTime < _holdTimeLv1)
-        {
-            _jumpForce *= 0.5f;
-        }
-        else if (_holdTime >= _holdTimeLv1 && _holdTime <= _holdTimeLv2)
-        {
-            _jumpForce *= 0.75f;
-        }
-        else if (_holdTime > _holdTimeLv3)
-        {
-            _jumpForce *= 1.5f;
-        }
-
-        Debug.Log(_jumpForce);
-        rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-
-        _jumpForce = _jumpForceOrigin;
-    }
-
-    private void MoveTarget(Transform target)
-    {
+        if (isCharging){ return; }
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
-
         Vector3 moveDirection = new Vector3(input.x, 0, 0);
-
         target.transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
     }
 
