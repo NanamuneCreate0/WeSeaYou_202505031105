@@ -6,9 +6,9 @@ public class BombAbility : BlockAbility
 {
     public float explodeAfterSeconds = 10f;
 
-    // Õ“Ë”»’è—p
-    public float minSpeedForCollision = 2f;   // ‚±‚Ì‘¬“xˆÈã‚Å‚È‚¢‚Æ”š”­‚µ‚È‚¢
-    public float speedDropThreshold = 3f;     // ‚±‚Ì‘¬“x·‚ð’´‚¦‚½‚ç”š”­
+    // ï¿½Õ“Ë”ï¿½ï¿½ï¿½p
+    public float minSpeedForCollision = 2f;   // ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½Èï¿½Å‚È‚ï¿½ï¿½Æ”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½
+    public float speedDropThreshold = 3f;     // ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½xï¿½ï¿½ï¿½ð’´‚ï¿½ï¿½ï¿½ï¿½ç”šï¿½ï¿½
 
     public float checkInterval = 0.1f;
 
@@ -42,7 +42,7 @@ public class BombAbility : BlockAbility
         if (!states.TryGetValue(block, out State state)) return;
         if (state.exploded) return;
 
-        // ŽžŠÔ‚Å‚Ì”š”­
+        // ï¿½ï¿½ï¿½Ô‚Å‚Ì”ï¿½ï¿½ï¿½
         state.timer += Time.deltaTime;
         if (state.timer >= explodeAfterSeconds)
         {
@@ -53,14 +53,14 @@ public class BombAbility : BlockAbility
         Rigidbody2D rb = block.GetComponent<Rigidbody2D>();
         if (rb == null) return;
 
-        // 0.1•b‚²‚Æ‚Ìƒ`ƒFƒbƒN
+        // 0.1ï¿½bï¿½ï¿½ï¿½Æ‚Ìƒ`ï¿½Fï¿½bï¿½N
         state.checkTimer += Time.deltaTime;
         if (state.checkTimer < checkInterval) return;
         state.checkTimer = 0f;
 
-        float currentSpeed = rb.velocity.magnitude;
+        float currentSpeed = rb.linearVelocity.magnitude;
 
-        // â‘Î‘¬“x‚ªˆê’èˆÈã‚Ìê‡‚Ì‚Ý‘¬“x·‚ðƒ`ƒFƒbƒN
+        // ï¿½ï¿½Î‘ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½Èï¿½Ìê‡ï¿½Ì‚Ý‘ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
         if (currentSpeed >= minSpeedForCollision)
         {
             float speedDrop = state.prevSampleSpeed - currentSpeed;
@@ -78,7 +78,7 @@ public class BombAbility : BlockAbility
     {
         state.exploded = true;
 
-        // ”š”­ƒGƒtƒFƒNƒg‚È‚Ç‚ ‚ê‚Î‚±‚±‚Å
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½tï¿½Fï¿½Nï¿½gï¿½È‚Ç‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
         GameObject.Destroy(block.gameObject);
         states.Remove(block);

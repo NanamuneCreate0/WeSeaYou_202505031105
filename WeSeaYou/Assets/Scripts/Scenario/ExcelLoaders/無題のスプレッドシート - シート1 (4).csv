@@ -1,4 +1,5 @@
-（No.）,カテゴリー (Category),表示(ID),数値 (Param),補足（Comment）,セリフ(ID),NAME,日本語 (JP)【1章】,英語 (EN),中国語 (CH)
-1,TEXT,-,-,-,CH11_MS_001,TESTER1,いろんな表示テストを開始,-,-
-2,PIC,PIC_FACE_SEA_S_○○,-,-,CH11_MS_001,TESTER1,いろんな表示テストを開始,-,-
-3,NON,-,-,-,CH11_MS_002,TESTER2,いろんな表示テストを開始,-,-
+???No.???,�J�e�S���[ (Category),�\��(ID),���l (Param),�⑫???Comment???,�Z��??(ID),NAME,���{?? (JP)??1????,�p?? (EN),����?? (CH)
+1,TEXT,-,-,-,CH11_MS_001,TESTER1,�����ȕ\���e�X�g,-,-
+2,PIC,PIC_FACE_SEA_PLEASURE,-,-,-,-,-,-,-
+3,EMO,EMO_SEA,,,,,,,
+4,NON,-,-,-,CH11_MS_002,TESTER2,??���ȕ\��??�X�g���J??,-,-

@@ -7,6 +7,7 @@ public class SeaSkillManager : MonoBehaviour
     [SerializeField] private RepulseExecuter _repulseExecuter;
     [SerializeField] private AttractExecuter _attractExecuter;
     [SerializeField] private SeaSkillExecuter _seaPowerExecuter;
+    [SerializeField] private ShockWaveManager _shockWaveManager;
 
     private ISeaSkill _seaSkill;
     private bool _isInSpecialMode = false;
@@ -52,6 +53,7 @@ public class SeaSkillManager : MonoBehaviour
         if (_isInSpecialMode)
         {
             Debug.Log("StartSeaSkill");
+            _shockWaveManager.StartShockWave();
             StartSkillMode();
         }
         else
