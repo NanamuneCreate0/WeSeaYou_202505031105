@@ -73,3 +73,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockAbilities: []
+  bombHitboxPrefab: {fileID: 4931762435143190446, guid: 74bfdce4b711b6146aaf0b8b885d3090, type: 3}
