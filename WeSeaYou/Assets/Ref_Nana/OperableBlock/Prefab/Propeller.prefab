@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1755910843856188676}
   - component: {fileID: 7680706174105802411}
   - component: {fileID: 1444007193840170048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Propeller
   m_TagString: Untagged
   m_Icon: {fileID: 0}

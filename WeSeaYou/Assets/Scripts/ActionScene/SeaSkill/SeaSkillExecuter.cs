@@ -56,8 +56,10 @@ public class SeaSkillExecuter : MonoBehaviour
         skillActivated = true;
         _targettingObj =Instantiate(_targettingObjPrefab);
         RefreshCandidates();
-        if (_candidates.Count == 0) { EndSkill(); }
-        else { SetFirstTarget(); }
+        //EndSkillの権限はAciivatorなので、変えたいなら、Aciivatorが変わるように、ActionModeごと変えないとダメ
+        //if (_candidates.Count == 0) { EndSkill(); }
+        //else { SetFirstTarget(); }
+        SetFirstTarget();
     }
     public void EndSkill()
     {
@@ -69,11 +71,28 @@ public class SeaSkillExecuter : MonoBehaviour
     {
         if (!skillActivated) { return; }
 
-        HandleJump();
-        HandleMove(target.transform);
+        //target範囲外
+        RefreshCandidates();
+        if (!_candidates.Contains(target))
+        {
+            target = null;
+            SetTarget(null);
+        }
 
+        //targetが無くて新たなtargetを得る
+        if(target==null&&_candidates.Count!=0)
+        {
+            SetFirstTarget();
+        }
+
+        //移動
+        if (target != null)
+        {
+            HandleJump();
+            HandleMove(target.transform);
+        }
     }
-    void SetFirstTarget()
+        void SetFirstTarget()
     {
         // 一番近いのtargetにあてはめる
         target = null;
@@ -178,8 +197,21 @@ public class SeaSkillExecuter : MonoBehaviour
 
     private void SetTarget(Transform target)
     {
-        _targettingObj.transform.position = target.position;
-        _targettingObj.transform.SetParent(target);
+
+        isCharging = false;
+        chargeTime = 0f;
+        chargeLevel = 0;
+        if (_targettingObj != null) _targettingObj.GetComponent<SpriteRenderer>().color = Color.blue;
+        if (target == null)
+        {
+            _targettingObj.SetActive(false);
+        }
+        else
+        {
+            _targettingObj.SetActive(true);
+            _targettingObj.transform.position = target.position;
+            _targettingObj.transform.SetParent(target);
+        }
     }
 
 
@@ -197,6 +229,7 @@ public class SeaSkillExecuter : MonoBehaviour
             chargeTime = 0f;
             return;
         }
+        else { Debug.Log("land"); }
 
         bool downInput = input.y < -0.5f;
 
@@ -238,10 +271,10 @@ public class SeaSkillExecuter : MonoBehaviour
                 1 => _jumpForceLv1,
                 _ => _jumpForceLv0
             };
+
             isCharging = false;
             chargeTime = 0f;
             chargeLevel = 0;
-
             _targettingObj.GetComponent<SpriteRenderer>().color = Color.blue;
 
             target.GetComponent<Rigidbody2D>()
