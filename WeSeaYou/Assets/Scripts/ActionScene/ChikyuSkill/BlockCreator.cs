@@ -4,8 +4,9 @@ using UnityEngine;
 public class BlockCreator : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private GameObject mixtureParent;
-    [SerializeField] private Vector2 spawnOffset = new Vector2(1f, 2f);
+    [SerializeField] private ChikyuWalk chikyuWalk;
+    [SerializeField] private GameObject mixturePrefab;
+    [SerializeField] private Vector2 spawnOffset = new Vector2(2f, 0f);
     private GameObject currentBlock;
     private BlockAbilityExcuter blockAbilityExcuter;
 
@@ -30,23 +31,17 @@ public class BlockCreator : MonoBehaviour
             Debug.Log("Create " + item0 + "," + item1 + "," + item2);
         }
 
-        //親オブジェクト生成
-        Vector3 spawnPos = player.position + (Vector3)spawnOffset;
-        GameObject parent = Instantiate( mixtureParent);
-        parent.transform.position = spawnPos;
-        blockAbilityExcuter = parent.GetComponent<BlockAbilityExcuter>();
-        currentBlock = parent;
+        //生成
+        GameObject mixture = Instantiate( mixturePrefab);
+        currentBlock = mixture;
+        //位置
+        Vector2 spawnPos =(Vector2) player.position + spawnOffset* (int)chikyuWalk.LastDirection;
+        mixture.transform.position = spawnPos;
 
-        //子として配置
-        float spacing = 1f;
+        //Ability
+        blockAbilityExcuter = mixture.GetComponent<BlockAbilityExcuter>();
         for (int i = 0; i < items.Count; i++)
         {
-            // 縦並び
-            GameObject child = Instantiate(items[i].prefab, parent.transform);
-            float offset = (i - (items.Count - 1) * 0.5f) * spacing;
-            child.transform.localPosition = new Vector3(0, offset, 0);
-
-            //Ability
             blockAbilityExcuter.BlockAbilities.Add(items[i].blockAbility);
         }
     }

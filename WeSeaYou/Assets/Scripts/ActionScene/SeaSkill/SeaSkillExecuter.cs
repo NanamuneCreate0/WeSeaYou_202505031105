@@ -18,16 +18,16 @@ public class SeaSkillExecuter : MonoBehaviour
     //Main Obj or Status
     private bool skillActivated = false;
     private Collider2D target;
-    private GameObject _targettingObj;
+    private GameObject _targetingObj;
 
     //Hit
-    private List<Collider2D> _hitResults = new List<Collider2D>(); 
+    private List<Collider2D> _hitResults = new List<Collider2D>();
     private List<Collider2D> _candidates = new List<Collider2D>();
     private ContactFilter2D _contactFilter;
 
     //Move
     private bool IsGrounding = false;
-    bool isCharging=false;
+    bool isCharging = false;
     float chargeTime;
     int chargeLevel;
     const float level1Time = 0.75f;
@@ -54,7 +54,7 @@ public class SeaSkillExecuter : MonoBehaviour
     public void ActivateSkill()
     {
         skillActivated = true;
-        _targettingObj =Instantiate(_targettingObjPrefab);
+        _targetingObj = Instantiate(_targettingObjPrefab);
         RefreshCandidates();
         //EndSkillの権限はAciivatorなので、変えたいなら、Aciivatorが変わるように、ActionModeごと変えないとダメ
         //if (_candidates.Count == 0) { EndSkill(); }
@@ -64,15 +64,17 @@ public class SeaSkillExecuter : MonoBehaviour
     public void EndSkill()
     {
         skillActivated = false;
-        Destroy(_targettingObj);
+        Destroy(_targetingObj);
     }
 
     void FixedUpdate()
     {
         if (!skillActivated) { return; }
 
-        //target範囲外
+        //範囲捜索
         RefreshCandidates();
+
+        //targetが範囲外
         if (!_candidates.Contains(target))
         {
             target = null;
@@ -80,7 +82,7 @@ public class SeaSkillExecuter : MonoBehaviour
         }
 
         //targetが無くて新たなtargetを得る
-        if(target==null&&_candidates.Count!=0)
+        if (target == null && _candidates.Count != 0)
         {
             SetFirstTarget();
         }
@@ -92,7 +94,7 @@ public class SeaSkillExecuter : MonoBehaviour
             HandleMove(target.transform);
         }
     }
-        void SetFirstTarget()
+    void SetFirstTarget()
     {
         // 一番近いのtargetにあてはめる
         target = null;
@@ -110,7 +112,7 @@ public class SeaSkillExecuter : MonoBehaviour
                 target = col;
             }
         }
-        SetTarget(target.transform);
+        SetTarget(target != null ? target.transform : null);
     }
 
     void SelectRight(InputAction.CallbackContext ctx)
@@ -201,23 +203,22 @@ public class SeaSkillExecuter : MonoBehaviour
         isCharging = false;
         chargeTime = 0f;
         chargeLevel = 0;
-        if (_targettingObj != null) _targettingObj.GetComponent<SpriteRenderer>().color = Color.blue;
+        if (_targetingObj != null) _targetingObj.GetComponent<SpriteRenderer>().color = Color.blue;
         if (target == null)
         {
-            _targettingObj.SetActive(false);
+            _targetingObj.SetActive(false);
         }
         else
         {
-            _targettingObj.SetActive(true);
-            _targettingObj.transform.position = target.position;
-            _targettingObj.transform.SetParent(target);
+            _targetingObj.SetActive(true);
+            _targetingObj.GetComponent<SeaSkillTargetingObj>().target = target;
         }
     }
 
 
     private void HandleJump()
     {
-        Vector2 input=InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
         IsGrounding = GroundUtil.CheckGrounded(
             target,
             out Collider2D col,
@@ -248,12 +249,12 @@ public class SeaSkillExecuter : MonoBehaviour
             if (chargeTime >= level2Time)
             {
                 chargeLevel = 2;
-                _targettingObj.GetComponent<SpriteRenderer>().color = Color.red;
+                _targetingObj.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else if (chargeTime >= level1Time)
             {
                 chargeLevel = 1;
-                _targettingObj.GetComponent<SpriteRenderer>().color = Color.yellow;
+                _targetingObj.GetComponent<SpriteRenderer>().color = Color.yellow;
             }
             else
             {
@@ -275,7 +276,7 @@ public class SeaSkillExecuter : MonoBehaviour
             isCharging = false;
             chargeTime = 0f;
             chargeLevel = 0;
-            _targettingObj.GetComponent<SpriteRenderer>().color = Color.blue;
+            _targetingObj.GetComponent<SpriteRenderer>().color = Color.blue;
 
             target.GetComponent<Rigidbody2D>()
                 .AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -285,7 +286,7 @@ public class SeaSkillExecuter : MonoBehaviour
 
     private void HandleMove(Transform target)
     {
-        if (isCharging){ return; }
+        if (isCharging) { return; }
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
         Vector3 moveDirection = new Vector3(input.x, 0, 0);
         target.transform.Translate(moveDirection * moveSpeed * Time.deltaTime);

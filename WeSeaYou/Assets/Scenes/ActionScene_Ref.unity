@@ -19543,7 +19543,7 @@ MonoBehaviour:
   _jumpForceLv2: 10
   _targetLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
 --- !u!4 &773561343
 Transform:
   m_ObjectHideFlags: 0
@@ -20032,8 +20032,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1754416794}
-  mixtureParent: {fileID: 3149122198151503222, guid: 5840e4d5f2ceeb346b5170fa6928c95a, type: 3}
-  spawnOffset: {x: 1, y: 2}
+  chikyuWalk: {fileID: 1754416795}
+  mixturePrefab: {fileID: 3149122198151503222, guid: 5840e4d5f2ceeb346b5170fa6928c95a, type: 3}
+  spawnOffset: {x: 0.9, y: 0}
 --- !u!4 &885494030
 Transform:
   m_ObjectHideFlags: 0
@@ -31488,6 +31489,7 @@ MonoBehaviour:
   moveSpeed: 3
   jumpPower: 16
   animator: {fileID: 496138904}
+  LastDirection: 1
 --- !u!50 &1754416796
 Rigidbody2D:
   serializedVersion: 5
@@ -32314,7 +32316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2118874765
 MonoBehaviour:
   m_ObjectHideFlags: 0
