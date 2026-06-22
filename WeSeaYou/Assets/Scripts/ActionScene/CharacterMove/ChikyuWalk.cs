@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class ChikyuWalk : MonoBehaviour
 {
-    enum Direction
+    public enum Direction
     {
-        None,
-        Right,
-        Left
+        Left = -1,
+        None = 0,
+        Right = 1
     }
 
     [SerializeField] float moveSpeed;
@@ -22,33 +22,28 @@ public class ChikyuWalk : MonoBehaviour
     public Vector2 GroundPoint { get; private set; }
 
     Direction direction = Direction.None;
+    public Direction LastDirection= Direction.Right;
 
-    float inputX;
+float inputX;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        myCol = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>(); 
+        myCol = GetComponentInChildren<Collider2D>();
     }
 
     void OnEnable()
     {
-        var player = InputManager.Instance.actions.Player;
-
-        player.Move.performed += OnMove;
-        player.Move.canceled += OnMove;
-
-        player.Jump.performed += OnJump;
+        InputManager.Instance.actions.Player.Move.performed += OnMove;
+        InputManager.Instance.actions.Player.Move.canceled += OnMove;
+        InputManager.Instance.actions.Player.Jump.performed += OnJump;
     }
 
     void OnDisable()
     {
-        var player = InputManager.Instance.actions.Player;
-
-        player.Move.performed -= OnMove;
-        player.Move.canceled -= OnMove;
-
-        player.Jump.performed -= OnJump;
+        InputManager.Instance.actions.Player.Move.performed -= OnMove;
+        InputManager.Instance.actions.Player.Move.canceled -= OnMove;
+        InputManager.Instance.actions.Player.Jump.performed -= OnJump;
     }
 
     void Update()
@@ -58,7 +53,7 @@ public class ChikyuWalk : MonoBehaviour
         ApplyMovement();
     }
 
-    // ===== Ú’n”»’è =====
+    //Ú’n”»’è
     void UpdateGrounding()
     {
         IsGrounding = GroundUtil.CheckGrounded(
@@ -91,10 +86,18 @@ public class ChikyuWalk : MonoBehaviour
     {
         Direction newDirection = Direction.None;
 
-        if (inputX > 0) newDirection = Direction.Right;
-        else if (inputX < 0) newDirection = Direction.Left;
+        if (inputX > 0)
+        {
+            newDirection = Direction.Right;
+            LastDirection = Direction.Right;
+        }
+        else if (inputX < 0)
+        {
+            newDirection = Direction.Left;
+            LastDirection = Direction.Left;
+        }
 
-        if (newDirection == direction) return;
+            if (newDirection == direction) return;
 
         switch (newDirection)
         {

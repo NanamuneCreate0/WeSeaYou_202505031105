@@ -16,6 +16,6 @@ public class TestObj_D : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext context)
     {
-        //Debug.Log("Jump pressed");
+        Debug.Log("TestObjD : Jump pressed");
     }
 }

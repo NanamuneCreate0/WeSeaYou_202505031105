@@ -24,9 +24,11 @@ public static class GroundUtil
             new Vector2(bounds.max.x, footY)
         };
 
+
+        int mask = LayerMask.GetMask("Ground", "Block");
         foreach (var origin in origins)
         {
-            int mask = ~LayerMask.GetMask("Player");
+            //int mask = ~LayerMask.GetMask("Player");
             RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, RAY_LENGTH, mask);
 
             Debug.DrawRay(origin, Vector2.down * RAY_LENGTH, Color.red);

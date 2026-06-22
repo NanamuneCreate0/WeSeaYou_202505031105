@@ -15,29 +15,10 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: d37252d2cd8fd6d4aacdc855efb0dfa5
   m_SerializeEntries:
-  - m_GUID: 050d4d005fcc54e46b36c5849d5730b5
-    m_Address: Assets/Res_Nana/Prefab/ActiveItem/Propeller.prefab
+  - m_GUID: 005d2d8a2ee01574b94fb416768aa66d
+    m_Address: Assets/Scripts/ActionScene/SeaSkill/Aura.prefab
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - AcitveItem
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1bccad647344fc640b8a792134422c90
-    m_Address: Assets/Res_Nana/Prefab/ActiveItem/Bomb.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AcitveItem
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5840e4d5f2ceeb346b5170fa6928c95a
-    m_Address: Assets/Res_Nana/Prefab/ActiveItem/MixtureParent.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AcitveItem
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e4a0c973f72ef1439ab7e67f8268917
-    m_Address: Assets/Res_Nana/Prefab/ActiveItem/Block.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - AcitveItem
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: acec592cc2eec074d83c73daa55fb593, type: 2}
