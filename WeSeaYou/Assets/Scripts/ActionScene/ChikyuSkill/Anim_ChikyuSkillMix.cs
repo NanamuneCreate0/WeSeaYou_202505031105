@@ -25,14 +25,14 @@ public class Anim_ChikyuSkillMix : MonoBehaviour
     void Update()
     {
     }
-    public void StartAnim_Mix(ItemData item0, ItemData item1,ItemData item2)
+    public void StartAnim_Mix(ChikyuSkillItemData item0, ChikyuSkillItemData item1,ChikyuSkillItemData item2)
     {
         AnimTable0.GetComponent<Image>().sprite = item0.sprite;
         AnimTable1.GetComponent<Image>().sprite = item1.sprite;
         MixedItem.GetComponent<Image>().sprite = item2.sprite;
         MixDirector.Play();
     }
-    public void StartAnim_MixFailuer(ItemData item0, ItemData item1)
+    public void StartAnim_MixFailuer(ChikyuSkillItemData item0, ChikyuSkillItemData item1)
     {
         Debug.Log("afsdf");
         AnimTable0.GetComponent<Image>().sprite = item0.sprite;

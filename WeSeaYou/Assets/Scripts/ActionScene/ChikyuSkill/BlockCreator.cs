@@ -10,7 +10,7 @@ public class BlockCreator : MonoBehaviour
     private GameObject currentBlock;
     private BlockAbilityExcuter blockAbilityExcuter;
 
-    public void CreateBlock(ItemData item0, ItemData item1 = null, ItemData item2 = null)
+    public void CreateBlock(ChikyuSkillItemData item0, ChikyuSkillItemData item1 = null, ChikyuSkillItemData item2 = null)
     {
         // 前のブロック削除
         if (currentBlock != null)
@@ -19,7 +19,7 @@ public class BlockCreator : MonoBehaviour
         }
 
         //nullじゃないものだけリストに
-        List<ItemData> items = new List<ItemData>();
+        List<ChikyuSkillItemData> items = new List<ChikyuSkillItemData>();
         if (item0 != null) items.Add(item0);
         if (item1 != null) items.Add(item1);
         if (item2 != null) items.Add(item2);

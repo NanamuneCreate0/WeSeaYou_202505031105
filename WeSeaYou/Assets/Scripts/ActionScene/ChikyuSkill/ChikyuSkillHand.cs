@@ -19,7 +19,7 @@ using UnityEngine.UI;
 
 public class ChikyuSkillHand : MonoBehaviour
 {
-    public List<ItemData> HandItems = new List<ItemData>();//nullも持つ
+    public List<ChikyuSkillItemData> HandItems = new List<ChikyuSkillItemData>();//nullも持つ
 
     public int HilightStart=0;
     //private int isMoving = 0;//0:静止//1:左//2:右
@@ -52,7 +52,7 @@ public class ChikyuSkillHand : MonoBehaviour
     float wayToMove;
     float moveTimer;
 
-    const float chargeTime = 0.7f; // 満タンまでの時間
+    const float chargeTime = 0.15f; // 満タンまでの時間
     float currentCharge = 0f;
     bool gaugeActive=false;
 
@@ -98,7 +98,7 @@ public class ChikyuSkillHand : MonoBehaviour
         //HandItem関連
         HandItems.Clear();
         HandItemsBool.Clear();
-        foreach (ItemData item in PublicStaticStatus.ItemList)
+        foreach (ChikyuSkillItemData item in PublicStaticStatus.ChikyuSkillItemList)
         {
             HandItems.Add(item);
             HandItemsBool.Add(true);
@@ -345,14 +345,14 @@ public class ChikyuSkillHand : MonoBehaviour
             int itemIndex = WrapIndex(i + HandItemsOffset, HandItems.Count);
 
             Image img = HandDisplayCells[i].GetComponent<Image>();
-            ItemData item = HandItems[itemIndex];
+            ChikyuSkillItemData item = HandItems[itemIndex];
             bool selectable = HandItemsBool[itemIndex];
             img.sprite = item != null ? item.sprite : NullItem;
             img.color = selectable ? Color.white : Color.gray;
         }
     }
 
-    void SubmitItem(ItemData item,int num)
+    void SubmitItem(ChikyuSkillItemData item,int num)
     {
         HandItemsBool[num] = false;
         MyChikyuSkillTable.CatchSubmitItem(item);
