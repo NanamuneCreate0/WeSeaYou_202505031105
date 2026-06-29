@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static EffekseerTool.Data.OptionValues;
+//using static EffekseerTool.Data.OptionValues;
 using static GameModeManager;
-using static UnityEditorInternal.VersionControl.ListControl;
+//using static UnityEditorInternal.VersionControl.ListControl;
 using static UnityEngine.GraphicsBuffer;
 
 [System.Serializable]
