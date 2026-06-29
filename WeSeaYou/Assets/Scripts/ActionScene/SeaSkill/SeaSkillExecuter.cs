@@ -10,10 +10,10 @@ public class SeaSkillExecuter : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _targettingObjPrefab;
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] float _jumpForceLv0 = 3f;
-    [SerializeField] float _jumpForceLv1 = 6f;
-    [SerializeField] float _jumpForceLv2 = 10f;
     [SerializeField] private LayerMask _targetLayer;
+    const float _jumpForceLv0 = 8f;
+    const float _jumpForceLv1 = 9f;
+    const float _jumpForceLv2 = 10f;
 
     //Main Obj or Status
     private bool skillActivated = false;
@@ -230,7 +230,7 @@ public class SeaSkillExecuter : MonoBehaviour
             chargeTime = 0f;
             return;
         }
-        else { Debug.Log("land"); }
+        //else { Debug.Log("land"); }
 
         bool downInput = input.y < -0.5f;
 

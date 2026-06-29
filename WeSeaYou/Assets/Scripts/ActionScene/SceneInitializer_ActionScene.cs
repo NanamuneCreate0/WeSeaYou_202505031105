@@ -8,19 +8,18 @@ public class SceneInitializer_ActionScene: MonoBehaviour
     int CurrentStage;
 
     [SerializeField]
-    List<ItemData> debugItems = new List<ItemData>();
+    List<ChikyuSkillItemData> debugItems = new List<ChikyuSkillItemData>();
     void Start()
     {
-        PublicStaticStatus.CurrentStage = CurrentStage;
         Application.targetFrameRate = 60;
         DebugFunction();
     }
     void DebugFunction()
     {
         //Item‘«‚·
-        foreach (ItemData item in debugItems)
+        foreach (ChikyuSkillItemData item in debugItems)
         {
-            PublicStaticStatus.ItemList.Add(item);
+            PublicStaticStatus.ChikyuSkillItemList.Add(item);
         }
     }
 }

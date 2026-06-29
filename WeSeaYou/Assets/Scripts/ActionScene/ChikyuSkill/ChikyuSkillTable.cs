@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ChikyuSkillTable : MonoBehaviour
 {
-    public List<ItemData> TableItems = new List<ItemData>();
+    public List<ChikyuSkillItemData> TableItems = new List<ChikyuSkillItemData>();
 
     [SerializeField]
     private BlockCreator blockCreater;
@@ -19,7 +19,7 @@ public class ChikyuSkillTable : MonoBehaviour
         SetItems();
     }
 
-    public void CatchSubmitItem(ItemData item)
+    public void CatchSubmitItem(ChikyuSkillItemData item)
     {
         //Debug.Log("Catch "+item.name);
         TableItems.Add(item);
@@ -34,9 +34,9 @@ public class ChikyuSkillTable : MonoBehaviour
     {
         actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.ChikyuView, ActionModeChanger.ActionModeType.ChikyuSkill);
 
-        ItemData a = TableItems[0];
-        ItemData b = TableItems.Count >= 2 ? TableItems[1] : null;
-        ItemData c = TableItems.Count >= 3 ? TableItems[2] : null;
+        ChikyuSkillItemData a = TableItems[0];
+        ChikyuSkillItemData b = TableItems.Count >= 2 ? TableItems[1] : null;
+        ChikyuSkillItemData c = TableItems.Count >= 3 ? TableItems[2] : null;
         blockCreater.CreateBlock(a, b, c);
     }
 

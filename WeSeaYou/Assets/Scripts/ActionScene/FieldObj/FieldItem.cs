@@ -3,7 +3,7 @@ using UnityEngine;
 public class FieldItem : MonoBehaviour
 {
     [SerializeField]
-    ItemData MyItem;
+    ChikyuSkillItemData MyItem;
 
     GameModeController MyGameModeController;
 
@@ -18,7 +18,7 @@ public class FieldItem : MonoBehaviour
         if (isTouching&&Input.GetKeyDown(KeyCode.C)&&MyGameModeController.GameMode=="Action")
         {
             Debug.Log("GetItem");
-            PublicStaticStatus.ItemList.Add(MyItem);
+            PublicStaticStatus.ChikyuSkillItemList.Add(MyItem);
             Destroy(gameObject);
         }
     }
