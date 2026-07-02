@@ -5,7 +5,7 @@ using static ActionModeChanger;
 public class SeaSkillActivator : MonoBehaviour
 {
     [SerializeField] private ActionModeChanger actionModeChanger;
-    [SerializeField] private SeaSkillExecuter seaSkillExecuter;
+    [SerializeField] private SeaSkillExecutor seaSkillExecuter;
     [SerializeField] private SeaSkillAura seaSkillAura; 
 
 

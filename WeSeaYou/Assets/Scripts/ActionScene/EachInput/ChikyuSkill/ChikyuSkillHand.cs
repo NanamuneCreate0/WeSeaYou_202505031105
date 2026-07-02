@@ -172,23 +172,6 @@ public class ChikyuSkillHand : MonoBehaviour
     }
     void Update()
     {
-        //決定
-        /*
-        if (Input.GetKeyDown(KeyCode.C) && direction == Direction.None)
-        {
-            int num = WrapIndex(HilightStart + 2, HandItems.Count);
-            if (HandItems[num] != null && HandItemsBool[num])
-            {
-                SubmitItem(HandItems[num], num);
-                SetItem(direction);
-            }
-            else
-            {
-                Debug.Log("null Chosen");
-                gaugeActive = true;
-            }
-        }*/
-
         if (InputManager.Instance.actions.Player.Decide.IsPressed() && gaugeActive)
             //学：startedやcanceledでdecidePressedを管理するのはキャッシュの思想。
             //目まぐるしく状態が変化する場合、状態の取得は、状態の真実に従う
@@ -211,58 +194,6 @@ public class ChikyuSkillHand : MonoBehaviour
             currentCharge = 0f;
             gaugeImage.fillAmount = 0f;
         }
-
-        //長押し
-        /*
-        if (Input.GetKey(KeyCode.C)&&gaugeActive)
-        {
-            currentCharge += Time.deltaTime;
-
-            // ゲージ更新
-            gaugeImage.fillAmount = currentCharge / chargeTime;
-
-            // 満タン
-            if (currentCharge >= chargeTime)
-            {
-                MyChikyuSkillTable.CatchSubmitDone();
-            }
-        }
-        else
-        {
-            gaugeActive=false;
-            currentCharge = 0f;
-            gaugeImage.fillAmount = 0f;
-        }*/
-
-        //右に動かす
-        /*if (direction == Direction.None && Input.GetKeyDown(KeyCode.D))
-        {
-            //動く用意とHandDisplayCell関連
-            direction = Direction.Left;
-            GameObject go = Instantiate(HandDisplayCell, transform);
-            HandDisplayCells.Add(go);
-            offSetAngle = FirstOffSetAngle;
-            lastOffsetAngle = offSetAngle;
-            wayToMove = +angleDistance;
-            SetCellPos();
-
-            SetItem(direction);
-        }
-        //左に動かす
-        else if (direction == Direction.None && Input.GetKeyDown(KeyCode.A))
-        {
-            //動く用意
-            direction = Direction.Right;
-            GameObject go = Instantiate(HandDisplayCell, transform);
-            HandDisplayCells.Insert(0, go);//この二つ
-            offSetAngle = FirstOffSetAngle + angleDistance;//この二つが高速で処理されていい感じ
-            lastOffsetAngle = offSetAngle;
-            wayToMove = -angleDistance;
-            SetCellPos();
-
-            SetItem(direction);
-        }*/
-
 
         //「動く」ということ
         if (direction == Direction.Left)

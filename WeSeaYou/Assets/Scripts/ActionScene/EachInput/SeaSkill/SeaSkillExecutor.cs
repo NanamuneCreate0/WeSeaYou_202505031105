@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-//using static UnityEditor.PlayerSettings;
-using static UnityEngine.GraphicsBuffer;
 
-public class SeaSkillExecuter : MonoBehaviour
+public class SeaSkillExecutor : MonoBehaviour
 {
     [SerializeField] public float SkillRadius { get; private set; } = 5f;
     [SerializeField] private GameObject _player;
@@ -223,7 +221,6 @@ public class SeaSkillExecuter : MonoBehaviour
             target,
             out Collider2D col,
             out Vector2 point);
-
         if (!IsGrounding)
         {
             isCharging = false;

@@ -14,7 +14,7 @@ public static class GroundUtil
         Bounds bounds = col.bounds;
 
         // 下端（足元）
-        float footY = bounds.min.y;
+        float footY = bounds.min.y-0.01f;
 
         // 左・中央・右
         Vector2[] origins = new Vector2[]

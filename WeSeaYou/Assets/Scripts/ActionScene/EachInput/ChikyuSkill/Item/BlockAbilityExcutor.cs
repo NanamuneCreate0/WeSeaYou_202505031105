@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockAbilityExcuter : MonoBehaviour
+public class BlockAbilityExcutor : MonoBehaviour
 {
     public List<BlockAbility> BlockAbilities = new();
     private readonly List<BlockAbility> runtimeAbilities = new();

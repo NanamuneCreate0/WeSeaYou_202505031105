@@ -3,7 +3,7 @@ using UnityEngine;
 public class SeaSkillAura : MonoBehaviour
 {
     [SerializeField] GameObject seaSkillAuraObj;
-    [SerializeField] SeaSkillExecuter _seaSkillExcuter;
+    [SerializeField] SeaSkillExecutor _seaSkillExcuter;
     [SerializeField] Transform _chikyuParent;
 
     GameObject go;

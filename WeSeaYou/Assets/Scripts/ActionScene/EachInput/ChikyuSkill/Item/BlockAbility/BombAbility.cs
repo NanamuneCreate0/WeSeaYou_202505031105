@@ -7,12 +7,12 @@ public class BombAbility : BlockAbility
 
     float timer;
 
-    public override void OnStart(BlockAbilityExcuter block)
+    public override void OnStart(BlockAbilityExcutor block)
     {
         timer = 0f;
     }
 
-    public override void OnUpdate(BlockAbilityExcuter block)
+    public override void OnUpdate(BlockAbilityExcutor block)
     {
         timer += Time.deltaTime;
 
@@ -21,7 +21,7 @@ public class BombAbility : BlockAbility
             block.DestroyBlock();
         }
     }
-    public override void OnBlockDestroy(BlockAbilityExcuter block)
+    public override void OnBlockDestroy(BlockAbilityExcutor block)
     {
         Debug.Log("爆発");
         Instantiate(
