@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class ConfirmTarget : MonoBehaviour
+public class ConfirmActivator : MonoBehaviour//Activator‚ÍIActivatable‹N“®‚Ì–½–¼ƒ‹[ƒ‹‚É‚æ‚Á‚Ä
 {
-    [Header("Prompt")]
     [SerializeField] private GameObject confirmPrompt;
-
-    [Header("Activate")]
     [SerializeField] private MonoBehaviour activatableMonoBehaviour;
 
     private IActivatable _activatable;

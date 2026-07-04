@@ -6,7 +6,7 @@ public class ChikyuConfirmCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ConfirmTarget target = other.GetComponent<ConfirmTarget>();
+        ConfirmActivator target = other.GetComponent<ConfirmActivator>();
 
         if (target != null)
         {
@@ -16,7 +16,7 @@ public class ChikyuConfirmCollider : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        ConfirmTarget target = other.GetComponent<ConfirmTarget>();
+        ConfirmActivator target = other.GetComponent<ConfirmActivator>();
 
         if (target != null)
         {

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConfirmExecutor : MonoBehaviour
+public class ConfirmExecutor : MonoBehaviour//Excuter‚ÍInputŒn“‚Ì–½–¼ƒ‹[ƒ‹‚É‚æ‚Á‚Ä
 {
     [SerializeField]
     private Transform playerTransfrom;
-    private readonly List<ConfirmTarget> _targets = new(); 
-    private ConfirmTarget _currentTarget;//null‚©‚È‚è‹–—e
+    private readonly List<ConfirmActivator> _targets = new(); 
+    private ConfirmActivator _currentTarget;//null‚©‚È‚è‹–—e
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class ConfirmExecutor : MonoBehaviour
     private void RefreshTarget()
     {
         _targets.RemoveAll(t => t == null);
-        ConfirmTarget nearest = GetNearestTarget();
+        ConfirmActivator nearest = GetNearestTarget();
         
         if (nearest != _currentTarget)//Å‚à‹ß‚¢target‚ª•Ï‚í‚Á‚½ê‡
         {
@@ -33,11 +33,11 @@ public class ConfirmExecutor : MonoBehaviour
             _currentTarget?.Select();
         }
     }
-    private ConfirmTarget GetNearestTarget()
+    private ConfirmActivator GetNearestTarget()
     {
-        ConfirmTarget nearest = null;
+        ConfirmActivator nearest = null;
         float nearestDistance = float.MaxValue;
-        foreach (ConfirmTarget target in _targets)
+        foreach (ConfirmActivator target in _targets)
         {
             if (target == null)
                 continue;
@@ -52,7 +52,7 @@ public class ConfirmExecutor : MonoBehaviour
         }
         return nearest;
     }
-    public void AddTarget(ConfirmTarget target)
+    public void AddTarget(ConfirmActivator target)
     {
         if (_targets.Contains(target))
             return;
@@ -60,7 +60,7 @@ public class ConfirmExecutor : MonoBehaviour
         _targets.Add(target);
     }
 
-    public void RemoveTarget(ConfirmTarget target)
+    public void RemoveTarget(ConfirmActivator target)
     {
         _targets.Remove(target);
     }

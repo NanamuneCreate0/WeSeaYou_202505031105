@@ -145,7 +145,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7002078603275295205}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5823ea96f3cca434fb26d38a8507b197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptObject: {fileID: 0}
+  confirmPrompt: {fileID: 0}
   activatableMonoBehaviour: {fileID: 0}
 --- !u!114 &7833702761775271840
 MonoBehaviour:
