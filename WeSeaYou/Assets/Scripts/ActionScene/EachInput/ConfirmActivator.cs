@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class ConfirmActivator : MonoBehaviour//ActivatorはIActivatable起動の命名ルールによって
+public class ConfirmActivator : MonoBehaviour
 {
-    [SerializeField] private GameObject confirmPrompt;
     [SerializeField] private MonoBehaviour activatableMonoBehaviour;
 
     private IActivatable _activatable;
@@ -10,36 +9,15 @@ public class ConfirmActivator : MonoBehaviour//ActivatorはIActivatable起動の命名
     private void Awake()
     {
         _activatable = activatableMonoBehaviour as IActivatable;
-        SetPromptVisible(false);
-    }
-    private void OnDisable()
-    {
-        SetPromptVisible(false);
+
+        if (activatableMonoBehaviour != null && _activatable == null)
+        {
+            Debug.LogError($"{name}: 設定されたMonoBehaviourはIActivatableを実装していません。");
+        }
     }
 
     public void Execute()
     {
-        if (_activatable == null)
-        {
-            Debug.LogError("IActivatableが設定されていません");
-            return;
-        }
-        _activatable.Activate();
-    }
-    public void Select()
-    {
-        SetPromptVisible(true);
-    }
-
-    public void Deselect()
-    {
-        SetPromptVisible(false);
-    }
-    private void SetPromptVisible(bool visible)
-    {
-        if (confirmPrompt != null)
-        {
-            confirmPrompt.SetActive(visible);
-        }
+        _activatable?.Activate();
     }
 }

@@ -6,6 +6,7 @@ public class KeyDoorOnActivate : MonoBehaviour, IActivatable
 
     public void Activate()
     {
+        Debug.Log(StageItemInventory.Contains(keyItem));
         if (!StageItemInventory.Contains(keyItem))
         {
             return;

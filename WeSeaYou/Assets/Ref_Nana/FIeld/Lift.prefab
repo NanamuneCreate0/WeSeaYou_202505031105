@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3063675241914069410}
   - component: {fileID: 1248153894734273312}
   - component: {fileID: 4091245657064378340}
+  - component: {fileID: 1760051592170865495}
   m_Layer: 8
   m_Name: Lift
   m_TagString: Untagged
@@ -162,3 +163,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1760051592170865495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002078603275295205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8c7470efef61d42acfe7ac97299801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPowered: 1
+  moveAxis: 0
+  positiveDistance: 0
+  negativeDistance: 2
+  speed: 1

@@ -12,6 +12,6 @@ public class DisableKinematicOnActivate : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        _rb.bodyType = RigidbodyType2D.Dynamic;
+        if (_rb) _rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

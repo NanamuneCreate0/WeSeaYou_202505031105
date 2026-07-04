@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ConfirmExecutor : MonoBehaviour//ExcuterはInput系統の命名ルールによって
 {
-    [SerializeField]
-    private Transform playerTransfrom;
+    [SerializeField] private Transform playerTransfrom;
+    [SerializeField] private ConfirmPrompt confirmPrompt;
     private readonly List<ConfirmActivator> _targets = new(); 
-    private ConfirmActivator _currentTarget;//nullかなり許容
+    private ConfirmActivator _currentTarget=null;//nullかなり許容
 
     private void Update()
     {
@@ -21,16 +21,23 @@ public class ConfirmExecutor : MonoBehaviour//ExcuterはInput系統の命名ルールによ
     {
         if (_currentTarget != null){_currentTarget.Execute();}//_currentTarget?.Execute();は使えない。Destroy後も参照が残るため
     }
+
     private void RefreshTarget()
     {
         _targets.RemoveAll(t => t == null);
         ConfirmActivator nearest = GetNearestTarget();
-        
+
         if (nearest != _currentTarget)//最も近いtargetが変わった場合
         {
-            _currentTarget?.Deselect();
             _currentTarget = nearest;
-            _currentTarget?.Select();
+            if (_currentTarget != null)
+            {
+                confirmPrompt.UpdateTarget(_currentTarget);
+            }
+            else
+            {
+                confirmPrompt.ClearTarget();
+            }
         }
     }
     private ConfirmActivator GetNearestTarget()
@@ -63,5 +70,11 @@ public class ConfirmExecutor : MonoBehaviour//ExcuterはInput系統の命名ルールによ
     public void RemoveTarget(ConfirmActivator target)
     {
         _targets.Remove(target);
+
+        if (_currentTarget == target)
+        {
+            _currentTarget = null;
+            confirmPrompt.ClearTarget();
+        }
     }
 }
