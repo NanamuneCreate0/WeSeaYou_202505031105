@@ -3,7 +3,7 @@ using UnityEngine;
 public class ConfirmTarget : MonoBehaviour
 {
     [Header("Prompt")]
-    [SerializeField] private GameObject promptObject;
+    [SerializeField] private GameObject confirmPrompt;
 
     [Header("Activate")]
     [SerializeField] private MonoBehaviour activatableMonoBehaviour;
@@ -40,9 +40,9 @@ public class ConfirmTarget : MonoBehaviour
     }
     private void SetPromptVisible(bool visible)
     {
-        if (promptObject != null)
+        if (confirmPrompt != null)
         {
-            promptObject.SetActive(visible);
+            confirmPrompt.SetActive(visible);
         }
     }
 }
