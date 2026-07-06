@@ -46,7 +46,7 @@ float inputX;
         InputManager.Instance.actions.Player.Jump.performed -= OnJump;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         UpdateGrounding();
         UpdateDirection();
@@ -118,10 +118,30 @@ float inputX;
         direction = newDirection;
     }
 
-    void ApplyMovement()
+    /*void ApplyMovement()
     {
         float velocityX = inputX * moveSpeed;
         rb.linearVelocityX = velocityX;
+
+        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
+    }*/
+    void ApplyMovement()
+    {
+        float platformVelocityX = 0f;
+
+        if (IsGrounding && CurrentGroundCollider != null)
+        {
+            //IVelocityProviderÇ™Ç†ÇÍÇŒÇªÇÃë¨ìxÇÅAñ≥ÇØÇÍÇŒRigidbodyÇÃë¨ìxÇéÊìæ
+            IVelocityProvider provider = CurrentGroundCollider.GetComponent<IVelocityProvider>();
+            if (provider != null) { platformVelocityX = provider.Velocity.x; }
+            else
+            {
+                Rigidbody2D groundRb = CurrentGroundCollider.attachedRigidbody;
+                if (groundRb != null){platformVelocityX = groundRb.linearVelocity.x;}
+            }
+        }
+
+        rb.linearVelocityX = inputX * moveSpeed + platformVelocityX;
 
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }

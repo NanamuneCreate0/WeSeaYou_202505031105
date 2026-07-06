@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Lift : MonoBehaviour
+public class Lift : MonoBehaviour, IVelocityProvider
 {
+    public Vector2 Velocity { get; private set; }
     private enum MoveAxis
     {
         Vertical,
@@ -17,29 +18,38 @@ public class Lift : MonoBehaviour
     [SerializeField] private float negativeDistance = 2f;
     [SerializeField] private float speed = 1f;
 
-    private Vector3 _startPosition;
-    private Vector3 _axis;
+
+    private Rigidbody2D _rb;
+    private Vector2 _startPosition;
+    private Vector2 _axis;
     private int _direction = 1;
 
     private void Awake()
     {
-        _startPosition = transform.position;
+        _rb = GetComponent<Rigidbody2D>();
+        _startPosition = _rb.position;
 
         _axis = moveAxis == MoveAxis.Vertical
-            ? Vector3.up
-            : Vector3.right;
+            ? Vector2.up
+            : Vector2.right;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!isPowered)
             return;
 
         float currentDistance = moveAxis == MoveAxis.Vertical
-            ? transform.position.y - _startPosition.y
-            : transform.position.x - _startPosition.x;
+            ? _rb.position.y - _startPosition.y
+            : _rb.position.x - _startPosition.x;
 
-        transform.position += _axis * (_direction * speed * Time.deltaTime);
+        //transform.position += _axis * (_direction * speed * Time.deltaTime);
+
+        Vector2 velocity = _axis * (_direction * speed);
+        Velocity = velocity;
+
+        Vector2 nextPosition = _rb.position + velocity * Time.fixedDeltaTime;
+        _rb.MovePosition(nextPosition);
 
         if (_direction > 0 && currentDistance >= positiveDistance)
         {
@@ -54,10 +64,4 @@ public class Lift : MonoBehaviour
     {
         this.isPowered = active;
     }
-    /*
-
-    public void ToggleActive()
-    {
-        active = !active;
-    }*/
 }
