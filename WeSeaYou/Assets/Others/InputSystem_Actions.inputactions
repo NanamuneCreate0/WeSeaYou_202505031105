@@ -1302,6 +1302,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StageReset",
+                    "type": "Button",
+                    "id": "84ca2bf5-0e7b-41a0-b029-873f57b44cfb",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1522,6 +1531,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Decide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec9b736e-6d5d-471c-a9f1-32cfe88d93ce",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StageReset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1388,6 +1388,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StageReset"",
+                    ""type"": ""Button"",
+                    ""id"": ""84ca2bf5-0e7b-41a0-b029-873f57b44cfb"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1610,6 +1619,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Decide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec9b736e-6d5d-471c-a9f1-32cfe88d93ce"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StageReset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1719,6 +1739,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_SkillSelectLeft = m_Player.FindAction("SkillSelectLeft", throwIfNotFound: true);
         m_Player_SkillSelectRight = m_Player.FindAction("SkillSelectRight", throwIfNotFound: true);
         m_Player_Decide = m_Player.FindAction("Decide", throwIfNotFound: true);
+        m_Player_StageReset = m_Player.FindAction("StageReset", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -2351,6 +2372,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SkillSelectLeft;
     private readonly InputAction m_Player_SkillSelectRight;
     private readonly InputAction m_Player_Decide;
+    private readonly InputAction m_Player_StageReset;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -2394,6 +2416,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Decide".
         /// </summary>
         public InputAction @Decide => m_Wrapper.m_Player_Decide;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/StageReset".
+        /// </summary>
+        public InputAction @StageReset => m_Wrapper.m_Player_StageReset;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -2444,6 +2470,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Decide.started += instance.OnDecide;
             @Decide.performed += instance.OnDecide;
             @Decide.canceled += instance.OnDecide;
+            @StageReset.started += instance.OnStageReset;
+            @StageReset.performed += instance.OnStageReset;
+            @StageReset.canceled += instance.OnStageReset;
         }
 
         /// <summary>
@@ -2479,6 +2508,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Decide.started -= instance.OnDecide;
             @Decide.performed -= instance.OnDecide;
             @Decide.canceled -= instance.OnDecide;
+            @StageReset.started -= instance.OnStageReset;
+            @StageReset.performed -= instance.OnStageReset;
+            @StageReset.canceled -= instance.OnStageReset;
         }
 
         /// <summary>
@@ -2846,5 +2878,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDecide(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "StageReset" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnStageReset(InputAction.CallbackContext context);
     }
 }
