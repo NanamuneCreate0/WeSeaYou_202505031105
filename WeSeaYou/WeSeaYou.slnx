@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Effekseer.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="EffekseerEditor.csproj" />
+  <Project Path="Effekseer.PostProcessing.csproj" />
+  <Project Path="Effekseer.HDRP.csproj" />
+  <Project Path="Effekseer.URP.csproj" />
+</Solution>

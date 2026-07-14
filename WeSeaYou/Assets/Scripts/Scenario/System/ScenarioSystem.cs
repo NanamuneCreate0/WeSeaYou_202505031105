@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,7 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
     public void ExitScenario()           => _state = ScenarioState.NoScenario;
     // Inspector から各コマンドを設定
     [SerializeField] private MonoBehaviour[] _commandComponents;
+    [SerializeField] private CinemaScopeManager _cinema;
 
     // 実行時に使う辞書
     private Dictionary<string, IScenarioCommand> _commands;
@@ -71,10 +73,28 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
     {
         if (Input.GetKeyDown(KeyCode.F) && _state == ScenarioState.NoScenario)
         {
-            _state = ScenarioState.OnScenario;
-            ProcessCurrentCommand();
+            StartScenario();
         }
     }
+
+    public void StartScenario()
+    {
+        StartCoroutine(StartScenarioCorutine());
+    }
+
+    private IEnumerator StartScenarioCorutine()
+    {
+        _state = ScenarioState.OnScenario;
+
+        yield return StartCoroutine(_cinema.PlayCinemaScopeCoroutine());
+
+        yield return new WaitForSeconds(1.5f);
+
+        ProcessCurrentCommand();
+        yield return null;
+    }
+
+
 
     private void ProcessCurrentCommand()
     {
