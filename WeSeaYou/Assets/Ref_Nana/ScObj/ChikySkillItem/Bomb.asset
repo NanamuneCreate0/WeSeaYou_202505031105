@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Bomb
   sprite: {fileID: 1863106890282901942, guid: 1f40d53939ed6bb4c9235801047303c3, type: 3}
   prefab: {fileID: 1599266680037970630, guid: 1bccad647344fc640b8a792134422c90, type: 3}
-  blockAbility: {fileID: 11400000, guid: 63b171d895799984ea811295f5accb08, type: 2}
+  blockAbility: {fileID: 11500000, guid: 6e4869a667d0b48459b87fe0d61ac6e3, type: 3}
   IsBlock: 0

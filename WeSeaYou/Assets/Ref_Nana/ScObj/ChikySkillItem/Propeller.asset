@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Propeller
   sprite: {fileID: 7061882413504209288, guid: df97de9198dc1ac4ba51c7cc16982417, type: 3}
   prefab: {fileID: 7592878504628673798, guid: 050d4d005fcc54e46b36c5849d5730b5, type: 3}
-  blockAbility: {fileID: 11400000, guid: 56fe6c1a127f75f43a15544146337c59, type: 2}
+  blockAbility: {fileID: 11500000, guid: f513d4b426b4cd84b9c0665dd95b84b1, type: 3}
   IsBlock: 0

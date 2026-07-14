@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class BlockCreator : MonoBehaviour
     [SerializeField] private GameObject mixturePrefab;
     [SerializeField] private Vector2 spawnOffset = new Vector2(2f, 0f);
     private GameObject currentBlock;
-    private BlockAbilityExcutor blockAbilityExcuter;
 
     public void CreateBlock(ChikyuSkillItemData item0, ChikyuSkillItemData item1 = null, ChikyuSkillItemData item2 = null)
     {
@@ -39,10 +39,10 @@ public class BlockCreator : MonoBehaviour
         mixture.transform.position = spawnPos;
 
         //Ability
-        blockAbilityExcuter = mixture.GetComponent<BlockAbilityExcutor>();
         for (int i = 0; i < items.Count; i++)
         {
-            blockAbilityExcuter.BlockAbilities.Add(items[i].blockAbility);
+            Type type = items[i].blockAbility.GetClass();
+            mixture.AddComponent(type);
         }
     }
 }

@@ -1,12 +1,11 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "BlockAbility/PropellerAbility")]
-public class PropellerAbility : BlockAbility
+public class PropellerAbility : MonoBehaviour
 {
-    public override void OnStart(BlockAbilityExcutor block)
+    private void Start()
     {
         Debug.Log("Propeller");
     }
-    public override void OnUpdate(BlockAbilityExcutor block)
+    private void Update()
     {
     }
 }

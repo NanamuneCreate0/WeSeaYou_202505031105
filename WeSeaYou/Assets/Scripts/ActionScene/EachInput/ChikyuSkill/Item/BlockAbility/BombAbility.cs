@@ -1,34 +1,31 @@
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "BlockAbility/BombAbility")]
-public class BombAbility : BlockAbility
+public class BombAbility : MonoBehaviour
 {
     const float explodeAfterSeconds = 4f;
 
     float timer;
-
-    public override void OnStart(BlockAbilityExcutor block)
+    private void Start()
     {
         timer = 0f;
     }
-
-    public override void OnUpdate(BlockAbilityExcutor block)
+    private void Update()
     {
         timer += Time.deltaTime;
 
         if (timer >= explodeAfterSeconds)
         {
-            block.DestroyBlock();
+            Destroy(gameObject);
         }
     }
-    public override void OnBlockDestroy(BlockAbilityExcutor block)
+    private void OnDestroy()
     {
         Debug.Log("爆発");
         Instantiate(
-             block.BombHitboxPrefab,
-             block.transform.position,
-             Quaternion.identity
-         );
+            GameAssetManager.Instance.GameAssets.bombHitboxPrefab,
+            transform.position,
+            Quaternion.identity);
 
     }
 }

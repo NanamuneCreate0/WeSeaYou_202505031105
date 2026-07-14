@@ -1,22 +1,15 @@
 using UnityEngine;
-[CreateAssetMenu(menuName = "BlockAbility/OperableAbility")]
-public class OperableAbility : BlockAbility, IVelocityProvider
+public class OperableAbility : MonoBehaviour, IVelocityProvider
 {
     public Vector2 Velocity { get; private set; }
-
-    public override void OnStart(BlockAbilityExcutor block)
+    private void Start()
     {
-        Debug.Log("Propeller");
-        _lastPosition = block.transform.position;
+        _lastPosition = transform.position;
     }
-    public override void OnUpdate(BlockAbilityExcutor block)
+    private void Update()
     {
-        Velocity = (block.transform.position - _lastPosition) / Time.deltaTime;
-        _lastPosition = block.transform.position;
+        Velocity = (transform.position - _lastPosition) / Time.deltaTime;
+        _lastPosition = transform.position;
     }
     Vector3 _lastPosition;
-    void Awake()
-    {
-        Debug.Log("Operable");
-    }
 }

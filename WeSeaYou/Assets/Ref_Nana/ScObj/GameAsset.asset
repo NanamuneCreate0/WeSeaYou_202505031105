@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f513d4b426b4cd84b9c0665dd95b84b1, type: 3}
-  m_Name: PropellerAbility
+  m_Script: {fileID: 11500000, guid: 0a82b031b5cd55d4ab753dc6c252eb15, type: 3}
+  m_Name: GameAsset
   m_EditorClassIdentifier: 
+  bombHitboxPrefab: {fileID: 4931762435143190446, guid: 74bfdce4b711b6146aaf0b8b885d3090, type: 3}
