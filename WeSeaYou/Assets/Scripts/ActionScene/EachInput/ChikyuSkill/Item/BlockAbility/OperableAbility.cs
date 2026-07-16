@@ -2,14 +2,14 @@ using UnityEngine;
 public class OperableAbility : MonoBehaviour, IVelocityProvider
 {
     public Vector2 Velocity { get; private set; }
+    private Vector3 _lastPosition;
     private void Start()
     {
         _lastPosition = transform.position;
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        Velocity = (transform.position - _lastPosition) / Time.deltaTime;
+        Velocity = (transform.position - _lastPosition) / Time.fixedDeltaTime;
         _lastPosition = transform.position;
     }
-    Vector3 _lastPosition;
 }

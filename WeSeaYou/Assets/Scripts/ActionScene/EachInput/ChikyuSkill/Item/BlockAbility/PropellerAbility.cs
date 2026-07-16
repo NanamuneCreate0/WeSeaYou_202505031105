@@ -1,11 +1,26 @@
 using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class PropellerAbility : MonoBehaviour
 {
-    private void Start()
+    private const float MAX_FALL_SPEED = -0.5f;
+
+    private Rigidbody2D _rb;
+
+    private void Awake()
     {
-        Debug.Log("Propeller");
+        _rb = GetComponent<Rigidbody2D>();
     }
-    private void Update()
+
+    private void FixedUpdate()
     {
+        Vector2 velocity = _rb.linearVelocity;
+
+        // —Ž‰º’†‚¾‚¯“K—p
+        if (velocity.y < MAX_FALL_SPEED)
+        {
+            velocity.y = MAX_FALL_SPEED;
+            _rb.linearVelocity = velocity;
+        }
     }
 }

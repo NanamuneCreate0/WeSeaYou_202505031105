@@ -15,6 +15,5 @@ MonoBehaviour:
   ID: 1
   itemName: OperableBlock
   sprite: {fileID: 6967881371962158837, guid: 11ea3c4c49794ce43a4f0ff9c20b40e3, type: 3}
-  prefab: {fileID: 3725822034831598027, guid: 9e4a0c973f72ef1439ab7e67f8268917, type: 3}
-  blockAbility: {fileID: 11500000, guid: 35f1301fad63ed84c9a14904c27aeb6d, type: 3}
+  blockAbility: OperableAbility
   IsBlock: 1

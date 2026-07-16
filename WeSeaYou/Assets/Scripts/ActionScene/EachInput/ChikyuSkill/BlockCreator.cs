@@ -39,10 +39,25 @@ public class BlockCreator : MonoBehaviour
         mixture.transform.position = spawnPos;
 
         //Ability
-        for (int i = 0; i < items.Count; i++)
+        /*for (int i = 0; i < items.Count; i++)
         {
             Type type = items[i].blockAbility.GetClass();
             mixture.AddComponent(type);
+        }*/
+
+        // Ability
+        for (int i = 0; i < items.Count; i++)
+        {
+            Type type = Type.GetType(items[i].blockAbility);
+
+            if (type != null)
+            {
+                mixture.AddComponent(type);
+            }
+            else
+            {
+                Debug.LogWarning("NoComponent");
+            }
         }
     }
 }

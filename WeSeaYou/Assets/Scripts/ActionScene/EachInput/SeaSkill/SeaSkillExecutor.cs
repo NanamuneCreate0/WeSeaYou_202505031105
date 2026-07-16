@@ -262,7 +262,7 @@ public class SeaSkillExecutor : MonoBehaviour
         // —£‚µ‚½
         if (!downInput && isCharging)
         {
-            Debug.Log($"Jump Level : {chargeLevel}");
+            //Debug.Log($"Jump Level : {chargeLevel}");
             float jumpForce = chargeLevel switch
             {
                 2 => _jumpForceLv2,

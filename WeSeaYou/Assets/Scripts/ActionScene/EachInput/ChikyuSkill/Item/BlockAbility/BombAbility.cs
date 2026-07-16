@@ -21,7 +21,6 @@ public class BombAbility : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log("爆発");
         Instantiate(
             GameAssetManager.Instance.GameAssets.bombHitboxPrefab,
             transform.position,
