@@ -34,6 +34,7 @@ public class ScenarioLoader : MonoBehaviour
                 data.Param = values[3];
                 data.Comment = values[4];
                 data.TextID = values[5];
+                //data.EventWaitFlag = int.Parse(values[]);
                 data.Name = values[6];
                 data.JPText = values[7];
                 data.ENText = values[8];

@@ -1,5 +1,9 @@
-???No.???,�J�e�S���[ (Category),�\��(ID),���l (Param),�⑫???Comment???,�Z��??(ID),NAME,���{?? (JP)??1????,�p?? (EN),����?? (CH)
-1,TEXT,-,-,-,CH11_MS_001,TESTER1,�����ȕ\���e�X�g,-,-
-2,PIC,PIC_FACE_SEA_PLEASURE,-,-,-,-,-,-,-
-3,EMO,EMO_SEA,,,,,,,
-4,NON,-,-,-,CH11_MS_002,TESTER2,??���ȕ\��??�X�g���J??,-,-
+No.???,�J�e�S���[ (Category),�\��(ID),���l (Param),�⑫???Comment???,�Z��??(ID),NAME,���{?? (JP)??1????,�p?? (EN),����?? (CH)
+1,TEXT,-,-,-,CH11_MS_001,TESTER1,いろんな表示テスト,-,-
+2,TEXT,-,-,-,CH11_MS_001,TESTER1,あああああああああああああああああああああああああああ,-,-
+3,PIC,PIC_FACE_SEA_PLEASURE,-,-,-,-,-,-,-
+4,EMO,EMO_SEA,,,,,,,
+5,WAIT,,2,,,,,,
+6,EV,PIX_CARA_SEA_W_TIE,2,,,,,,
+7,TEXT,-,-,-,CH11_MS_001,TESTER2,表示テスト終了,-,-
+8,NON,-,-,-,,,,-,-

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,9 +65,19 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
     private void OnScenario(InputAction.CallbackContext context)
     {
         if (_state != ScenarioState.OnScenario) return;
-        if (_commands is IInputReceiver receiver && receiver.HandleAdvanceInput())　return;     // 実行中コマンドが消費したので進めない 
-        _currentIndex++;
-        ProcessCurrentCommand();// 誰も消費しなかったら次行へ
+
+        if (TryGetCurrentCommand(out var command) && command is IInputReceiver receiver)
+        {
+            receiver.HandleAdvanceInput();
+        }
+    }
+
+    private bool TryGetCurrentCommand(out IScenarioCommand command)
+    {
+        command = null;
+        if (_csvData == null) return false;
+        if (_currentIndex < 0 || _currentIndex >= _csvData.Count) return false;
+        return _commands.TryGetValue(_csvData[_currentIndex].Category, out command);
     }
 
     private void Update()
@@ -77,19 +88,20 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
         }
     }
 
-    public void StartScenario()
+    public void StartScenario() // 外部からシナリオを開始するためのメソッド
     {
         StartCoroutine(StartScenarioCorutine());
     }
 
     private IEnumerator StartScenarioCorutine()
     {
-        _state = ScenarioState.OnScenario;
+        
 
         yield return StartCoroutine(_cinema.PlayCinemaScopeCoroutine());
 
         yield return new WaitForSeconds(1.5f);
 
+        _state = ScenarioState.OnScenario;
         ProcessCurrentCommand();
         yield return null;
     }
