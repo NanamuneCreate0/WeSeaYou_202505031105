@@ -32,13 +32,13 @@ public class ScenarioLoader : MonoBehaviour
                 data.Category = values[1];
                 data.ID= values[2];
                 data.Param = values[3];
-                data.Comment = values[4];
-                data.TextID = values[5];
+                data.EventWaitFlag = int.Parse(values[4]);
+                /*data.TextID = values[6];
                 //data.EventWaitFlag = int.Parse(values[]);
-                data.Name = values[6];
-                data.JPText = values[7];
-                data.ENText = values[8];
-                data.CHText = values[9];
+                data.Name = values[7];
+                data.JPText = values[8];
+                data.ENText = values[9];
+                data.CHText = values[10];*/
                 lineList.Add(data);
             }
         }

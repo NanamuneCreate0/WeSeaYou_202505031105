@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PicExecutor : MonoBehaviour, IScenarioCommand
@@ -63,8 +64,8 @@ public class PicExecutor : MonoBehaviour, IScenarioCommand
     {
         SpriteRenderer emotionSprite = emotionTransform.GetComponent<SpriteRenderer>();
         Animator animator = emotionTransform.GetComponent<Animator>();
-        /*emotionSprite.gameObject.SetActive(true);
-        AnimationController clip = Resources.Load<AnimationController>($"Animations/EMOAnimators/{emotionID}"); // 例: "Animations/Emotions/CHARACTER1_FACE_HAPPY"
+        emotionSprite.gameObject.SetActive(true);
+        Animation clip = Resources.Load<Animation>($"Animations/EMOAnimators/{emotionID}"); // 例: "Animations/Emotions/CHARACTER1_FACE_HAPPY"
         if (animator != null && clip != null)
         {
             animator.Play(clip.name);
@@ -75,7 +76,7 @@ public class PicExecutor : MonoBehaviour, IScenarioCommand
             Debug.LogWarning($"アニメーターまたはアニメーションクリップが見つかりません: {emotionID}");
         }
         yield return new WaitForSeconds(2f);
-        emotionSprite.DOFade(0f, 1f).OnComplete(() => emotionSprite.gameObject.SetActive(false));*/ // 例: 表情をフェードアウトして非表示にする
+        emotionSprite.DOFade(0f, 1f).OnComplete(() => emotionSprite.gameObject.SetActive(false)); // 例: 表情をフェードアウトして非表示にする
         yield return null; // 処理が完了するまで待機する
     }
 }
