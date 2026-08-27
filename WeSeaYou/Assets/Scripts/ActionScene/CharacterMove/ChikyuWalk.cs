@@ -120,8 +120,7 @@ float inputX;
 
     /*void ApplyMovement()
     {
-        float velocityX = inputX * moveSpeed;
-        rb.linearVelocityX = velocityX;
+        rb.linearVelocityX = inputX * moveSpeed;
 
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }*/
@@ -145,4 +144,5 @@ float inputX;
 
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }
+
 }

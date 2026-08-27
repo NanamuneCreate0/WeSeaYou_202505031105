@@ -279,14 +279,50 @@ public class SeaSkillExecutor : MonoBehaviour
                 .AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
         }
-    }
-
+    }/*
     private void HandleMove(Transform target)
     {
         if (isCharging) { return; }
-        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
-        Vector3 moveDirection = new Vector3(input.x, 0, 0);
-        target.transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
-    }
 
+        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
+        if (rb == null) { return; }
+
+        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+
+        rb.linearVelocity = new Vector2(
+            input.x * moveSpeed,
+            rb.linearVelocity.y
+        );
+    }*/
+    private void HandleMove(Transform target)
+    {
+        if (isCharging) { return; }
+
+        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
+        if (rb == null) { return; }
+
+        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+
+        float groundVelocityX = 0f;
+
+        // ê⁄ínÇµÇƒÇ¢ÇÈè∞ÇéÊìæ
+        if (GroundUtil.CheckGrounded(
+            target.GetComponent<Collider2D>(),
+            out Collider2D groundCol,
+            out Vector2 hitPoint))
+        {
+            IVelocityProvider provider = groundCol.GetComponent<IVelocityProvider>();
+
+            if (provider != null)
+            {
+                groundVelocityX = provider.Velocity.x;
+                Debug.Log(provider);
+            }
+        }
+
+        rb.linearVelocity = new Vector2(
+            input.x * moveSpeed + groundVelocityX,
+            rb.linearVelocity.y
+        );
+    }
 }

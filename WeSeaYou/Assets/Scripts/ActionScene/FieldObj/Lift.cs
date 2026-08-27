@@ -64,4 +64,8 @@ public class Lift : MonoBehaviour, IVelocityProvider
     {
         this.isPowered = active;
     }
+    public void Activate()
+    {
+        isPowered = true;
+    }
 }
