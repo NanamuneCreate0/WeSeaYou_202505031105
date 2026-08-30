@@ -117,17 +117,10 @@ float inputX;
 
         direction = newDirection;
     }
-
-    /*void ApplyMovement()
-    {
-        rb.linearVelocityX = inputX * moveSpeed;
-
-        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
-    }*/
     void ApplyMovement()
     {
+        /*
         float platformVelocityX = 0f;
-
         if (IsGrounding && CurrentGroundCollider != null)
         {
             //IVelocityProvider‚ª‚ ‚ê‚Î‚»‚Ì‘¬“x‚ğA–³‚¯‚ê‚ÎRigidbody‚Ì‘¬“x‚ğæ“¾
@@ -138,9 +131,9 @@ float inputX;
                 Rigidbody2D groundRb = CurrentGroundCollider.attachedRigidbody;
                 if (groundRb != null){platformVelocityX = groundRb.linearVelocity.x;}
             }
-        }
+        }*/
 
-        rb.linearVelocityX = inputX * moveSpeed + platformVelocityX;
+        rb.linearVelocityX = inputX * moveSpeed /*+ platformVelocityX*/;
 
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }

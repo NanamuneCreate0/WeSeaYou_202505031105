@@ -303,8 +303,8 @@ public class SeaSkillExecutor : MonoBehaviour
 
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
 
+        /*
         float groundVelocityX = 0f;
-
         // Ú’n‚µ‚Ä‚¢‚é°‚ğæ“¾
         if (GroundUtil.CheckGrounded(
             target.GetComponent<Collider2D>(),
@@ -318,11 +318,14 @@ public class SeaSkillExecutor : MonoBehaviour
                 groundVelocityX = provider.Velocity.x;
                 Debug.Log(provider);
             }
-        }
+        }*/
 
-        rb.linearVelocity = new Vector2(
-            input.x * moveSpeed + groundVelocityX,
-            rb.linearVelocity.y
-        );
+        if(Mathf.Abs(input.x)>0.4f)
+        {
+            rb.linearVelocity = new Vector2(
+                Mathf.Sin(input.x) * moveSpeed /*+ groundVelocityX*/,
+                rb.linearVelocity.y
+            );
+        }
     }
 }
