@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class ChikyuWalk : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ChikyuWalk : MonoBehaviour
     }
 
     [SerializeField] float moveSpeed;
+    [SerializeField] float resistance;
+    [SerializeField] float power;
     [SerializeField] float jumpPower;
     [SerializeField] Animator animator;
 
@@ -77,7 +80,7 @@ float inputX;
     {
         if (IsGrounding)
         {
-            rb.AddForce(Vector2.up * jumpPower * 20f);
+            rb.AddForce(Vector2.up * jumpPower *rb.mass);
         }
     }
 
@@ -119,22 +122,24 @@ float inputX;
     }
     void ApplyMovement()
     {
-        /*
-        float platformVelocityX = 0f;
-        if (IsGrounding && CurrentGroundCollider != null)
+
+        float groundVelocityX = 0f;
+        if (GroundUtil.CheckGrounded(
+            myCol,
+            out Collider2D groundCol,
+            out Vector2 hitPoint))
         {
-            //IVelocityProviderÇ™Ç†ÇÍÇŒÇªÇÃë¨ìxÇÅAñ≥ÇØÇÍÇŒRigidbodyÇÃë¨ìxÇéÊìæ
-            IVelocityProvider provider = CurrentGroundCollider.GetComponent<IVelocityProvider>();
-            if (provider != null) { platformVelocityX = provider.Velocity.x; }
-            else
+            IVelocityProvider provider = groundCol.GetComponent<IVelocityProvider>();
+            if (provider != null)
             {
-                Rigidbody2D groundRb = CurrentGroundCollider.attachedRigidbody;
-                if (groundRb != null){platformVelocityX = groundRb.linearVelocity.x;}
+                groundVelocityX = provider.Velocity.x;
+                Debug.Log(provider);
             }
-        }*/
+        }
 
-        rb.linearVelocityX = inputX * moveSpeed /*+ platformVelocityX*/;
-
+        rb.AddForce(Vector2.right * inputX * moveSpeed);
+        float resistanceForce = -(rb.linearVelocityX - groundVelocityX) * Mathf.Pow(resistance,power);
+        rb.AddForce(Vector2.right * resistanceForce);
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }
 

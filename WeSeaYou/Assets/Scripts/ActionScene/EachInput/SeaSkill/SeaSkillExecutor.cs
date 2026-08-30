@@ -276,10 +276,10 @@ public class SeaSkillExecutor : MonoBehaviour
             _targetingObj.GetComponent<SpriteRenderer>().color = Color.blue;
 
             target.GetComponent<Rigidbody2D>()
-                .AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                .AddForce(Vector2.up * jumpForce*target.GetComponent<Rigidbody2D>().mass, ForceMode2D.Impulse);
 
         }
-    }/*
+    }
     private void HandleMove(Transform target)
     {
         if (isCharging) { return; }
@@ -289,41 +289,25 @@ public class SeaSkillExecutor : MonoBehaviour
 
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
 
-        rb.linearVelocity = new Vector2(
-            input.x * moveSpeed,
-            rb.linearVelocity.y
-        );
-    }*/
-    private void HandleMove(Transform target)
-    {
-        if (isCharging) { return; }
-
-        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
-        if (rb == null) { return; }
-
-        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
-
-        /*
+        
         float groundVelocityX = 0f;
-        // ê⁄ínÇµÇƒÇ¢ÇÈè∞ÇéÊìæ
         if (GroundUtil.CheckGrounded(
             target.GetComponent<Collider2D>(),
             out Collider2D groundCol,
             out Vector2 hitPoint))
         {
             IVelocityProvider provider = groundCol.GetComponent<IVelocityProvider>();
-
             if (provider != null)
             {
                 groundVelocityX = provider.Velocity.x;
                 Debug.Log(provider);
             }
-        }*/
+        }
 
-        if(Mathf.Abs(input.x)>0.4f)
+        if (Mathf.Abs(input.x) > 0.4f)
         {
             rb.linearVelocity = new Vector2(
-                Mathf.Sin(input.x) * moveSpeed /*+ groundVelocityX*/,
+                Mathf.Sin(input.x) * moveSpeed + groundVelocityX,
                 rb.linearVelocity.y
             );
         }

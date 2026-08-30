@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class WaypointLift : MonoBehaviour, IVelocityProvider, IActivatable
 {
     public Vector2 Velocity { get; private set; }
