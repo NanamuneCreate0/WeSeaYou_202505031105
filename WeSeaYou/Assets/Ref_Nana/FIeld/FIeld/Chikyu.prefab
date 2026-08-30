@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494930589090401299}
   - component: {fileID: 8765246702414631516}
-  - component: {fileID: 2455473953219682072}
+  - component: {fileID: 8536917248388474377}
   m_Layer: 6
   m_Name: ChikyuCollider
   m_TagString: Untagged
@@ -70,18 +70,52 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.09}
   m_Size: {x: 0.5, y: 0.98}
   m_Direction: 0
---- !u!114 &2455473953219682072
-MonoBehaviour:
+--- !u!61 &8536917248388474377
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026004170758454570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.5, y: 0.9}
+  m_EdgeRadius: 0
 --- !u!1 &1031798349283027467
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ad8de07cef6a9458de3cd616cf9caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  resistance: 25
+  moveSpeed: 240
+  resistance: 80
   power: 1
   jumpPower: 500
   animator: {fileID: 2109907473789153150}

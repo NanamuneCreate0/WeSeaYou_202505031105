@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3014514913592325913}
   - component: {fileID: 7195387950128526231}
   - component: {fileID: -6898052278990615891}
+  - component: {fileID: -6053391646556709272}
   m_Layer: 8
   m_Name: MixtureParent
   m_TagString: UtyuSkillItem
@@ -162,3 +163,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0.02
+--- !u!114 &-6053391646556709272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3149122198151503222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8344439216838825718}
   - component: {fileID: 2285551358603029906}
   - component: {fileID: 8475325975784498097}
-  - component: {fileID: 8204785205182032303}
   m_Layer: 8
   m_Name: Breakable
   m_TagString: Untagged
@@ -103,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -117,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &2285551358603029906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,17 +173,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eb5633d43fc4084496f8b3afe2ef154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8204785205182032303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7710190482491738501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
