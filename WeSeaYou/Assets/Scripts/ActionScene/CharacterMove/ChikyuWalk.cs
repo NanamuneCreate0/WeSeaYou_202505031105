@@ -120,26 +120,26 @@ float inputX;
 
         direction = newDirection;
     }
+    
     void ApplyMovement()
     {
-
         float groundVelocityX = 0f;
-        if (GroundUtil.CheckGrounded(
-            myCol,
-            out Collider2D groundCol,
-            out Vector2 hitPoint))
+
+        if (IsGrounding && CurrentGroundCollider != null)
         {
-            IVelocityProvider provider = groundCol.GetComponent<IVelocityProvider>();
+            IVelocityProvider provider =CurrentGroundCollider.GetComponent<IVelocityProvider>();
             if (provider != null)
             {
                 groundVelocityX = provider.Velocity.x;
-                Debug.Log(provider);
             }
         }
 
-        rb.AddForce(Vector2.right * inputX * moveSpeed);
-        float resistanceForce = -(rb.linearVelocityX - groundVelocityX) * Mathf.Pow(resistance,power);
+        float moveMultiplier = IsGrounding ? 1f : 0.7f;
+        rb.AddForce(Vector2.right * inputX * moveSpeed * moveMultiplier);
+
+        float resistanceForce =-(rb.linearVelocityX - groundVelocityX) * Mathf.Pow(resistance, power);
         rb.AddForce(Vector2.right * resistanceForce);
+
         animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }
 
