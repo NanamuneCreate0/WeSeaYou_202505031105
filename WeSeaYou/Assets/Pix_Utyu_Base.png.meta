@@ -1,0 +1,3018 @@
+fileFormatVersion: 2
+guid: 83e19e9659e62ee49a8a407b4956a98f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5599817771046829756
+    second: Pix_Utyu_Base_0
+  - first:
+      213: -3983979490863985150
+    second: Pix_Utyu_Base_1
+  - first:
+      213: 6507279988375868727
+    second: Pix_Utyu_Base_2
+  - first:
+      213: -5631444616006913512
+    second: Pix_Utyu_Base_3
+  - first:
+      213: -2547161219099885709
+    second: Pix_Utyu_Base_4
+  - first:
+      213: 8497974933690632923
+    second: Pix_Utyu_Base_5
+  - first:
+      213: 8304543075326166071
+    second: Pix_Utyu_Base_6
+  - first:
+      213: -81200188744909098
+    second: Pix_Utyu_Base_7
+  - first:
+      213: -9157615049484080804
+    second: Pix_Utyu_Base_8
+  - first:
+      213: -2840556149556748918
+    second: Pix_Utyu_Base_9
+  - first:
+      213: 6158364207893377052
+    second: Pix_Utyu_Base_10
+  - first:
+      213: -6015165535687138068
+    second: Pix_Utyu_Base_11
+  - first:
+      213: -3099060923390326452
+    second: Pix_Utyu_Base_12
+  - first:
+      213: 8722214170942627174
+    second: Pix_Utyu_Base_13
+  - first:
+      213: -5800136579356460256
+    second: Pix_Utyu_Base_14
+  - first:
+      213: 1691387729261889165
+    second: Pix_Utyu_Base_15
+  - first:
+      213: -1886445635979194826
+    second: Pix_Utyu_Base_16
+  - first:
+      213: 9027454104176680586
+    second: Pix_Utyu_Base_17
+  - first:
+      213: -3184141040393114199
+    second: Pix_Utyu_Base_18
+  - first:
+      213: -6743320357760445656
+    second: Pix_Utyu_Base_19
+  - first:
+      213: 3612744382858807352
+    second: Pix_Utyu_Base_20
+  - first:
+      213: 6714984179127752839
+    second: Pix_Utyu_Base_21
+  - first:
+      213: 7422827959404611292
+    second: Pix_Utyu_Base_22
+  - first:
+      213: -1200071072294732107
+    second: Pix_Utyu_Base_23
+  - first:
+      213: 1561335445917649704
+    second: Pix_Utyu_Base_24
+  - first:
+      213: 8374291862644427723
+    second: Pix_Utyu_Base_25
+  - first:
+      213: 2535479613230729992
+    second: Pix_Utyu_Base_26
+  - first:
+      213: 9205389902786642257
+    second: Pix_Utyu_Base_27
+  - first:
+      213: 6495169560443180032
+    second: Pix_Utyu_Base_28
+  - first:
+      213: -7329972205124846645
+    second: Pix_Utyu_Base_29
+  - first:
+      213: 3914520712149748165
+    second: Pix_Utyu_Base_30
+  - first:
+      213: -7715378046407537314
+    second: Pix_Utyu_Base_31
+  - first:
+      213: 5618083856929019462
+    second: Pix_Utyu_Base_32
+  - first:
+      213: 4105423314290222608
+    second: Pix_Utyu_Base_33
+  - first:
+      213: 6010132617511985874
+    second: Pix_Utyu_Base_34
+  - first:
+      213: -1636606011349030451
+    second: Pix_Utyu_Base_35
+  - first:
+      213: -1488242008667420366
+    second: Pix_Utyu_Base_36
+  - first:
+      213: 1887809371300653715
+    second: Pix_Utyu_Base_37
+  - first:
+      213: -108257621780780531
+    second: Pix_Utyu_Base_38
+  - first:
+      213: 5262069707854996148
+    second: Pix_Utyu_Base_39
+  - first:
+      213: -8331590674482716973
+    second: Pix_Utyu_Base_40
+  - first:
+      213: -3127059630431018375
+    second: Pix_Utyu_Base_41
+  - first:
+      213: -4064747030815439398
+    second: Pix_Utyu_Base_42
+  - first:
+      213: -6947719086325387312
+    second: Pix_Utyu_Base_43
+  - first:
+      213: 5253227726844750722
+    second: Pix_Utyu_Base_44
+  - first:
+      213: -3718454231991475889
+    second: Pix_Utyu_Base_45
+  - first:
+      213: -5028144767295110334
+    second: Pix_Utyu_Base_46
+  - first:
+      213: 6396708750849715266
+    second: Pix_Utyu_Base_47
+  - first:
+      213: 6911432878760749039
+    second: Pix_Utyu_Base_48
+  - first:
+      213: -7899906592257179589
+    second: Pix_Utyu_Base_49
+  - first:
+      213: -3906212941009742355
+    second: Pix_Utyu_Base_50
+  - first:
+      213: -6219677543549454590
+    second: Pix_Utyu_Base_51
+  - first:
+      213: 1329094816716600200
+    second: Pix_Utyu_Base_52
+  - first:
+      213: -4798220032820951066
+    second: Pix_Utyu_Base_53
+  - first:
+      213: -1276378775152442394
+    second: Pix_Utyu_Base_54
+  - first:
+      213: 6316601520795638300
+    second: Pix_Utyu_Base_55
+  - first:
+      213: 3321799070366388372
+    second: Pix_Utyu_Base_56
+  - first:
+      213: 6196695171068290932
+    second: Pix_Utyu_Base_57
+  - first:
+      213: -3211616713289663624
+    second: Pix_Utyu_Base_58
+  - first:
+      213: -4295999975400364680
+    second: Pix_Utyu_Base_59
+  - first:
+      213: 3945530681786346012
+    second: Pix_Utyu_Base_60
+  - first:
+      213: -5308474568402910604
+    second: Pix_Utyu_Base_61
+  - first:
+      213: 2855591866283612451
+    second: Pix_Utyu_Base_62
+  - first:
+      213: -7753111587393090643
+    second: Pix_Utyu_Base_63
+  - first:
+      213: 231249306515115222
+    second: Pix_Utyu_Base_64
+  - first:
+      213: 2725629735841765965
+    second: Pix_Utyu_Base_65
+  - first:
+      213: -1282583031461818479
+    second: Pix_Utyu_Base_66
+  - first:
+      213: 7556867778518072480
+    second: Pix_Utyu_Base_67
+  - first:
+      213: -1970305539463497514
+    second: Pix_Utyu_Base_68
+  - first:
+      213: 3011989854150196250
+    second: Pix_Utyu_Base_69
+  - first:
+      213: -2720499052366397155
+    second: Pix_Utyu_Base_70
+  - first:
+      213: 979405373365376897
+    second: Pix_Utyu_Base_71
+  - first:
+      213: 7065246972033097408
+    second: Pix_Utyu_Base_72
+  - first:
+      213: 5383854389044215927
+    second: Pix_Utyu_Base_73
+  - first:
+      213: -8591195836373756411
+    second: Pix_Utyu_Base_74
+  - first:
+      213: -1572071100063139402
+    second: Pix_Utyu_Base_75
+  - first:
+      213: 908405579574273778
+    second: Pix_Utyu_Base_76
+  - first:
+      213: -3123506381334503494
+    second: Pix_Utyu_Base_77
+  - first:
+      213: 4804059763955480965
+    second: Pix_Utyu_Base_78
+  - first:
+      213: 8965989556341020421
+    second: Pix_Utyu_Base_79
+  - first:
+      213: -6890086055177165821
+    second: Pix_Utyu_Base_80
+  - first:
+      213: -2537036751153259667
+    second: Pix_Utyu_Base_81
+  - first:
+      213: 5784210774448388780
+    second: Pix_Utyu_Base_82
+  - first:
+      213: -6586643219274770303
+    second: Pix_Utyu_Base_83
+  - first:
+      213: 3692388521371950055
+    second: Pix_Utyu_Base_84
+  - first:
+      213: 6337101701996409303
+    second: Pix_Utyu_Base_85
+  - first:
+      213: -232228244698631179
+    second: Pix_Utyu_Base_86
+  - first:
+      213: 4778503524566870076
+    second: Pix_Utyu_Base_87
+  - first:
+      213: 2407908501347871903
+    second: Pix_Utyu_Base_88
+  - first:
+      213: 7494424326786232926
+    second: Pix_Utyu_Base_89
+  - first:
+      213: -8083128614166805216
+    second: Pix_Utyu_Base_90
+  - first:
+      213: 1621606541378443379
+    second: Pix_Utyu_Base_91
+  - first:
+      213: 269743394944834664
+    second: Pix_Utyu_Base_92
+  - first:
+      213: -5158502358309398957
+    second: Pix_Utyu_Base_93
+  - first:
+      213: -9136649636780839581
+    second: Pix_Utyu_Base_94
+  - first:
+      213: -7319245267277182346
+    second: Pix_Utyu_Base_95
+  - first:
+      213: 926154872946280471
+    second: Pix_Utyu_Base_96
+  - first:
+      213: 726085439590200981
+    second: Pix_Utyu_Base_97
+  - first:
+      213: 6345007366794917231
+    second: Pix_Utyu_Base_98
+  - first:
+      213: -7701258926894229796
+    second: Pix_Utyu_Base_99
+  - first:
+      213: 8772956013962471727
+    second: Pix_Utyu_Base_100
+  - first:
+      213: -8010398109831313441
+    second: Pix_Utyu_Base_101
+  - first:
+      213: -4423855555646361996
+    second: Pix_Utyu_Base_102
+  - first:
+      213: 2685246570131212290
+    second: Pix_Utyu_Base_103
+  - first:
+      213: 6657752733889920873
+    second: Pix_Utyu_Base_104
+  - first:
+      213: -1271867256678415790
+    second: Pix_Utyu_Base_105
+  - first:
+      213: 2140046041721715136
+    second: Pix_Utyu_Base_106
+  - first:
+      213: 4277785176103380778
+    second: Pix_Utyu_Base_107
+  - first:
+      213: -5898342515896147442
+    second: Pix_Utyu_Base_108
+  - first:
+      213: -1855478983817478094
+    second: Pix_Utyu_Base_109
+  - first:
+      213: -2799591734659403959
+    second: Pix_Utyu_Base_110
+  - first:
+      213: -2451389107630537455
+    second: Pix_Utyu_Base_111
+  - first:
+      213: -8530809584384089312
+    second: Pix_Utyu_Base_112
+  - first:
+      213: -4233462271945229100
+    second: Pix_Utyu_Base_113
+  - first:
+      213: -4316624157693095959
+    second: Pix_Utyu_Base_114
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1056
+        width: 50
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe7a2af79c86bd40800000000000000
+      internalID: 5599817771046829756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1056
+        width: 50
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e4c96d2cf06b8c0800000000000000
+      internalID: -3983979490863985150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1056
+        width: 50
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735d6212ca08e4a50800000000000000
+      internalID: 6507279988375868727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1056
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8123f9a55f619d1b0800000000000000
+      internalID: -5631444616006913512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1056
+        width: 45
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f76eddd5aa6acd0800000000000000
+      internalID: -2547161219099885709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1056
+        width: 45
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdacdc09d2fdee570800000000000000
+      internalID: 8497974933690632923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7340fba7de9af3370800000000000000
+      internalID: 8304543075326166071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_7
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de3a2acbd48fdef0800000000000000
+      internalID: -81200188744909098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59eab1b1ad99e080800000000000000
+      internalID: -9157615049484080804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d5e1d5b315498d0800000000000000
+      internalID: -2840556149556748918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_10
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10f6f06e97e67550800000000000000
+      internalID: 6158364207893377052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce42234a0d6d58ca0800000000000000
+      internalID: -6015165535687138068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_12
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49860c728cedf4d0800000000000000
+      internalID: -3099060923390326452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_13
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66dd9e183978b0970800000000000000
+      internalID: 8722214170942627174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_14
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b75b2f286c18fa0800000000000000
+      internalID: -5800136579356460256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d860c1cad24097710800000000000000
+      internalID: 1691387729261889165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_16
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ecf5b50bff1d5e0800000000000000
+      internalID: -1886445635979194826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_17
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ed791ada5f74d70800000000000000
+      internalID: 9027454104176680586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_18
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad20a41898afc3d0800000000000000
+      internalID: -3184141040393114199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_19
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823570dbcd9ea62a0800000000000000
+      internalID: -6743320357760445656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838469400eb032230800000000000000
+      internalID: 3612744382858807352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_21
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1024
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788174d888a603d50800000000000000
+      internalID: 6714984179127752839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_22
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1026
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6462583be230760800000000000000
+      internalID: 7422827959404611292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_23
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1021
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be76aec7bd785fe0800000000000000
+      internalID: -1200071072294732107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82bc525d05afaa510800000000000000
+      internalID: 1561335445917649704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_25
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb8d568416773470800000000000000
+      internalID: 8374291862644427723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_26
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80bccd15645df2320800000000000000
+      internalID: 2535479613230729992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_27
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151c096285d10cf70800000000000000
+      internalID: 9205389902786642257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_28
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00455266d4a732a50800000000000000
+      internalID: 6495169560443180032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_29
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbfb048d15b64a90800000000000000
+      internalID: -7329972205124846645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_30
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9489109db235630800000000000000
+      internalID: 3914520712149748165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_31
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d080c6b887de490800000000000000
+      internalID: -7715378046407537314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_32
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6465c92808177fd40800000000000000
+      internalID: 5618083856929019462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_33
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01620ecb0c469f830800000000000000
+      internalID: 4105423314290222608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_34
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1002
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d26ac7c5c7486350800000000000000
+      internalID: 6010132617511985874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_35
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1002
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9a548f08b9949e0800000000000000
+      internalID: -1636606011349030451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239809537c3b85be0800000000000000
+      internalID: -1488242008667420366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_37
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a67040f98d23a10800000000000000
+      internalID: 1887809371300653715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_38
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a278d34446f7ef0800000000000000
+      internalID: -108257621780780531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_39
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b26a080580a60940800000000000000
+      internalID: 5262069707854996148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_40
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de10899c6e306c80800000000000000
+      internalID: -8331590674482716973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_41
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972e1b085d37a94d0800000000000000
+      internalID: -3127059630431018375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_42
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad50c668c1e1797c0800000000000000
+      internalID: -4064747030815439398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_43
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dfaf543d4eb49f90800000000000000
+      internalID: -6947719086325387312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_44
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b60d6e8c637e840800000000000000
+      internalID: 5253227726844750722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_45
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41a994c395656cc0800000000000000
+      internalID: -3718454231991475889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_46
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243c22279f0783ab0800000000000000
+      internalID: -5028144767295110334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_47
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ca70ab7bca5c850800000000000000
+      internalID: 6396708750849715266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_48
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe76d7bb5975aef50800000000000000
+      internalID: 6911432878760749039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_49
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b308eb15fc4ed5290800000000000000
+      internalID: -7899906592257179589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_50
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de59412b6085ac9c0800000000000000
+      internalID: -3906212941009742355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_51
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207b2473a344fa9a0800000000000000
+      internalID: -6219677543549454590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_52
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883b437a1b4e17210800000000000000
+      internalID: 1329094816716600200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_53
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e74b8d5d4c496db0800000000000000
+      internalID: -4798220032820951066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_54
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e3c03c3444694ee0800000000000000
+      internalID: -1276378775152442394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_55
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a57bacd9319a750800000000000000
+      internalID: 6316601520795638300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_56
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4905964a7a6691e20800000000000000
+      internalID: 3321799070366388372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_57
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47767e43d651ff550800000000000000
+      internalID: 6196695171068290932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_58
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b79a97d9b0e63d0800000000000000
+      internalID: -3211616713289663624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875ac2798ca8164c0800000000000000
+      internalID: -4295999975400364680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_60
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1aa742304751c630800000000000000
+      internalID: 3945530681786346012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_61
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 905
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 472462b61828456b0800000000000000
+      internalID: -5308474568402910604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_62
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 898
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329545d3ca911a720800000000000000
+      internalID: 2855591866283612451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_63
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 894
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab4879c61a676490800000000000000
+      internalID: -7753111587393090643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_64
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 895
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc8361e400953300800000000000000
+      internalID: 231249306515115222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_65
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 906
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a1712cdc163d520800000000000000
+      internalID: 2725629735841765965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_66
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f46ce3789533ee0800000000000000
+      internalID: -1282583031461818479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_67
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac3a21e4336fd860800000000000000
+      internalID: 7556867778518072480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_68
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d83b4d0d8118a4e0800000000000000
+      internalID: -1970305539463497514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_69
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cf3bb60dcbcc920800000000000000
+      internalID: 3011989854150196250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_70
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d110ae39688de3ad0800000000000000
+      internalID: -2720499052366397155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_71
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 895
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1875d8a7ffb879d00800000000000000
+      internalID: 979405373365376897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_72
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 768
+        width: 35
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cedf6210bccc0260800000000000000
+      internalID: 7065246972033097408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_73
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 768
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770886dba0b47ba40800000000000000
+      internalID: 5383854389044215927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_74
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 768
+        width: 48
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5069029a7e0f5c880800000000000000
+      internalID: -8591195836373756411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_75
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 768
+        width: 33
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b93417e9a1ee2ae0800000000000000
+      internalID: -1572071100063139402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_76
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 768
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6e18acf0e4b9c00800000000000000
+      internalID: 908405579574273778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_77
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 768
+        width: 52
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf14e6ce7317a4d0800000000000000
+      internalID: -3123506381334503494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_78
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 672
+        width: 35
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 589305ef6e27ba240800000000000000
+      internalID: 4804059763955480965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_79
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 672
+        width: 48
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50791956ff79d6c70800000000000000
+      internalID: 8965989556341020421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_80
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 672
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304ea41fc3f7160a0800000000000000
+      internalID: -6890086055177165821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_81
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 672
+        width: 33
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b16614482aaccd0800000000000000
+      internalID: -2537036751153259667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_82
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 672
+        width: 49
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caabbf4ad05a54050800000000000000
+      internalID: 5784210774448388780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_83
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 672
+        width: 52
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18854ecb3ea8794a0800000000000000
+      internalID: -6586643219274770303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_84
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 576
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebda1d0ccffd3330800000000000000
+      internalID: 3692388521371950055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_85
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 576
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d1f40d2c68e1f750800000000000000
+      internalID: 6337101701996409303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_86
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 576
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3fcef44a5f6ccf0800000000000000
+      internalID: -232228244698631179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_87
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 576
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38a2c353a7a05240800000000000000
+      internalID: 4778503524566870076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_88
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 576
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cab7a360c9a6120800000000000000
+      internalID: 2407908501347871903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_89
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 576
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52b322d73b810860800000000000000
+      internalID: 7494424326786232926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_90
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 480
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025cac60a55f2df80800000000000000
+      internalID: -8083128614166805216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_91
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 480
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378df48ce8a118610800000000000000
+      internalID: 1621606541378443379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_92
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 480
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86cd13440325eb300800000000000000
+      internalID: 269743394944834664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_93
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 480
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35614ff9f615968b0800000000000000
+      internalID: -5158502358309398957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_94
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 480
+        width: 55
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36de97a3099143180800000000000000
+      internalID: -9136649636780839581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_95
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 480
+        width: 55
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a0cfb5531dc6a90800000000000000
+      internalID: -7319245267277182346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_96
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 384
+        width: 42
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 718c5f033fc5adc00800000000000000
+      internalID: 926154872946280471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_97
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 384
+        width: 43
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5967b5f3cd2931a00800000000000000
+      internalID: 726085439590200981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_98
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 384
+        width: 42
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f653c03359efd0850800000000000000
+      internalID: 6345007366794917231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_99
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 384
+        width: 40
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd6d92b1fc1af1590800000000000000
+      internalID: -7701258926894229796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_100
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 384
+        width: 42
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f292c5a730dcfb970800000000000000
+      internalID: 8772956013962471727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_101
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 384
+        width: 42
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd74b0a2c5955d090800000000000000
+      internalID: -8010398109831313441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_102
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 288
+        width: 39
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e6f0c8fce4b92c0800000000000000
+      internalID: -4423855555646361996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_103
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 288
+        width: 37
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208c10b4789e34520800000000000000
+      internalID: 2685246570131212290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_104
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 288
+        width: 41
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ff4e156d6156c50800000000000000
+      internalID: 6657752733889920873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_105
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 288
+        width: 39
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2528b3cf77b695ee0800000000000000
+      internalID: -1271867256678415790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_106
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 373
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9bdc75988f2bd10800000000000000
+      internalID: 2140046041721715136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_107
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 288
+        width: 39
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27e217f3febd5b30800000000000000
+      internalID: 4277785176103380778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_108
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 288
+        width: 42
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e022d688bb0e42ea0800000000000000
+      internalID: -5898342515896147442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_109
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 192
+        width: 39
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2304b59e1b30046e0800000000000000
+      internalID: -1855478983817478094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_110
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 192
+        width: 37
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fa183762ad529d0800000000000000
+      internalID: -2799591734659403959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_111
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 192
+        width: 41
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1158b69389aeafdd0800000000000000
+      internalID: -2451389107630537455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_112
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 192
+        width: 39
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023e94491e97c9980800000000000000
+      internalID: -8530809584384089312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_113
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 39
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dcbfa65e78bf35c0800000000000000
+      internalID: -4233462271945229100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pix_Utyu_Base_114
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 192
+        width: 42
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef45d3f2354814c0800000000000000
+      internalID: -4316624157693095959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

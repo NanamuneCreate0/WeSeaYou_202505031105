@@ -1,4 +1,5 @@
-（No.）,カテゴリー (Category),表示(ID),数値 (Param),"終了待ち(EventWait)",補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】,英語 (EN),中国語 (CH)
+（No.）,カテゴリー (Category),表示(ID),数値 (Param),"終了待ち
+(EventWait)",補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】,英語 (EN),中国語 (CH)
 1,TEXT,TEST_MS_001,-,0,-,TEST_MS_001,TESTER1,いろんな表示テスト,-,-
 2,TEXT,TEST_MS_002,-,0,-,TEST_MS_002,TESTER1,あああああああああああああああああああああああああああ,-,-
 3,PIC,PIC_FACE_SEA_PLEASURE,-,0,-,TEST_MS_003,TESTER2,表示テスト終了,-,-
