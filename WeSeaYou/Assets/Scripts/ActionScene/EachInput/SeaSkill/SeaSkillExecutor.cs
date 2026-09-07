@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class SeaSkillExecutor : MonoBehaviour
 {
+    public event Action<Collider2D, bool> CandidateStateChanged;
+    public event Action<Collider2D, bool> TargetStateChanged;
     [SerializeField] public float SkillRadius { get; private set; } = 5f;
     [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _targettingObjPrefab;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private LayerMask _targetLayer;
     const float _jumpForceLv0 = 8f;
@@ -16,7 +18,6 @@ public class SeaSkillExecutor : MonoBehaviour
     //Main Obj or Status
     private bool skillActivated = false;
     private Collider2D target;
-    private GameObject _targetingObj;
 
     //Hit
     private List<Collider2D> _hitResults = new List<Collider2D>();
@@ -52,7 +53,6 @@ public class SeaSkillExecutor : MonoBehaviour
     public void ActivateSkill()
     {
         skillActivated = true;
-        _targetingObj = Instantiate(_targettingObjPrefab);
         RefreshCandidates();
         //EndSkillの権限はAciivatorなので、変えたいなら、Aciivatorが変わるように、ActionModeごと変えないとダメ
         //if (_candidates.Count == 0) { EndSkill(); }
@@ -61,8 +61,20 @@ public class SeaSkillExecutor : MonoBehaviour
     }
     public void EndSkill()
     {
+
+        SetTarget(null);
+
+        //ClearCandidates()
+        foreach (Collider2D candidate in _candidates)
+        {
+            if (candidate != null)
+            {
+                CandidateStateChanged?.Invoke(candidate, false);
+            }
+        }
+        _candidates.Clear();
+
         skillActivated = false;
-        Destroy(_targetingObj);
     }
 
     void FixedUpdate()
@@ -72,18 +84,8 @@ public class SeaSkillExecutor : MonoBehaviour
         //範囲捜索
         RefreshCandidates();
 
-        //targetが範囲外
-        if (!_candidates.Contains(target))
-        {
-            target = null;
-            SetTarget(null);
-        }
-
-        //targetが無くて新たなtargetを得る
-        if (target == null && _candidates.Count != 0)
-        {
-            SetFirstTarget();
-        }
+        //Targetの更新
+        RefreshTarget();
 
         //移動
         if (target != null)
@@ -92,11 +94,26 @@ public class SeaSkillExecutor : MonoBehaviour
             HandleMove(target.transform);
         }
     }
+    void RefreshTarget()
+    {
+        //targetが範囲外
+        if (!_candidates.Contains(target))
+        {
+            SetTarget(null);
+        }
+
+        //targetが無くて新たなtargetを得る
+        if (target == null && _candidates.Count != 0)
+        {
+            SetFirstTarget();
+        }
+    }
     void SetFirstTarget()
     {
-        // 一番近いのtargetにあてはめる
-        target = null;
+        // 一番近いTargetを探す
+        Collider2D best = null;
         float bestDistSqr = float.MaxValue;
+
         foreach (Collider2D col in _candidates)
         {
             if (col == null) continue;
@@ -107,10 +124,11 @@ public class SeaSkillExecutor : MonoBehaviour
             if (distSqr < bestDistSqr)
             {
                 bestDistSqr = distSqr;
-                target = col;
+                best = col;
             }
         }
-        SetTarget(target != null ? target.transform : null);
+
+        SetTarget(best);
     }
 
     void SelectRight(InputAction.CallbackContext ctx)
@@ -139,8 +157,10 @@ public class SeaSkillExecutor : MonoBehaviour
             }
         }
         //targetに当てはめる
-        if (best != null) { target = best; }
-        SetTarget(target.transform);
+        if (best != null)
+        {
+            SetTarget(best);
+        }
     }
     void SelectLeft(InputAction.CallbackContext ctx)
     {
@@ -169,11 +189,13 @@ public class SeaSkillExecutor : MonoBehaviour
             }
         }
         //targetに当てはめる
-        if (best != null) { target = best; }
-        SetTarget(target.transform);
+        if (best != null)
+        {
+            SetTarget(best);
+        }
     }
 
-    void RefreshCandidates()
+    /*void RefreshCandidates()
     {
         _candidates.Clear();
 
@@ -193,27 +215,138 @@ public class SeaSkillExecutor : MonoBehaviour
             }
         }
         //Debug.Log(_candidates.Count);
-    }
-
-    private void SetTarget(Transform target)
+    }*/
+    /*void RefreshCandidates()
     {
+        // 前回の候補を保存
+        List<Collider2D> previousCandidates = new List<Collider2D>(_candidates);
 
+        _candidates.Clear();
+
+        int count = Physics2D.OverlapCircle(
+            _player.transform.position,
+            SkillRadius,
+            _contactFilter,
+            _hitResults);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider2D col = _hitResults[i];
+
+            if (col == null || !col.CompareTag("UtyuSkillItem"))
+                continue;
+            _candidates.Add(col);
+            // 新しく候補になった
+            if (!previousCandidates.Contains(col))
+            {
+                if (col.TryGetComponent<IOperable>(out var operable))
+                {
+                    operable.BecomeCandidateColor();
+                }
+                else
+                {
+                    Debug.LogWarning("CandidatesMustHanveIOperable");
+                }
+            }
+        }
+
+        // 前回は候補だったが、今回は候補ではなくなった
+        foreach (Collider2D col in previousCandidates)
+        {
+            if (!_candidates.Contains(col) &&
+                col != null )
+            {
+                if (col.TryGetComponent<IOperable>(out var operable))
+                {
+                    operable.ResetColor();
+                }
+                else
+                {
+                    Debug.LogWarning("CandidatesMustHanveIOperable");
+                }
+            }
+        }
+    }*/
+    /*private void RefreshCandidates()
+    {
+        _candidates.Clear();
+
+        int count = Physics2D.OverlapCircle(
+            _player.transform.position,
+            SkillRadius,
+            _contactFilter,
+            _hitResults);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider2D col = _hitResults[i];
+
+            if (col == null || !col.CompareTag("UtyuSkillItem"))
+                continue;
+
+            _candidates.Add(col);
+        }
+
+        CandidateStateChanged?.Invoke(_candidates);
+    }*/
+    private void RefreshCandidates()
+    {
+        List<Collider2D> previousCandidates = new List<Collider2D>(_candidates);
+
+        _candidates.Clear();
+
+        int count = Physics2D.OverlapCircle(
+            _player.transform.position,
+            SkillRadius,
+            _contactFilter,
+            _hitResults);
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider2D col = _hitResults[i];
+
+            if (col == null || !col.CompareTag("UtyuSkillItem"))
+                continue;
+
+            _candidates.Add(col);
+
+            // 新しくCandidateになった
+            if (!previousCandidates.Contains(col))
+            {
+                CandidateStateChanged?.Invoke(col, true);
+            }
+        }
+
+        // Candidateではなくなった
+        foreach (Collider2D col in previousCandidates)
+        {
+            if (col != null && !_candidates.Contains(col))
+            {
+                CandidateStateChanged?.Invoke(col, false);
+            }
+        }
+    }
+    private void SetTarget(Collider2D newTarget)
+    {
         isCharging = false;
         chargeTime = 0f;
         chargeLevel = 0;
-        if (_targetingObj != null) _targetingObj.GetComponent<SpriteRenderer>().color = Color.blue;
-        if (target == null)
+
+        if (target != newTarget)
         {
-            _targetingObj.SetActive(false);
-        }
-        else
-        {
-            _targetingObj.SetActive(true);
-            _targetingObj.GetComponent<SeaSkillTargetingObj>().target = target;
+            if (target != null)
+            {
+                TargetStateChanged?.Invoke(target, false);
+            }
+
+            target = newTarget;
+
+            if (target != null)
+            {
+                TargetStateChanged?.Invoke(target, true);
+            }
         }
     }
-
-
     private void HandleJump()
     {
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
@@ -246,12 +379,14 @@ public class SeaSkillExecutor : MonoBehaviour
             if (chargeTime >= level2Time)
             {
                 chargeLevel = 2;
-                _targetingObj.GetComponent<SpriteRenderer>().color = Color.red;
+                /////////////色を変える赤
+                target.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else if (chargeTime >= level1Time)
             {
                 chargeLevel = 1;
-                _targetingObj.GetComponent<SpriteRenderer>().color = Color.yellow;
+                /////////////色を変える黄色
+                target.GetComponent<SpriteRenderer>().color = Color.white;
             }
             else
             {
@@ -273,7 +408,8 @@ public class SeaSkillExecutor : MonoBehaviour
             isCharging = false;
             chargeTime = 0f;
             chargeLevel = 0;
-            _targetingObj.GetComponent<SpriteRenderer>().color = Color.blue;
+            /////////////色を変える青
+            target.GetComponent<SpriteRenderer>().color = Color.yellow;
 
             target.GetComponent<Rigidbody2D>()
                 .AddForce(Vector2.up * jumpForce*target.GetComponent<Rigidbody2D>().mass, ForceMode2D.Impulse);

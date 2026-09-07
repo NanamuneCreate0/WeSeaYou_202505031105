@@ -7,7 +7,7 @@ public class Lift : MonoBehaviour, IVelocityProvider
         Vertical,
         Horizontal
     }
-
+    
     [Header("State")]
     [SerializeField] private bool isPowered = true;
 

@@ -1,15 +1,11 @@
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-public class OperableAbility : MonoBehaviour, IVelocityProvider
+public class OperableAbility : MonoBehaviour
 {
-    public Vector2 Velocity { get; private set; }
-    private Vector3 _lastPosition;
-    private void Start()
+    void Start()
     {
-        _lastPosition = transform.position;
-    }
-    private void FixedUpdate()
-    {
-        Velocity = (transform.position - _lastPosition) / Time.fixedDeltaTime;
-        _lastPosition = transform.position;
+        gameObject.AddComponent<VelocityProviderObj>();
+        gameObject.AddComponent<OperableObj>();
     }
 }
