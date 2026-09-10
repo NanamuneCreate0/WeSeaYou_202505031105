@@ -35,7 +35,7 @@ public class BlockCreator : MonoBehaviour
         GameObject mixture = Instantiate( mixturePrefab);
         currentBlock = mixture;
         //ˆÊ’u
-        Vector2 spawnPos =(Vector2) player.position + spawnOffset* (int)chikyuWalk.LastDirection;
+        Vector2 spawnPos =(Vector2) player.position + spawnOffset* (int)chikyuWalk.CurrentDirection;
         mixture.transform.position = spawnPos;
 
         //Ability

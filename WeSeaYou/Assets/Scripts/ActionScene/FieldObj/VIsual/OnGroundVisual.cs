@@ -29,7 +29,6 @@ public class OnGroundVisual : MonoBehaviour
 
     void OnGround()
     {
-        Debug.Log("OnG");
         Vector2 spawnPosition = new Vector2(
             col.bounds.center.x,
             col.bounds.min.y
