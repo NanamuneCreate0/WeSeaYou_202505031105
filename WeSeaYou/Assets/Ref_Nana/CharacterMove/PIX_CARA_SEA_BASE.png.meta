@@ -1,280 +1,316 @@
 fileFormatVersion: 2
-guid: db3ecab59d080fe4887fcbc6b77d2869
+guid: 5366d3e4c51887d4c80eb41d8cb66fc8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5599817771046829756
-    second: Pix_Utyu_Base_0
+      213: -7052561523569566149
+    second: PIX_CARA_SEA_BASE_0
   - first:
-      213: -3983979490863985150
-    second: Pix_Utyu_Base_1
+      213: -1261750522220567352
+    second: PIX_CARA_SEA_BASE_1
   - first:
-      213: 6507279988375868727
-    second: Pix_Utyu_Base_2
+      213: -4055810671573665761
+    second: PIX_CARA_SEA_BASE_2
   - first:
-      213: -5631444616006913512
-    second: Pix_Utyu_Base_3
+      213: -8622116357399114821
+    second: PIX_CARA_SEA_BASE_3
   - first:
-      213: -2547161219099885709
-    second: Pix_Utyu_Base_4
+      213: 8136404214517730139
+    second: PIX_CARA_SEA_BASE_4
   - first:
-      213: 8497974933690632923
-    second: Pix_Utyu_Base_5
+      213: -7105526762065118568
+    second: PIX_CARA_SEA_BASE_5
   - first:
-      213: 8304543075326166071
-    second: Pix_Utyu_Base_6
+      213: 8504185299224913113
+    second: PIX_CARA_SEA_BASE_6
   - first:
-      213: -81200188744909098
-    second: Pix_Utyu_Base_7
+      213: -1078518373829422944
+    second: PIX_CARA_SEA_BASE_7
   - first:
-      213: -9157615049484080804
-    second: Pix_Utyu_Base_8
+      213: -321309173383990530
+    second: PIX_CARA_SEA_BASE_8
   - first:
-      213: -2840556149556748918
-    second: Pix_Utyu_Base_9
+      213: -2147047204555732490
+    second: PIX_CARA_SEA_BASE_9
   - first:
-      213: 6158364207893377052
-    second: Pix_Utyu_Base_10
+      213: 8752253705993874527
+    second: PIX_CARA_SEA_BASE_10
   - first:
-      213: -6015165535687138068
-    second: Pix_Utyu_Base_11
+      213: 3183958749395834447
+    second: PIX_CARA_SEA_BASE_11
   - first:
-      213: -3099060923390326452
-    second: Pix_Utyu_Base_12
+      213: 9172802936458549004
+    second: PIX_CARA_SEA_BASE_12
   - first:
-      213: 8722214170942627174
-    second: Pix_Utyu_Base_13
+      213: 275127441918784164
+    second: PIX_CARA_SEA_BASE_13
   - first:
-      213: -5800136579356460256
-    second: Pix_Utyu_Base_14
+      213: 2979539862883171612
+    second: PIX_CARA_SEA_BASE_14
   - first:
-      213: 1691387729261889165
-    second: Pix_Utyu_Base_15
+      213: -8276496083283682980
+    second: PIX_CARA_SEA_BASE_15
   - first:
-      213: -1886445635979194826
-    second: Pix_Utyu_Base_16
+      213: 4102617240965576573
+    second: PIX_CARA_SEA_BASE_16
   - first:
-      213: 9027454104176680586
-    second: Pix_Utyu_Base_17
+      213: -8496678310177559716
+    second: PIX_CARA_SEA_BASE_17
   - first:
-      213: -3184141040393114199
-    second: Pix_Utyu_Base_18
+      213: -181272534930914790
+    second: PIX_CARA_SEA_BASE_18
   - first:
-      213: -6743320357760445656
-    second: Pix_Utyu_Base_19
+      213: 3866736413664543590
+    second: PIX_CARA_SEA_BASE_19
   - first:
-      213: 3612744382858807352
-    second: Pix_Utyu_Base_20
+      213: -5865057577707065857
+    second: PIX_CARA_SEA_BASE_20
   - first:
-      213: 6714984179127752839
-    second: Pix_Utyu_Base_21
+      213: -4870228546043658763
+    second: PIX_CARA_SEA_BASE_21
   - first:
-      213: 7422827959404611292
-    second: Pix_Utyu_Base_22
+      213: 4113554887605400670
+    second: PIX_CARA_SEA_BASE_22
   - first:
-      213: -1200071072294732107
-    second: Pix_Utyu_Base_23
+      213: -142061713728734697
+    second: PIX_CARA_SEA_BASE_23
   - first:
-      213: 1561335445917649704
-    second: Pix_Utyu_Base_24
+      213: -5774161827377883648
+    second: PIX_CARA_SEA_BASE_24
   - first:
-      213: 8374291862644427723
-    second: Pix_Utyu_Base_25
+      213: -5552726991327225539
+    second: PIX_CARA_SEA_BASE_25
   - first:
-      213: 2535479613230729992
-    second: Pix_Utyu_Base_26
+      213: 8843616391872059386
+    second: PIX_CARA_SEA_BASE_26
   - first:
-      213: 9205389902786642257
-    second: Pix_Utyu_Base_27
+      213: 7723293879764687340
+    second: PIX_CARA_SEA_BASE_27
   - first:
-      213: 6495169560443180032
-    second: Pix_Utyu_Base_28
+      213: 675510223199751458
+    second: PIX_CARA_SEA_BASE_28
   - first:
-      213: -7329972205124846645
-    second: Pix_Utyu_Base_29
+      213: 1083474997663885808
+    second: PIX_CARA_SEA_BASE_29
   - first:
-      213: 3914520712149748165
-    second: Pix_Utyu_Base_30
+      213: 698475036128091010
+    second: PIX_CARA_SEA_BASE_30
   - first:
-      213: -7715378046407537314
-    second: Pix_Utyu_Base_31
+      213: -7828968117303315788
+    second: PIX_CARA_SEA_BASE_31
   - first:
-      213: 5618083856929019462
-    second: Pix_Utyu_Base_32
+      213: 4144838796699864548
+    second: PIX_CARA_SEA_BASE_32
   - first:
-      213: 4105423314290222608
-    second: Pix_Utyu_Base_33
+      213: -6781405321212164457
+    second: PIX_CARA_SEA_BASE_33
   - first:
-      213: 6010132617511985874
-    second: Pix_Utyu_Base_34
+      213: -442596945366798623
+    second: PIX_CARA_SEA_BASE_34
   - first:
-      213: -1636606011349030451
-    second: Pix_Utyu_Base_35
+      213: -1445567289960155459
+    second: PIX_CARA_SEA_BASE_35
   - first:
-      213: -1488242008667420366
-    second: Pix_Utyu_Base_36
+      213: 8297503419824885661
+    second: PIX_CARA_SEA_BASE_36
   - first:
-      213: 1887809371300653715
-    second: Pix_Utyu_Base_37
+      213: 4502308576348832931
+    second: PIX_CARA_SEA_BASE_37
   - first:
-      213: -108257621780780531
-    second: Pix_Utyu_Base_38
+      213: 2494315590737087458
+    second: PIX_CARA_SEA_BASE_38
   - first:
-      213: 5262069707854996148
-    second: Pix_Utyu_Base_39
+      213: 6169067481722278736
+    second: PIX_CARA_SEA_BASE_39
   - first:
-      213: -8331590674482716973
-    second: Pix_Utyu_Base_40
+      213: 718569883528581839
+    second: PIX_CARA_SEA_BASE_40
   - first:
-      213: -3127059630431018375
-    second: Pix_Utyu_Base_41
+      213: -2358232198293256359
+    second: PIX_CARA_SEA_BASE_41
   - first:
-      213: -4064747030815439398
-    second: Pix_Utyu_Base_42
+      213: 6532385453740487258
+    second: PIX_CARA_SEA_BASE_42
   - first:
-      213: -6947719086325387312
-    second: Pix_Utyu_Base_43
+      213: 8812454913286673129
+    second: PIX_CARA_SEA_BASE_43
   - first:
-      213: 5253227726844750722
-    second: Pix_Utyu_Base_44
+      213: 784555185240138575
+    second: PIX_CARA_SEA_BASE_44
   - first:
-      213: -3718454231991475889
-    second: Pix_Utyu_Base_45
+      213: -433120154525531517
+    second: PIX_CARA_SEA_BASE_45
   - first:
-      213: -5028144767295110334
-    second: Pix_Utyu_Base_46
+      213: -5941758340925373902
+    second: PIX_CARA_SEA_BASE_46
   - first:
-      213: 6396708750849715266
-    second: Pix_Utyu_Base_47
+      213: 3665837591543092831
+    second: PIX_CARA_SEA_BASE_47
   - first:
-      213: 6911432878760749039
-    second: Pix_Utyu_Base_48
+      213: -4446124804215875535
+    second: PIX_CARA_SEA_BASE_48
   - first:
-      213: -7899906592257179589
-    second: Pix_Utyu_Base_49
+      213: -8558134049427525705
+    second: PIX_CARA_SEA_BASE_49
   - first:
-      213: -3906212941009742355
-    second: Pix_Utyu_Base_50
+      213: -2632503749020878743
+    second: PIX_CARA_SEA_BASE_50
   - first:
-      213: -6219677543549454590
-    second: Pix_Utyu_Base_51
+      213: 7940034448097004315
+    second: PIX_CARA_SEA_BASE_51
   - first:
-      213: 1329094816716600200
-    second: Pix_Utyu_Base_52
+      213: 2365691726765958992
+    second: PIX_CARA_SEA_BASE_52
   - first:
-      213: -4798220032820951066
-    second: Pix_Utyu_Base_53
+      213: 3158236610623997617
+    second: PIX_CARA_SEA_BASE_53
   - first:
-      213: -1276378775152442394
-    second: Pix_Utyu_Base_54
+      213: 9059558355683742456
+    second: PIX_CARA_SEA_BASE_54
   - first:
-      213: 6316601520795638300
-    second: Pix_Utyu_Base_55
+      213: 2059307376723964465
+    second: PIX_CARA_SEA_BASE_55
   - first:
-      213: 3321799070366388372
-    second: Pix_Utyu_Base_56
+      213: 6245172725805412669
+    second: PIX_CARA_SEA_BASE_56
   - first:
-      213: 6196695171068290932
-    second: Pix_Utyu_Base_57
+      213: -5170630926896405737
+    second: PIX_CARA_SEA_BASE_57
   - first:
-      213: -3211616713289663624
-    second: Pix_Utyu_Base_58
+      213: -7286241376304097371
+    second: PIX_CARA_SEA_BASE_58
   - first:
-      213: -4295999975400364680
-    second: Pix_Utyu_Base_59
+      213: 66189066224200276
+    second: PIX_CARA_SEA_BASE_59
   - first:
-      213: 3945530681786346012
-    second: Pix_Utyu_Base_60
+      213: 6648039079510002170
+    second: PIX_CARA_SEA_BASE_60
   - first:
-      213: -5308474568402910604
-    second: Pix_Utyu_Base_61
+      213: 293155001609642834
+    second: PIX_CARA_SEA_BASE_61
   - first:
-      213: 2855591866283612451
-    second: Pix_Utyu_Base_62
+      213: 3213621243420093310
+    second: PIX_CARA_SEA_BASE_62
   - first:
-      213: -7753111587393090643
-    second: Pix_Utyu_Base_63
+      213: 5956994295356128513
+    second: PIX_CARA_SEA_BASE_63
   - first:
-      213: 231249306515115222
-    second: Pix_Utyu_Base_64
+      213: -4262970168614837297
+    second: PIX_CARA_SEA_BASE_64
   - first:
-      213: 2725629735841765965
-    second: Pix_Utyu_Base_65
+      213: 3991349330023117744
+    second: PIX_CARA_SEA_BASE_65
   - first:
-      213: -1282583031461818479
-    second: Pix_Utyu_Base_66
+      213: 5005417077690551109
+    second: PIX_CARA_SEA_BASE_66
   - first:
-      213: 7556867778518072480
-    second: Pix_Utyu_Base_67
+      213: 3457692392547953993
+    second: PIX_CARA_SEA_BASE_67
   - first:
-      213: -1970305539463497514
-    second: Pix_Utyu_Base_68
+      213: -5337033029855391255
+    second: PIX_CARA_SEA_BASE_68
   - first:
-      213: 3011989854150196250
-    second: Pix_Utyu_Base_69
+      213: 6746751943968604216
+    second: PIX_CARA_SEA_BASE_69
   - first:
-      213: -2720499052366397155
-    second: Pix_Utyu_Base_70
+      213: -1162977298735916193
+    second: PIX_CARA_SEA_BASE_70
   - first:
-      213: 979405373365376897
-    second: Pix_Utyu_Base_71
+      213: -3556092676462670335
+    second: PIX_CARA_SEA_BASE_71
   - first:
-      213: 7065246972033097408
-    second: Pix_Utyu_Base_72
+      213: 6099988620902711669
+    second: PIX_CARA_SEA_BASE_72
   - first:
-      213: 5383854389044215927
-    second: Pix_Utyu_Base_73
+      213: 2357893441453464031
+    second: PIX_CARA_SEA_BASE_73
   - first:
-      213: -8591195836373756411
-    second: Pix_Utyu_Base_74
+      213: -4248746866280237520
+    second: PIX_CARA_SEA_BASE_74
   - first:
-      213: -1572071100063139402
-    second: Pix_Utyu_Base_75
+      213: -663492720724289621
+    second: PIX_CARA_SEA_BASE_75
   - first:
-      213: 908405579574273778
-    second: Pix_Utyu_Base_76
+      213: -6573707273581341044
+    second: PIX_CARA_SEA_BASE_76
   - first:
-      213: -3123506381334503494
-    second: Pix_Utyu_Base_77
+      213: 6340437864650821009
+    second: PIX_CARA_SEA_BASE_77
   - first:
-      213: 4804059763955480965
-    second: Pix_Utyu_Base_78
+      213: 8550317075159241092
+    second: PIX_CARA_SEA_BASE_78
   - first:
-      213: 8965989556341020421
-    second: Pix_Utyu_Base_79
+      213: 7590812848297599781
+    second: PIX_CARA_SEA_BASE_79
   - first:
-      213: -6890086055177165821
-    second: Pix_Utyu_Base_80
+      213: 8428125765045126865
+    second: PIX_CARA_SEA_BASE_80
   - first:
-      213: -2537036751153259667
-    second: Pix_Utyu_Base_81
+      213: 2275186515659814458
+    second: PIX_CARA_SEA_BASE_81
   - first:
-      213: 5784210774448388780
-    second: Pix_Utyu_Base_82
+      213: -8760015530889835344
+    second: PIX_CARA_SEA_BASE_82
   - first:
-      213: -6586643219274770303
-    second: Pix_Utyu_Base_83
+      213: 5248178365717947268
+    second: PIX_CARA_SEA_BASE_83
   - first:
-      213: 3692388521371950055
-    second: Pix_Utyu_Base_84
+      213: -8315174935939321228
+    second: PIX_CARA_SEA_BASE_84
   - first:
-      213: 6337101701996409303
-    second: Pix_Utyu_Base_85
+      213: 6208937056271263213
+    second: PIX_CARA_SEA_BASE_85
   - first:
-      213: -232228244698631179
-    second: Pix_Utyu_Base_86
+      213: -6713450428477076559
+    second: PIX_CARA_SEA_BASE_86
   - first:
-      213: 4778503524566870076
-    second: Pix_Utyu_Base_87
+      213: -8176793033950788744
+    second: PIX_CARA_SEA_BASE_87
   - first:
-      213: 2407908501347871903
-    second: Pix_Utyu_Base_88
+      213: -6572937416521553613
+    second: PIX_CARA_SEA_BASE_88
   - first:
-      213: 7494424326786232926
-    second: Pix_Utyu_Base_89
+      213: 369811474196294291
+    second: PIX_CARA_SEA_BASE_89
   - first:
-      213: -8083128614166805216
-    second: Pix_Utyu_Base_90
+      213: 5930600842920373336
+    second: PIX_CARA_SEA_BASE_90
+  - first:
+      213: 7225721814316799654
+    second: PIX_CARA_SEA_BASE_91
+  - first:
+      213: -3132210938932142702
+    second: PIX_CARA_SEA_BASE_92
+  - first:
+      213: 2621798403108217300
+    second: PIX_CARA_SEA_BASE_93
+  - first:
+      213: 3490621466572913482
+    second: PIX_CARA_SEA_BASE_94
+  - first:
+      213: 9040262160666540652
+    second: PIX_CARA_SEA_BASE_95
+  - first:
+      213: -2713197360210330430
+    second: PIX_CARA_SEA_BASE_96
+  - first:
+      213: 4298412304582219625
+    second: PIX_CARA_SEA_BASE_97
+  - first:
+      213: -948587050277399369
+    second: PIX_CARA_SEA_BASE_98
+  - first:
+      213: 8502060439571948201
+    second: PIX_CARA_SEA_BASE_99
+  - first:
+      213: 3298205335731297837
+    second: PIX_CARA_SEA_BASE_100
+  - first:
+      213: -5687226373690873967
+    second: PIX_CARA_SEA_BASE_101
+  - first:
+      213: -8774217174178914451
+    second: PIX_CARA_SEA_BASE_102
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -396,7 +432,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pix_Utyu_Base_0
+      name: PIX_CARA_SEA_BASE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964d316524d05d84e95f75ebc4b46196
+      internalID: 1026760701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b27463436f5d65409ca8c35d86e53f0
+      internalID: -1479262487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d451a48e5bb618f458a1c3c7eaafd290
+      internalID: 2140270267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedad06aaba4b3448837ac1939956119
+      internalID: 1646632726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d6241b12f6d5340b3bc29fc36a78f9
+      internalID: 1467574469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1152
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5966699f0eab74191c0e9fab8e2806
+      internalID: 2036046181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_6
       rect:
         serializedVersion: 2
         x: 0
@@ -411,14 +579,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 575b47b234d517942abf37f4b3a351d4
-      internalID: 1738322739
+      spriteID: 549a6face74be25429c81816202d828a
+      internalID: -284886929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_1
+      name: PIX_CARA_SEA_BASE_7
       rect:
         serializedVersion: 2
         x: 64
@@ -433,14 +601,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e917aa31a713e140ae5799ab9d7c5dd
-      internalID: -695727320
+      spriteID: ff53260cc77b1e74e909abd675bdee95
+      internalID: 810045422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_2
+      name: PIX_CARA_SEA_BASE_8
       rect:
         serializedVersion: 2
         x: 128
@@ -455,14 +623,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118fae37cc2862d4b927ee0284b605bd
-      internalID: 1803701702
+      spriteID: b52b5c2d3d473eb4bb20a2c9b33a3587
+      internalID: -796618752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_3
+      name: PIX_CARA_SEA_BASE_9
       rect:
         serializedVersion: 2
         x: 192
@@ -477,14 +645,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6333a1e8237c2241875216a650358ee
-      internalID: -771344380
+      spriteID: 2f543f828911d8546b2f1efb608b09e8
+      internalID: -1690940566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_4
+      name: PIX_CARA_SEA_BASE_10
       rect:
         serializedVersion: 2
         x: 256
@@ -499,14 +667,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 917952cedaf61504cbfb6cf35161dccb
-      internalID: -984447887
+      spriteID: da27e28b38b15b140a512437842bb7a1
+      internalID: 1411259186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_5
+      name: PIX_CARA_SEA_BASE_11
       rect:
         serializedVersion: 2
         x: 320
@@ -521,14 +689,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00abb8f09a57d7c45bd5065666c9141e
-      internalID: -46917562
+      spriteID: 8131c51895852954197842ae87017ce0
+      internalID: -1027358796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_6
+      name: PIX_CARA_SEA_BASE_12
       rect:
         serializedVersion: 2
         x: 0
@@ -543,14 +711,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a631726e746acd4996a5dfc94806087
-      internalID: -294612475
+      spriteID: 653264036acdc4243b78dbe5181b3f9f
+      internalID: 2104695854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_7
+      name: PIX_CARA_SEA_BASE_13
       rect:
         serializedVersion: 2
         x: 64
@@ -565,14 +733,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21291a357fc0fbe4999edf626bc0d842
-      internalID: -203935658
+      spriteID: 501b0e29995e3a14d93a872d61f99254
+      internalID: -511943113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_8
+      name: PIX_CARA_SEA_BASE_14
       rect:
         serializedVersion: 2
         x: 128
@@ -587,14 +755,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f71e0cf78f55caf4286b58cdcfd4a6e0
-      internalID: 123149397
+      spriteID: 861cf5efd8cc60b45ac5b8a455edd57f
+      internalID: 2054675585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_9
+      name: PIX_CARA_SEA_BASE_15
       rect:
         serializedVersion: 2
         x: 192
@@ -609,14 +777,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56459ba8415ba944d914a9475c7e4aaa
-      internalID: 45820921
+      spriteID: ec8f4e9163da19d42bc4f8d8464119e7
+      internalID: -324605906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_10
+      name: PIX_CARA_SEA_BASE_16
       rect:
         serializedVersion: 2
         x: 256
@@ -631,14 +799,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9956b2e67cc21e147a0b9cde19b1aa5c
-      internalID: 664530440
+      spriteID: fdc7386d71f95ad4c90a8b7c4843fce6
+      internalID: 1943771852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_11
+      name: PIX_CARA_SEA_BASE_17
       rect:
         serializedVersion: 2
         x: 320
@@ -653,14 +821,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eebe196a94bdfb438af73efd44fafc0
-      internalID: 440032293
+      spriteID: 6f36737cbfca8c844ae47569bc76609c
+      internalID: 432340202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_12
+      name: PIX_CARA_SEA_BASE_18
       rect:
         serializedVersion: 2
         x: 0
@@ -675,14 +843,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c31bf47ea9d41364dadc945f0f2ce832
-      internalID: -371697689
+      spriteID: bcf6243348dcfd0479c191bc66e5f317
+      internalID: -1745282914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_13
+      name: PIX_CARA_SEA_BASE_19
       rect:
         serializedVersion: 2
         x: 64
@@ -697,14 +865,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 218fcd6c660f7764fa90923571ed4185
-      internalID: -644213632
+      spriteID: 69875c50aab44f940913f8607416149b
+      internalID: 1304709091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_14
+      name: PIX_CARA_SEA_BASE_20
       rect:
         serializedVersion: 2
         x: 128
@@ -719,14 +887,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56393860b41b5dc48b4e37106f7fac95
-      internalID: -1163412380
+      spriteID: c9f30d07acc24364a917eeafec6004ef
+      internalID: -1635488726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_15
+      name: PIX_CARA_SEA_BASE_21
       rect:
         serializedVersion: 2
         x: 192
@@ -741,14 +909,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdeb8af0cc64e784d90846ed890b4a25
-      internalID: -1059526470
+      spriteID: df75c62b7a9cbf14a98935d9c57fcf88
+      internalID: -1815498736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_16
+      name: PIX_CARA_SEA_BASE_22
       rect:
         serializedVersion: 2
         x: 256
@@ -763,14 +931,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb6ab77fda87c4540a7679107cdddad0
-      internalID: -669409170
+      spriteID: 3d53f75452ffcf646a175907271cdf48
+      internalID: -334196306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_17
+      name: PIX_CARA_SEA_BASE_23
       rect:
         serializedVersion: 2
         x: 320
@@ -785,14 +953,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f3b587e8c578264498cf1178b655b72
-      internalID: -532227046
+      spriteID: 7dbcbb2fcae984940b9be6473900f518
+      internalID: -748368580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_18
+      name: PIX_CARA_SEA_BASE_24
       rect:
         serializedVersion: 2
         x: 0
@@ -807,14 +975,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ed3700ab15346489835102bf8f7320
-      internalID: 1253199872
+      spriteID: fd836cf7a0363fc40addc5aef9476658
+      internalID: -2138423042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_19
+      name: PIX_CARA_SEA_BASE_25
       rect:
         serializedVersion: 2
         x: 64
@@ -829,14 +997,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ea8fbf3bd9bad04f92fe6467801d35c
-      internalID: -1259627020
+      spriteID: fe58acd235babf648a3190bdf2b2ecda
+      internalID: 1618490775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_20
+      name: PIX_CARA_SEA_BASE_26
       rect:
         serializedVersion: 2
         x: 128
@@ -851,14 +1019,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51329d2c18e2744787aa4cd8c504b11
-      internalID: 1653288259
+      spriteID: d0cafb86683a7054fb05377adf397f24
+      internalID: 331645137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_21
+      name: PIX_CARA_SEA_BASE_27
       rect:
         serializedVersion: 2
         x: 192
@@ -873,14 +1041,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a2647694676c2148888d1bcf8781847
-      internalID: -1444555241
+      spriteID: 76d8959a323406940ac728c4e9459f4e
+      internalID: 46114726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_22
+      name: PIX_CARA_SEA_BASE_28
       rect:
         serializedVersion: 2
         x: 256
@@ -895,14 +1063,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4665a296d546b334ba175dc3e66abc16
-      internalID: -491195800
+      spriteID: 09ce7b259e530b740b1c835e6473f8ca
+      internalID: 1740653463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_23
+      name: PIX_CARA_SEA_BASE_29
       rect:
         serializedVersion: 2
         x: 320
@@ -917,14 +1085,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 139a53e16ea8de64292b01ff67ab4f79
-      internalID: -119740897
+      spriteID: aa13a25bb33d4064b868810d5b87552f
+      internalID: -336593469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_24
+      name: PIX_CARA_SEA_BASE_30
       rect:
         serializedVersion: 2
         x: 0
@@ -939,14 +1107,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3be0313584491340baa18ae2a1e76a4
-      internalID: 856927779
+      spriteID: 987adc6fe23a5c24d8cd1bfc09ce4240
+      internalID: 725868538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_25
+      name: PIX_CARA_SEA_BASE_31
       rect:
         serializedVersion: 2
         x: 64
@@ -961,14 +1129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ccfdbd07fde0754a952843f19055f99
-      internalID: 1303092364
+      spriteID: 0a57123321c8ba14395ce25a2aed7d93
+      internalID: -1564636313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_26
+      name: PIX_CARA_SEA_BASE_32
       rect:
         serializedVersion: 2
         x: 128
@@ -983,14 +1151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f3dfe729c769bd4f85f593c99e733f1
-      internalID: 67967725
+      spriteID: 5993fe6ea2cbff14d87531d133462981
+      internalID: -1154693255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_27
+      name: PIX_CARA_SEA_BASE_33
       rect:
         serializedVersion: 2
         x: 192
@@ -1005,14 +1173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbc8099fbc859ad45ac62e245a92ba99
-      internalID: -1352266237
+      spriteID: 6253c03eb41cd6949bbefc076bc0fcb4
+      internalID: 1545357006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_28
+      name: PIX_CARA_SEA_BASE_34
       rect:
         serializedVersion: 2
         x: 256
@@ -1027,14 +1195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbfc1a8e9eb203a4d9722d6408cb2a6a
-      internalID: 1135014467
+      spriteID: 361ecd6ebde122f41b3f85a598dc438c
+      internalID: -942993296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_29
+      name: PIX_CARA_SEA_BASE_35
       rect:
         serializedVersion: 2
         x: 320
@@ -1049,14 +1217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c783e8b38eccdf418b27d68dc7af87a
-      internalID: 577259922
+      spriteID: 59e2bf6f5def1c64fb62cb0d0afc44f4
+      internalID: -405099537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_30
+      name: PIX_CARA_SEA_BASE_36
       rect:
         serializedVersion: 2
         x: 0
@@ -1071,14 +1239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03ba8c03e5ea11040bbac81ea42fbb8f
-      internalID: 1244584932
+      spriteID: 981a86eed928ab84f95c28c9e7f67713
+      internalID: 1506818709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_31
+      name: PIX_CARA_SEA_BASE_37
       rect:
         serializedVersion: 2
         x: 64
@@ -1093,14 +1261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aea2cbf70b2d3f2469af5155bc906ea5
-      internalID: -2052497593
+      spriteID: e87a6907d7f7acf4a896763462448389
+      internalID: 424937127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_32
+      name: PIX_CARA_SEA_BASE_38
       rect:
         serializedVersion: 2
         x: 128
@@ -1115,14 +1283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 164dd982a27495e48a9dc18784c4b2a9
-      internalID: -530778145
+      spriteID: cf5ef718192ba6741a3c3827e92ebaa6
+      internalID: -1016101082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_33
+      name: PIX_CARA_SEA_BASE_39
       rect:
         serializedVersion: 2
         x: 192
@@ -1137,14 +1305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09ed0918fd400ed45b8befd65b57b618
-      internalID: 911521099
+      spriteID: 9e70cb39741b68545af6099970516e80
+      internalID: 1038226564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_34
+      name: PIX_CARA_SEA_BASE_40
       rect:
         serializedVersion: 2
         x: 256
@@ -1159,14 +1327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a081c5070c5d451418a6ef6552c09655
-      internalID: -1900820038
+      spriteID: 4403ab5cb1f3fc047b990bd901ff066b
+      internalID: 447460244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_35
+      name: PIX_CARA_SEA_BASE_41
       rect:
         serializedVersion: 2
         x: 320
@@ -1181,14 +1349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 135d5d806c6903442b1689d24bfe4f68
-      internalID: -513399203
+      spriteID: 33a1e6a3e7ca5d64993aa35de9a7ee55
+      internalID: 938002242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_36
+      name: PIX_CARA_SEA_BASE_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1203,14 +1371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a8b11be5e77b248b54dc16dda80c80
-      internalID: -307078363
+      spriteID: 03a18aaf00a61c6409b74d10c1759e43
+      internalID: -1384769860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_37
+      name: PIX_CARA_SEA_BASE_43
       rect:
         serializedVersion: 2
         x: 64
@@ -1225,14 +1393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f304ca93fa1af64f9d36adf600cb1ee
-      internalID: 1128173214
+      spriteID: 9663c4474f2bc004abf82340422ef5a9
+      internalID: 609809935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_38
+      name: PIX_CARA_SEA_BASE_44
       rect:
         serializedVersion: 2
         x: 128
@@ -1247,14 +1415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4e82f7a9cca3204eb0f9832aa47b7ae
-      internalID: -357481958
+      spriteID: 4fdab70513510034eac6e56b033168d1
+      internalID: 1024786115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_39
+      name: PIX_CARA_SEA_BASE_45
       rect:
         serializedVersion: 2
         x: 192
@@ -1269,14 +1437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66d797443c32ae0419c328b0b486c8a9
-      internalID: 339705971
+      spriteID: eb97febd27ce1714c8dba0147df052df
+      internalID: -600974721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_40
+      name: PIX_CARA_SEA_BASE_46
       rect:
         serializedVersion: 2
         x: 256
@@ -1291,14 +1459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 959a77374829474459d926c4ff14b464
-      internalID: -1328011705
+      spriteID: 3b7aa907cf8ea964097dcb2bf9a3c664
+      internalID: 305437804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_41
+      name: PIX_CARA_SEA_BASE_47
       rect:
         serializedVersion: 2
         x: 320
@@ -1313,14 +1481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5ae15069eadeba4481a2806369a5c08
-      internalID: 408395293
+      spriteID: 3b7ae86010c50234fa522741b7c5f4b6
+      internalID: 1585472646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_42
+      name: PIX_CARA_SEA_BASE_48
       rect:
         serializedVersion: 2
         x: 0
@@ -1335,14 +1503,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af384657693337e4c8021e6254b9275d
-      internalID: -1792889027
+      spriteID: 008d892baa4f3684c9769d2cc6e27544
+      internalID: -1754367414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_43
+      name: PIX_CARA_SEA_BASE_49
       rect:
         serializedVersion: 2
         x: 64
@@ -1357,14 +1525,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1a44d33b968d8e4ca9435021fb49996
-      internalID: -1648937462
+      spriteID: fff70866871d65c4b9631d1ffc1b0021
+      internalID: 1260228171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_44
+      name: PIX_CARA_SEA_BASE_50
       rect:
         serializedVersion: 2
         x: 128
@@ -1379,14 +1547,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 747cd70d3d53c194486243e3744060ad
-      internalID: 183376635
+      spriteID: 57278c1c195fbf642920f221f34a3163
+      internalID: 1294560885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_45
+      name: PIX_CARA_SEA_BASE_51
       rect:
         serializedVersion: 2
         x: 192
@@ -1401,14 +1569,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 143529cd758c5204f8c05ea90bef4116
-      internalID: 676060041
+      spriteID: 000e357bb25eaf64a9628d6547573d62
+      internalID: -2145040827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_46
+      name: PIX_CARA_SEA_BASE_52
       rect:
         serializedVersion: 2
         x: 256
@@ -1423,14 +1591,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb35c79f9fda868459c3c0a201e78cce
-      internalID: -1667771516
+      spriteID: ddfdd45e5312b3549bad3729955a9255
+      internalID: -1881015368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_47
+      name: PIX_CARA_SEA_BASE_53
       rect:
         serializedVersion: 2
         x: 320
@@ -1445,14 +1613,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3bcb162de65ac34a8bc42d71b0a109a
-      internalID: -1747657519
+      spriteID: fd5de671e82fb9345bc9108fc09f519d
+      internalID: -2041732080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_48
+      name: PIX_CARA_SEA_BASE_54
       rect:
         serializedVersion: 2
         x: 0
@@ -1467,14 +1635,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28ad65b6150c2c74d9a035145710468f
-      internalID: 955250527
+      spriteID: 865b20c4323f4aa42aed707a21ede8cc
+      internalID: -1692578437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_49
+      name: PIX_CARA_SEA_BASE_55
       rect:
         serializedVersion: 2
         x: 64
@@ -1489,14 +1657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60b9b63c909c08d4085f91689007faaa
-      internalID: 119109206
+      spriteID: 822050c8f9a4202458bbe87fc4ad4230
+      internalID: -383391078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_50
+      name: PIX_CARA_SEA_BASE_56
       rect:
         serializedVersion: 2
         x: 128
@@ -1511,14 +1679,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bedde92de59fe4743b2badaa7883e0ff
-      internalID: 11190641
+      spriteID: fc0132ecf096ef74c8d136b872592fc7
+      internalID: -1403390217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_51
+      name: PIX_CARA_SEA_BASE_57
       rect:
         serializedVersion: 2
         x: 192
@@ -1533,14 +1701,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca866bdf0101d6547afa2ef192812118
-      internalID: -946413322
+      spriteID: 3cce8935aa28505448a5501529409f80
+      internalID: 1888499867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_52
+      name: PIX_CARA_SEA_BASE_58
       rect:
         serializedVersion: 2
         x: 256
@@ -1555,14 +1723,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d2a34c7d9f98984ca25aa0a50252a09
-      internalID: 1215376257
+      spriteID: 00b4c3922192d3d4eb1abb8494dd50c5
+      internalID: -1207855347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_53
+      name: PIX_CARA_SEA_BASE_59
       rect:
         serializedVersion: 2
         x: 320
@@ -1577,14 +1745,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbf3c98d515650049bf3f3afaf909d23
-      internalID: 661425206
+      spriteID: aa1e9063ad986e848a2cee4a235d286c
+      internalID: 509900994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_54
+      name: PIX_CARA_SEA_BASE_60
       rect:
         serializedVersion: 2
         x: 0
@@ -1599,14 +1767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7fc14968c471be45b115336d5bf231a
-      internalID: 1204821210
+      spriteID: 828b96ab0110b954c8edaf9afcdc8836
+      internalID: -564756245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_55
+      name: PIX_CARA_SEA_BASE_61
       rect:
         serializedVersion: 2
         x: 64
@@ -1621,14 +1789,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4443a2be995a29345bdc9bfe69e756c9
-      internalID: -1882443366
+      spriteID: 14e0bd75c6a71714ca09e96e16bb6f33
+      internalID: -1763013140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_56
+      name: PIX_CARA_SEA_BASE_62
       rect:
         serializedVersion: 2
         x: 128
@@ -1643,14 +1811,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62254374295172d43bbc053d22b2759c
-      internalID: -1128570287
+      spriteID: 53e49f1c41e230b42a874875560cb169
+      internalID: -1053589246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_57
+      name: PIX_CARA_SEA_BASE_63
       rect:
         serializedVersion: 2
         x: 192
@@ -1665,14 +1833,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 585a16b4abe9fda4389a061875cbcb4a
-      internalID: 1446145755
+      spriteID: 995adb25eb098e44c92e81243342858a
+      internalID: -520669708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_58
+      name: PIX_CARA_SEA_BASE_64
       rect:
         serializedVersion: 2
         x: 256
@@ -1687,14 +1855,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f42a0c7806c7d18489ece597440583d7
-      internalID: -1835739945
+      spriteID: 48de985201b2f6742b8914c2bfd3f769
+      internalID: 328994133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_59
+      name: PIX_CARA_SEA_BASE_65
       rect:
         serializedVersion: 2
         x: 320
@@ -1709,14 +1877,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be812c10c92a7d43b425967a08e9a65
-      internalID: 1401850733
+      spriteID: 441466b4ede7c69488f59dcfa2444b37
+      internalID: -774753016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_60
+      name: PIX_CARA_SEA_BASE_66
       rect:
         serializedVersion: 2
         x: 0
@@ -1731,14 +1899,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238accd454702824984b8bff317ac57a
-      internalID: -235893231
+      spriteID: be1a5fd85a84fcb4886b54b47a2e49a1
+      internalID: 948108261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_61
+      name: PIX_CARA_SEA_BASE_67
       rect:
         serializedVersion: 2
         x: 64
@@ -1753,14 +1921,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aeeb483323440f41b95bd18579022d3
-      internalID: 26190225
+      spriteID: cc51a0f9e296d1b4ba33295161b0f4c5
+      internalID: 1995434619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_62
+      name: PIX_CARA_SEA_BASE_68
       rect:
         serializedVersion: 2
         x: 128
@@ -1775,14 +1943,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbfe402a8937e6a479776219e271359f
-      internalID: -1382168068
+      spriteID: e03e6c3c3349c674688efc9e0c494be4
+      internalID: 234384987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_63
+      name: PIX_CARA_SEA_BASE_69
       rect:
         serializedVersion: 2
         x: 192
@@ -1797,14 +1965,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeca7490e03dd3d4499be61a0d222ec0
-      internalID: 620574316
+      spriteID: 94ae01ea8fbd61f458feac19b8b53dec
+      internalID: -1627933961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_64
+      name: PIX_CARA_SEA_BASE_70
       rect:
         serializedVersion: 2
         x: 256
@@ -1819,14 +1987,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a5c29cec0c195c4588302d62a958ff5
-      internalID: -1457143746
+      spriteID: 364194b436e472840bd670ffe5666ac4
+      internalID: 1301433994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pix_Utyu_Base_65
+      name: PIX_CARA_SEA_BASE_71
       rect:
         serializedVersion: 2
         x: 320
@@ -1841,8 +2009,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afdefd2ba02c2134ebed405f97108671
-      internalID: -350040873
+      spriteID: c6bd3cd3884a6a04ab55b78adc5de07a
+      internalID: 2051854475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af22c7424c3d65a45a994b62d976c654
+      internalID: 1140668802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_73
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586d7d26e9c6b9a49bbf2a8a01270750
+      internalID: 948989042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_74
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e55c0f899935694fbef90fbfa29ee97
+      internalID: -1022658742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_75
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eaf5f1ecb6fd254c8006d73223b2b66
+      internalID: -3543540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1f2356489d8024f8675ac52f7b2b22
+      internalID: 1641908882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_77
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5622c8e59928508449743e7ccaa7efb8
+      internalID: -874982288
       vertices: []
       indices: 
       edges: []
@@ -1851,7 +2151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1629bce2f55dd764aa1ae18848b9f2f4
+    spriteID: 33576b45780a00a4aa486442c5988ded
     internalID: 0
     vertices: []
     indices: 
@@ -1861,72 +2161,84 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pix_Utyu_Base_0: 1738322739
-      Pix_Utyu_Base_1: -695727320
-      Pix_Utyu_Base_10: 664530440
-      Pix_Utyu_Base_11: 440032293
-      Pix_Utyu_Base_12: -371697689
-      Pix_Utyu_Base_13: -644213632
-      Pix_Utyu_Base_14: -1163412380
-      Pix_Utyu_Base_15: -1059526470
-      Pix_Utyu_Base_16: -669409170
-      Pix_Utyu_Base_17: -532227046
-      Pix_Utyu_Base_18: 1253199872
-      Pix_Utyu_Base_19: -1259627020
-      Pix_Utyu_Base_2: 1803701702
-      Pix_Utyu_Base_20: 1653288259
-      Pix_Utyu_Base_21: -1444555241
-      Pix_Utyu_Base_22: -491195800
-      Pix_Utyu_Base_23: -119740897
-      Pix_Utyu_Base_24: 856927779
-      Pix_Utyu_Base_25: 1303092364
-      Pix_Utyu_Base_26: 67967725
-      Pix_Utyu_Base_27: -1352266237
-      Pix_Utyu_Base_28: 1135014467
-      Pix_Utyu_Base_29: 577259922
-      Pix_Utyu_Base_3: -771344380
-      Pix_Utyu_Base_30: 1244584932
-      Pix_Utyu_Base_31: -2052497593
-      Pix_Utyu_Base_32: -530778145
-      Pix_Utyu_Base_33: 911521099
-      Pix_Utyu_Base_34: -1900820038
-      Pix_Utyu_Base_35: -513399203
-      Pix_Utyu_Base_36: -307078363
-      Pix_Utyu_Base_37: 1128173214
-      Pix_Utyu_Base_38: -357481958
-      Pix_Utyu_Base_39: 339705971
-      Pix_Utyu_Base_4: -984447887
-      Pix_Utyu_Base_40: -1328011705
-      Pix_Utyu_Base_41: 408395293
-      Pix_Utyu_Base_42: -1792889027
-      Pix_Utyu_Base_43: -1648937462
-      Pix_Utyu_Base_44: 183376635
-      Pix_Utyu_Base_45: 676060041
-      Pix_Utyu_Base_46: -1667771516
-      Pix_Utyu_Base_47: -1747657519
-      Pix_Utyu_Base_48: 955250527
-      Pix_Utyu_Base_49: 119109206
-      Pix_Utyu_Base_5: -46917562
-      Pix_Utyu_Base_50: 11190641
-      Pix_Utyu_Base_51: -946413322
-      Pix_Utyu_Base_52: 1215376257
-      Pix_Utyu_Base_53: 661425206
-      Pix_Utyu_Base_54: 1204821210
-      Pix_Utyu_Base_55: -1882443366
-      Pix_Utyu_Base_56: -1128570287
-      Pix_Utyu_Base_57: 1446145755
-      Pix_Utyu_Base_58: -1835739945
-      Pix_Utyu_Base_59: 1401850733
-      Pix_Utyu_Base_6: -294612475
-      Pix_Utyu_Base_60: -235893231
-      Pix_Utyu_Base_61: 26190225
-      Pix_Utyu_Base_62: -1382168068
-      Pix_Utyu_Base_63: 620574316
-      Pix_Utyu_Base_64: -1457143746
-      Pix_Utyu_Base_65: -350040873
-      Pix_Utyu_Base_7: -203935658
-      Pix_Utyu_Base_8: 123149397
-      Pix_Utyu_Base_9: 45820921
+      PIX_CARA_SEA_BASE_0: 1026760701
+      PIX_CARA_SEA_BASE_1: -1479262487
+      PIX_CARA_SEA_BASE_10: 1411259186
+      PIX_CARA_SEA_BASE_11: -1027358796
+      PIX_CARA_SEA_BASE_12: 2104695854
+      PIX_CARA_SEA_BASE_13: -511943113
+      PIX_CARA_SEA_BASE_14: 2054675585
+      PIX_CARA_SEA_BASE_15: -324605906
+      PIX_CARA_SEA_BASE_16: 1943771852
+      PIX_CARA_SEA_BASE_17: 432340202
+      PIX_CARA_SEA_BASE_18: -1745282914
+      PIX_CARA_SEA_BASE_19: 1304709091
+      PIX_CARA_SEA_BASE_2: 2140270267
+      PIX_CARA_SEA_BASE_20: -1635488726
+      PIX_CARA_SEA_BASE_21: -1815498736
+      PIX_CARA_SEA_BASE_22: -334196306
+      PIX_CARA_SEA_BASE_23: -748368580
+      PIX_CARA_SEA_BASE_24: -2138423042
+      PIX_CARA_SEA_BASE_25: 1618490775
+      PIX_CARA_SEA_BASE_26: 331645137
+      PIX_CARA_SEA_BASE_27: 46114726
+      PIX_CARA_SEA_BASE_28: 1740653463
+      PIX_CARA_SEA_BASE_29: -336593469
+      PIX_CARA_SEA_BASE_3: 1646632726
+      PIX_CARA_SEA_BASE_30: 725868538
+      PIX_CARA_SEA_BASE_31: -1564636313
+      PIX_CARA_SEA_BASE_32: -1154693255
+      PIX_CARA_SEA_BASE_33: 1545357006
+      PIX_CARA_SEA_BASE_34: -942993296
+      PIX_CARA_SEA_BASE_35: -405099537
+      PIX_CARA_SEA_BASE_36: 1506818709
+      PIX_CARA_SEA_BASE_37: 424937127
+      PIX_CARA_SEA_BASE_38: -1016101082
+      PIX_CARA_SEA_BASE_39: 1038226564
+      PIX_CARA_SEA_BASE_4: 1467574469
+      PIX_CARA_SEA_BASE_40: 447460244
+      PIX_CARA_SEA_BASE_41: 938002242
+      PIX_CARA_SEA_BASE_42: -1384769860
+      PIX_CARA_SEA_BASE_43: 609809935
+      PIX_CARA_SEA_BASE_44: 1024786115
+      PIX_CARA_SEA_BASE_45: -600974721
+      PIX_CARA_SEA_BASE_46: 305437804
+      PIX_CARA_SEA_BASE_47: 1585472646
+      PIX_CARA_SEA_BASE_48: -1754367414
+      PIX_CARA_SEA_BASE_49: 1260228171
+      PIX_CARA_SEA_BASE_5: 2036046181
+      PIX_CARA_SEA_BASE_50: 1294560885
+      PIX_CARA_SEA_BASE_51: -2145040827
+      PIX_CARA_SEA_BASE_52: -1881015368
+      PIX_CARA_SEA_BASE_53: -2041732080
+      PIX_CARA_SEA_BASE_54: -1692578437
+      PIX_CARA_SEA_BASE_55: -383391078
+      PIX_CARA_SEA_BASE_56: -1403390217
+      PIX_CARA_SEA_BASE_57: 1888499867
+      PIX_CARA_SEA_BASE_58: -1207855347
+      PIX_CARA_SEA_BASE_59: 509900994
+      PIX_CARA_SEA_BASE_6: -284886929
+      PIX_CARA_SEA_BASE_60: -564756245
+      PIX_CARA_SEA_BASE_61: -1763013140
+      PIX_CARA_SEA_BASE_62: -1053589246
+      PIX_CARA_SEA_BASE_63: -520669708
+      PIX_CARA_SEA_BASE_64: 328994133
+      PIX_CARA_SEA_BASE_65: -774753016
+      PIX_CARA_SEA_BASE_66: 948108261
+      PIX_CARA_SEA_BASE_67: 1995434619
+      PIX_CARA_SEA_BASE_68: 234384987
+      PIX_CARA_SEA_BASE_69: -1627933961
+      PIX_CARA_SEA_BASE_7: 810045422
+      PIX_CARA_SEA_BASE_70: 1301433994
+      PIX_CARA_SEA_BASE_71: 2051854475
+      PIX_CARA_SEA_BASE_72: 1140668802
+      PIX_CARA_SEA_BASE_73: 948989042
+      PIX_CARA_SEA_BASE_74: -1022658742
+      PIX_CARA_SEA_BASE_75: -3543540
+      PIX_CARA_SEA_BASE_76: 1641908882
+      PIX_CARA_SEA_BASE_77: -874982288
+      PIX_CARA_SEA_BASE_8: -796618752
+      PIX_CARA_SEA_BASE_9: -1690940566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
