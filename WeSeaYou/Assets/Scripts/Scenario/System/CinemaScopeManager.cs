@@ -27,7 +27,7 @@ public class CinemaScopeManager : MonoBehaviour
         }*/
     }
 
-    public IEnumerator PlayCinemaScopeCoroutine()
+    public IEnumerator PlayOnCinemaScopeCoroutine()
     {
         _topBar.DOScaleY(-_targetHeight, _duration).SetEase(Ease.InOutSine);
         _bottomBar.DOScaleY(_targetHeight, _duration).SetEase(Ease.InOutSine);
@@ -35,6 +35,17 @@ public class CinemaScopeManager : MonoBehaviour
         {
             _groupTop.DOFade(1f, _duration).SetEase(Ease.InOutSine);
             _groupBottom.DOFade(1f, _duration).SetEase(Ease.InOutSine);
+        }
+        yield return null;
+    }
+    public IEnumerator PlayOffCinemaScopeCoroutine()
+    {
+        _topBar.DOScaleY(0f, _duration).SetEase(Ease.InOutSine);
+        _bottomBar.DOScaleY(0f, _duration).SetEase(Ease.InOutSine);
+        if (_groupTop != null || _groupBottom != null)
+        {
+            _groupTop.DOFade(0f, _duration).SetEase(Ease.InOutSine);
+            _groupBottom.DOFade(0f, _duration).SetEase(Ease.InOutSine);
         }
         yield return null;
     }

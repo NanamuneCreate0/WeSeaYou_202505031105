@@ -14,10 +14,12 @@ public class EVExecuter : MonoBehaviour, IScenarioCommand, IInputReceiver
     [SerializeField] private Transform[] _charas;
     private Action _onComplete;
     private Action _skipEV;
+    private float _pos;
+    private string _currentAnim;
     private string[] _idParam;
     private Dictionary<Transform, string> _charaID = new Dictionary<Transform, string>();
 
-    private const string WALK = "W";
+    private const string WALK = "WALK";
     private const string DUSH = "DUSH";
     private const string STAND = "STAND";
     private const string WAIT = "WAIT";
@@ -50,26 +52,32 @@ public class EVExecuter : MonoBehaviour, IScenarioCommand, IInputReceiver
 
         foreach (var chara in _charas)
         {
-            if(_charaID.TryGetValue(chara, out string id) && id == _idParam[NAME_INDEX])
+            if (_charaID.TryGetValue(chara, out string id) && id == _idParam[NAME_INDEX])
             {
                 targetChara = chara;
                 break;
             }
         }
 
-        float pos = float.Parse(data.Param);
+        Animator animator = targetChara.GetComponent<Animator>();
+        animator.Play(data.ID);
+
+
         switch (_idParam[COMMAND_INDEX])
         {
             case WALK:
+                _pos = float.Parse(data.Param);
                 _skipEV = _move.ExecuteImmediate;
-                _move.WalkTo(pos, false, targetChara, OnArrived);
+                _move.WalkTo(_pos, animator, targetChara, OnArrived);
                 break;
             case DUSH:
+                _pos = float.Parse(data.Param);
                 _skipEV = _move.ExecuteImmediate;
-                _move.WalkTo(pos, true, targetChara, OnArrived);
+                _move.DushTo(_pos, animator, targetChara, OnArrived);
                 break;
             case WAIT:
-                _wait.Execute(data, context, onComplete);
+                //_wait.Execute(data.ID, targetChara, onComplete);
+                onComplete?.Invoke();
                 break;
             case STAND:
                 _stand.Execute(data, context, onComplete);

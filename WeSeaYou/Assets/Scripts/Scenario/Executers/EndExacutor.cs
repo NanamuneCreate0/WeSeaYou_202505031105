@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EndExecutor : MonoBehaviour, IScenarioCommand
 {
-    public string CommandType => "NON";
+    public string CommandType => "END";
     public bool IsAutoAdvance => true;
     // コマンドを実行する
     // onComplete: 完了時に呼ぶコールバック

@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 
 public class ScenarioSystem : MonoBehaviour, IScenarioContext
 {
-    public void JumpTo(int index)        => _currentIndex = index;
-    public void EnterWait()              => _state = ScenarioState.Wait;
-    public void ResumeScenario()         => _state = ScenarioState.OnScenario;
-    public void ExitScenario()           => _state = ScenarioState.NoScenario;
+    public void JumpTo(int index) => _currentIndex = index;
+    public void EnterWait() => _state = ScenarioState.Wait;
+    public void ResumeScenario() => _state = ScenarioState.OnScenario;
+    //public void ExitScenario() =>  _state = ScenarioState.NoScenario;
     // Inspector から各コマンドを設定
     [SerializeField] private MonoBehaviour[] _commandComponents;
     [SerializeField] private CinemaScopeManager _cinema;
@@ -82,29 +82,31 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _state == ScenarioState.NoScenario)
+        /*if (Input.GetKeyDown(KeyCode.F) && _state == ScenarioState.NoScenario)
         {
             StartScenario();
-        }
+        }*/
     }
 
     public void StartScenario() // 外部からシナリオを開始するためのメソッド
     {
-        StartCoroutine(StartScenarioCorutine());
+        //StartCoroutine(StartScenarioCorutine());
+        _state = ScenarioState.OnScenario;
+        ProcessCurrentCommand();
     }
 
-    private IEnumerator StartScenarioCorutine()
+    /* private IEnumerator StartScenarioCorutine()
     {
         
 
-        yield return StartCoroutine(_cinema.PlayCinemaScopeCoroutine());
+        yield return StartCoroutine(_cinema.PlayOnCinemaScopeCoroutine());
 
         yield return new WaitForSeconds(1.5f);
 
         _state = ScenarioState.OnScenario;
         ProcessCurrentCommand();
         yield return null;
-    }
+    }*/
 
 
 
@@ -131,5 +133,11 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
         _currentIndex++;
         // 必要なら次のコマンドを自動実行
         ProcessCurrentCommand();
+    }
+
+    public void ExitScenario()
+    {
+        _state = ScenarioState.NoScenario;
+        _currentIndex = 0;
     }
 }

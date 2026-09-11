@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class WaitEvent : MonoBehaviour 
 {
+    string _currentAnim;　//常にほかのところから取得できるようにしたい
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,8 +16,12 @@ public class WaitEvent : MonoBehaviour
         
     }
 
-    public void Execute(ScenarioLine data, IScenarioContext context, System.Action onComplete)
+    public void Execute(string id, Transform targetChara, Action onComplete)
     {
-        Debug.Log($"Wait Command Executed with data: {data}");
+        Animator anim = targetChara.GetComponent<Animator>();
+        if (!String.IsNullOrEmpty(_currentAnim)) anim.SetBool(_currentAnim, false);
+        anim.SetBool(id, true);
+        _currentAnim = id;
+        onComplete?.Invoke();
     }
 }

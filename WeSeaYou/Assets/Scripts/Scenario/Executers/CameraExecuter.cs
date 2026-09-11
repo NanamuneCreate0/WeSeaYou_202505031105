@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CameraExecuter : MonoBehaviour, IScenarioCommand
 
@@ -37,8 +38,34 @@ public class CameraExecuter : MonoBehaviour, IScenarioCommand
     }
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
-        _idParam = data.ID.Split('_');
+        int param = int.Parse(data.Param);
+        if (param == 0)
+        {
+            ResetCamera();
+        }
+        else if (param == 1)
+        {
+            _idParam = data.ID.Split('_');
+            switch (_idParam[EVENT_INDEX])
+            {
+                case FOLLOW:
+                    FollowMode();
+                    break;
+            }
+        }
+        onComplete?.Invoke();
+    }
 
+    private void ResetCamera()
+    {
+        _cameraType = CameraCommandType.None;
+        _reset?.Invoke();
+        _reset = null;
+        Debug.Log("Executing NONE command in CameraExecuter");
+    }
+
+    private void FollowMode()
+    {
         Transform target = null;
         foreach (var chara in _charas)
         {
@@ -48,29 +75,9 @@ public class CameraExecuter : MonoBehaviour, IScenarioCommand
                 break;
             }
         }
-
-        int param = int.Parse(data.Param);  
-        if (param == 0)
-        {
-            _cameraType = CameraCommandType.None;
-            _reset?.Invoke();
-            _reset = null;
-            Debug.Log("Executing NONE command in CameraExecuter");
-        }
-        else if(param == 1)
-        {
-            switch (_idParam[EVENT_INDEX])
-            {
-                case FOLLOW:
-                    // FOLLOW command implementation
-                    _cameraType = CameraCommandType.FollowTo;
-                    _reset = _followEvent.ResetFollowSetting;
-                    _followEvent.StartFollowSetting(target);
-                    Debug.Log($"Executing FOLLOW command for character: {_idParam[NAME_INDEX]}");
-                    break;
-            }
-        }
-        
-        onComplete?.Invoke();
+        _cameraType = CameraCommandType.FollowTo;
+        _reset = _followEvent.ResetFollowSetting;
+        _followEvent.StartFollowSetting(target);
+        Debug.Log($"Executing FOLLOW command for character: {_idParam[NAME_INDEX]}");
     }
 }

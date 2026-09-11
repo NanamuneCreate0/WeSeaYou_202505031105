@@ -6,21 +6,29 @@ public class ScenarioLoader : MonoBehaviour
     [SerializeField] private TextAsset _csvFile;      // 読み込むCSVファイル
     [SerializeField] private ScenarioSystem _system; // 渡し先のManager（演出家）
 
-    void Start()
+    /*void Start()
     {
         // 1. CSVを読み込んでリストを作る（前回のコードの流用）
         List<ScenarioLine> loadedData = LoadCSV();
 
         // 2. 作ったリストを Manager に「はい、どうぞ！」と渡す
         _system.SetupData(loadedData);
+    }*/
+
+    public void LoadScenario(TextAsset csvData)
+    {
+        // 1. CSVを読み込んでリストを作る（前回のコードの流用）
+        List<ScenarioLine> loadedData = LoadCSV(csvData);
+        // 2. 作ったリストを Manager に「はい、どうぞ！」と渡す
+        _system.SetupData(loadedData);
     }
 
-    private List<ScenarioLine> LoadCSV()
+    private List<ScenarioLine> LoadCSV(TextAsset csvData)
     {
         List<ScenarioLine> lineList = new List<ScenarioLine>();
 
         // 改行で分割
-        string[] lines = _csvFile.text.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+        string[] lines = csvData.text.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 1; i < lines.Length; i++)
         {
@@ -30,8 +38,9 @@ public class ScenarioLoader : MonoBehaviour
                 ScenarioLine data = new ScenarioLine();
                 data.Number = int.Parse(values[0]);
                 data.Category = values[1];
-                data.ID= values[2];
+                data.ID = values[2];
                 data.Param = values[3];
+
                 data.EventWaitFlag = int.Parse(values[4]);
                 /*data.TextID = values[6];
                 //data.EventWaitFlag = int.Parse(values[]);
@@ -44,4 +53,6 @@ public class ScenarioLoader : MonoBehaviour
         }
         return lineList;
     }
+
+
 }

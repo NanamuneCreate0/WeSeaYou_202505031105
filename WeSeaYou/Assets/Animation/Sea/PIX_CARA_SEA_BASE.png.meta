@@ -1,0 +1,2090 @@
+fileFormatVersion: 2
+guid: d7a616794bd9b5f40ae5e02933a309f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7052561523569566149
+    second: PIX_CARA_SEA_BASE_0
+  - first:
+      213: -1261750522220567352
+    second: PIX_CARA_SEA_BASE_1
+  - first:
+      213: -4055810671573665761
+    second: PIX_CARA_SEA_BASE_2
+  - first:
+      213: -8622116357399114821
+    second: PIX_CARA_SEA_BASE_3
+  - first:
+      213: 8136404214517730139
+    second: PIX_CARA_SEA_BASE_4
+  - first:
+      213: -7105526762065118568
+    second: PIX_CARA_SEA_BASE_5
+  - first:
+      213: 8504185299224913113
+    second: PIX_CARA_SEA_BASE_6
+  - first:
+      213: -1078518373829422944
+    second: PIX_CARA_SEA_BASE_7
+  - first:
+      213: -321309173383990530
+    second: PIX_CARA_SEA_BASE_8
+  - first:
+      213: -2147047204555732490
+    second: PIX_CARA_SEA_BASE_9
+  - first:
+      213: 8752253705993874527
+    second: PIX_CARA_SEA_BASE_10
+  - first:
+      213: 3183958749395834447
+    second: PIX_CARA_SEA_BASE_11
+  - first:
+      213: 9172802936458549004
+    second: PIX_CARA_SEA_BASE_12
+  - first:
+      213: 275127441918784164
+    second: PIX_CARA_SEA_BASE_13
+  - first:
+      213: 2979539862883171612
+    second: PIX_CARA_SEA_BASE_14
+  - first:
+      213: -8276496083283682980
+    second: PIX_CARA_SEA_BASE_15
+  - first:
+      213: 4102617240965576573
+    second: PIX_CARA_SEA_BASE_16
+  - first:
+      213: -8496678310177559716
+    second: PIX_CARA_SEA_BASE_17
+  - first:
+      213: -181272534930914790
+    second: PIX_CARA_SEA_BASE_18
+  - first:
+      213: 3866736413664543590
+    second: PIX_CARA_SEA_BASE_19
+  - first:
+      213: -5865057577707065857
+    second: PIX_CARA_SEA_BASE_20
+  - first:
+      213: -4870228546043658763
+    second: PIX_CARA_SEA_BASE_21
+  - first:
+      213: 4113554887605400670
+    second: PIX_CARA_SEA_BASE_22
+  - first:
+      213: -142061713728734697
+    second: PIX_CARA_SEA_BASE_23
+  - first:
+      213: -5774161827377883648
+    second: PIX_CARA_SEA_BASE_24
+  - first:
+      213: -5552726991327225539
+    second: PIX_CARA_SEA_BASE_25
+  - first:
+      213: 8843616391872059386
+    second: PIX_CARA_SEA_BASE_26
+  - first:
+      213: 7723293879764687340
+    second: PIX_CARA_SEA_BASE_27
+  - first:
+      213: 675510223199751458
+    second: PIX_CARA_SEA_BASE_28
+  - first:
+      213: 1083474997663885808
+    second: PIX_CARA_SEA_BASE_29
+  - first:
+      213: 698475036128091010
+    second: PIX_CARA_SEA_BASE_30
+  - first:
+      213: -7828968117303315788
+    second: PIX_CARA_SEA_BASE_31
+  - first:
+      213: 4144838796699864548
+    second: PIX_CARA_SEA_BASE_32
+  - first:
+      213: -6781405321212164457
+    second: PIX_CARA_SEA_BASE_33
+  - first:
+      213: -442596945366798623
+    second: PIX_CARA_SEA_BASE_34
+  - first:
+      213: -1445567289960155459
+    second: PIX_CARA_SEA_BASE_35
+  - first:
+      213: 8297503419824885661
+    second: PIX_CARA_SEA_BASE_36
+  - first:
+      213: 4502308576348832931
+    second: PIX_CARA_SEA_BASE_37
+  - first:
+      213: 2494315590737087458
+    second: PIX_CARA_SEA_BASE_38
+  - first:
+      213: 6169067481722278736
+    second: PIX_CARA_SEA_BASE_39
+  - first:
+      213: 718569883528581839
+    second: PIX_CARA_SEA_BASE_40
+  - first:
+      213: -2358232198293256359
+    second: PIX_CARA_SEA_BASE_41
+  - first:
+      213: 6532385453740487258
+    second: PIX_CARA_SEA_BASE_42
+  - first:
+      213: 8812454913286673129
+    second: PIX_CARA_SEA_BASE_43
+  - first:
+      213: 784555185240138575
+    second: PIX_CARA_SEA_BASE_44
+  - first:
+      213: -433120154525531517
+    second: PIX_CARA_SEA_BASE_45
+  - first:
+      213: -5941758340925373902
+    second: PIX_CARA_SEA_BASE_46
+  - first:
+      213: 3665837591543092831
+    second: PIX_CARA_SEA_BASE_47
+  - first:
+      213: -4446124804215875535
+    second: PIX_CARA_SEA_BASE_48
+  - first:
+      213: -8558134049427525705
+    second: PIX_CARA_SEA_BASE_49
+  - first:
+      213: -2632503749020878743
+    second: PIX_CARA_SEA_BASE_50
+  - first:
+      213: 7940034448097004315
+    second: PIX_CARA_SEA_BASE_51
+  - first:
+      213: 2365691726765958992
+    second: PIX_CARA_SEA_BASE_52
+  - first:
+      213: 3158236610623997617
+    second: PIX_CARA_SEA_BASE_53
+  - first:
+      213: 9059558355683742456
+    second: PIX_CARA_SEA_BASE_54
+  - first:
+      213: 2059307376723964465
+    second: PIX_CARA_SEA_BASE_55
+  - first:
+      213: 6245172725805412669
+    second: PIX_CARA_SEA_BASE_56
+  - first:
+      213: -5170630926896405737
+    second: PIX_CARA_SEA_BASE_57
+  - first:
+      213: -7286241376304097371
+    second: PIX_CARA_SEA_BASE_58
+  - first:
+      213: 66189066224200276
+    second: PIX_CARA_SEA_BASE_59
+  - first:
+      213: 6648039079510002170
+    second: PIX_CARA_SEA_BASE_60
+  - first:
+      213: 293155001609642834
+    second: PIX_CARA_SEA_BASE_61
+  - first:
+      213: 3213621243420093310
+    second: PIX_CARA_SEA_BASE_62
+  - first:
+      213: 5956994295356128513
+    second: PIX_CARA_SEA_BASE_63
+  - first:
+      213: -4262970168614837297
+    second: PIX_CARA_SEA_BASE_64
+  - first:
+      213: 3991349330023117744
+    second: PIX_CARA_SEA_BASE_65
+  - first:
+      213: 5005417077690551109
+    second: PIX_CARA_SEA_BASE_66
+  - first:
+      213: 3457692392547953993
+    second: PIX_CARA_SEA_BASE_67
+  - first:
+      213: -5337033029855391255
+    second: PIX_CARA_SEA_BASE_68
+  - first:
+      213: 6746751943968604216
+    second: PIX_CARA_SEA_BASE_69
+  - first:
+      213: -1162977298735916193
+    second: PIX_CARA_SEA_BASE_70
+  - first:
+      213: -3556092676462670335
+    second: PIX_CARA_SEA_BASE_71
+  - first:
+      213: 6099988620902711669
+    second: PIX_CARA_SEA_BASE_72
+  - first:
+      213: 2357893441453464031
+    second: PIX_CARA_SEA_BASE_73
+  - first:
+      213: -4248746866280237520
+    second: PIX_CARA_SEA_BASE_74
+  - first:
+      213: -663492720724289621
+    second: PIX_CARA_SEA_BASE_75
+  - first:
+      213: -6573707273581341044
+    second: PIX_CARA_SEA_BASE_76
+  - first:
+      213: 6340437864650821009
+    second: PIX_CARA_SEA_BASE_77
+  - first:
+      213: 8550317075159241092
+    second: PIX_CARA_SEA_BASE_78
+  - first:
+      213: 7590812848297599781
+    second: PIX_CARA_SEA_BASE_79
+  - first:
+      213: 8428125765045126865
+    second: PIX_CARA_SEA_BASE_80
+  - first:
+      213: 2275186515659814458
+    second: PIX_CARA_SEA_BASE_81
+  - first:
+      213: -8760015530889835344
+    second: PIX_CARA_SEA_BASE_82
+  - first:
+      213: 5248178365717947268
+    second: PIX_CARA_SEA_BASE_83
+  - first:
+      213: -8315174935939321228
+    second: PIX_CARA_SEA_BASE_84
+  - first:
+      213: 6208937056271263213
+    second: PIX_CARA_SEA_BASE_85
+  - first:
+      213: -6713450428477076559
+    second: PIX_CARA_SEA_BASE_86
+  - first:
+      213: -8176793033950788744
+    second: PIX_CARA_SEA_BASE_87
+  - first:
+      213: -6572937416521553613
+    second: PIX_CARA_SEA_BASE_88
+  - first:
+      213: 369811474196294291
+    second: PIX_CARA_SEA_BASE_89
+  - first:
+      213: 5930600842920373336
+    second: PIX_CARA_SEA_BASE_90
+  - first:
+      213: 7225721814316799654
+    second: PIX_CARA_SEA_BASE_91
+  - first:
+      213: -3132210938932142702
+    second: PIX_CARA_SEA_BASE_92
+  - first:
+      213: 2621798403108217300
+    second: PIX_CARA_SEA_BASE_93
+  - first:
+      213: 3490621466572913482
+    second: PIX_CARA_SEA_BASE_94
+  - first:
+      213: 9040262160666540652
+    second: PIX_CARA_SEA_BASE_95
+  - first:
+      213: -2713197360210330430
+    second: PIX_CARA_SEA_BASE_96
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404f83bc9e0b2394c9f8bf48ff90d04e
+      internalID: 1535344030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727afdbab27057d43996dd006d40f397
+      internalID: -2095838991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851827699274f0e438f2cf0c530e0761
+      internalID: 579040947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89b1655936bc7547bc9c5a98ddfdcf1
+      internalID: 222846396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3e5f12ca387bf45b29de6ca65e4e35
+      internalID: -684662919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1056
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a515d08811eb1541b524a792f685533
+      internalID: -1073030196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d98084490df7c54ab2a5a6fc3e7b6bb
+      internalID: -616117681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e3364ccfbd0d241a3c37f23a499e85
+      internalID: 1537438786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af77ce800d22031449bcca4561b01b84
+      internalID: -1048909440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e1184662c6d2b47a2cc137a048c8fb
+      internalID: 1726407936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb44b569ccd078b48b132cc837ec1518
+      internalID: 1062007228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188b9de4f99516849bd096f6fa5d963d
+      internalID: 1277402264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b482eacd7adf5f48902e168f205448e
+      internalID: 2018893398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d78438f0af3e8d48be6914d37a98d00
+      internalID: -2065032139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada2c9f7856be9949be190836039260d
+      internalID: 1306622905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cad5577ad8b3514097ae3f3f6a76ea6
+      internalID: -473060821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f626b4088a3423944ad636fc462966fe
+      internalID: -1842036277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 864
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e189de96e5a3ff4180a74011a56fb6a
+      internalID: -1761979596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066b94d3294cac34caac588a794e0f35
+      internalID: -112970055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1aebe8771f137448f4326c8f1e7ca2
+      internalID: 2038873361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b213e2755157f7c408d21725838d5cd0
+      internalID: 968794738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74d5f6ccfe40a34fb54698607060175
+      internalID: -907655693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002709500d1878d48a8b8f36baafec56
+      internalID: 1904808307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 768
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4729183f59a81e74d91fd6bbed6a2ef2
+      internalID: -427359746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0f33fbd8148bf46926d7409f94720f
+      internalID: -1162155618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ebafec5082e0a4390fa010303178ed
+      internalID: 1422829231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008d6e211deaba543a47045006247518
+      internalID: 1746749126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f315faff7f9ec4fae53098923487a7
+      internalID: -1524875976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ccadc0d990ece40bff6f0b40ee6613
+      internalID: -1669369841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 672
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98042757da0494445a2983f59d605e52
+      internalID: -1012164896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98f195bfd725de47af85629c88cbd8a
+      internalID: -1076290886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c91fb0ec5831aa4eb733704dfd75ee0
+      internalID: 754739927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d9da3c9dda4b94582539cf370741ac
+      internalID: -887877137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dceff002f78e4346ac6350cb28ab139
+      internalID: -308538369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d54aa5ccc67c234daa1285ebfa62cb7
+      internalID: -677379261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_35
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02107f11f13eb744a06990d9221031d
+      internalID: 1252231027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecd1b181e829db4b8658305ea57b865
+      internalID: 930709806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed9d459f40a93542800e95e2d6f7c86
+      internalID: 836434684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e96044e9520cf43a0c242046f576e2
+      internalID: 1844527543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008fe41fc01b7794cbbedce38baebaaa
+      internalID: -1381439720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5c61b3159c2f143a5f9d8afc075743
+      internalID: 1854105887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a9bd79a57407a49a8df8be38e63f98
+      internalID: 1798851427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83fc4e71095d1a4f92c6e952101b641
+      internalID: 536208915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3195ace8a013244499845379127cb08
+      internalID: 1238549866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f442fd1a9fa3d478c5b780bcd0133d
+      internalID: 1723843491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_45
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053eb2d812b84534c90621fbfedb32b3
+      internalID: -1097895806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1c9d4bd4828fb4292552829099d114
+      internalID: -703248261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_47
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea474f9e7881b474d854e010b5e41b69
+      internalID: -1829696117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77dc641e9064444d90933dba6c441c7
+      internalID: -804133734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40657172d1977744aab9e888117131db
+      internalID: -937934942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0d7f119352c064089b29d708150f10
+      internalID: 674551168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1c479a63b720449b768ab5eab6e601
+      internalID: 517653604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b899a601368119c42bb12dfe79aa9c5a
+      internalID: 1713848417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5a4345ac0c72348a74103eb87319aa
+      internalID: 1873680182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3246be0f26f3aab44a5bbb9af81ed19d
+      internalID: 1155179790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_55
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35532a09139d4ce4ba69671bfe86d912
+      internalID: -62275250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_56
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984c08b65e54dbf4c9cbf65fbd49922b
+      internalID: 459895943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_57
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce2e18ff24ee5d409984d1210c885c4
+      internalID: 228751549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d049d9accd9113545ba1875556207f04
+      internalID: 76665105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_59
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9d909bcd4644849bc81235cdba5a55
+      internalID: -1597733882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564e4956e3579a94a8a55564a6d12abb
+      internalID: -626429265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f292a78f1fe6145a5852e7254aeac4
+      internalID: 918095196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213de61a7bc2ea5448f8420f00351204
+      internalID: 1287887129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f0e624c84157d4bb3eb91a874b228c
+      internalID: 83559876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c078358c276864fbaeb44b85e6727c
+      internalID: 151465854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_65
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1461ebc117ec8b4e8afed4319e7e671
+      internalID: 509726985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e5ad70ab185fc4a97c75f490dbdcc9
+      internalID: 510106940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_67
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f65ed04294779a45b20f1f4bea4c029
+      internalID: 131913346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483922b3647141844af5c3b78db27982
+      internalID: -1898205490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53984206512f20745a2646cc4b2de218
+      internalID: -61938807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_70
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db11f823ffc4044ba7c097f20d3ac3b
+      internalID: 993491448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_CARA_SEA_BASE_71
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576cc00b0cd93f24281021cac72b4637
+      internalID: -620060145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e2a4b8fdfd2477a4ea92ec5dfeec3a6d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PIX_CARA_SEA_BASE_0: 1535344030
+      PIX_CARA_SEA_BASE_1: -2095838991
+      PIX_CARA_SEA_BASE_10: 1062007228
+      PIX_CARA_SEA_BASE_11: 1277402264
+      PIX_CARA_SEA_BASE_12: 2018893398
+      PIX_CARA_SEA_BASE_13: -2065032139
+      PIX_CARA_SEA_BASE_14: 1306622905
+      PIX_CARA_SEA_BASE_15: -473060821
+      PIX_CARA_SEA_BASE_16: -1842036277
+      PIX_CARA_SEA_BASE_17: -1761979596
+      PIX_CARA_SEA_BASE_18: -112970055
+      PIX_CARA_SEA_BASE_19: 2038873361
+      PIX_CARA_SEA_BASE_2: 579040947
+      PIX_CARA_SEA_BASE_20: 968794738
+      PIX_CARA_SEA_BASE_21: -907655693
+      PIX_CARA_SEA_BASE_22: 1904808307
+      PIX_CARA_SEA_BASE_23: -427359746
+      PIX_CARA_SEA_BASE_24: -1162155618
+      PIX_CARA_SEA_BASE_25: 1422829231
+      PIX_CARA_SEA_BASE_26: 1746749126
+      PIX_CARA_SEA_BASE_27: -1524875976
+      PIX_CARA_SEA_BASE_28: -1669369841
+      PIX_CARA_SEA_BASE_29: -1012164896
+      PIX_CARA_SEA_BASE_3: 222846396
+      PIX_CARA_SEA_BASE_30: -1076290886
+      PIX_CARA_SEA_BASE_31: 754739927
+      PIX_CARA_SEA_BASE_32: -887877137
+      PIX_CARA_SEA_BASE_33: -308538369
+      PIX_CARA_SEA_BASE_34: -677379261
+      PIX_CARA_SEA_BASE_35: 1252231027
+      PIX_CARA_SEA_BASE_36: 930709806
+      PIX_CARA_SEA_BASE_37: 836434684
+      PIX_CARA_SEA_BASE_38: 1844527543
+      PIX_CARA_SEA_BASE_39: -1381439720
+      PIX_CARA_SEA_BASE_4: -684662919
+      PIX_CARA_SEA_BASE_40: 1854105887
+      PIX_CARA_SEA_BASE_41: 1798851427
+      PIX_CARA_SEA_BASE_42: 536208915
+      PIX_CARA_SEA_BASE_43: 1238549866
+      PIX_CARA_SEA_BASE_44: 1723843491
+      PIX_CARA_SEA_BASE_45: -1097895806
+      PIX_CARA_SEA_BASE_46: -703248261
+      PIX_CARA_SEA_BASE_47: -1829696117
+      PIX_CARA_SEA_BASE_48: -804133734
+      PIX_CARA_SEA_BASE_49: -937934942
+      PIX_CARA_SEA_BASE_5: -1073030196
+      PIX_CARA_SEA_BASE_50: 674551168
+      PIX_CARA_SEA_BASE_51: 517653604
+      PIX_CARA_SEA_BASE_52: 1713848417
+      PIX_CARA_SEA_BASE_53: 1873680182
+      PIX_CARA_SEA_BASE_54: 1155179790
+      PIX_CARA_SEA_BASE_55: -62275250
+      PIX_CARA_SEA_BASE_56: 459895943
+      PIX_CARA_SEA_BASE_57: 228751549
+      PIX_CARA_SEA_BASE_58: 76665105
+      PIX_CARA_SEA_BASE_59: -1597733882
+      PIX_CARA_SEA_BASE_6: -616117681
+      PIX_CARA_SEA_BASE_60: -626429265
+      PIX_CARA_SEA_BASE_61: 918095196
+      PIX_CARA_SEA_BASE_62: 1287887129
+      PIX_CARA_SEA_BASE_63: 83559876
+      PIX_CARA_SEA_BASE_64: 151465854
+      PIX_CARA_SEA_BASE_65: 509726985
+      PIX_CARA_SEA_BASE_66: 510106940
+      PIX_CARA_SEA_BASE_67: 131913346
+      PIX_CARA_SEA_BASE_68: -1898205490
+      PIX_CARA_SEA_BASE_69: -61938807
+      PIX_CARA_SEA_BASE_7: 1537438786
+      PIX_CARA_SEA_BASE_70: 993491448
+      PIX_CARA_SEA_BASE_71: -620060145
+      PIX_CARA_SEA_BASE_8: -1048909440
+      PIX_CARA_SEA_BASE_9: 1726407936
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

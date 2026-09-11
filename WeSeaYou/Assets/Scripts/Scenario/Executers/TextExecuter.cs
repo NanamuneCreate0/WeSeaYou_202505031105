@@ -24,7 +24,12 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
 
     private void Awake()
     {
-        _table = new TextTable(_scenarioText);
+        //_table = new TextTable(_scenarioText);
+    }
+
+    public void SetTable(TextTable table)
+    {
+        _table = table;
     }
 
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
@@ -71,7 +76,7 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
         IsTyping = true;
         messageText.maxVisibleCharacters = 0;
 
-        NameText.text = entry.Name;        // ← 出どころがTextEntryに
+        NameText.text = SetName(entry);        // ← 出どころがTextEntryに
         messageText.text = entry.JPText;   // ←
 
         messageText.ForceMeshUpdate();
@@ -85,5 +90,20 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
         }
 
         IsTyping = false;
+    }
+
+    private string SetName(TextEntry entry)
+    {
+        switch(entry.Name)
+        {
+            case "MARE":
+                return "マーレ";
+            case "SEA":
+                return "シー";
+            case "NULL":
+                return "";
+            default:
+                return entry.Name;
+        }
     }
 }
