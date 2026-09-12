@@ -18,8 +18,8 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯
     private void Awake()
     {
         _seaSkillExecutor = GameObject.Find("SeaSkillExcutor").GetComponent<SeaSkillExecutor>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<Collider2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _collider = GetComponentInChildren<Collider2D>();
 
         _originalColor = _spriteRenderer.color;
     }

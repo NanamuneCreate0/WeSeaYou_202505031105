@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 3
   itemName: Bomb
-  sprite: {fileID: 1863106890282901942, guid: 1f40d53939ed6bb4c9235801047303c3, type: 3}
+  sprite: {fileID: -782896212, guid: 307e65686e3abee48be8ce4b8356a951, type: 3}
   blockAbility: BombAbility
   IsBlock: 0

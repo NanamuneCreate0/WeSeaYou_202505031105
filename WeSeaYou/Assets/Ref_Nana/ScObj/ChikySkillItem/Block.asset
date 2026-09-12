@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   itemName: OperableBlock
-  sprite: {fileID: 6967881371962158837, guid: 11ea3c4c49794ce43a4f0ff9c20b40e3, type: 3}
+  sprite: {fileID: 1539764438, guid: 307e65686e3abee48be8ce4b8356a951, type: 3}
   blockAbility: OperableAbility
   IsBlock: 1

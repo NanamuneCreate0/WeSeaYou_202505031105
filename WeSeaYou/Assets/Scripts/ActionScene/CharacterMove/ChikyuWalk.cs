@@ -134,10 +134,11 @@ public class ChikyuWalk : MonoBehaviour//////ChikyuÇ∆èëÇ¢ÇƒÇÈÇØÇ«ÅAé¿ç€Ç…ÇÕÇ«Ç¡Ç
         if (IsGrounding && CurrentGroundCollider != null)
         {
             IVelocityProvider provider =
-                CurrentGroundCollider.GetComponent<IVelocityProvider>();
+                CurrentGroundCollider.transform.parent.GetComponentInChildren<IVelocityProvider>();//////////////////
 
             if (provider != null)
             {
+                Debug.Log("Onmovingthing");
                 groundVelocityX = provider.Velocity.x;
             }
         }

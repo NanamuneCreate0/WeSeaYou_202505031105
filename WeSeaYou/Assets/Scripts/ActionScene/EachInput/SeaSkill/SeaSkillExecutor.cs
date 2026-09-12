@@ -239,7 +239,7 @@ public class SeaSkillExecutor : MonoBehaviour
             // 新しく候補になった
             if (!previousCandidates.Contains(col))
             {
-                if (col.TryGetComponent<IOperable>(out var operable))
+                if (col.TryGetComponentInChildren<IOperable>(out var operable))
                 {
                     operable.BecomeCandidateColor();
                 }
@@ -256,7 +256,7 @@ public class SeaSkillExecutor : MonoBehaviour
             if (!_candidates.Contains(col) &&
                 col != null )
             {
-                if (col.TryGetComponent<IOperable>(out var operable))
+                if (col.TryGetComponentInChildren<IOperable>(out var operable))
                 {
                     operable.ResetColor();
                 }
@@ -380,13 +380,13 @@ public class SeaSkillExecutor : MonoBehaviour
             {
                 chargeLevel = 2;
                 /////////////色を変える赤
-                target.GetComponent<SpriteRenderer>().color = Color.red;
+                target.transform.parent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             }
             else if (chargeTime >= level1Time)
             {
                 chargeLevel = 1;
                 /////////////色を変える黄色
-                target.GetComponent<SpriteRenderer>().color = Color.white;
+                target.transform.parent.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             }
             else
             {
@@ -409,18 +409,17 @@ public class SeaSkillExecutor : MonoBehaviour
             chargeTime = 0f;
             chargeLevel = 0;
             /////////////色を変える青
-            target.GetComponent<SpriteRenderer>().color = Color.yellow;
+            (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<SpriteRenderer>() : target.GetComponent<SpriteRenderer>()).color = Color.yellow;
 
-            target.GetComponent<Rigidbody2D>()
-                .AddForce(Vector2.up * jumpForce*target.GetComponent<Rigidbody2D>().mass, ForceMode2D.Impulse);
+            (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>())
+                .AddForce(Vector2.up * jumpForce* (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>()).mass, ForceMode2D.Impulse);
 
         }
     }
     private void HandleMove(Transform target)
     {
         if (isCharging) { return; }
-
-        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>();///////////////////要修正
         if (rb == null) { return; }
 
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
@@ -428,7 +427,7 @@ public class SeaSkillExecutor : MonoBehaviour
         
         float groundVelocityX = 0f;
         if (GroundUtil.CheckGrounded(
-            target.GetComponent<Collider2D>(),
+            target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Collider2D>() : target.GetComponent<Collider2D>(),
             out Collider2D groundCol,
             out Vector2 hitPoint))
         {

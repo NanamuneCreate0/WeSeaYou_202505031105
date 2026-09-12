@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   itemName: Propeller
-  sprite: {fileID: 7061882413504209288, guid: df97de9198dc1ac4ba51c7cc16982417, type: 3}
+  sprite: {fileID: -1677821743, guid: 307e65686e3abee48be8ce4b8356a951, type: 3}
   blockAbility: PropellerAbility
   IsBlock: 0
