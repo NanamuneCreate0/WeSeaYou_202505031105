@@ -9,7 +9,7 @@ public class OnGroundVisual : MonoBehaviour
 
     void Start()
     {
-        col = GetComponent<Collider2D>();
+        col = GetComponentInChildren<Collider2D>();
     }
 
     void Update()

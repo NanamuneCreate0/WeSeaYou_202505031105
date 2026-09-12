@@ -54,7 +54,6 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯
 
     public void OnTargetStateChanged(Collider2D target, bool isTarget)
     {
-        Debug.Log($"Target event received: {target}, {isTarget}");
         if (target != _collider)
             return;
 

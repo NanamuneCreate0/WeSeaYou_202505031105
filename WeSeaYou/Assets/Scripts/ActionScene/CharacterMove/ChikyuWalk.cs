@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ChikyuWalk : MonoBehaviour
+public class ChikyuWalk : MonoBehaviour//////Chikyuと書いてるけど、実際にはどっちのキャラか分からない　操作しない方
 {
     public enum Direction
     {
@@ -9,6 +9,7 @@ public class ChikyuWalk : MonoBehaviour
         None = 0,
         Right = 1
     }
+    public string CurrentAnim;
 
     [SerializeField] float moveSpeed;
     [SerializeField] float resistance;
@@ -19,7 +20,8 @@ public class ChikyuWalk : MonoBehaviour
     Rigidbody2D rb;
     Collider2D myCol;
     bool wasGrounding;
-    bool groundingInitialized;
+    bool groundingInitialized; 
+    float previousVelocityY;
 
     // 接地状態
     public bool IsGrounding { get; private set; }
@@ -54,6 +56,7 @@ public class ChikyuWalk : MonoBehaviour
     void FixedUpdate()
     {
         UpdateGrounding();
+        UpdateAirState();//空中アニメを反映
         ApplyMovement();
     }
 
@@ -107,8 +110,22 @@ public class ChikyuWalk : MonoBehaviour
             lastDirection = null;
             UpdateDirection();
         }
-
         wasGrounding = IsGrounding;
+    }
+    void UpdateAirState()
+    {
+        if (IsGrounding)
+        {
+            previousVelocityY = rb.linearVelocityY;
+            return;
+        }
+
+        if (previousVelocityY >= 0 && rb.linearVelocityY < 0)
+        {
+            lastDirection = null;
+            UpdateDirection();
+        }
+        previousVelocityY = rb.linearVelocityY;
     }
     void ApplyMovement()
     {
@@ -182,11 +199,11 @@ public class ChikyuWalk : MonoBehaviour
         {
             if (CurrentDirection == Direction.Right)
             {
-                animator.Play("UtyuWaitRight");
+                PlayAnimation("WaitRight");
             }
             else if (CurrentDirection == Direction.Left)
             {
-                animator.Play("UtyuWaitLeft");
+                PlayAnimation("WaitLeft");
             }
 
             return;
@@ -196,25 +213,46 @@ public class ChikyuWalk : MonoBehaviour
         switch (CurrentDirection)
         {
             case Direction.Right:
-                animator.Play("UtyuWalkRight");
+                PlayAnimation("WalkRight");
                 break;
 
             case Direction.Left:
-                animator.Play("UtyuWalkLeft");
+                PlayAnimation("WalkLeft");
                 break;
         }
     }
     void PlayJumpAnimation()
     {
-        switch (CurrentDirection)
+        if (rb.linearVelocityY >= 0)
         {
-            case Direction.Right:
-                animator.Play("UtyuJumpRight");
-                break;
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("JumpRight");
+                    break;
 
-            case Direction.Left:
-                animator.Play("UtyuJumpLeft");
-                break;
+                case Direction.Left:
+                    PlayAnimation("JumpLeft");
+                    break;
+            }
         }
+        else
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("FallRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("FallLeft");
+                    break;
+            }
+        }
+    }
+    void PlayAnimation(string animationName)
+    {
+        CurrentAnim = animationName;
+        animator.Play(animationName);
     }
 }
