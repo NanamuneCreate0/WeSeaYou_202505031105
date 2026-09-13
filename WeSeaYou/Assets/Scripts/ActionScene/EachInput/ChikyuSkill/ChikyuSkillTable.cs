@@ -32,7 +32,7 @@ public class ChikyuSkillTable : MonoBehaviour
     
     public void CatchSubmitDone()
     {
-        actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.ChikyuView, ActionModeChanger.ActionModeType.ChikyuSkill);
+        actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.Neutral, ActionModeChanger.ActionModeType.ChikyuSkill);
 
         ChikyuSkillItemData a = TableItems[0];
         ChikyuSkillItemData b = TableItems.Count >= 2 ? TableItems[1] : null;
