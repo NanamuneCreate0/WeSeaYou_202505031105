@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,3 +9,4 @@ public class FastTravel_CommandExcuter : MonoBehaviour
         SceneManager.LoadScene(gameObject.GetComponent<Text>().text);
     }
 }
+*/

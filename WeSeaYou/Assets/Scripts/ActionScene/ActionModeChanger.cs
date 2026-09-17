@@ -55,8 +55,6 @@ public class ActionModeChanger : MonoBehaviour
 
     private void ActivateChikyuSkill(InputAction.CallbackContext ctx)
     {
-        if (MyGameModeController.GameMode != "Action") return;
-
         if (ActionMode == ActionModeType.Neutral)
         {
             ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.Neutral);
@@ -73,8 +71,6 @@ public class ActionModeChanger : MonoBehaviour
 
     private void ActivateSeaSkill(InputAction.CallbackContext ctx)
     {
-        if (MyGameModeController.GameMode != "Action") return;
-
         if (ActionMode == ActionModeType.Neutral)
         {
             ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.Neutral);

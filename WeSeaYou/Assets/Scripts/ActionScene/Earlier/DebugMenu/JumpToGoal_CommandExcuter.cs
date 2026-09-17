@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class JumpToGoal_CommandExcuter : MonoBehaviour
@@ -7,4 +7,4 @@ public class JumpToGoal_CommandExcuter : MonoBehaviour
     {
         Debug.Log("Excute Jump");
     }
-}
+}*/

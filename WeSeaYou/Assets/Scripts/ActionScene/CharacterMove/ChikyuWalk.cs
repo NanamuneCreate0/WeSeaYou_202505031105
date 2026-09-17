@@ -67,7 +67,6 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     void OnMove(InputAction.CallbackContext context)
     {
         inputX = context.ReadValue<Vector2>().x;
-
         UpdateDirection();
     }
 
