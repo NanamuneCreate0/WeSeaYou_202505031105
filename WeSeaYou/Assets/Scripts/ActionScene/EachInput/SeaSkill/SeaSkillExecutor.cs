@@ -10,6 +10,8 @@ public class SeaSkillExecutor : MonoBehaviour
     [SerializeField] public float SkillRadius { get; private set; } = 5f;
     [SerializeField] private GameObject _player;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] float resistance;
+    [SerializeField] float power;
     [SerializeField] private LayerMask _targetLayer;
     const float _jumpForceLv0 = 8f;
     const float _jumpForceLv1 = 9f;
@@ -419,12 +421,12 @@ public class SeaSkillExecutor : MonoBehaviour
     private void HandleMove(Transform target)
     {
         if (isCharging) { return; }
-        Rigidbody2D rb = target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>();///////////////////óvèCê≥
+        Rigidbody2D rb = target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>();
         if (rb == null) { return; }
 
         Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
 
-        
+        //à⁄ìÆè∞Ç…ÇÊÇÈë¨ìx
         float groundVelocityX = 0f;
         if (GroundUtil.CheckGrounded(
             target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Collider2D>() : target.GetComponent<Collider2D>(),
@@ -439,12 +441,22 @@ public class SeaSkillExecutor : MonoBehaviour
             }
         }
 
-        if (Mathf.Abs(input.x) > 0.4f)
-        {
-            rb.linearVelocity = new Vector2(
-                Mathf.Sin(input.x) * moveSpeed + groundVelocityX,
-                rb.linearVelocity.y
-            );
-        }
+        float moveMultiplier = GroundUtil.CheckGrounded(
+            target.transform.parent != null
+                ? target.transform.parent.GetComponentInChildren<Collider2D>()
+                : target.GetComponent<Collider2D>(),
+            out _,
+            out _)
+            ? 1f
+            : 0.7f;
+
+        rb.AddForce(
+            Vector2.right * input.x * moveSpeed * moveMultiplier
+        );
+
+        float resistanceForce =
+            -(rb.linearVelocityX - groundVelocityX)
+            * Mathf.Pow(resistance, power);
+        rb.AddForce(Vector2.right * resistanceForce);
     }
 }

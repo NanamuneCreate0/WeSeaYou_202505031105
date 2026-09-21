@@ -30,8 +30,6 @@ public class ChikyuSkillActivator : MonoBehaviour
         if (b == ActionModeChanger.ActionModeType.ChikyuSkill)
         {
             if (a != ActionModeChanger.ActionModeType.Neutral && a != ActionModeChanger.ActionModeType.UtyuSkill) { Debug.LogWarning("ëzíËäOÇÃActionModeïœçX"); }
-            //MyItemDisplayer.SetItemDisplay(true);
-            MyChikyuSkillHand.HilightStart = 0;
             MyChikyuSkillUI.SetActive(false);
         }
     }

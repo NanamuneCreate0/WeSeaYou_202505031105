@@ -77,7 +77,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.68, y: 1.26}
-  m_EdgeRadius: 0.01
+  m_EdgeRadius: 0.02
 --- !u!1 &976692350426012199
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundParticlePrefab: {fileID: 8101769438488906718, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
+  groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
 --- !u!114 &8922681129440470044
 MonoBehaviour:
   m_ObjectHideFlags: 0

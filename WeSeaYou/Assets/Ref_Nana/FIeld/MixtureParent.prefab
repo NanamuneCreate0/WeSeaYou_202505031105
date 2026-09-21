@@ -51,7 +51,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 38815642ef1e09b4f85545577eeada55, type: 2}
+  m_Material: {fileID: 6200000, guid: a9c7aefbdd0cf40438d6e96c40ba8470, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundParticlePrefab: {fileID: 8101769438488906718, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
+  groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
 --- !u!1 &5542242022634552668
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,4 +262,4 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.51, y: 1.04}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.02

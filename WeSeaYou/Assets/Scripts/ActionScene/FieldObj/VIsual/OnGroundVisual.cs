@@ -31,7 +31,7 @@ public class OnGroundVisual : MonoBehaviour
     {
         Vector2 spawnPosition = new Vector2(
             col.bounds.center.x,
-            col.bounds.min.y
+            col.bounds.min.y-0.22f
         );
         ParticleSystem particle = Instantiate(
             groundParticlePrefab,
