@@ -10,6 +10,7 @@ public class ShockWaveManager : MonoBehaviour
     void Awake()
     {
         _material = GetComponent<SpriteRenderer>().material; // SpriteRenderer‚Ìƒ}ƒeƒŠƒAƒ‹‚ğæ“¾
+        StartShockWave();
     }
 
     public void StartShockWave()
