@@ -22,16 +22,14 @@ public class ChikyuSkillActivator : MonoBehaviour
         
         if(a== ActionModeChanger.ActionModeType.ChikyuSkill)
         {
-            if(b!= ActionModeChanger.ActionModeType.ChikyuView&& b != ActionModeChanger.ActionModeType.UtyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
+            if(b!= ActionModeChanger.ActionModeType.Neutral&& b != ActionModeChanger.ActionModeType.UtyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
             MyChikyuSkillUI.SetActive(true);
             MyChikyuSkillTable.ActivationStart();
             MyChikyuSkillHand.ActivationStart();//Tableへの提出があるためHandが後。提出だけLateActivationStart()に分けてもいい
         }
         if (b == ActionModeChanger.ActionModeType.ChikyuSkill)
         {
-            if (a != ActionModeChanger.ActionModeType.ChikyuView && a != ActionModeChanger.ActionModeType.UtyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
-            //MyItemDisplayer.SetItemDisplay(true);
-            MyChikyuSkillHand.HilightStart = 0;
+            if (a != ActionModeChanger.ActionModeType.Neutral && a != ActionModeChanger.ActionModeType.UtyuSkill) { Debug.LogWarning("想定外のActionMode変更"); }
             MyChikyuSkillUI.SetActive(false);
         }
     }

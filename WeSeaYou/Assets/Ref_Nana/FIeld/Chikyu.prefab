@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2455473953219682072}
   m_Layer: 6
   m_Name: ChikyuCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3b9e2798ecf2f4a8fe1dcc113f5e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundParticlePrefab: {fileID: 8101769438488906718, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
+  groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
 --- !u!1 &1031798349283027467
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5878871774347067009}
   m_Layer: 6
   m_Name: Chikyu
-  m_TagString: player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,12 +158,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ad8de07cef6a9458de3cd616cf9caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentAnim: 
   moveSpeed: 100
   resistance: 25
   power: 1
   jumpPower: 500
   animator: {fileID: 2109907473789153150}
-  LastDirection: 1
+  actionModeChanger: {fileID: 0}
+  CurrentDirection: 1
 --- !u!1 &1813895205365921055
 GameObject:
   m_ObjectHideFlags: 0

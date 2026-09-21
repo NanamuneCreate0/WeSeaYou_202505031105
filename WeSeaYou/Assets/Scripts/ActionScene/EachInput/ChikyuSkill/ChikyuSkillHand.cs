@@ -21,7 +21,7 @@ public class ChikyuSkillHand : MonoBehaviour
 {
     public List<ChikyuSkillItemData> HandItems = new List<ChikyuSkillItemData>();//nullも持つ
 
-    public int HilightStart=0;
+    public int HilightStart;
     //private int isMoving = 0;//0:静止//1:左//2:右
 
     List<GameObject> HandDisplayCells = new List<GameObject>();//CellのみのGameObject（固定）
@@ -34,16 +34,14 @@ public class ChikyuSkillHand : MonoBehaviour
 
     //長押し用
     [SerializeField]
-    Image gaugeImage;
-    [SerializeField]
     private BlockCreator blockCreater;
     [SerializeField]
     private ActionModeChanger actionModeChanger;
 
+    const float FirstOffSetAngle = 162;//FirstOffSetAngle=180,angleDistance=45でも綺麗//
     const float angleDistance = 36;
     const float radius=210;
     const float moveTime = 0.15f;
-    const float FirstOffSetAngle = 162;
 
 
     public List<bool> HandItemsBool = new List<bool>();
@@ -52,9 +50,6 @@ public class ChikyuSkillHand : MonoBehaviour
     float wayToMove;
     float moveTimer;
 
-    const float chargeTime = 0.15f; // 満タンまでの時間
-    float currentCharge = 0f;
-    bool gaugeActive=false;
 
     private enum Direction
     {
@@ -133,7 +128,8 @@ public class ChikyuSkillHand : MonoBehaviour
             }
             else
             {
-                gaugeActive = true;
+                MyChikyuSkillTable.CatchSubmitDone();
+                //gaugeActive = true;//長押しの場合//
             }
         }
     }
@@ -172,6 +168,7 @@ public class ChikyuSkillHand : MonoBehaviour
     }
     void Update()
     {
+        /*長押しの保存版
         if (InputManager.Instance.actions.Player.Decide.IsPressed() && gaugeActive)
             //学：startedやcanceledでdecidePressedを管理するのはキャッシュの思想。
             //目まぐるしく状態が変化する場合、状態の取得は、状態の真実に従う
@@ -193,7 +190,7 @@ public class ChikyuSkillHand : MonoBehaviour
             gaugeActive = false;
             currentCharge = 0f;
             gaugeImage.fillAmount = 0f;
-        }
+        }*/
 
         //「動く」ということ
         if (direction == Direction.Left)

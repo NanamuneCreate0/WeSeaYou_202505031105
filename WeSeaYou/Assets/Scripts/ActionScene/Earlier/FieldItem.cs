@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class FieldItem : MonoBehaviour
 {
@@ -33,3 +33,4 @@ public class FieldItem : MonoBehaviour
     }
 
 }
+*/

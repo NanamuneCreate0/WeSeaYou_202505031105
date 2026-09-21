@@ -1149,6 +1149,288 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""UI_Nana"",
+            ""id"": ""4c7729d0-b13c-45b3-8bae-8c35eb49e821"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""2fe7e078-6ecc-426c-b6b3-d5c9e296d5a5"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TabLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""9693f551-c0d1-45cf-b2d3-a4af36507c4f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TabRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""99857b6a-7060-4a40-a607-18e761d190c9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Decide"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ee28a45-cf9d-460e-b59f-4a88bae00eb7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""c719fdb4-c06f-4157-902a-a121b91c3254"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""91edbaa0-2d02-4df7-abc7-1c59bbccdffa"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""e1091f21-0ea3-4b5c-b1ad-577467d22538"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b57adfdd-8ac3-423c-b0e9-d473f6d5545d"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""87cb37b5-5786-4060-9d55-5e96ca423b5a"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""eae7e3d4-238b-4b7c-bf20-56fc1796038b"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d5b82369-5385-4c8c-8a96-87a0a1971d66"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e20c03fd-13fb-4813-a89b-83ffdbe640c8"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""25978fef-a368-4aaf-a55a-a6a248892540"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b44e4c6c-bb4e-4f1d-ba3d-6a0bc734509a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""647f4d47-40dd-452e-9748-0bf110338d0a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""539fe5a5-157b-4676-b2f6-1e83843a68f9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""bbf521b0-459d-4fd9-8316-5379ce0727f5"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4fd7c6a4-1044-4b05-9982-4df3229f7027"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1376be17-dd48-487c-ad0b-071be8675f41"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f022ec6c-5c5b-45c6-befd-49c2309481ef"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""b5938e49-0b49-4542-bb71-c36abfd391c2"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57eac1b3-fb1f-4723-a781-dfcab14bba39"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TabLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a515b04-2c8b-4ef8-99cf-8e08e4c5b391"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TabRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fcb1d7f3-0733-4219-a613-3c9913fb89d8"",
+                    ""path"": ""*/{Submit}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""action"": ""Decide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1058dff6-6267-48b2-883b-02d9f4662eb5"",
+                    ""path"": ""*/{Cancel}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4613fe0-b3d9-4c41-981f-9680f3f93562"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""SeaSkill"",
             ""id"": ""ccfe0ecd-688d-42e5-97f8-219a606eeba7"",
             ""actions"": [
@@ -1397,6 +1679,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""d267f609-d6fc-47d1-affa-08edc968a471"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1630,6 +1921,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""StageReset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07e8ff3f-9cb3-44db-99e0-ee28f70aea54"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1723,6 +2025,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_AdvanceText = m_UI.FindAction("AdvanceText", throwIfNotFound: true);
         m_UI_ModeChanger = m_UI.FindAction("ModeChanger", throwIfNotFound: true);
+        // UI_Nana
+        m_UI_Nana = asset.FindActionMap("UI_Nana", throwIfNotFound: true);
+        m_UI_Nana_Move = m_UI_Nana.FindAction("Move", throwIfNotFound: true);
+        m_UI_Nana_TabLeft = m_UI_Nana.FindAction("TabLeft", throwIfNotFound: true);
+        m_UI_Nana_TabRight = m_UI_Nana.FindAction("TabRight", throwIfNotFound: true);
+        m_UI_Nana_Decide = m_UI_Nana.FindAction("Decide", throwIfNotFound: true);
+        m_UI_Nana_Cancel = m_UI_Nana.FindAction("Cancel", throwIfNotFound: true);
+        m_UI_Nana_Pause = m_UI_Nana.FindAction("Pause", throwIfNotFound: true);
         // SeaSkill
         m_SeaSkill = asset.FindActionMap("SeaSkill", throwIfNotFound: true);
         m_SeaSkill_ModeChange = m_SeaSkill.FindAction("ModeChange", throwIfNotFound: true);
@@ -1740,12 +2050,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_SkillSelectRight = m_Player.FindAction("SkillSelectRight", throwIfNotFound: true);
         m_Player_Decide = m_Player.FindAction("Decide", throwIfNotFound: true);
         m_Player_StageReset = m_Player.FindAction("StageReset", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         UnityEngine.Debug.Assert(!m_Player_Earlier.enabled, "This will cause a leak and performance issues, PlayerInputActions.Player_Earlier.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerInputActions.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_UI_Nana.enabled, "This will cause a leak and performance issues, PlayerInputActions.UI_Nana.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_SeaSkill.enabled, "This will cause a leak and performance issues, PlayerInputActions.SeaSkill.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputActions.Player.Disable() has not been called.");
     }
@@ -2232,6 +2544,157 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     /// </summary>
     public UIActions @UI => new UIActions(this);
 
+    // UI_Nana
+    private readonly InputActionMap m_UI_Nana;
+    private List<IUI_NanaActions> m_UI_NanaActionsCallbackInterfaces = new List<IUI_NanaActions>();
+    private readonly InputAction m_UI_Nana_Move;
+    private readonly InputAction m_UI_Nana_TabLeft;
+    private readonly InputAction m_UI_Nana_TabRight;
+    private readonly InputAction m_UI_Nana_Decide;
+    private readonly InputAction m_UI_Nana_Cancel;
+    private readonly InputAction m_UI_Nana_Pause;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "UI_Nana".
+    /// </summary>
+    public struct UI_NanaActions
+    {
+        private @PlayerInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public UI_NanaActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/Move".
+        /// </summary>
+        public InputAction @Move => m_Wrapper.m_UI_Nana_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/TabLeft".
+        /// </summary>
+        public InputAction @TabLeft => m_Wrapper.m_UI_Nana_TabLeft;
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/TabRight".
+        /// </summary>
+        public InputAction @TabRight => m_Wrapper.m_UI_Nana_TabRight;
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/Decide".
+        /// </summary>
+        public InputAction @Decide => m_Wrapper.m_UI_Nana_Decide;
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/Cancel".
+        /// </summary>
+        public InputAction @Cancel => m_Wrapper.m_UI_Nana_Cancel;
+        /// <summary>
+        /// Provides access to the underlying input action "UI_Nana/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_UI_Nana_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_UI_Nana; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="UI_NanaActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(UI_NanaActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="UI_NanaActions" />
+        public void AddCallbacks(IUI_NanaActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UI_NanaActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UI_NanaActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @TabLeft.started += instance.OnTabLeft;
+            @TabLeft.performed += instance.OnTabLeft;
+            @TabLeft.canceled += instance.OnTabLeft;
+            @TabRight.started += instance.OnTabRight;
+            @TabRight.performed += instance.OnTabRight;
+            @TabRight.canceled += instance.OnTabRight;
+            @Decide.started += instance.OnDecide;
+            @Decide.performed += instance.OnDecide;
+            @Decide.canceled += instance.OnDecide;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="UI_NanaActions" />
+        private void UnregisterCallbacks(IUI_NanaActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @TabLeft.started -= instance.OnTabLeft;
+            @TabLeft.performed -= instance.OnTabLeft;
+            @TabLeft.canceled -= instance.OnTabLeft;
+            @TabRight.started -= instance.OnTabRight;
+            @TabRight.performed -= instance.OnTabRight;
+            @TabRight.canceled -= instance.OnTabRight;
+            @Decide.started -= instance.OnDecide;
+            @Decide.performed -= instance.OnDecide;
+            @Decide.canceled -= instance.OnDecide;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UI_NanaActions.UnregisterCallbacks(IUI_NanaActions)" />.
+        /// </summary>
+        /// <seealso cref="UI_NanaActions.UnregisterCallbacks(IUI_NanaActions)" />
+        public void RemoveCallbacks(IUI_NanaActions instance)
+        {
+            if (m_Wrapper.m_UI_NanaActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="UI_NanaActions.AddCallbacks(IUI_NanaActions)" />
+        /// <seealso cref="UI_NanaActions.RemoveCallbacks(IUI_NanaActions)" />
+        /// <seealso cref="UI_NanaActions.UnregisterCallbacks(IUI_NanaActions)" />
+        public void SetCallbacks(IUI_NanaActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UI_NanaActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UI_NanaActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="UI_NanaActions" /> instance referencing this action map.
+    /// </summary>
+    public UI_NanaActions @UI_Nana => new UI_NanaActions(this);
+
     // SeaSkill
     private readonly InputActionMap m_SeaSkill;
     private List<ISeaSkillActions> m_SeaSkillActionsCallbackInterfaces = new List<ISeaSkillActions>();
@@ -2373,6 +2836,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SkillSelectRight;
     private readonly InputAction m_Player_Decide;
     private readonly InputAction m_Player_StageReset;
+    private readonly InputAction m_Player_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -2420,6 +2884,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/StageReset".
         /// </summary>
         public InputAction @StageReset => m_Wrapper.m_Player_StageReset;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -2473,6 +2941,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @StageReset.started += instance.OnStageReset;
             @StageReset.performed += instance.OnStageReset;
             @StageReset.canceled += instance.OnStageReset;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -2511,6 +2982,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @StageReset.started -= instance.OnStageReset;
             @StageReset.performed -= instance.OnStageReset;
             @StageReset.canceled -= instance.OnStageReset;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -2780,6 +3254,56 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnModeChanger(InputAction.CallbackContext context);
     }
     /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI_Nana" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="UI_NanaActions.AddCallbacks(IUI_NanaActions)" />
+    /// <seealso cref="UI_NanaActions.RemoveCallbacks(IUI_NanaActions)" />
+    public interface IUI_NanaActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "TabLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTabLeft(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "TabRight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTabRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Decide" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDecide(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Cancel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCancel(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
+    }
+    /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "SeaSkill" which allows adding and removing callbacks.
     /// </summary>
     /// <seealso cref="SeaSkillActions.AddCallbacks(ISeaSkillActions)" />
@@ -2885,5 +3409,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnStageReset(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
 }

@@ -16,6 +16,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     [SerializeField] float power;
     [SerializeField] float jumpPower;
     [SerializeField] Animator animator;
+    [SerializeField] ActionModeChanger actionModeChanger;
 
     Rigidbody2D rb;
     Collider2D myCol;
@@ -44,6 +45,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         InputManager.Instance.actions.Player.Move.performed += OnMove;
         InputManager.Instance.actions.Player.Move.canceled += OnMove;
         InputManager.Instance.actions.Player.Jump.performed += OnJump;
+        ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
     }
 
     void OnDisable()
@@ -51,6 +53,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         InputManager.Instance.actions.Player.Move.performed -= OnMove;
         InputManager.Instance.actions.Player.Move.canceled -= OnMove;
         InputManager.Instance.actions.Player.Jump.performed -= OnJump;
+        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
     }
 
     void FixedUpdate()
@@ -64,7 +67,6 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     void OnMove(InputAction.CallbackContext context)
     {
         inputX = context.ReadValue<Vector2>().x;
-
         UpdateDirection();
     }
 
@@ -76,9 +78,14 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
 
         PlayJumpAnimation();
     }
+    //Event
+    void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
+    {
+        UpdateDirection(true);
+    }
 
-    // Ú’n”»’è
-    void UpdateGrounding()
+        // Ú’n”»’è
+        void UpdateGrounding()
     {
         IsGrounding = GroundUtil.CheckGrounded(
             myCol,
@@ -107,8 +114,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         // ‹ó’† ¨ Ú’n‚É‚È‚Á‚½uŠÔ
         if (!wasGrounding && IsGrounding)
         {
-            lastDirection = null;
-            UpdateDirection();
+            UpdateDirection(true);
         }
         wasGrounding = IsGrounding;
     }
@@ -122,8 +128,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
 
         if (previousVelocityY >= 0 && rb.linearVelocityY < 0)
         {
-            lastDirection = null;
-            UpdateDirection();
+            UpdateDirection(true);
         }
         previousVelocityY = rb.linearVelocityY;
     }
@@ -134,11 +139,10 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         if (IsGrounding && CurrentGroundCollider != null)
         {
             IVelocityProvider provider =
-                CurrentGroundCollider.transform.parent.GetComponentInChildren<IVelocityProvider>();//////////////////
+                CurrentGroundCollider.transform.parent.GetComponentInChildren<IVelocityProvider>();
 
             if (provider != null)
             {
-                Debug.Log("Onmovingthing");
                 groundVelocityX = provider.Velocity.x;
             }
         }
@@ -161,7 +165,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
 
 
     // Œü‚«‚Ì•ÏX
-    void UpdateDirection()
+    void UpdateDirection(bool force = false)//ƒAƒjƒ‚ğ‹­§“I‚É•Ï‚¦‚éê‡true
     {
         Direction newDirection = Direction.None;
 
@@ -174,8 +178,8 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
             newDirection = Direction.Left;
         }
 
-        // Œü‚«E“ü—Íó‘Ô‚ª•Ï‚í‚Á‚Ä‚¢‚È‚¯‚ê‚Î‰½‚à‚µ‚È‚¢
-        if (newDirection == lastDirection)
+        // Œü‚«E“ü—Íó‘Ô‚ª•Ï‚í‚Á‚Ä‚¢‚È‚¯‚ê‚Î‰½‚à‚µ‚È‚¢(force‚È‚ç‚·‚é)
+        if (!force && newDirection == lastDirection)
         {
             return;
         }
@@ -251,9 +255,45 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
             }
         }
     }
-    void PlayAnimation(string animationName)
+    /*void PlayAnimation(string animationName)
     {
         CurrentAnim = animationName;
         animator.Play(animationName);
+    }*/
+    void PlayAnimation(string animationName)
+    {
+        string originalAnimationName = animationName;
+
+        if (actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
+        {
+            if (animationName == "WalkRight")
+            {
+                animationName = "UtyuSkillWalkRight";
+            }
+            else if (animationName == "WalkLeft")
+            {
+                animationName = "UtyuSkillWalkLeft";
+            }
+            else if (animationName == "WaitRight")
+            {
+                animationName = "UtyuSkillWaitRight";
+            }
+            else if (animationName == "WaitLeft")
+            {
+                animationName = "UtyuSkillWaitLeft";
+            }
+
+            int stateHash = Animator.StringToHash(animationName);
+
+            if (!animator.HasState(0, stateHash))
+            {
+                Debug.LogWarning("Animator‚ÉƒXƒe[ƒg‚ª‚ ‚è‚Ü‚¹‚ñ: " + animationName);
+                animationName = originalAnimationName;
+            }
+        }
+
+        CurrentAnim = animationName;
+        animator.Play(animationName);
     }
+
 }

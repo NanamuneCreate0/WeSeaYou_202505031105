@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PIX_GIMMICK_ROCK_02_0: 1929269334583892299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
