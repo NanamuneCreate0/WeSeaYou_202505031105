@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Lift : MonoBehaviour, IVelocityProvider
 {
     public Vector2 Velocity { get; private set; }
@@ -8,7 +7,7 @@ public class Lift : MonoBehaviour, IVelocityProvider
         Vertical,
         Horizontal
     }
-
+    
     [Header("State")]
     [SerializeField] private bool isPowered = true;
 
@@ -43,8 +42,6 @@ public class Lift : MonoBehaviour, IVelocityProvider
             ? _rb.position.y - _startPosition.y
             : _rb.position.x - _startPosition.x;
 
-        //transform.position += _axis * (_direction * speed * Time.deltaTime);
-
         Vector2 velocity = _axis * (_direction * speed);
         Velocity = velocity;
 
@@ -63,5 +60,9 @@ public class Lift : MonoBehaviour, IVelocityProvider
     public void SetPowered(bool active)
     {
         this.isPowered = active;
+    }
+    public void Activate()
+    {
+        isPowered = true;
     }
 }

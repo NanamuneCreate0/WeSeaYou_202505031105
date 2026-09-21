@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ChikyuWalk : MonoBehaviour
+public class ChikyuWalk : MonoBehaviour//////Chikyuと書いてるけど、実際にはどっちのキャラか分からない　操作しない方
 {
     public enum Direction
     {
@@ -9,26 +9,33 @@ public class ChikyuWalk : MonoBehaviour
         None = 0,
         Right = 1
     }
+    public string CurrentAnim;
 
     [SerializeField] float moveSpeed;
+    [SerializeField] float resistance;
+    [SerializeField] float power;
     [SerializeField] float jumpPower;
     [SerializeField] Animator animator;
 
     Rigidbody2D rb;
     Collider2D myCol;
+    bool wasGrounding;
+    bool groundingInitialized; 
+    float previousVelocityY;
+
     // 接地状態
     public bool IsGrounding { get; private set; }
     public Collider2D CurrentGroundCollider { get; private set; }
     public Vector2 GroundPoint { get; private set; }
 
-    Direction direction = Direction.None;
-    public Direction LastDirection= Direction.Right;
+    Direction? lastDirection = null;
+    public Direction CurrentDirection = Direction.Right;
 
-float inputX;
+    float inputX;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
         myCol = GetComponentInChildren<Collider2D>();
     }
 
@@ -49,11 +56,28 @@ float inputX;
     void FixedUpdate()
     {
         UpdateGrounding();
-        UpdateDirection();
+        UpdateAirState();//空中アニメを反映
         ApplyMovement();
     }
 
-    //接地判定
+    // InputSystem
+    void OnMove(InputAction.CallbackContext context)
+    {
+        inputX = context.ReadValue<Vector2>().x;
+
+        UpdateDirection();
+    }
+
+    void OnJump(InputAction.CallbackContext context)
+    {
+        if (!IsGrounding) return;
+
+        rb.AddForce(Vector2.up * jumpPower * rb.mass);
+
+        PlayJumpAnimation();
+    }
+
+    // 接地判定
     void UpdateGrounding()
     {
         IsGrounding = GroundUtil.CheckGrounded(
@@ -66,22 +90,77 @@ float inputX;
             CurrentGroundCollider = col;
             GroundPoint = point;
         }
-    }
+        else
+        {
+            CurrentGroundCollider = null;
+        }
+        //着地アニメ
+        
+        // 初回は着地扱いにしない
+        if (!groundingInitialized)
+        {
+            wasGrounding = IsGrounding;
+            groundingInitialized = true;
+            return;
+        }
 
-    //InputSystem
-    void OnMove(InputAction.CallbackContext context)
-    {
-        inputX = context.ReadValue<Vector2>().x;
+        // 空中 → 接地になった瞬間
+        if (!wasGrounding && IsGrounding)
+        {
+            lastDirection = null;
+            UpdateDirection();
+        }
+        wasGrounding = IsGrounding;
     }
-    void OnJump(InputAction.CallbackContext context)
+    void UpdateAirState()
     {
         if (IsGrounding)
         {
-            rb.AddForce(Vector2.up * jumpPower * 20f);
+            previousVelocityY = rb.linearVelocityY;
+            return;
         }
+
+        if (previousVelocityY >= 0 && rb.linearVelocityY < 0)
+        {
+            lastDirection = null;
+            UpdateDirection();
+        }
+        previousVelocityY = rb.linearVelocityY;
+    }
+    void ApplyMovement()
+    {
+        float groundVelocityX = 0f;
+
+        if (IsGrounding && CurrentGroundCollider != null)
+        {
+            IVelocityProvider provider =
+                CurrentGroundCollider.transform.parent.GetComponentInChildren<IVelocityProvider>();//////////////////
+
+            if (provider != null)
+            {
+                Debug.Log("Onmovingthing");
+                groundVelocityX = provider.Velocity.x;
+            }
+        }
+
+        float moveMultiplier = IsGrounding ? 1f : 0.7f;
+
+        rb.AddForce(
+            Vector2.right * inputX * moveSpeed * moveMultiplier
+        );
+
+        float resistanceForce =
+            -(rb.linearVelocityX - groundVelocityX)
+            * Mathf.Pow(resistance, power);
+
+        rb.AddForce(Vector2.right * resistanceForce);
+
+        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
     }
 
 
+
+    // 向きの変更
     void UpdateDirection()
     {
         Direction newDirection = Direction.None;
@@ -89,60 +168,92 @@ float inputX;
         if (inputX > 0)
         {
             newDirection = Direction.Right;
-            LastDirection = Direction.Right;
         }
         else if (inputX < 0)
         {
             newDirection = Direction.Left;
-            LastDirection = Direction.Left;
         }
 
-            if (newDirection == direction) return;
+        // 向き・入力状態が変わっていなければ何もしない
+        if (newDirection == lastDirection)
+        {
+            return;
+        }
+        lastDirection = newDirection;
 
-        switch (newDirection)
+        // None以外なら外部公開用のCurrentDirectionを更新
+        if (newDirection != Direction.None)
+        {
+            CurrentDirection = newDirection;
+        }
+
+
+        // 空中ならジャンプアニメーションの向きだけ変更
+        if (!IsGrounding)
+        {
+            PlayJumpAnimation();
+            return;
+        }
+
+        // 地上でDirection.Noneなら待機
+        if (newDirection == Direction.None)
+        {
+            if (CurrentDirection == Direction.Right)
+            {
+                PlayAnimation("WaitRight");
+            }
+            else if (CurrentDirection == Direction.Left)
+            {
+                PlayAnimation("WaitLeft");
+            }
+
+            return;
+        }
+
+        // 地上でDirection.None以外なら待機
+        switch (CurrentDirection)
         {
             case Direction.Right:
-                animator.SetTrigger("WalkRight");
+                PlayAnimation("WalkRight");
                 break;
+
             case Direction.Left:
-                animator.SetTrigger("WalkLeft");
-                break;
-            case Direction.None:
-                if (direction == Direction.Right)
-                    animator.SetTrigger("StandRight");
-                else if (direction == Direction.Left)
-                    animator.SetTrigger("StandLeft");
+                PlayAnimation("WalkLeft");
                 break;
         }
-
-        direction = newDirection;
     }
-
-    /*void ApplyMovement()
+    void PlayJumpAnimation()
     {
-        float velocityX = inputX * moveSpeed;
-        rb.linearVelocityX = velocityX;
-
-        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
-    }*/
-    void ApplyMovement()
-    {
-        float platformVelocityX = 0f;
-
-        if (IsGrounding && CurrentGroundCollider != null)
+        if (rb.linearVelocityY >= 0)
         {
-            //IVelocityProviderがあればその速度を、無ければRigidbodyの速度を取得
-            IVelocityProvider provider = CurrentGroundCollider.GetComponent<IVelocityProvider>();
-            if (provider != null) { platformVelocityX = provider.Velocity.x; }
-            else
+            switch (CurrentDirection)
             {
-                Rigidbody2D groundRb = CurrentGroundCollider.attachedRigidbody;
-                if (groundRb != null){platformVelocityX = groundRb.linearVelocity.x;}
+                case Direction.Right:
+                    PlayAnimation("JumpRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("JumpLeft");
+                    break;
             }
         }
+        else
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("FallRight");
+                    break;
 
-        rb.linearVelocityX = inputX * moveSpeed + platformVelocityX;
-
-        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
+                case Direction.Left:
+                    PlayAnimation("FallLeft");
+                    break;
+            }
+        }
+    }
+    void PlayAnimation(string animationName)
+    {
+        CurrentAnim = animationName;
+        animator.Play(animationName);
     }
 }

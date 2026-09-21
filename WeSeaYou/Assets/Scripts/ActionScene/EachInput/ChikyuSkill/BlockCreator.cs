@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BlockCreator : MonoBehaviour
@@ -35,14 +36,44 @@ public class BlockCreator : MonoBehaviour
         GameObject mixture = Instantiate( mixturePrefab);
         currentBlock = mixture;
         //位置
-        Vector2 spawnPos =(Vector2) player.position + spawnOffset* (int)chikyuWalk.LastDirection;
+        Vector2 spawnPos =(Vector2) player.position + spawnOffset* (int)chikyuWalk.CurrentDirection;
         mixture.transform.position = spawnPos;
 
-        //Ability
+        // Ability
         for (int i = 0; i < items.Count; i++)
         {
-            Type type = items[i].blockAbility.GetClass();
-            mixture.AddComponent(type);
+            Type type = Type.GetType(items[i].blockAbility);
+
+            if (type != null)
+            {
+                mixture.AddComponent(type);
+            }
+            else
+            {
+                Debug.LogWarning("NoComponent");
+            }
+        }
+
+        //アニメ更新間に合わせ
+        Animator animator = mixture.GetComponentInChildren<Animator>();
+        bool hasBomb = items.Any(item => item.name == "Bomb");
+        bool hasPropeller = items.Any(item => item.name == "Propeller");
+
+        if (hasBomb && hasPropeller)
+        {
+            animator.Play("CB+B+P_ON");
+        }
+        else if (hasBomb)
+        {
+            animator.Play("CB+B");
+        }
+        else if (hasPropeller)
+        {
+            animator.Play("CB+P_ON");
+        }
+        else
+        {
+            animator.Play("CB");
         }
     }
 }
