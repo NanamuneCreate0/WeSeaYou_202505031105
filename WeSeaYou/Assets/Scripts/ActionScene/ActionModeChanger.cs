@@ -18,7 +18,7 @@ public class ActionModeChanger : MonoBehaviour
     [SerializeField]
     MainCamera mainCamera;
     [SerializeField]
-    GameModeController MyGameModeController;
+    GameModeController_ActionScene MyGameModeController;
 
     private void OnEnable()
     {

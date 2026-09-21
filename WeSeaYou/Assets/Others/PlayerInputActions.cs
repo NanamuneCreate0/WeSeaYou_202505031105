@@ -1180,7 +1180,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Submit"",
+                    ""name"": ""Decide"",
                     ""type"": ""Button"",
                     ""id"": ""3ee28a45-cf9d-460e-b59f-4a88bae00eb7"",
                     ""expectedControlType"": """",
@@ -1402,7 +1402,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
-                    ""action"": ""Submit"",
+                    ""action"": ""Decide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -2030,7 +2030,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_Nana_Move = m_UI_Nana.FindAction("Move", throwIfNotFound: true);
         m_UI_Nana_TabLeft = m_UI_Nana.FindAction("TabLeft", throwIfNotFound: true);
         m_UI_Nana_TabRight = m_UI_Nana.FindAction("TabRight", throwIfNotFound: true);
-        m_UI_Nana_Submit = m_UI_Nana.FindAction("Submit", throwIfNotFound: true);
+        m_UI_Nana_Decide = m_UI_Nana.FindAction("Decide", throwIfNotFound: true);
         m_UI_Nana_Cancel = m_UI_Nana.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Nana_Pause = m_UI_Nana.FindAction("Pause", throwIfNotFound: true);
         // SeaSkill
@@ -2550,7 +2550,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Nana_Move;
     private readonly InputAction m_UI_Nana_TabLeft;
     private readonly InputAction m_UI_Nana_TabRight;
-    private readonly InputAction m_UI_Nana_Submit;
+    private readonly InputAction m_UI_Nana_Decide;
     private readonly InputAction m_UI_Nana_Cancel;
     private readonly InputAction m_UI_Nana_Pause;
     /// <summary>
@@ -2577,9 +2577,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @TabRight => m_Wrapper.m_UI_Nana_TabRight;
         /// <summary>
-        /// Provides access to the underlying input action "UI_Nana/Submit".
+        /// Provides access to the underlying input action "UI_Nana/Decide".
         /// </summary>
-        public InputAction @Submit => m_Wrapper.m_UI_Nana_Submit;
+        public InputAction @Decide => m_Wrapper.m_UI_Nana_Decide;
         /// <summary>
         /// Provides access to the underlying input action "UI_Nana/Cancel".
         /// </summary>
@@ -2623,9 +2623,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @TabRight.started += instance.OnTabRight;
             @TabRight.performed += instance.OnTabRight;
             @TabRight.canceled += instance.OnTabRight;
-            @Submit.started += instance.OnSubmit;
-            @Submit.performed += instance.OnSubmit;
-            @Submit.canceled += instance.OnSubmit;
+            @Decide.started += instance.OnDecide;
+            @Decide.performed += instance.OnDecide;
+            @Decide.canceled += instance.OnDecide;
             @Cancel.started += instance.OnCancel;
             @Cancel.performed += instance.OnCancel;
             @Cancel.canceled += instance.OnCancel;
@@ -2652,9 +2652,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @TabRight.started -= instance.OnTabRight;
             @TabRight.performed -= instance.OnTabRight;
             @TabRight.canceled -= instance.OnTabRight;
-            @Submit.started -= instance.OnSubmit;
-            @Submit.performed -= instance.OnSubmit;
-            @Submit.canceled -= instance.OnSubmit;
+            @Decide.started -= instance.OnDecide;
+            @Decide.performed -= instance.OnDecide;
+            @Decide.canceled -= instance.OnDecide;
             @Cancel.started -= instance.OnCancel;
             @Cancel.performed -= instance.OnCancel;
             @Cancel.canceled -= instance.OnCancel;
@@ -3282,12 +3282,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTabRight(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Submit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Decide" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSubmit(InputAction.CallbackContext context);
+        void OnDecide(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Cancel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

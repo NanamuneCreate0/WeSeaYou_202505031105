@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class GameModeController : MonoBehaviour
+public class GameModeController_ActionScene : MonoBehaviour
 {
     public enum GameMode
     {

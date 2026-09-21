@@ -1094,7 +1094,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Submit",
+                    "name": "Decide",
                     "type": "Button",
                     "id": "3ee28a45-cf9d-460e-b59f-4a88bae00eb7",
                     "expectedControlType": "",
@@ -1316,7 +1316,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Submit",
+                    "action": "Decide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
