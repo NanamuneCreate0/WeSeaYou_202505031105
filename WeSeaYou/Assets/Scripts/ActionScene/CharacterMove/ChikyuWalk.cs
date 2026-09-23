@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;ƒ_ƒbƒVƒ…–³‚µ•Û‘¶”Å
 using UnityEngine.InputSystem;
 
 public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚¿‚ÌƒLƒƒƒ‰‚©•ª‚©‚ç‚È‚¢@‘€ì‚µ‚È‚¢•û
@@ -255,11 +255,6 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
             }
         }
     }
-    /*void PlayAnimation(string animationName)
-    {
-        CurrentAnim = animationName;
-        animator.Play(animationName);
-    }*/
     void PlayAnimation(string animationName)
     {
         string originalAnimationName = animationName;
@@ -296,4 +291,419 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         animator.Play(animationName);
     }
 
+}*/
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚¿‚ÌƒLƒƒƒ‰‚©•ª‚©‚ç‚È‚¢@‘€ì‚µ‚È‚¢•û
+{
+    public enum Direction
+    {
+        Left = -1,
+        None = 0,
+        Right = 1
+    }
+    public string CurrentAnim;
+
+    [SerializeField] float moveSpeed;
+    [SerializeField] float resistance;
+    [SerializeField] float power;
+    [SerializeField] float jumpPower;
+    [SerializeField] Animator animator;
+    [SerializeField] ActionModeChanger actionModeChanger;
+
+    Rigidbody2D rb;
+    Collider2D myCol;
+    bool wasGrounding;
+    bool groundingInitialized;
+    float previousVelocityY;
+
+    // Ú’nó‘Ô
+    public bool IsGrounding { get; private set; }
+    public Collider2D CurrentGroundCollider { get; private set; }
+    public Vector2 GroundPoint { get; private set; }
+
+    Direction? lastDirection = null;
+    public Direction CurrentDirection = Direction.Right;
+
+    float inputX;
+
+    // ‘–‚é‚Ü‚Å‚ÌŠÔ
+    float walkTime;
+    bool isRunning;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        myCol = GetComponentInChildren<Collider2D>();
+    }
+
+    void OnEnable()
+    {
+        InputManager.Instance.actions.Player.Move.performed += OnMove;
+        InputManager.Instance.actions.Player.Move.canceled += OnMove;
+        InputManager.Instance.actions.Player.Jump.performed += OnJump;
+        ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
+    }
+
+    void OnDisable()
+    {
+        InputManager.Instance.actions.Player.Move.performed -= OnMove;
+        InputManager.Instance.actions.Player.Move.canceled -= OnMove;
+        InputManager.Instance.actions.Player.Jump.performed -= OnJump;
+        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
+    }
+
+    void FixedUpdate()
+    {
+        UpdateGrounding();
+        UpdateAirState();//‹ó’†ƒAƒjƒ‚ğ”½‰f
+        UpdateRunState();
+        ApplyMovement();
+    }
+
+    // InputSystem
+    void OnMove(InputAction.CallbackContext context)
+    {
+        inputX = context.ReadValue<Vector2>().x;
+        UpdateDirection();
+    }
+
+    void OnJump(InputAction.CallbackContext context)
+    {
+        if (!IsGrounding) return;
+
+        rb.AddForce(Vector2.up * jumpPower * rb.mass);
+
+        PlayJumpAnimation();
+    }
+
+    //Event
+    void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
+    {
+        UpdateDirection(true);
+    }
+
+    // Ú’n”»’è
+    void UpdateGrounding()
+    {
+        IsGrounding = GroundUtil.CheckGrounded(
+            myCol,
+            out Collider2D col,
+            out Vector2 point);
+
+        if (IsGrounding)
+        {
+            CurrentGroundCollider = col;
+            GroundPoint = point;
+        }
+        else
+        {
+            CurrentGroundCollider = null;
+        }
+
+        //’…’nƒAƒjƒ
+
+        // ‰‰ñ‚Í’…’nˆµ‚¢‚É‚µ‚È‚¢
+        if (!groundingInitialized)
+        {
+            wasGrounding = IsGrounding;
+            groundingInitialized = true;
+            return;
+        }
+
+        // ‹ó’† ¨ Ú’n‚É‚È‚Á‚½uŠÔ
+        if (!wasGrounding && IsGrounding)
+        {
+            UpdateDirection(true);
+        }
+        wasGrounding = IsGrounding;
+    }
+
+    void UpdateAirState()
+    {
+        if (IsGrounding)
+        {
+            previousVelocityY = rb.linearVelocityY;
+            return;
+        }
+
+        if (previousVelocityY >= 0 && rb.linearVelocityY < 0)
+        {
+            UpdateDirection(true);
+        }
+        previousVelocityY = rb.linearVelocityY;
+    }
+
+    void UpdateRunState()
+    {
+        // Neutral‚Ì‚Æ‚«‚¾‚¯‘–‚é
+        if (actionModeChanger.ActionMode != ActionModeChanger.ActionModeType.Neutral)
+        {
+            if (isRunning)
+            {
+                isRunning = false;
+                UpdateDirection(true);
+            }
+
+            walkTime = 0f;
+            return;
+        }
+
+        // ’nã‚ÅˆÚ“®“ü—Í‚ª‚ ‚éŠÔ‚¾‚¯ŠÔ‚ği‚ß‚é
+        if (IsGrounding && Mathf.Abs(inputX) > 0)
+        {
+            // –Ú‚Ì‘O‚É•Ç‚ª‚ ‚éŠÔ‚Í‘–‚é‚½‚ß‚ÌŠÔ‚ği‚ß‚È‚¢
+            if (IsWallAhead(inputX))
+            {
+                if (isRunning)
+                {
+                    isRunning = false;
+                    UpdateDirection(true);
+                }
+
+                walkTime = 0f;
+                return;
+            }
+
+            walkTime += Time.fixedDeltaTime;
+
+            // 1•b•à‚«‘±‚¯‚½‚ç‘–‚é
+            if (!isRunning && walkTime >= 1f)
+            {
+                isRunning = true;
+                UpdateDirection(true);
+            }
+
+            // ‘–‚Á‚Ä‚¢‚é“r’†‚Å–Ú‚Ì‘O‚É•Ç‚ª‚Å‚«‚½‚ç‘–‚è‚ğ‰ğœ‚·‚é
+            if (isRunning && IsWallAhead(inputX))
+            {
+                isRunning = false;
+                UpdateDirection(true);
+            }
+        }
+        else
+        {
+            // “ü—Í‚ğ—£‚µ‚½‚ç‘–sŠÔ‚ğƒŠƒZƒbƒg
+            if (isRunning)
+            {
+                isRunning = false;
+                UpdateDirection(true);
+            }
+
+            walkTime = 0f;
+        }
+    }
+
+    void ApplyMovement()
+    {
+        float groundVelocityX = 0f;
+
+        if (IsGrounding && CurrentGroundCollider != null)
+        {
+            IVelocityProvider provider =
+                CurrentGroundCollider.transform.parent.GetComponentInChildren<IVelocityProvider>();
+
+            if (provider != null)
+            {
+                groundVelocityX = provider.Velocity.x;
+            }
+        }
+
+        float moveMultiplier = IsGrounding ? 1f : 0.7f;
+
+        // ‘–‚Á‚Ä‚¢‚éŠÔ‚ÍˆÚ“®‘¬“x‚ğ1.4”{‚É‚·‚é
+        if (isRunning && IsGrounding)
+        {
+            moveMultiplier = 1.4f;
+        }
+
+        rb.AddForce(
+            Vector2.right * inputX * moveSpeed * moveMultiplier
+        );
+
+        float resistanceForce =
+            -(rb.linearVelocityX - groundVelocityX)
+            * Mathf.Pow(resistance, power);
+
+        rb.AddForce(Vector2.right * resistanceForce);
+
+        animator.SetFloat("AnimSpeed", Mathf.Abs(inputX));
+    }
+
+
+
+    // Œü‚«‚Ì•ÏX
+    void UpdateDirection(bool force = false)//ƒAƒjƒ‚ğ‹­§“I‚É•Ï‚¦‚éê‡true
+    {
+        Direction newDirection = Direction.None;
+
+        if (inputX > 0)
+        {
+            newDirection = Direction.Right;
+        }
+        else if (inputX < 0)
+        {
+            newDirection = Direction.Left;
+        }
+
+        // Œü‚«E“ü—Íó‘Ô‚ª•Ï‚í‚Á‚Ä‚¢‚È‚¯‚ê‚Î‰½‚à‚µ‚È‚¢(force‚È‚ç‚·‚é)
+        if (!force && newDirection == lastDirection)
+        {
+            return;
+        }
+        lastDirection = newDirection;
+
+        // NoneˆÈŠO‚È‚çŠO•”ŒöŠJ—p‚ÌCurrentDirection‚ğXV
+        if (newDirection != Direction.None)
+        {
+            CurrentDirection = newDirection;
+        }
+
+
+        // ‹ó’†‚È‚çƒWƒƒƒ“ƒvƒAƒjƒ[ƒVƒ‡ƒ“‚ÌŒü‚«‚¾‚¯•ÏX
+        if (!IsGrounding)
+        {
+            PlayJumpAnimation();
+            return;
+        }
+
+        // ’nã‚ÅDirection.None‚È‚ç‘Ò‹@
+        if (newDirection == Direction.None)
+        {
+            if (CurrentDirection == Direction.Right)
+            {
+                PlayAnimation("WaitRight");
+            }
+            else if (CurrentDirection == Direction.Left)
+            {
+                PlayAnimation("WaitLeft");
+            }
+
+            return;
+        }
+
+        // ’nã‚ÅDirection.NoneˆÈŠO‚È‚ç•à‚«‚Ü‚½‚Í‘–‚è
+        if (isRunning)
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("RunRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("RunLeft");
+                    break;
+            }
+        }
+        else
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("WalkRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("WalkLeft");
+                    break;
+            }
+        }
+    }
+
+    void PlayJumpAnimation()
+    {
+        if (rb.linearVelocityY >= 0)
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("JumpRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("JumpLeft");
+                    break;
+            }
+        }
+        else
+        {
+            switch (CurrentDirection)
+            {
+                case Direction.Right:
+                    PlayAnimation("FallRight");
+                    break;
+
+                case Direction.Left:
+                    PlayAnimation("FallLeft");
+                    break;
+            }
+        }
+    }
+
+    void PlayAnimation(string animationName)
+    {
+        string originalAnimationName = animationName;
+
+        if (actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
+        {
+            if (animationName == "WalkRight")
+            {
+                animationName = "UtyuSkillWalkRight";
+            }
+            else if (animationName == "WalkLeft")
+            {
+                animationName = "UtyuSkillWalkLeft";
+            }
+            else if (animationName == "WaitRight")
+            {
+                animationName = "UtyuSkillWaitRight";
+            }
+            else if (animationName == "WaitLeft")
+            {
+                animationName = "UtyuSkillWaitLeft";
+            }
+
+            int stateHash = Animator.StringToHash(animationName);
+
+            if (!animator.HasState(0, stateHash))
+            {
+                Debug.LogWarning("Animator‚ÉƒXƒe[ƒg‚ª‚ ‚è‚Ü‚¹‚ñ: " + animationName);
+                animationName = originalAnimationName;
+            }
+        }
+
+        CurrentAnim = animationName;
+        animator.Play(animationName);
+    }
+    bool IsWallAhead(float dir)
+    {
+        Bounds bounds = myCol.bounds;
+
+        float x = dir > 0
+            ? bounds.max.x
+            : bounds.min.x;
+
+        float y = bounds.min.y + bounds.size.y * 0.25f;
+
+        Vector2 origin = new Vector2(x, y);
+        Vector2 direction = new Vector2(dir, 0);
+
+        int layerMask = ~LayerMask.GetMask("Player");
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,
+            direction,
+            0.4f,
+            layerMask);
+
+        Debug.DrawRay(
+            origin,
+            direction * 0.4f,
+            Color.blue);
+
+        return hit.collider != null &&
+               hit.collider.attachedRigidbody != null;
+    }
 }
