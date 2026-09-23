@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
+  dustLeft: {fileID: 8635394770069074837, guid: f2fbf88a1d3bbf54381b5829a357447f, type: 3}
+  dustRight: {fileID: 3777739597282404097, guid: 286265e816032a043b6379fd3684f224, type: 3}
 --- !u!1 &5542242022634552668
 GameObject:
   m_ObjectHideFlags: 0
