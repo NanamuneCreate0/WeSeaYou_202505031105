@@ -34,7 +34,6 @@ public class ActionModeChanger : MonoBehaviour
     void Start()
     {
         ActionMode = ActionModeType.Neutral;
-        mainCamera.ModeChanged();
     }
     void Update()
     {

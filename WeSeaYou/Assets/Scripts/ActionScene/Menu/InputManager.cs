@@ -31,11 +31,11 @@ public class InputManager : MonoBehaviour
     {
         if (actions == null) return;
         actions.Player.Disable();
-        actions.UI.Disable();
+        actions.UI_Nana.Disable();
     }
 }
 
-//Vector2 move =InputManager.Instance.Actions.Player.Move.ReadValue<Vector2>();
-//InputManager.Instance.Actions.Player.Jump.performed += OnJump;
+//Vector2 move =InputManager.Instance.Actions.Player.Move.ReadValue<Vector2>();//
+//InputManager.Instance.Actions.Player.Jump.performed += OnJump;//
 
 

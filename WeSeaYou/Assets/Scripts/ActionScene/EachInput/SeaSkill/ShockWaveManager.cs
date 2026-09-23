@@ -10,11 +10,14 @@ public class ShockWaveManager : MonoBehaviour
     void Awake()
     {
         _material = GetComponent<SpriteRenderer>().material; // SpriteRendererのマテリアルを取得
-        StartShockWave();
     }
 
     public void StartShockWave()
     {
+        if (_shockWaveCoroutine != null)
+        {
+            StopCoroutine(_shockWaveCoroutine);
+        }
         _shockWaveCoroutine = StartCoroutine(ShockWaveAction(-0.1f, 1f)); // ショックウェーブの開始位置と終了位置を指定してコルーチンを開始
     }
 

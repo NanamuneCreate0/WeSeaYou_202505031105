@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class PauseInitializer : MonoBehaviour//ˆê•”Initial‚Å‚Í‚È‚¢
+public class MenuInitializer : MonoBehaviour//ˆê•”Initial‚Å‚Í‚È‚¢
 {
     [SerializeField] private GameModeController_ActionScene gameModeController;
     [SerializeField] private GameObject menuObject;
+    [SerializeField] private MenuExecutor_ActionScene excuter;
 
     void OnEnable()
     {
@@ -27,6 +28,7 @@ public class PauseInitializer : MonoBehaviour//ˆê•”Initial‚Å‚Í‚È‚¢
             case GameModeController_ActionScene.GameMode.Menu:
                 Time.timeScale = 0f;
                 menuObject.SetActive(true);
+                excuter.Initialize();
                 break;
         }
     }

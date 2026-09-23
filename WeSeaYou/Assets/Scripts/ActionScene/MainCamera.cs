@@ -1,36 +1,47 @@
-using Unity.Collections;
 using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
     [SerializeField]
     GameObject MyMainCamera;
-    [SerializeField]
-    ActionModeChanger controlModeChanger;
+
     [SerializeField]
     GameObject MyChikyu;
-    //[SerializeField]GameObject MyUtyu;//
 
-    //GameObject ControlableChara;//
+    [SerializeField]
+    Vector3 Misalignment;
 
-    private Vector3 Misalignment { get { return new Vector3(0, 2f, 0); } }
+    [SerializeField]
+    GameObject borderObjLeft;
 
-    Vector3 LastPos;
-    public void ModeChanged()
-    {
-        //if (controlModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuView) { ControlableChara = MyChikyu; }//
-        //if (controlModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuView) { ControlableChara = MyUtyu; }//
-    }
-    void Start()
-    {
-    }
+    [SerializeField]
+    GameObject borderObjRight;
 
     void Update()
     {
-        //カメラ追従
-        //Vector3 vec = new Vector3(ControlableChara.transform.position.x, ControlableChara.transform.position.y, -1) + Misalignment;//
-        Vector3 vec = new Vector3(MyChikyu.transform.position.x, MyChikyu.transform.position.y, -1) + Misalignment;
-        MyMainCamera.transform.position = MyMainCamera.transform.position * Mathf.Pow(0.1f, Time.deltaTime) + vec * (1 - Mathf.Pow(0.1f, Time.deltaTime));
-    }
+        // カメラ追従先
+        Vector3 targetPos = new Vector3(
+            MyChikyu.transform.position.x,
+            MyChikyu.transform.position.y,
+            -1
+        ) + Misalignment;
 
+        // カメラ中心のX移動範囲を計算
+        float cameraMinX = borderObjLeft.transform.position.x + 10f;
+        float cameraMaxX = borderObjRight.transform.position.x - 10f;
+
+        // X軸だけ移動範囲内に制限
+        targetPos.x = Mathf.Clamp(
+            targetPos.x,
+            cameraMinX,
+            cameraMaxX
+        );
+
+        // カメラ追従
+        MyMainCamera.transform.position = Vector3.Lerp(
+            targetPos,
+            MyMainCamera.transform.position,
+            Mathf.Pow(0.1f, Time.deltaTime)
+        );
+    }
 }

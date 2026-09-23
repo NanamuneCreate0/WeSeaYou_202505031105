@@ -5,34 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene_Ref03.unity
     guid: 738ab4f2370526f4f8317baa2eb219aa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene_Ref02.unity
     guid: 9e4bbbad358801c48b010b6a0494bb43
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene_Ref01.unity
     guid: 7a333cf9ae5f35b4aa49aec2e7704f76
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene00.unity
     guid: 12868af637d8ee041a4b885add19d72b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene01.unity
     guid: 3e39cb0df46728c448e25438703ba49b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene02.unity
     guid: cf9792a926b36844591c491c4a35db38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene03.unity
     guid: b1f341c5ac1b3824c8e69815250211ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene04.unity
     guid: e4aecb7138d760847b50a2904c563f39
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene05.unity
     guid: f4020c5ce929c55409a6e7e083b5181c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ActionScene06.unity
     guid: 6a67dc7283266234e90f8572adbade5b
   - enabled: 1

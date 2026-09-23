@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public static class PublicStaticStatus
 {
@@ -21,4 +22,31 @@ public static class PublicStaticStatus
      * ななむねは、ステージゴール時にenumを+1する
      * はじめてのゲームスタート時、始めるボタンでNone→ChapterA
      */
+    private static int volume_Config = 5;
+    public static int Volume_Config
+    {
+        get
+        {
+            return volume_Config;
+        }
+        set
+        {
+
+            if (value < 0 || value > 11)
+            {
+                Debug.LogWarning(
+                    $"Volume_Configの値が範囲外です。0～11の範囲で指定してください。指定値: {value}"
+                );
+                return;
+            }
+            if (volume_Config == value)
+            {
+                return;
+            }
+
+            volume_Config = value;
+            VolumeConfigChanged?.Invoke();
+        }
+    }
+    public static event Action VolumeConfigChanged;
 }

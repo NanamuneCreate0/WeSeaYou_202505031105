@@ -20,24 +20,23 @@ public class GameModeController_ActionScene : MonoBehaviour
             case GameMode.Action:
                 if (InputManager.Instance.actions.Player.Pause.WasPressedThisFrame())
                 {
-                    gameMode = GameMode.Menu;
-                    ApplyGameMode();
+                    ChangeGameMode(GameMode.Menu);
                 }
                 break;
 
             case GameMode.Menu:
                 if (InputManager.Instance.actions.UI_Nana.Pause.WasPressedThisFrame())
                 {
-                    gameMode = GameMode.Action;
-                    ApplyGameMode();
+                    ChangeGameMode(GameMode.Action);
                 }
                 break;
         }
     }
 
-    void ApplyGameMode()
+    public void ChangeGameMode(GameMode gm)//Input.actionsÇïœçXÇ∑ÇÈÇÃÇÕGameModeÇÃê”ñ±ÅBTimeScaleÇ‚ObjÇÃSetActiveÇïœÇ¶ÇÈÇÃÇÕê”ñ±Ç∂Ç·Ç»Ç¢ÅB
     {
-        switch (gameMode)
+        gameMode = gm;
+        switch (gm)
         {
             case GameMode.Action:
                 InputManager.Instance.actions.Player.Enable();
