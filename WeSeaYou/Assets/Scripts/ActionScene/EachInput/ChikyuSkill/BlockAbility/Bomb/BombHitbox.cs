@@ -4,7 +4,7 @@ public class BombHitbox : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 1f);
+        Destroy(transform.root.gameObject,1f);
     }
     private void OnTriggerStay2D(Collider2D other)
     {
