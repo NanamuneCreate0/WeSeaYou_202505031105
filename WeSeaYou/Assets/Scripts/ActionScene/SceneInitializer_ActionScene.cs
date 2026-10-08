@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.AddressableAssets.Build.Layout.BuildLayout;
 
-public class SceneInitializer_ActionScene: MonoBehaviour
+public class SceneInitializer_ActionScene : MonoBehaviour
 {
     [System.Serializable]
     public class StartObjectToPlace
@@ -20,12 +20,15 @@ public class SceneInitializer_ActionScene: MonoBehaviour
 
     [SerializeField]
     List<ChikyuSkillItemData> debugItems = new List<ChikyuSkillItemData>();
+    [SerializeField] private GameObject chapterAObj;
+    [SerializeField] private GameObject chapterBObj;
+    [SerializeField] private GameObject chapterCObj;
+    [SerializeField] private GameObject otherObj;
 
     void Start()
     {
         Application.targetFrameRate = 60;
         DebugFunction();
-        FadePannel.SetActive(true);
         foreach (StartObjectToPlace so in objects)
         {
             if (so.obj != null)
@@ -47,6 +50,28 @@ public class SceneInitializer_ActionScene: MonoBehaviour
             foreach (ChikyuSkillItemData item in debugItems)
             {
                 PublicStaticStatus.ChikyuSkillItemList.Add(item);
+            }
+        }
+
+        //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»void Start()
+        {
+            switch (PublicStaticStatus.ClearedChapter)
+            {
+                case PublicStaticStatus.Chapter.ChapterA:
+                    chapterAObj.SetActive(true);
+                    break;
+
+                case PublicStaticStatus.Chapter.ChapterB:
+                    chapterBObj.SetActive(true);
+                    break;
+
+                case PublicStaticStatus.Chapter.ChapterC:
+                    chapterCObj.SetActive(true);
+                    break;
+
+                default:
+                    otherObj.SetActive(true);
+                    break;
             }
         }
     }

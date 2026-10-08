@@ -200,7 +200,7 @@ public class MenuExecutor_ActionScene : MonoBehaviour
 
                     SetSelectedScale(currentCursorObject.obj);
 
-                    Debug.Log($"Tab: {currentTab} / Cursor: {cursorPosition}");
+                    //Debug.Log($"Tab: {currentTab} / Cursor: {cursorPosition}");
 
                     return;
                 }
