@@ -119,9 +119,7 @@ public class SeaSkillExecutor : MonoBehaviour
         foreach (Collider2D col in _candidates)
         {
             if (col == null) continue;
-
-            float distSqr =
-                ((Vector2)col.transform.position - (Vector2)transform.position).sqrMagnitude;
+            float distSqr =((Vector2)col.transform.position - (Vector2)_player.transform.position).sqrMagnitude;
 
             if (distSqr < bestDistSqr)
             {
@@ -197,100 +195,6 @@ public class SeaSkillExecutor : MonoBehaviour
         }
     }
 
-    /*void RefreshCandidates()
-    {
-        _candidates.Clear();
-
-        int count = Physics2D.OverlapCircle(
-            _player.transform.position,
-            SkillRadius,
-            _contactFilter,
-            _hitResults);
-
-        for (int i = 0; i < count; i++)
-        {
-            Collider2D col = _hitResults[i];
-
-            if (col != null && col.CompareTag("UtyuSkillItem"))
-            {
-                _candidates.Add(col);
-            }
-        }
-        //Debug.Log(_candidates.Count);
-    }*/
-    /*void RefreshCandidates()
-    {
-        // 前回の候補を保存
-        List<Collider2D> previousCandidates = new List<Collider2D>(_candidates);
-
-        _candidates.Clear();
-
-        int count = Physics2D.OverlapCircle(
-            _player.transform.position,
-            SkillRadius,
-            _contactFilter,
-            _hitResults);
-
-        for (int i = 0; i < count; i++)
-        {
-            Collider2D col = _hitResults[i];
-
-            if (col == null || !col.CompareTag("UtyuSkillItem"))
-                continue;
-            _candidates.Add(col);
-            // 新しく候補になった
-            if (!previousCandidates.Contains(col))
-            {
-                if (col.TryGetComponentInChildren<IOperable>(out var operable))
-                {
-                    operable.BecomeCandidateColor();
-                }
-                else
-                {
-                    Debug.LogWarning("CandidatesMustHanveIOperable");
-                }
-            }
-        }
-
-        // 前回は候補だったが、今回は候補ではなくなった
-        foreach (Collider2D col in previousCandidates)
-        {
-            if (!_candidates.Contains(col) &&
-                col != null )
-            {
-                if (col.TryGetComponentInChildren<IOperable>(out var operable))
-                {
-                    operable.ResetColor();
-                }
-                else
-                {
-                    Debug.LogWarning("CandidatesMustHanveIOperable");
-                }
-            }
-        }
-    }*/
-    /*private void RefreshCandidates()
-    {
-        _candidates.Clear();
-
-        int count = Physics2D.OverlapCircle(
-            _player.transform.position,
-            SkillRadius,
-            _contactFilter,
-            _hitResults);
-
-        for (int i = 0; i < count; i++)
-        {
-            Collider2D col = _hitResults[i];
-
-            if (col == null || !col.CompareTag("UtyuSkillItem"))
-                continue;
-
-            _candidates.Add(col);
-        }
-
-        CandidateStateChanged?.Invoke(_candidates);
-    }*/
     private void RefreshCandidates()
     {
         List<Collider2D> previousCandidates = new List<Collider2D>(_candidates);

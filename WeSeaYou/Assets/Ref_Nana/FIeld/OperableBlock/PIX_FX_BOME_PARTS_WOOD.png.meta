@@ -1,0 +1,920 @@
+fileFormatVersion: 2
+guid: 7f2d0cefe5f5ddc48b3196a7b21becc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6374000300528501092
+    second: PIX_FX_BOME_PARTS_WOOD_0
+  - first:
+      213: -6830022647217417639
+    second: PIX_FX_BOME_PARTS_WOOD_1
+  - first:
+      213: 195183685340200339
+    second: PIX_FX_BOME_PARTS_WOOD_2
+  - first:
+      213: -5224278387687203917
+    second: PIX_FX_BOME_PARTS_WOOD_3
+  - first:
+      213: -6636116390589193370
+    second: PIX_FX_BOME_PARTS_WOOD_4
+  - first:
+      213: -7426863495693781505
+    second: PIX_FX_BOME_PARTS_WOOD_5
+  - first:
+      213: 5560718766008146008
+    second: PIX_FX_BOME_PARTS_WOOD_6
+  - first:
+      213: -8716347159858409603
+    second: PIX_FX_BOME_PARTS_WOOD_7
+  - first:
+      213: -2969633843573686122
+    second: PIX_FX_BOME_PARTS_WOOD_8
+  - first:
+      213: -6074113704448183035
+    second: PIX_FX_BOME_PARTS_WOOD_9
+  - first:
+      213: -2658545146321447510
+    second: PIX_FX_BOME_PARTS_WOOD_10
+  - first:
+      213: -9154703759127822856
+    second: PIX_FX_BOME_PARTS_WOOD_11
+  - first:
+      213: 2409100961222091529
+    second: PIX_FX_BOME_PARTS_WOOD_12
+  - first:
+      213: 4716313810366069480
+    second: PIX_FX_BOME_PARTS_WOOD_13
+  - first:
+      213: -7292007226869976231
+    second: PIX_FX_BOME_PARTS_WOOD_14
+  - first:
+      213: -2200359919296600315
+    second: PIX_FX_BOME_PARTS_WOOD_15
+  - first:
+      213: 828437014593104299
+    second: PIX_FX_BOME_PARTS_WOOD_16
+  - first:
+      213: -389412773844172448
+    second: PIX_FX_BOME_PARTS_WOOD_17
+  - first:
+      213: 4604152504152986563
+    second: PIX_FX_BOME_PARTS_WOOD_18
+  - first:
+      213: 4434799639461644223
+    second: PIX_FX_BOME_PARTS_WOOD_19
+  - first:
+      213: -1740066175620033655
+    second: PIX_FX_BOME_PARTS_WOOD_20
+  - first:
+      213: 771814893632827680
+    second: PIX_FX_BOME_PARTS_WOOD_21
+  - first:
+      213: 4504234448139962780
+    second: PIX_FX_BOME_PARTS_WOOD_22
+  - first:
+      213: -9185582545788996001
+    second: PIX_FX_BOME_PARTS_WOOD_23
+  - first:
+      213: 1068110298012999913
+    second: PIX_FX_BOME_PARTS_WOOD_24
+  - first:
+      213: 1750022651129623232
+    second: PIX_FX_BOME_PARTS_WOOD_25
+  - first:
+      213: 341629124888949892
+    second: PIX_FX_BOME_PARTS_WOOD_26
+  - first:
+      213: -6761481571507915426
+    second: PIX_FX_BOME_PARTS_WOOD_27
+  - first:
+      213: 7579042809776278493
+    second: PIX_FX_BOME_PARTS_WOOD_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ef3c06f700b87a0800000000000000
+      internalID: -6374000300528501092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9529bb0e692e631a0800000000000000
+      internalID: -6830022647217417639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d77a6178e65b200800000000000000
+      internalID: 195183685340200339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb572e5c72af77b0800000000000000
+      internalID: -5224278387687203917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663a8ca6d47c7e3a0800000000000000
+      internalID: -6636116390589193370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff53bd7fffa7ee890800000000000000
+      internalID: -7426863495693781505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85893c77144ab2d40800000000000000
+      internalID: 5560718766008146008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f87a57070590780800000000000000
+      internalID: -8716347159858409603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69000d8c0cdb9c6d0800000000000000
+      internalID: -2969633843573686122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505b80194c964bba0800000000000000
+      internalID: -6074113704448183035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5db266643fa1bd0800000000000000
+      internalID: -2658545146321447510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdb04d4f65f3f080800000000000000
+      internalID: -9154703759127822856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903e1bd6f88de6120800000000000000
+      internalID: 2409100961222091529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea73242c66b37140800000000000000
+      internalID: 4716313810366069480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95375d6df069dca90800000000000000
+      internalID: -7292007226869976231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507a158bf40c671e0800000000000000
+      internalID: -2200359919296600315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba96b9553133f7b00800000000000000
+      internalID: 828437014593104299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061c4083527889af0800000000000000
+      internalID: -389412773844172448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c393c50f4c35ef30800000000000000
+      internalID: 4604152504152986563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb7442886c29b8d30800000000000000
+      internalID: 4434799639461644223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983de74580b0ad7e0800000000000000
+      internalID: -1740066175620033655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02137577e8906ba00800000000000000
+      internalID: 771814893632827680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99c57abd51428e30800000000000000
+      internalID: 4504234448139962780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56f7378751468080800000000000000
+      internalID: -9185582545788996001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e0600e28a0b2de00800000000000000
+      internalID: 1068110298012999913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2f7754454594810800000000000000
+      internalID: 1750022651129623232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484fee901e5bdb400800000000000000
+      internalID: 341629124888949892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55bbe6a5546a22a0800000000000000
+      internalID: -6761481571507915426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb813ea74b2e2960800000000000000
+      internalID: 7579042809776278493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PIX_FX_BOME_PARTS_WOOD_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2452c97442d4db64b87232d65ab03719
+      internalID: -86253012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f8582cab5b0d5564c8e99f2fdbf69db1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PIX_FX_BOME_PARTS_WOOD_0: -6374000300528501092
+      PIX_FX_BOME_PARTS_WOOD_1: -6830022647217417639
+      PIX_FX_BOME_PARTS_WOOD_10: -2658545146321447510
+      PIX_FX_BOME_PARTS_WOOD_11: -9154703759127822856
+      PIX_FX_BOME_PARTS_WOOD_12: 2409100961222091529
+      PIX_FX_BOME_PARTS_WOOD_13: 4716313810366069480
+      PIX_FX_BOME_PARTS_WOOD_14: -7292007226869976231
+      PIX_FX_BOME_PARTS_WOOD_15: -2200359919296600315
+      PIX_FX_BOME_PARTS_WOOD_16: 828437014593104299
+      PIX_FX_BOME_PARTS_WOOD_17: -389412773844172448
+      PIX_FX_BOME_PARTS_WOOD_18: 4604152504152986563
+      PIX_FX_BOME_PARTS_WOOD_19: 4434799639461644223
+      PIX_FX_BOME_PARTS_WOOD_2: 195183685340200339
+      PIX_FX_BOME_PARTS_WOOD_20: -1740066175620033655
+      PIX_FX_BOME_PARTS_WOOD_21: 771814893632827680
+      PIX_FX_BOME_PARTS_WOOD_22: 4504234448139962780
+      PIX_FX_BOME_PARTS_WOOD_23: -9185582545788996001
+      PIX_FX_BOME_PARTS_WOOD_24: 1068110298012999913
+      PIX_FX_BOME_PARTS_WOOD_25: 1750022651129623232
+      PIX_FX_BOME_PARTS_WOOD_26: 341629124888949892
+      PIX_FX_BOME_PARTS_WOOD_27: -6761481571507915426
+      PIX_FX_BOME_PARTS_WOOD_28: 7579042809776278493
+      PIX_FX_BOME_PARTS_WOOD_29: -86253012
+      PIX_FX_BOME_PARTS_WOOD_3: -5224278387687203917
+      PIX_FX_BOME_PARTS_WOOD_4: -6636116390589193370
+      PIX_FX_BOME_PARTS_WOOD_5: -7426863495693781505
+      PIX_FX_BOME_PARTS_WOOD_6: 5560718766008146008
+      PIX_FX_BOME_PARTS_WOOD_7: -8716347159858409603
+      PIX_FX_BOME_PARTS_WOOD_8: -2969633843573686122
+      PIX_FX_BOME_PARTS_WOOD_9: -6074113704448183035
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

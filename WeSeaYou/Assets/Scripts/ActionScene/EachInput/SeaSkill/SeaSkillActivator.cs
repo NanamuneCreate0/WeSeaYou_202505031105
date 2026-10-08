@@ -5,8 +5,8 @@ using static ActionModeChanger;
 public class SeaSkillActivator : MonoBehaviour
 {
     [SerializeField] private SeaSkillExecutor seaSkillExecuter;
-    [SerializeField] private SeaSkillAura seaSkillAura; 
-
+    [SerializeField] private SeaSkillAura seaSkillAura;
+    [SerializeField] private ShockWaveManager _shockWaveManager;
 
     private void OnEnable()
     {
@@ -23,6 +23,7 @@ public class SeaSkillActivator : MonoBehaviour
             if (b != ActionModeChanger.ActionModeType.Neutral && b != ActionModeChanger.ActionModeType.ChikyuSkill) { Debug.LogWarning("ëzíËäOÇÃActionModeïœçX"); }
             seaSkillExecuter.ActivateSkill();
             seaSkillAura.ActivateSkill();
+            _shockWaveManager.StartShockWave();
         }
         if (b == ActionModeChanger.ActionModeType.UtyuSkill)
         {

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameAsset
   m_EditorClassIdentifier: 
   bombHitboxPrefab: {fileID: 4931762435143190446, guid: 74bfdce4b711b6146aaf0b8b885d3090, type: 3}
+  bombHitboxPrefab2: {fileID: 4931762435143190446, guid: c998b527cdd014042a7ff5798be04eec, type: 3}

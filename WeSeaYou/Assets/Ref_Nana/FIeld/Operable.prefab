@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.1, y: -0.14}
+  m_Offset: {x: 0.1, y: -0.19}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.68, y: 1.26}
+  m_Size: {x: 1.68, y: 1.15}
   m_EdgeRadius: 0.02
 --- !u!1 &976692350426012199
 GameObject:
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -30
   m_Sprite: {fileID: 1357804845519514096, guid: 352d4f68c79fd26448445baeb4376a38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -243,6 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
+  dustLeft: {fileID: 8635394770069074837, guid: f2fbf88a1d3bbf54381b5829a357447f, type: 3}
+  dustRight: {fileID: 3777739597282404097, guid: 286265e816032a043b6379fd3684f224, type: 3}
 --- !u!114 &8922681129440470044
 MonoBehaviour:
   m_ObjectHideFlags: 0
