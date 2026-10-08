@@ -16,7 +16,6 @@ public class MainCamera : MonoBehaviour
 
     [SerializeField]
     GameObject borderObjRight;
-
     void Update()
     {
         // ÉJÉÅÉâí«è]êÊ
@@ -43,5 +42,10 @@ public class MainCamera : MonoBehaviour
             MyMainCamera.transform.position,
             Mathf.Pow(0.1f, Time.deltaTime)
         );
+    }
+    public void SetBorderObjects(GameObject left, GameObject right)
+    {
+        borderObjLeft = left;
+        borderObjRight = right;
     }
 }

@@ -15,13 +15,17 @@ public class SceneInitializer_ActionScene: MonoBehaviour
     List<StartObjectToPlace> objects;
     [SerializeField]
     GameObject StartObj;
+    [SerializeField]
+    GameObject FadePannel;
 
     [SerializeField]
     List<ChikyuSkillItemData> debugItems = new List<ChikyuSkillItemData>();
+
     void Start()
     {
         Application.targetFrameRate = 60;
         DebugFunction();
+        FadePannel.SetActive(true);
         foreach (StartObjectToPlace so in objects)
         {
             if (so.obj != null)
@@ -29,6 +33,10 @@ public class SceneInitializer_ActionScene: MonoBehaviour
                 so.obj.transform.position = StartObj.transform.position + so.offset;
             }
         }
+    }
+    public void SetStartObj(GameObject startObj)
+    {
+        StartObj = startObj;
     }
     void DebugFunction()
     {

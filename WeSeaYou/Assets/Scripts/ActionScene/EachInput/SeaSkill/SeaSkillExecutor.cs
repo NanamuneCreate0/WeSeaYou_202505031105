@@ -119,9 +119,7 @@ public class SeaSkillExecutor : MonoBehaviour
         foreach (Collider2D col in _candidates)
         {
             if (col == null) continue;
-
-            float distSqr =
-                ((Vector2)col.transform.position - (Vector2)transform.position).sqrMagnitude;
+            float distSqr =((Vector2)col.transform.position - (Vector2)_player.transform.position).sqrMagnitude;
 
             if (distSqr < bestDistSqr)
             {
