@@ -53,12 +53,14 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
     }
 
     public void HandleAdvanceInput()
-    {
+    { 
+        Debug.Log("yobaremasita");
         if (IsTyping)
         {
             // 1回目のクリック: 全文表示にするだけ
             messageText.maxVisibleCharacters = messageText.textInfo.characterCount;
             IsTyping = false;
+            
             return;
         }
 

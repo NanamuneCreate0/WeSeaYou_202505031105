@@ -1,0 +1,315 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df2596b9b3de5349875dcbc11221b9e, type: 3}
+  m_Name: "TryData - \u30B7\u30FC\u30C83 (1)"
+  m_EditorClassIdentifier: 
+  Entries:
+  - ID: CH0T_MS_028
+    Name: MARE
+    JPText: "\u3053\u308C\u3067\u5B8C\u6210\u3060\u306A"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_029
+    Name: SEA
+    JPText: "\u308F\u3041\uFF01\u3000\u3059\u3054\u3044\u3088\u3001\u30DE\u30FC\u30EC\uFF01\u3000\\n\u3053\u3093\u306A\u306B\u3042\u3063\u3055\u308A\uFF01"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_030
+    Name: MARE
+    JPText: "\u3082\u3046\u3044\u3044\u306E\u304B\uFF1F"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_031
+    Name: SEA
+    JPText: "\u3046\u3093\u3002\u30DC\u30AF\u3058\u3083\u30DE\u30FC\u30EC\u306E\u4EE3\u308F\u308A\u306F\\n\u3067\u304D\u306A\u304B\u3063\u305F\u304B\u3089\u2026\u2026\u3002"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_032
+    Name: MARE
+    JPText: "\u3042\u30FC\u3001\u306E\u3069\u4E7E\u3044\u305F\u306A\u30FC\u3002\u3067\u3082\u3001\u6728\u306E\u4E0A\u3058\u3083\\n\u30EC\u30E2\u30F3\u53D6\u308C\u306A\u3044\u306A\u30FC\u3002\u56F0\u3063\u305F\u306A\u30FC\u3002\\n\u8AB0\u304B\u5B87\u5B99\u4EBA\u30D1\u30EF\u30FC\u3067\u52A9\u3051\u3066\u304F\u308C\u306A\u3044\u304B\u306A\u30FC\u3002"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_033
+    Name: MARE
+    JPText: "\u3044\u306A\u3044\u304B\u306A\u30FC\uFF1F"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_034
+    Name: MARE
+    JPText: "\u2026\u2026\u304A\u3044\u3002\u306A\u3093\u304B\u8A00\u3063\u3066\u304F\u308C\u3088\u3002"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_035
+    Name: SEA
+    JPText: "\u3042\u306F\u306F\uFF01\u3000\u3046\u3093\uFF01\u3000\u30DE\u30FC\u30EC\u3001\u4EFB\u305B\u3066\u3088\uFF01"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_036
+    Name: SEA
+    JPText: "\u305D\u308C\u3058\u3083\u3001\u3044\u304F\u306D\uFF01"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_037
+    Name: MARE
+    JPText: "\u3061\u3087\u3063\u3068\u5F85\u3066\u3001\u306A\u3093\u3060\u305D\u308C!?"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_038
+    Name: SEA
+    JPText: "\u3048\uFF1F\u3000\u3055\u3063\u304D\u8AAC\u660E\u3057\u305F\u3088\u306D\uFF1F"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_039
+    Name: SEA
+    JPText: "\u5C71\u3042\u308A\u8C37\u3042\u308A\u30A2\u30AF\u30B7\u30E7\u30F3\u3042\u308A\u30D1\u30BA\u30EB\u3042\u308A\\n\u611F\u52D5\u3042\u308A\u2015\u2015"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_040
+    Name: SEA
+    JPText: "\u2015\u2015\u7206\u7834\u30AA\u30C1\u3042\u308A\u3001\u3063\u3066\u3002"
+    ENText: 
+    CNText: 
+  - ID: CH0T_MS_041
+    Name: MARE
+    JPText: "\u7206\u767A\u30AA\u30C1\u306A\u3093\u3066\u30B5\u30A4\u30C6\u30FC\u2026\u2026\uFF01"
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: '-'
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 
+  - ID: '-'
+    Name: 
+    JPText: 
+    ENText: 
+    CNText: 

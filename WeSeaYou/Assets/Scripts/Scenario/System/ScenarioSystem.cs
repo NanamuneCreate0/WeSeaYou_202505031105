@@ -64,10 +64,12 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
 
     private void OnScenario(InputAction.CallbackContext context)
     {
+        Debug.Log("1");
         if (_state != ScenarioState.OnScenario) return;
-
+        Debug.Log("2");
         if (TryGetCurrentCommand(out var command) && command is IInputReceiver receiver)
         {
+            Debug.Log("3");
             receiver.HandleAdvanceInput();
         }
     }

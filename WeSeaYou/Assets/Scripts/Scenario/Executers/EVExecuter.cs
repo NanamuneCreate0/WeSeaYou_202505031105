@@ -59,6 +59,13 @@ public class EVExecuter : MonoBehaviour, IScenarioCommand, IInputReceiver
             }
         }
 
+        if(targetChara == null)
+        {
+            Debug.LogWarning($"Chara not found: {_idParam[NAME_INDEX]}");
+            onComplete?.Invoke();
+            return;
+        }
+
         Animator animator = targetChara.GetComponent<Animator>();
         animator.Play(data.ID);
 

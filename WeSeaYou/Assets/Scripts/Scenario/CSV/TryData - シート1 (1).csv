@@ -1,0 +1,29 @@
+0,カテゴリー (Category),表示(ID),数値 (Param),終了待ち(EventWait),補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】
+1,EV,PIX_BACK_CH00_FORE,-,0,-,CH0T_MS_001,FKMARE,祝！　うみいこ体験版！　いえー！
+2,EV,PIX_CARA_SEA_P_WAIT_R_DTIE,-,0,-,CH0T_MS_002,FKMARE,本作は！　文明崩壊後の地球を舞台に、\nボクこと宇宙人シーと！
+3,EV,PIX_CARA_MARE_P_WAIT_L_TIE,-,0,-,CH0T_MS_003,FKSEA,地球人マーレが
+4,WAIT,-,1,0,-,CH0T_MS_004,FKMARE,海を目指して旅をする/nアクションパズルゲームです！　やったー！
+5,CINEMASCOPE,CS_IN,-,0,-,CH0T_MS_005,FKSEA,テンション高いな
+6,WAIT,-,1,0,-,CH0T_MS_006,FKMARE,だって、体験版だよ体験版！　\n苦節八年、山あり谷ありアクションあり\nパズルあり感動あり爆発オチあり、\n数々の苦難を乗り越えて\nようやくたどり着いた約束の土地だよ！
+7,BGM,BGM_TAIKEN_01,-,0,TEXT同,CH0T_MS_007,FKSEA,なかった記憶を作るんじゃない
+8,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,CH0T_MS_009,FKSEA,ああもう、ぱたぱたするから\nネクタイ曲がってるぞ
+9,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,CH0T_MS_010,FKMARE,ありがとう、マーレ！
+10,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_011,FKSEA,シー。名札間違ってた
+11,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,CH0T_MS_012,FKMARE,コホン
+12,TEXT,CH0T_MS_001,-,0,,CH0T_MS_013,FKMARE,いや、名札は間違ってないぞ！
+13,SE,SE_DOMPUF,-,0,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされた場合その時点で再生停止",CH0T_MS_014,FKSEA,え？
+14,PIC,PIC_FACE_SEA_N_HAPPY_01,-,0,TEXT同,CH0T_MS_016,FKSEA,"おい、ちょっと待て、シー！　\nそれぼくのマネか!?"
+15,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_017,FKMARE,冒険の始まりだー！
+16,TEXT,CH0T_MS_002,-,0,-,CH0T_MS_018,FKMARE,"むふー。ボクこと地球人マーレのおかげで\nこの難所も突破できたな！"
+17,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,CH0T_MS_019,FKSEA,それ続けるのか？
+18,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,CH0T_MS_020,FKMARE,さあ、次の冒険だ！　いこう、シー！
+19,TEXT,CH0T_MS_003,-,0,-,CH0T_MS_021,FKSEA,"はいはい、マーレマーレ。\nなんだか新鮮ではあるよ"
+20,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,CH0T_MS_023,FKSEA,代わるか？
+21,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_024,FKMARE,待って。もうちょっと頑張りたい
+22,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,CH0T_MS_025,FKSEA,そうか
+23,TEXT,CH0T_MS_004,-,0,-,CH0T_MS_026,FKMARE,うん。ボク、今マーレだから
+24,SE,SE_DOMPUF,,1,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされたらその時点で再生停止",CH0T_MS_027,MARE,これで完成だな
+25,EV,PIX_CARA_MARE_STAND_STUNNED_01_TIE,-,0,TEXT同,CH0T_MS_028,SEA,わぁ！　すごいよ、マーレ！　\nこんなにあっさり！
+26,PIC,PIC_FACE_MARE_N_SULLEN_05,-,0,TEXT同,CH0T_MS_029,MARE,もういいのか？
+27,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,CH0T_MS_030,SEA,うん。ボクじゃマーレの代わりはできなかったから……
+28,TEXT,CH0T_MS_005,-,0,-,CH0T_MS_031,MARE,"……あー、のど乾いたなー。でも、高台だから取れないな―。困ったな―。誰か宇宙人パワーで助けてくれる人はいないかなー"

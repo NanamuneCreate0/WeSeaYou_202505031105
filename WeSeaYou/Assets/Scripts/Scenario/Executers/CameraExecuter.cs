@@ -51,6 +51,9 @@ public class CameraExecuter : MonoBehaviour, IScenarioCommand
                 case FOLLOW:
                     FollowMode();
                     break;
+                default:
+                    Debug.LogWarning($"Unknown camera command: {_idParam[EVENT_INDEX]}");
+                    break;
             }
         }
         onComplete?.Invoke();

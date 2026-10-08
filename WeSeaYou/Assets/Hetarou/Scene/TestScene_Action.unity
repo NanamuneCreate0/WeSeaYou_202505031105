@@ -294,7 +294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &44421277
 Transform:
   m_ObjectHideFlags: 0
@@ -3148,7 +3148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1238845630
 Transform:
   m_ObjectHideFlags: 0
@@ -3211,10 +3211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0aed4bc43c2a42b920b60b4bc6855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _repulseExecuter: {fileID: 44421279}
-  _attractExecuter: {fileID: 44421278}
-  _seaPowerExecuter: {fileID: 1286505225}
-  _shockWaveManager: {fileID: 582850672}
+  seaSkillExecuter: {fileID: 0}
+  seaSkillAura: {fileID: 0}
 --- !u!114 &1286505225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3227,17 +3225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c3e378c140eae4187b0fc74379d0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectObj: {fileID: 179839011}
-  _targettingObj: {fileID: 659047467}
+  _player: {fileID: 0}
   moveSpeed: 5
-  _jumpForce: 10
-  _holdTimeLv1: 1
-  _holdTimeLv2: 2
-  _holdTimeLv3: 3
-  _holdThreshold: 0.5
-  _pullRadiusMax: 10
-  _pullRadiusMin: 1
-  _pullSpeed: 5
+  resistance: 0
+  power: 0
   _targetLayer:
     serializedVersion: 2
     m_Bits: 4294967295
