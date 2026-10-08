@@ -24,6 +24,7 @@ public class BombAbility : MonoBehaviour
         // Žc‚è‚ÌŽžŠÔ‘Ò‚Â
         yield return new WaitForSeconds(explodeAfterSeconds * 3f / 5f);
 
+        OnExplod();
         Destroy(gameObject);
     }
 
@@ -49,7 +50,7 @@ public class BombAbility : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnExplod()
     {
         Instantiate(
             GameAssetManager.Instance.GameAssets.bombHitboxPrefab,

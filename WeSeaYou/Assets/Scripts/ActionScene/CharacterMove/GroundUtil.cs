@@ -25,7 +25,7 @@ public static class GroundUtil
         };
 
 
-        int mask = LayerMask.GetMask("Ground", "Block");
+        int mask = LayerMask.GetMask("Ground", "FieldObj");
         foreach (var origin in origins)
         {
             //int mask = ~LayerMask.GetMask("Player");

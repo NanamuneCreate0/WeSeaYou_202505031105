@@ -8,7 +8,7 @@ public class BombHitbox : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        IBombTarget target = other.GetComponent<IBombTarget>();
+        IBombTarget target = other.GetComponent<IBombTarget>()?? other.transform.parent?.GetComponent<IBombTarget>();
 
         if (target != null)
         {
