@@ -286,13 +286,13 @@ public class SeaSkillExecutor : MonoBehaviour
             {
                 chargeLevel = 2;
                 /////////////色を変える赤
-                target.transform.parent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(Color.red);
             }
             else if (chargeTime >= level1Time)
             {
                 chargeLevel = 1;
                 /////////////色を変える黄色
-                target.transform.parent.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(Color.white);
             }
             else
             {
@@ -314,8 +314,8 @@ public class SeaSkillExecutor : MonoBehaviour
             isCharging = false;
             chargeTime = 0f;
             chargeLevel = 0;
-            /////////////色を変える青
-            (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<SpriteRenderer>() : target.GetComponent<SpriteRenderer>()).color = Color.yellow;
+            /////////////色を変える元の色
+            target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor();
 
             (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>())
                 .AddForce(Vector2.up * jumpForce* (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>()).mass, ForceMode2D.Impulse);

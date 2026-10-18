@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ActionScene06.unity
     guid: 6a67dc7283266234e90f8572adbade5b
   - enabled: 1
+    path: Assets/Scenes/ActionScene_Nana2.unity
+    guid: f9cbf43b7dcaed34996ef5725e8e4543
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: da526f23c987a4f4b9c2f937a7c072ba
   - enabled: 1

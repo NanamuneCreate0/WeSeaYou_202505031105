@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PIC_EMO_SEA_KIRA1_0: 210219799452787126
+      PIC_EMO_SEA_KIRA1_1: -2178807361110812505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

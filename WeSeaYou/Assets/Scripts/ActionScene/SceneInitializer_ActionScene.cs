@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.AddressableAssets.Build.Layout.BuildLayout;
 
 public class SceneInitializer_ActionScene : MonoBehaviour
 {
@@ -53,26 +52,26 @@ public class SceneInitializer_ActionScene : MonoBehaviour
             }
         }
 
-        //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»void Start()
+        //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»
+
+        switch (PublicStaticStatus.ClearedChapter)
         {
-            switch (PublicStaticStatus.ClearedChapter)
-            {
-                case PublicStaticStatus.Chapter.ChapterA:
-                    chapterAObj.SetActive(true);
-                    break;
+            case PublicStaticStatus.Chapter.ChapterA:
+                chapterAObj.SetActive(true);
+                break;
 
-                case PublicStaticStatus.Chapter.ChapterB:
-                    chapterBObj.SetActive(true);
-                    break;
+            case PublicStaticStatus.Chapter.ChapterB:
+                chapterBObj.SetActive(true);
+                break;
 
-                case PublicStaticStatus.Chapter.ChapterC:
-                    chapterCObj.SetActive(true);
-                    break;
+            case PublicStaticStatus.Chapter.ChapterC:
+                chapterCObj.SetActive(true);
+                break;
 
-                default:
-                    otherObj.SetActive(true);
-                    break;
-            }
+            default:
+                otherObj.SetActive(true);
+                break;
         }
+
     }
 }

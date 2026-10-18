@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2888042783334972341}
-  - component: {fileID: 5072388399869558377}
+  - component: {fileID: 6128048362860946999}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: UtyuSkillItem
@@ -110,7 +110,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 374415417527054151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5072388399869558377
+--- !u!212 &6128048362860946999
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.875, y: 1.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
