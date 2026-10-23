@@ -8,13 +8,13 @@ public class StageItemDisplayer : MonoBehaviour
 
     private void OnEnable()
     {
-        StageItemInventory.OnChanged += Refresh;
+        PublicStaticItem.OnStageItemChanged += Refresh;
         Refresh();
     }
 
     private void OnDisable()
     {
-        StageItemInventory.OnChanged -= Refresh;
+        PublicStaticItem.OnStageItemChanged -= Refresh;
     }
 
     private void Refresh()
@@ -24,7 +24,7 @@ public class StageItemDisplayer : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (StageItemData item in StageItemInventory.Items)
+        foreach (StageItemData item in PublicStaticItem.StageItemList)
         {
             Image image = Instantiate(itemPrefab, parent);
             image.sprite = item.sprite;

@@ -93,7 +93,7 @@ public class ChikyuSkillHand : MonoBehaviour
         //HandItemŠÖ˜A
         HandItems.Clear();
         HandItemsBool.Clear();
-        foreach (ChikyuSkillItemData item in PublicStaticStatus.ChikyuSkillItemList)
+        foreach (ChikyuSkillItemData item in PublicStaticItem.ChikyuSkillItemList)
         {
             HandItems.Add(item);
             HandItemsBool.Add(true);

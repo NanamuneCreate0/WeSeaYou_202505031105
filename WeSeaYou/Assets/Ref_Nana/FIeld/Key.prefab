@@ -277,7 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bef04806c5db24088a5e6d8663049a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 7afbea5d09d32eb42bbe6139719a221d, type: 2}
+  isCollectionItem: 0
+  stageItemToGet: {fileID: 11400000, guid: 7afbea5d09d32eb42bbe6139719a221d, type: 2}
+  collectionItemToGet: {fileID: 0}
 --- !u!114 &3720789752582143791
 MonoBehaviour:
   m_ObjectHideFlags: 0

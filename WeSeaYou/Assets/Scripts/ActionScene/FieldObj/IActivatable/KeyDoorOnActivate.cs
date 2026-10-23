@@ -6,13 +6,13 @@ public class KeyDoorOnActivate : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        Debug.Log(StageItemInventory.Contains(keyItem));
-        if (!StageItemInventory.Contains(keyItem))
+        Debug.Log(PublicStaticItem.ContainsStageItem(keyItem));
+        if (!PublicStaticItem.ContainsStageItem(keyItem))
         {
             return;
         }
 
-        StageItemInventory.Remove(keyItem);
+        PublicStaticItem.RemoveStageItem(keyItem);
         Destroy(gameObject);
     }
 }

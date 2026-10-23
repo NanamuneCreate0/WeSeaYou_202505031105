@@ -5,9 +5,9 @@ public class MenuExecutor_ActionScene : MonoBehaviour
 {
     public enum Tab
     {
-        Item,
-        Config,
-        Reset
+        //Item,
+        Reset,
+        Config
     }
 
     [System.Serializable]
@@ -127,7 +127,7 @@ public class MenuExecutor_ActionScene : MonoBehaviour
             nextTab = 0;
         }
         currentTab = (Tab)nextTab;
-        if (initialize) currentTab = Tab.Item;
+        if (initialize) currentTab = (Tab)0;
         
         //cursorPosition‚à0
         cursorPosition = Vector2Int.zero;
