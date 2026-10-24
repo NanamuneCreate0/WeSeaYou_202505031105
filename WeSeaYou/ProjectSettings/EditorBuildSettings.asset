@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ActionScene_Nana2.unity
     guid: f9cbf43b7dcaed34996ef5725e8e4543
   - enabled: 1
+    path: Assets/Scenes/StartScene20261018.unity
+    guid: bad00aa11ecee1f47a989deb5dd15c4b
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: da526f23c987a4f4b9c2f937a7c072ba
   - enabled: 1
