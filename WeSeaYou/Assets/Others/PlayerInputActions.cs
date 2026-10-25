@@ -1126,6 +1126,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6b15d13f-0bfc-46d1-9174-2a044acce974"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AdvanceText"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""64b2ab57-f5ef-404a-897e-cea9d8c061b0"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
