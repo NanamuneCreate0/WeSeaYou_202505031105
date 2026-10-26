@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PressToLoadScene_StartScene : MonoBehaviour
 {
+    [SerializeField] private AudioClip BGM;
     [SerializeField] Animator fadeAnimator;
     private System.IDisposable buttonPressListener;
     private bool hasPressed = false;
@@ -18,6 +19,8 @@ public class PressToLoadScene_StartScene : MonoBehaviour
 
         buttonPressListener =
             InputSystem.onAnyButtonPress.Call(OnAnyButtonPressed);
+
+        BGMManager_ActionScene.Instance.PlayBGM(BGM);
     }
 
     private void OnDisable()
