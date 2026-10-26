@@ -4,9 +4,6 @@ using System;
 
 public static class PublicStaticStatus
 {
-    public static List<ChikyuSkillItemData> ChikyuSkillItemList = new List<ChikyuSkillItemData>();
-    //public static List<StageItemData> StageItemList = new List<StageItemData>();
-
     public enum Chapter
     {
         None,

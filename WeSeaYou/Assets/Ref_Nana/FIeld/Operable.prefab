@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2888042783334972341}
-  - component: {fileID: 5072388399869558377}
+  - component: {fileID: 6128048362860946999}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: UtyuSkillItem
@@ -110,7 +110,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 374415417527054151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5072388399869558377
+--- !u!212 &6128048362860946999
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.875, y: 1.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -177,8 +177,8 @@ GameObject:
   - component: {fileID: 4091245657064378340}
   - component: {fileID: -9010275738205587532}
   - component: {fileID: 8922681129440470044}
-  - component: {fileID: -7143824656569637921}
   - component: {fileID: -7324628938087195051}
+  - component: {fileID: 210536874539964809}
   m_Layer: 8
   m_Name: Operable
   m_TagString: UtyuSkillItem
@@ -260,21 +260,6 @@ MonoBehaviour:
   _seaSkillExecutor: {fileID: 0}
   candidateColor: {r: 1, g: 0.4, b: 0.7, a: 1}
   targetColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
---- !u!114 &-7143824656569637921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002078603275295205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 816d2c5200b31534caec6b154ef3dac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _seaSkillExecutor: {fileID: 0}
-  candidateColor: {r: 1, g: 0.4, b: 0.7, a: 1}
-  targetColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &-7324628938087195051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,3 +272,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269764add0454ff42b0e63fb023fb861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &210536874539964809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002078603275295205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c87efe9eb0d734dab2cd93d4f09b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landingSE: {fileID: 8300000, guid: 04be9270496f5bf41b209cd2ef063b2e, type: 3}

@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ConfirmExecutor : MonoBehaviour//ExcuterはInput系統の命名ルールによって
 {
@@ -8,18 +10,35 @@ public class ConfirmExecutor : MonoBehaviour//ExcuterはInput系統の命名ルールによ
     private readonly List<ConfirmActivator> _targets = new(); 
     private ConfirmActivator _currentTarget=null;//nullかなり許容
 
-    private void Update()
+
+    [SerializeField]
+    private ActionModeChanger actionModeChanger;
+    private void OnEnable()
     {
-        RefreshTarget();
-        if (InputManager.Instance.actions.Player.Decide.WasPressedThisFrame())
+        ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
+    }
+    private void OnDisable()
+    {
+        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
+    }
+    void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
+    {
+        if (a == ActionModeChanger.ActionModeType.Neutral)
         {
-            ExecuteConfirm();
+            InputManager.Instance.actions.Player.Decide.performed += OnDecide;
+        }
+
+        if (b == ActionModeChanger.ActionModeType.Neutral)
+        {
+            InputManager.Instance.actions.Player.Decide.performed -= OnDecide;
         }
     }
 
-    private void ExecuteConfirm()
+    private void OnDecide(InputAction.CallbackContext context)
     {
-        if (_currentTarget != null){_currentTarget.Execute();}//_currentTarget?.Execute();は使えない。Destroy後も参照が残るため
+        if (actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.Neutral)
+        RefreshTarget();
+        if (_currentTarget != null) { _currentTarget.Execute(); }
     }
 
     private void RefreshTarget()

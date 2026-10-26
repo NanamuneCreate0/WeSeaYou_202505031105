@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/ActionScene_Ref03.unity
-    guid: c5e5f2ddcdb3fa44db6671be6032c782
+    guid: 738ab4f2370526f4f8317baa2eb219aa
   - enabled: 0
     path: Assets/Scenes/ActionScene_Ref02.unity
     guid: 9e4bbbad358801c48b010b6a0494bb43
@@ -36,11 +36,17 @@ EditorBuildSettings:
     path: Assets/Scenes/ActionScene06.unity
     guid: 6a67dc7283266234e90f8572adbade5b
   - enabled: 1
-    path: Assets/Hetarou/Scene/StillScene01.unity
-    guid: a99ab6ef5578f1c4fa2f7ae858c097e9
+    path: Assets/Scenes/ActionScene_Nana2.unity
+    guid: f9cbf43b7dcaed34996ef5725e8e4543
+  - enabled: 1
+    path: Assets/Scenes/StartScene20261018.unity
+    guid: bad00aa11ecee1f47a989deb5dd15c4b
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: da526f23c987a4f4b9c2f937a7c072ba
+  - enabled: 1
+    path: Assets/Hetarou/Scene/StillScene01.unity
+    guid: a99ab6ef5578f1c4fa2f7ae858c097e9
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: ef751fea871479345ae174f7d34fa392

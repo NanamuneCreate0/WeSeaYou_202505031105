@@ -16,6 +16,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ChikyuSkillHand : MonoBehaviour
 {
@@ -93,7 +94,7 @@ public class ChikyuSkillHand : MonoBehaviour
         //HandItemä÷òA
         HandItems.Clear();
         HandItemsBool.Clear();
-        foreach (ChikyuSkillItemData item in PublicStaticStatus.ChikyuSkillItemList)
+        foreach (ChikyuSkillItemData item in PublicStaticItem.ChikyuSkillItemList)
         {
             HandItems.Add(item);
             HandItemsBool.Add(true);
@@ -123,11 +124,13 @@ public class ChikyuSkillHand : MonoBehaviour
             int num = WrapIndex(HilightStart + 2, HandItems.Count);
             if (HandItems[num] != null && HandItemsBool[num])
             {
+                SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.decideSE);
                 SubmitItem(HandItems[num], num);
                 SetItem(direction);
             }
             else
             {
+                SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.decideSE);
                 MyChikyuSkillTable.CatchSubmitDone();
                 //gaugeActive = true;//í∑âüÇµÇÃèÍçá//
             }
@@ -148,6 +151,8 @@ public class ChikyuSkillHand : MonoBehaviour
             SetCellPos();
 
             SetItem(direction);
+
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.cursorSE);
         }
     }
     private void OnMoveLeft(InputAction.CallbackContext ctx)
@@ -164,6 +169,8 @@ public class ChikyuSkillHand : MonoBehaviour
             SetCellPos();
 
             SetItem(direction);
+
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.cursorSE);
         }
     }
     void Update()

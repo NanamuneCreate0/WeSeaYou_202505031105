@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PIC_EMO_MARE_BLUSH_0: 5119490591615967022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

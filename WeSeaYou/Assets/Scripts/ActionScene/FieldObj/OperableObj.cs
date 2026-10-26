@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuterの状態を受けて色を変える//溜めの色はSeaSkillExcuterのなかで変えてる。ややこしい場合は修正しても
+public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuterの状態を受けて色を変える//IOperableはinterfaceとしての存在価値ないかも
 {
     [SerializeField] private SeaSkillExecutor _seaSkillExecutor;
 
@@ -62,19 +62,26 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuterの状態を受け
         UpdateColor();
     }
 
-    private void UpdateColor()
+    public void UpdateColor(Color? color = null)
     {
-        if (_isTarget)
+        if (color != null)
         {
-            _spriteRenderer.color = targetColor;
-        }
-        else if (_isCandidate)
-        {
-            _spriteRenderer.color = candidateColor;
+            _spriteRenderer.color = color.Value;
         }
         else
         {
-            _spriteRenderer.color = _originalColor;
+            if (_isTarget)
+            {
+                _spriteRenderer.color = targetColor;
+            }
+            else if (_isCandidate)
+            {
+                _spriteRenderer.color = candidateColor;
+            }
+            else
+            {
+                _spriteRenderer.color = _originalColor;
+            }
         }
     }
 }

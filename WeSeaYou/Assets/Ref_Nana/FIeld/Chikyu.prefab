@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 494930589090401299}
   - component: {fileID: 8765246702414631516}
   - component: {fileID: 2455473953219682072}
+  - component: {fileID: 921109580902825973}
   m_Layer: 6
   m_Name: ChikyuCollider
   m_TagString: Player
@@ -85,6 +86,18 @@ MonoBehaviour:
   groundParticlePrefab: {fileID: 379363587985314587, guid: 99c8fa818270a7847bca7ccc8a3d60bb, type: 3}
   dustLeft: {fileID: 8635394770069074837, guid: f2fbf88a1d3bbf54381b5829a357447f, type: 3}
   dustRight: {fileID: 3777739597282404097, guid: 286265e816032a043b6379fd3684f224, type: 3}
+--- !u!114 &921109580902825973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026004170758454570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c87efe9eb0d734dab2cd93d4f09b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1031798349283027467
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +109,7 @@ GameObject:
   - component: {fileID: 1642941155093773026}
   - component: {fileID: 2562655266342100520}
   - component: {fileID: 5878871774347067009}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Chikyu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,8 +191,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157478826192139577}
-  - component: {fileID: 7304902417727639029}
   - component: {fileID: 3353805170603768541}
+  - component: {fileID: 5327611545759344058}
   m_Layer: 0
   m_Name: ChikyuConfirmCollider
   m_TagString: Untagged
@@ -197,13 +210,26 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1642941155093773026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7304902417727639029
-CircleCollider2D:
+--- !u!114 &3353805170603768541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813895205365921055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e24136ff27082c489a1a496931bd0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confirmExecutor: {fileID: 0}
+--- !u!70 &5327611545759344058
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -237,20 +263,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &3353805170603768541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813895205365921055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e24136ff27082c489a1a496931bd0d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  confirmExecutor: {fileID: 0}
+  m_Size: {x: 2.4, y: 3.3}
+  m_Direction: 0
 --- !u!1 &7668171176461854383
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +276,7 @@ GameObject:
   - component: {fileID: 2227305802863739791}
   - component: {fileID: 973435145775487386}
   - component: {fileID: 5959199441010488819}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +377,7 @@ GameObject:
   - component: {fileID: 4630636794600975142}
   - component: {fileID: 164844608415819945}
   - component: {fileID: 2109907473789153150}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: ChikyuSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,9 +5,9 @@ public class MenuExecutor_ActionScene : MonoBehaviour
 {
     public enum Tab
     {
-        Item,
-        Config,
-        Reset
+        //Item,
+        Reset,
+        Config
     }
 
     [System.Serializable]
@@ -83,11 +83,13 @@ public class MenuExecutor_ActionScene : MonoBehaviour
     {
         if (InputManager.Instance.actions.UI_Nana.TabLeft.WasPressedThisFrame())
         {
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.MenuSE);
             ChangeTab(-1);
         }
 
         if (InputManager.Instance.actions.UI_Nana.TabRight.WasPressedThisFrame())
         {
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.MenuSE);
             ChangeTab(1);
         }
 
@@ -127,7 +129,7 @@ public class MenuExecutor_ActionScene : MonoBehaviour
             nextTab = 0;
         }
         currentTab = (Tab)nextTab;
-        if (initialize) currentTab = Tab.Item;
+        if (initialize) currentTab = (Tab)0;
         
         //cursorPosition‚à0
         cursorPosition = Vector2Int.zero;
@@ -184,6 +186,7 @@ public class MenuExecutor_ActionScene : MonoBehaviour
             {
                 if (cursorObject.position == nextPosition)
                 {
+                    SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.cursorSE);
                     if (cursorObject.executeInsteadOfMove)
                     {
                         ExecuteFunction(cursorObject);
@@ -224,6 +227,7 @@ public class MenuExecutor_ActionScene : MonoBehaviour
             return;
         }
 
+        SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.decideSE);
         ExecuteFunction(currentCursorObject);
     }
 

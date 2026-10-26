@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameModeController_ActionScene : MonoBehaviour
@@ -34,10 +35,18 @@ public class GameModeController_ActionScene : MonoBehaviour
                 break;
         }
     }
-
-    public void ChangeGameMode(GameMode gm)//Input.actionsを変更するのはGameModeの責務。TimeScaleやObjのSetActiveを変えるのは責務じゃない。
+    public void ChangeGameMode(GameMode gm)
     {
+        StartCoroutine(ChangeGameModeCoroutine(gm));//InputSystemのPerformedを二重誘発させないため1f待つ
+    }
+
+    private IEnumerator ChangeGameModeCoroutine(GameMode gm)
+    {
+        yield return null;
+
+        // Input.actionsを変更するのはGameModeの責務
         gameMode = gm;
+
         switch (gm)
         {
             case GameMode.Action:
@@ -54,7 +63,6 @@ public class GameModeController_ActionScene : MonoBehaviour
                 InputManager.Instance.actions.Player.Disable();
                 InputManager.Instance.actions.UI_Nana.Disable();
                 break;
-
         }
 
         GameModeChanged?.Invoke(gameMode);

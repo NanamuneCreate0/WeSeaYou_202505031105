@@ -24,10 +24,36 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     [SerializeField] private GameObject chapterCObj;
     [SerializeField] private GameObject otherObj;
 
+    [SerializeField] private AudioClip BGM;
+    [SerializeField] private AudioClip BGM2;
+
+    [SerializeField] private GameModeController_ActionScene gameModeController;
+    [SerializeField] private ActionModeChanger actionModeChanger;
     void Start()
     {
         Application.targetFrameRate = 60;
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action);
+        actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.Neutral, ActionModeChanger.ActionModeType.Neutral);
         DebugFunction();
+        //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»
+        switch (PublicStaticStatus.ClearedChapter)
+        {
+            case PublicStaticStatus.Chapter.ChapterA:
+                chapterAObj.SetActive(true);
+                break;
+
+            case PublicStaticStatus.Chapter.ChapterB:
+                chapterBObj.SetActive(true);
+                break;
+
+            case PublicStaticStatus.Chapter.ChapterC:
+                chapterCObj.SetActive(true);
+                break;
+
+            default:
+                otherObj.SetActive(true);
+                break;
+        }
         foreach (StartObjectToPlace so in objects)
         {
             if (so.obj != null)
@@ -35,6 +61,10 @@ public class SceneInitializer_ActionScene : MonoBehaviour
                 so.obj.transform.position = StartObj.transform.position + so.offset;
             }
         }
+
+        //BGM
+        BGMManager_ActionScene.Instance.PlayBGM(BGM);
+        SubBGMManager_ActionScene.Instance.PlayBGM(BGM2);
     }
     public void SetStartObj(GameObject startObj)
     {
@@ -43,35 +73,14 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void DebugFunction()
     {
         //Item‘«‚·
-        if (PublicStaticStatus.ChikyuSkillItemList.Count == 0)
+        if (PublicStaticItem.ChikyuSkillItemList.Count == 0)
         {
             Debug.Log("Get Item for Debug");
             foreach (ChikyuSkillItemData item in debugItems)
             {
-                PublicStaticStatus.ChikyuSkillItemList.Add(item);
+                PublicStaticItem.ChikyuSkillItemList.Add(item);
             }
         }
 
-        //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»void Start()
-        {
-            switch (PublicStaticStatus.ClearedChapter)
-            {
-                case PublicStaticStatus.Chapter.ChapterA:
-                    chapterAObj.SetActive(true);
-                    break;
-
-                case PublicStaticStatus.Chapter.ChapterB:
-                    chapterBObj.SetActive(true);
-                    break;
-
-                case PublicStaticStatus.Chapter.ChapterC:
-                    chapterCObj.SetActive(true);
-                    break;
-
-                default:
-                    otherObj.SetActive(true);
-                    break;
-            }
-        }
     }
 }
