@@ -16,8 +16,11 @@ public class SceneExcuter_End : MonoBehaviour
     [SerializeField] private Animator boxAnim3a;
     [SerializeField] private Animator boxAnim3b;
     [SerializeField] private Animator thankAnim; 
-    [SerializeField] private TMPro.TMP_Text youGetAnim;
-    [SerializeField] private int itemID;
+    [SerializeField] private TMPro.TMP_Text youGetAnim; 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip pafSE;
+    [SerializeField] private AudioClip completeSE;
+    [SerializeField] private AudioClip endSE;
 
     private bool isInputEnabled = false;
 
@@ -54,6 +57,7 @@ public class SceneExcuter_End : MonoBehaviour
             boxAnim1a.SetTrigger("Action");
             boxAnim1b.transform.gameObject.SetActive(true);
             boxAnim1b.SetTrigger("Action");
+            audioSource.PlayOneShot(pafSE);
             yield return new WaitForSeconds(0.6f);
         }
         if (PublicStaticItem.CollectionItemList.Exists(item => item.ID == 2))
@@ -62,6 +66,7 @@ public class SceneExcuter_End : MonoBehaviour
             boxAnim2a.SetTrigger("Action");
             boxAnim2b.transform.gameObject.SetActive(true);
             boxAnim2b.SetTrigger("Action");
+            audioSource.PlayOneShot(pafSE);
             yield return new WaitForSeconds(0.6f);
         }
         if (PublicStaticItem.CollectionItemList.Exists(item => item.ID == 3))
@@ -70,6 +75,7 @@ public class SceneExcuter_End : MonoBehaviour
             boxAnim3a.SetTrigger("Action");
             boxAnim3b.transform.gameObject.SetActive(true);
             boxAnim3b.SetTrigger("Action");
+            audioSource.PlayOneShot(pafSE);
             yield return new WaitForSeconds(0.6f);
         }
 
@@ -89,12 +95,14 @@ public class SceneExcuter_End : MonoBehaviour
         else if (PublicStaticItem.CollectionItemList.Count == 3)
         {
             youGetAnim.text = "Complete！！\nYou Get All 宝　！！";
+            audioSource.PlayOneShot(completeSE);
         }
         youGetAnim.color = Color.white;
 
         yield return new WaitForSeconds(1f);
 
-        thankAnim.SetTrigger("Action");
+        thankAnim.SetTrigger("Action"); 
+        audioSource.PlayOneShot(endSE);
         yield return new WaitForSeconds(3f);
 
         // 入力受付を有効化

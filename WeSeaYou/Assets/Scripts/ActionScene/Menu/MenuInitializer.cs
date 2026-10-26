@@ -47,6 +47,7 @@ public class MenuInitializer : MonoBehaviour//一部Initialではない
     }
     IEnumerator ChangeToMenu()//本来スクリプト分けてもいい
     {
+        SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.MenuSE);
         gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Event);
         Time.timeScale = 0;
         float AnimTime = 0.07f;

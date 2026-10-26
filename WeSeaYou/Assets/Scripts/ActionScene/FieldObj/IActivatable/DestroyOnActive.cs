@@ -9,6 +9,7 @@ public class DestroyOnActivate : MonoBehaviour, IActivatable
     }
     private void OnExplod()
     {
+        SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.bombSE);
         Instantiate(
             GameAssetManager.Instance.GameAssets.bombHitboxPrefab2,
             transform.position,

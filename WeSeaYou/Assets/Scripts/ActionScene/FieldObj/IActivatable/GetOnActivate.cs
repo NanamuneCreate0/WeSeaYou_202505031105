@@ -8,16 +8,6 @@ public class GetOnActivate : MonoBehaviour, IActivatable
 
     public void Activate()
     {
-        /*if (itemData == null)
-        {
-            Debug.LogWarning($"{name}: StageItemDataÇ™ê›íËÇ≥ÇÍÇƒÇ¢Ç‹ÇπÇÒÅB");
-            return;
-        }
-        PublicStaticItem.AddStageItem(itemData);
-        Debug.Log($"Get Item: {itemData.itemName}");
-
-        Destroy(gameObject);*/
-
         if (isCollectionItem)
         {
             if (collectionItemToGet == null)
@@ -26,6 +16,7 @@ public class GetOnActivate : MonoBehaviour, IActivatable
                 return;
             }
 
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.getSE);
             PublicStaticItem.AddCollectionItem(collectionItemToGet);
             Debug.Log($"Get Collection Item: {collectionItemToGet.itemName}");
         }
@@ -37,6 +28,7 @@ public class GetOnActivate : MonoBehaviour, IActivatable
                 return;
             }
 
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.getSE);
             PublicStaticItem.AddStageItem(stageItemToGet);
             Debug.Log($"Get Item: {stageItemToGet.itemName}");
         }

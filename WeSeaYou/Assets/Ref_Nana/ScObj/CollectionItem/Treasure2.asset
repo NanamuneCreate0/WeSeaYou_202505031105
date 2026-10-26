@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   itemName: Treasure2
-  sprite: {fileID: -1446107377, guid: 50a1d0c038d5f324f97550d8650f57da, type: 3}
+  sprite: {fileID: 7383130405278358909, guid: beebb920e5355e94f9580429d43793a1, type: 3}

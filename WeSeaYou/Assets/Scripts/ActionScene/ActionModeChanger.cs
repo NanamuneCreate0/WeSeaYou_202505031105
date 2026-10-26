@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -38,9 +39,15 @@ public class ActionModeChanger : MonoBehaviour
     void Update()
     {
     }
-
     public void ChangeActionMode(ActionModeType a, ActionModeType b)
     {
+        StartCoroutine(ChangeActionModeCoroutine(a, b));//InputSystem‚ÌPerformed‚ğ“ñd—U”­‚³‚¹‚È‚¢‚½‚ß1f‘Ò‚Â
+    }
+
+    private IEnumerator ChangeActionModeCoroutine(ActionModeType a, ActionModeType b)
+    {
+        yield return null; // 1ƒtƒŒ[ƒ€‘Ò‚Â
+
         if (ActionMode == b)
         {
             ActionMode = a;
@@ -49,6 +56,7 @@ public class ActionModeChanger : MonoBehaviour
         {
             Debug.LogWarning("ChangeActionMode Failed");
         }
+
         ActionModeChangeEvent?.Invoke(a, b);
     }
 

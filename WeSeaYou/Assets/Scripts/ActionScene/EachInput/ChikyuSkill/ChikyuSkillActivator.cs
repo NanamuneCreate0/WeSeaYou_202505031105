@@ -26,6 +26,7 @@ public class ChikyuSkillActivator : MonoBehaviour
             MyChikyuSkillUI.SetActive(true);
             MyChikyuSkillTable.ActivationStart();
             MyChikyuSkillHand.ActivationStart();//Table‚Ö‚Ì’ño‚ª‚ ‚é‚½‚ßHand‚ªŒãB’ño‚¾‚¯LateActivationStart()‚É•ª‚¯‚Ä‚à‚¢‚¢
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.MenuSE);
         }
         if (b == ActionModeChanger.ActionModeType.ChikyuSkill)
         {

@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
         actions = new PlayerInputActions();
     }
 
-    void OnEnable()
+    /*void OnEnable()
     {
         actions.Player.Enable();
         actions.UI_Nana.Enable();
@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
         if (actions == null) return;
         actions.Player.Disable();
         actions.UI_Nana.Disable();
-    }
+    }*/
 }
 
 //Vector2 move =InputManager.Instance.Actions.Player.Move.ReadValue<Vector2>();//

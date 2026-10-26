@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f39a059330d9f98478a00f9f2b96f272, type: 3}
-  m_Name: Treasure
+  m_Name: MixerB
   m_EditorClassIdentifier: 
-  ID: 2
-  itemName: Treasure
-  sprite: {fileID: -821211910706755276, guid: ee7e646f6f02792448d571df827b4613, type: 3}
+  ID: 3
+  itemName: MixerB
+  sprite: {fileID: 5238654732962796709, guid: 4b17039bd9b8dd94f8af1dd791821c40, type: 3}

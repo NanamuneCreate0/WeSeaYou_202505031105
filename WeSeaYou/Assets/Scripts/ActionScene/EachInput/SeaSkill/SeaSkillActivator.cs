@@ -24,6 +24,7 @@ public class SeaSkillActivator : MonoBehaviour
             seaSkillExecuter.ActivateSkill();
             seaSkillAura.ActivateSkill();
             _shockWaveManager.StartShockWave();
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.seaSkillSE);
         }
         if (b == ActionModeChanger.ActionModeType.UtyuSkill)
         {

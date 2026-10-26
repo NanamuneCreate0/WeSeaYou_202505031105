@@ -316,9 +316,10 @@ public class SeaSkillExecutor : MonoBehaviour
             chargeLevel = 0;
             /////////////F‚ğ•Ï‚¦‚éŒ³‚ÌF
             target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor();
-
             (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>())
                 .AddForce(Vector2.up * jumpForce* (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>()).mass, ForceMode2D.Impulse);
+
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.seaSkillSE);
 
         }
     }

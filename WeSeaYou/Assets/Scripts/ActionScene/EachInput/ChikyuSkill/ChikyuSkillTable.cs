@@ -38,6 +38,7 @@ public class ChikyuSkillTable : MonoBehaviour
         ChikyuSkillItemData b = TableItems.Count >= 2 ? TableItems[1] : null;
         ChikyuSkillItemData c = TableItems.Count >= 3 ? TableItems[2] : null;
         blockCreater.CreateBlock(a, b, c);
+            
     }
 
     void SetItems()

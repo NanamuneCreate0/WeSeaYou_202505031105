@@ -11,6 +11,7 @@ public class PressToLoadScene_StartScene : MonoBehaviour
     private System.IDisposable buttonPressListener;
     private bool hasPressed = false;
 
+    [SerializeField] private AudioClip gameStartSE;
     private void OnEnable()
     {
         hasPressed = false;
@@ -36,15 +37,14 @@ public class PressToLoadScene_StartScene : MonoBehaviour
             return;
         }
         hasPressed = true;
-        Debug.Log("PressAny‚¨‚³‚ê‚½");
 
         PublicStaticStatus.ClearedChapter=PublicStaticStatus.Chapter.ChapterA;
-        StartCoroutine(GoalCoroutine());
+        StartCoroutine(GameStartCoroutine());
 
     }
-    IEnumerator GoalCoroutine()
+    IEnumerator GameStartCoroutine()
     {
-
+        SEManager_Nana.Instance.PlaySE(gameStartSE);
         float constFloat = 2f;
         fadeAnimator.speed = 1 / constFloat;
         fadeAnimator.SetTrigger("FadeOut");
