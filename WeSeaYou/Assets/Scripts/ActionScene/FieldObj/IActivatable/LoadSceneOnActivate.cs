@@ -20,7 +20,7 @@ public class LoadSceneOnActivate : MonoBehaviour, IActivatable
     }
     IEnumerator GoalCoroutine()
     {
-        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Event);
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Event,true);
 
         float constFloat = 2f;
         fadeAnimator.speed = 1/constFloat;

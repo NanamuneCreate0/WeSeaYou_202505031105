@@ -32,7 +32,7 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action);
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action, true);
         actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.Neutral, ActionModeChanger.ActionModeType.Neutral);
         DebugFunction();
         //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»
@@ -80,6 +80,10 @@ public class SceneInitializer_ActionScene : MonoBehaviour
             {
                 PublicStaticItem.ChikyuSkillItemList.Add(item);
             }
+        }
+        else
+        {
+            Debug.LogWarning("Failed To Get Item");
         }
 
     }

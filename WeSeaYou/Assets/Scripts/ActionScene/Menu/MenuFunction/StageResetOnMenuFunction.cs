@@ -7,7 +7,7 @@ public class StageResetOnMenuFunction : MonoBehaviour, IMenuFunction
     GameModeController_ActionScene gameModeController;
     public void Execute()
     {
-        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action);
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action, true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

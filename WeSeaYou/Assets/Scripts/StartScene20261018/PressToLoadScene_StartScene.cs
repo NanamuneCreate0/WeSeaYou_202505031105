@@ -37,8 +37,7 @@ public class PressToLoadScene_StartScene : MonoBehaviour
             return;
         }
         hasPressed = true;
-
-        PublicStaticStatus.ClearedChapter=PublicStaticStatus.Chapter.ChapterA;
+        DebugFunction();
         StartCoroutine(GameStartCoroutine());
 
     }
@@ -52,5 +51,10 @@ public class PressToLoadScene_StartScene : MonoBehaviour
         yield return new WaitForSeconds(constFloat);
 
         SceneManager.LoadScene("StillScene01");
+    }
+    private void DebugFunction()
+    {
+        PublicStaticItem.CollectionItemList.Clear();
+        PublicStaticStatus.ClearedChapter = PublicStaticStatus.Chapter.ChapterA;
     }
 }
