@@ -15,4 +15,5 @@ public class GameAssets : ScriptableObject
     public AudioClip decideSE;
     public AudioClip seaSkillSE;
     public AudioClip stepSE;
+    public AudioClip propellerSE;
 }

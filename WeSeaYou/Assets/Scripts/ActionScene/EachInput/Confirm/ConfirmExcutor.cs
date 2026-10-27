@@ -23,14 +23,13 @@ public class ConfirmExecutor : MonoBehaviour//ExcuterÇÕInputånìùÇÃñΩñºÉãÅ[ÉãÇ…ÇÊ
     }
     void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
-        if (a == ActionModeChanger.ActionModeType.Neutral)
-        {
-            InputManager.Instance.actions.Player.Decide.performed += OnDecide;
-        }
-
         if (b == ActionModeChanger.ActionModeType.Neutral)
         {
             InputManager.Instance.actions.Player.Decide.performed -= OnDecide;
+        }
+        if (a == ActionModeChanger.ActionModeType.Neutral)
+        {
+            InputManager.Instance.actions.Player.Decide.performed += OnDecide;
         }
     }
 

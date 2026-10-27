@@ -73,18 +73,13 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void DebugFunction()
     {
         //Item‘«‚·
-        if (PublicStaticItem.ChikyuSkillItemList.Count == 0)
+        PublicStaticItem.ChikyuSkillItemList.Clear();
+        Debug.Log("Get Item for Debug");
+        foreach (ChikyuSkillItemData item in debugItems)
         {
-            Debug.Log("Get Item for Debug");
-            foreach (ChikyuSkillItemData item in debugItems)
-            {
-                PublicStaticItem.ChikyuSkillItemList.Add(item);
-            }
+            PublicStaticItem.ChikyuSkillItemList.Add(item);
         }
-        else
-        {
-            Debug.LogWarning("Failed To Get Item");
-        }
+
 
     }
 }
