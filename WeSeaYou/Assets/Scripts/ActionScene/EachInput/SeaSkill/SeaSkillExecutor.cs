@@ -286,13 +286,13 @@ public class SeaSkillExecutor : MonoBehaviour
             {
                 chargeLevel = 2;
                 /////////////F‚ğ•Ï‚¦‚éÔ
-                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(Color.red);
+                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(new Color(1f, 0f, 0f, 0.3f));
             }
             else if (chargeTime >= level1Time)
             {
                 chargeLevel = 1;
                 /////////////F‚ğ•Ï‚¦‚é‰©F
-                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(Color.white);
+                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(new Color(1f, 1f, 1f, 0.3f));
             }
             else
             {
