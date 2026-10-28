@@ -1,0 +1,67 @@
+0,カテゴリー (Category),表示(ID),数値 (Param),終了待ち(EventWait),補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】,,
+1,EV,PIX_BACK_CH00_FORE,-,0,-,CH0T_MS_000,SEA,,,
+2,EV,PIX_CARA_SEA_P_WAIT_R_DTIE,-,0,-,CH0T_MS_001,FKMARE,祝！　うみいこ体験版！　いえー！,,
+3,EV,PIX_CARA_MARE_P_WAIT_L_TIE,-,0,-,CH0T_MS_002,FKMARE,本作は！　文明崩壊後の地球を舞台に、\nボクこと宇宙人シーと！,,
+4,WAIT,-,1,0,-,CH0T_MS_003,FKSEA,地球人マーレが,,
+5,CINEMASCOPE,CS_IN,-,0,-,CH0T_MS_004,FKMARE,海を目指して旅をする\nアクションパズルゲームです！　やったー！,,
+6,WAIT,-,1,0,-,CH0T_MS_005,FKSEA,テンション高いな,,
+7,BGM,BGM_TAIKEN_01,-,0,TEXT同,CH0T_MS_006,FKMARE,だって、体験版だよ体験版！　,,
+8,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,CH0T_MS_007,FKMARE,苦節八年、山あり谷ありアクションあり\nパズルあり感動あり爆発オチあり、 \n数多の苦難の末に辿り着いた約束の地だよ！,,
+9,,,,,,CH0T_MS_008,FKSEA,なかった記憶を作るんじゃない,,
+10,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,CH0T_MS_009,FKMARE,えへー,,
+11,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_010,FKSEA,ああもう、ぱたぱたするから\nネクタイ曲がってるぞ,,
+12,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,CH0T_MS_011,FKMARE,ありがとう、マーレ！,,
+13,TEXT,CH0T_MS_001,-,0,-,CH0T_MS_012,FKSEA,シー。名札間違ってた,,
+14,TEXT,CH0T_MS_000,-,0,-,CH0T_MS_013,FKMARE,コホン,,
+15,SE,SE_DOMPUF,-,1,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされた場合その時点で再生停止",CH0T_MS_014,FKMARE,いや、名札は間違ってないぞ！,,
+16,,,,,,CH0T_MS_015,FKSEA,え？,,
+17,PIC,PIC_FACE_SEA_N_HAPPY_01,-,0,TEXT同,CH0T_MS_016,FKMARE,さあ、いくぞ、シー！　\nボクこと地球人マーレに付いてくるんだ！,,
+18,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_017,FKSEA,おい、ちょっと待て、シー！　\nそれぼくのマネか!?,,
+19,TEXT,CH0T_MS_002,-,0,-,CH0T_MS_018,FKMARE,冒険の始まりだー！,,
+20,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,,,,,
+21,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,,,,,
+22,TEXT,CH0T_MS_003,-,0,-,,,,,
+23,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,,
+24,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,,
+25,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,,,,,
+26,TEXT,CH0T_MS_004,-,0,-,,,,,
+27,TEXT,CH0T_MS_000,-,0,-,,,,,
+28,SE,SE_DOMPUF,,1,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされたらその時点で再生停止",,,,,
+29,EV,PIX_CARA_MARE_STAND_STUNNED_01_TIE,-,0,TEXT同,,,,,
+30,PIC,PIC_FACE_MARE_N_SULLEN_05,-,0,TEXT同,,,,,
+31,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,,,
+32,TEXT,CH0T_MS_005,-,0,-,,,,,
+33,EV,PIX_CARA_SEA_P_WAIT_R_DTIE,-,0,TEXT同,,,,-,-
+34,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,-,-
+35,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,-,-
+36,TEXT,CH0T_MS_006,-,0,-,,,,-,-
+37,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,-,-
+38,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,-,-
+39,TEXT,CH0T_MS_007,-,0,"行数の関係で分割したセリフなので立ち絵CH0T_MS_006と同じです",,,,-,-
+40,PIC,PIC_FACE_MARE_N_SULLEN_05,-,0,TEXT同,,,,-,-
+41,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,,-,-
+42,TEXT,CH0T_MS_008,-,0,-,,,-,-,-
+43,PIC,PIC_FACE_SEA_N_HAPPY_08,-,0,TEXT同,,,-,-,-
+44,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,-,-,-
+45,TEXT,CH0T_MS_009,-,0,-,,,-,-,-
+46,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,,,-,-,-
+47,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,-,-,-
+48,TEXT,CH0T_MS_010,-,0,-,,,-,-,-
+49,EV,PIX_CARA_W_TIE,-,1,"""ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ""",,,-,-,-
+50,EV,PIX_CARA_SEA_STAND_HAPPY_01_TIE,-,0,TEXT同,,,-,-,-
+51,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,,
+52,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+53,TEXT,CH0T_MS_011,-,0,-,,,,,
+54,EV,PIX_CARA_MARE_STAND_SUPRISED_01_TIE,-,1,"ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ",,,,,
+55,EV,PIX_CARA_MARE_NAMECHANGE_01,-,0,TEXT同,,,,,
+56,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,,,,,
+57,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,,,,,
+58,TEXT,CH0T_MS_012,-,0,-,,,,,
+59,PIC,PIC_FACE_SEA_N_HAPPY_15,-,0,TEXT同,,,,,
+60,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+61,TEXT,CH0T_MS_013,-,0,-,,,,,
+62,EV,PIX_CARA_SEA_GLASSESTIE,-,1,"ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ",,,,,
+63,EV,PIX_CARA_MARE_NAMECHANGE_02,-,0,TEXT同,,,,,
+64,PIC,PIC_FACE_SEA_N_HAPPY_10_GLASSES,-,0,TEXT同,,,,,
+65,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+66,TEXT,CH0T_MS_014,-,0,-,,,,,

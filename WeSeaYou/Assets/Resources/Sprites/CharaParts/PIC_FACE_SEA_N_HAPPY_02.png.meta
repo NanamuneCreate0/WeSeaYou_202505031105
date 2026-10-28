@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 0861ddf631effdd45bb41b320e7342aa
+guid: ae9b79973ca6d4a418106ba3cb7d9ce3
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4204689243818424706
     second: PIC_FACE_SEA_N_HAPPY_02_0
+  - first:
+      213: -373469823193787778
+    second: PIC_FACE_SEA_N_HAPPY_02_1
+  - first:
+      213: 7009299538289949722
+    second: PIC_FACE_SEA_N_HAPPY_02_2
+  - first:
+      213: 1636187555074146476
+    second: PIC_FACE_SEA_N_HAPPY_02_3
+  - first:
+      213: 1533910140551581989
+    second: PIC_FACE_SEA_N_HAPPY_02_4
+  - first:
+      213: -6905244721490379647
+    second: PIC_FACE_SEA_N_HAPPY_02_5
+  - first:
+      213: 4165876717730771185
+    second: PIC_FACE_SEA_N_HAPPY_02_6
+  - first:
+      213: -1292310864838905315
+    second: PIC_FACE_SEA_N_HAPPY_02_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,19 +151,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 588
-        height: 962
-      alignment: 6
+        y: 0
+        width: 800
+        height: 984
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 289f3b0079e0a5a30800000000000000
-      internalID: 4204689243818424706
+      spriteID: 0c3028e2e1b0f8b43bbddbc56cea3bc5
+      internalID: 1530468663
       vertices: []
       indices: 
       edges: []
@@ -151,7 +172,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 07427a8ad56a42a4f9e2d0a1d3a5e675
+    spriteID: 2dc4c6d3206d99040a0dbeb5623edc1b
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +182,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PIC_FACE_SEA_N_HAPPY_02_0: 4204689243818424706
+      PIC_FACE_SEA_N_HAPPY_02_0: 1530468663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,13 +13,25 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
     [SerializeField] private TextDataSO _scenarioText;   // ← 缶詰をInspectorでD&D
 
     [Header("表示先UI")]
-    [SerializeField] private TMP_Text messageText;
-    [SerializeField] private TMP_Text NameText;
+    [SerializeField] private TMP_Text _messageText;
+    [SerializeField] private TMP_Text _nameText;
+    [SerializeField] private GameObject[] _namePanels;
+
+    [Header("表示速度")]
     [SerializeField] private float charDelay = 0.05f;
+    [SerializeField] private float slowCharDelay = 0.15f; // param=2 のときの1文字あたりの待ち時間
 
     private TextTable _table;
     private Coroutine _typingCoroutine;
     private Action _onComplete;
+
+    private const int NAME_INDEX_SEA = 0;
+    private const int NAME_INDEX_MARE = 1;
+    private const int NAME_INDEX_FKSEA = 2;
+    private const int NAME_INDEX_FKMARE = 3;
+
+    private const string PARAM_SLOW = "Lv2";
+
     private bool IsTyping { get; set; } = false;
 
     private void Awake()
@@ -34,6 +46,11 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
 
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
+        for (int i = 0; i < _namePanels.Length; i++)
+        {
+            _namePanels[i].SetActive(false);
+        }
+
         // ID引き。見つからなければ警告して即完了(シナリオを詰まらせない)
         if (!_table.TryGet(data.ID, out var entry))
         {
@@ -43,24 +60,31 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
         }
 
         _onComplete = onComplete;   // ポケットにしまう
-        PlayLine(entry);
+
+        float delay = data.Param == PARAM_SLOW ? slowCharDelay : charDelay;
+        PlayLine(entry, delay);
     }
 
-    private void PlayLine(TextEntry entry)
+    private void PlayLine(TextEntry entry, float delay)
     {
         if (_typingCoroutine != null) StopCoroutine(_typingCoroutine);
-        _typingCoroutine = StartCoroutine(TypeMessage(entry));
+        if (string.IsNullOrEmpty(entry.JPText))
+        {
+            _messageText.text = "";
+            _nameText.text = "";
+            _onComplete?.Invoke();
+            return;
+        }
+        _typingCoroutine = StartCoroutine(TypeMessage(entry, delay));
     }
 
     public void HandleAdvanceInput()
-    { 
-        Debug.Log("yobaremasita");
+    {
         if (IsTyping)
         {
             // 1回目のクリック: 全文表示にするだけ
-            messageText.maxVisibleCharacters = messageText.textInfo.characterCount;
+            _messageText.maxVisibleCharacters = _messageText.textInfo.characterCount;
             IsTyping = false;
-            
             return;
         }
 
@@ -73,39 +97,46 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
         }
     }
 
-    private IEnumerator TypeMessage(TextEntry entry)
+    private IEnumerator TypeMessage(TextEntry entry, float delay)
     {
         IsTyping = true;
-        messageText.maxVisibleCharacters = 0;
+        _messageText.maxVisibleCharacters = 0;
 
-        NameText.text = SetName(entry);        // ← 出どころがTextEntryに
-        messageText.text = entry.JPText;   // ←
+        SetName(entry);
+        _messageText.text = entry.JPText;
 
-        messageText.ForceMeshUpdate();
-        int totalCharacters = messageText.textInfo.characterCount;
+        _messageText.ForceMeshUpdate();
+        int totalCharacters = _messageText.textInfo.characterCount;
 
         for (int i = 0; i <= totalCharacters; i++)
         {
             if (!IsTyping) break;
-            messageText.maxVisibleCharacters = i;
-            yield return new WaitForSeconds(charDelay);
+            _messageText.maxVisibleCharacters = i;
+            yield return new WaitForSeconds(delay);
         }
 
         IsTyping = false;
     }
 
-    private string SetName(TextEntry entry)
+    private void SetName(TextEntry entry)
     {
-        switch(entry.Name)
+        switch (entry.Name)
         {
             case "MARE":
-                return "マーレ";
+                _namePanels[NAME_INDEX_MARE].SetActive(true);
+                break;
             case "SEA":
-                return "シー";
-            case "NULL":
-                return "";
+                _namePanels[NAME_INDEX_SEA].SetActive(true);
+                break;
+            case "FKSEA":
+                _namePanels[NAME_INDEX_FKSEA].SetActive(true);
+                break;
+            case "FKMARE":
+                _namePanels[NAME_INDEX_FKMARE].SetActive(true);
+                break;
             default:
-                return entry.Name;
+                Debug.LogWarning($"Unknown name: {entry.Name}");
+                break;
         }
     }
 }

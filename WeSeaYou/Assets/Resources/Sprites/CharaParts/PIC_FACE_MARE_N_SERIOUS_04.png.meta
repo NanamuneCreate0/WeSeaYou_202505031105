@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 0d5b06030e768aa4a9e5c15a4e516682
+guid: 4be8cd26391cc3644b831abab276a77a
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6394670148339766634
     second: PIC_FACE_MARE_N_SERIOUS_04_0
+  - first:
+      213: 5137897986505176165
+    second: PIC_FACE_MARE_N_SERIOUS_04_1
+  - first:
+      213: 163392885815366607
+    second: PIC_FACE_MARE_N_SERIOUS_04_2
+  - first:
+      213: 7815132336859652384
+    second: PIC_FACE_MARE_N_SERIOUS_04_3
+  - first:
+      213: -7654027031442347062
+    second: PIC_FACE_MARE_N_SERIOUS_04_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,20 +141,20 @@ TextureImporter:
       name: PIC_FACE_MARE_N_SERIOUS_04_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 16
-        width: 392
-        height: 872
-      alignment: 9
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 0
+        width: 480
+        height: 984
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 69ae96861619147a0800000000000000
-      internalID: -6394670148339766634
+      spriteID: 59784ef1ea528b943b3f9595f3f413a3
+      internalID: -75638337
       vertices: []
       indices: 
       edges: []
@@ -151,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d14d38153af3b7545b0ec32cdcc43cfe
+    spriteID: c757a6e9db238504a91c34fba014b788
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +173,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PIC_FACE_MARE_N_SERIOUS_04_0: -6394670148339766634
+      PIC_FACE_MARE_N_SERIOUS_04_0: -75638337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

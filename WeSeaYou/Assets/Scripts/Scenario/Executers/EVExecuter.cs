@@ -1,120 +1,175 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class EVExecuter : MonoBehaviour, IScenarioCommand, IInputReceiver
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public string CommandType => "EV";
     public bool IsAutoAdvance => false;
 
     [SerializeField] MoveEvent _move;
     [SerializeField] StandEvent _stand;
     [SerializeField] WaitEvent _wait;
+    [SerializeField] private MonoBehaviour[] _specialEvents;
     [SerializeField] private Transform[] _charas;
-    private Action _onComplete;
-    private Action _skipEV;
-    private float _pos;
-    private string _currentAnim;
-    private string[] _idParam;
-    private Dictionary<Transform, string> _charaID = new Dictionary<Transform, string>();
+
+    private readonly Dictionary<string, Transform> _charaByName = new Dictionary<string, Transform>();
+    private readonly Dictionary<string, ISpecialEvent> _specialByID = new Dictionary<string, ISpecialEvent>();
+
+    private Action _pendingComplete; // 待機中だけ値が入る
+    private Action _skipEV;          // 待機中だけ値が入る（今はクリックスキップ無効）
+    private int _waitId;             // 古いコールバックを無視するための番号
 
     private const string WALK = "WALK";
     private const string DUSH = "DUSH";
     private const string STAND = "STAND";
     private const string WAIT = "WAIT";
     private const int NAME_INDEX = 2;
-    private const int COMMAND_INDEX = 3;
 
+    // IDの中から探すコマンド名
+    private static readonly HashSet<string> COMMANDS = new HashSet<string> { WALK, DUSH, STAND, WAIT };
 
-
-    void Start()
+    void Awake()
     {
         foreach (var chara in _charas)
+            _charaByName[chara.name] = chara;
+
+        foreach (var component in _specialEvents)
         {
-            _charaID.Add(chara, chara.name);
-            Debug.Log($"Chara ID: {chara.name}");
+            if (component is ISpecialEvent ev)
+                _specialByID[ev.TargetID] = ev;
+            else
+                Debug.LogWarning($"{component.name} は ISpecialEvent を実装していません");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
-        _idParam = data.ID.Split('_');
-        _onComplete = onComplete;
+        ClearWait(); // 前回の残りを消す
 
-        Transform targetChara = null;
+        string[] idParam = data.ID.Split('_');
+        bool wait = ShouldWaitForEnd(data);
 
-        foreach (var chara in _charas)
+        // ★ 例外処理：専用イベントのIDなら、形式やキャラの有無に関係なく最優先
+        if (_specialByID.TryGetValue(data.ID, out var special))
         {
-            if (_charaID.TryGetValue(chara, out string id) && id == _idParam[NAME_INDEX])
-            {
-                targetChara = chara;
-                break;
-            }
+            Transform specialChara = FindChara(idParam); // 見つからなければ null
+            Run(cb => special.Execute(data, specialChara, cb), special.Skip, wait, onComplete);
+            return;
         }
 
-        if(targetChara == null)
+        // ここから下は通常のEV（キャラ必須）
+        Transform chara = FindChara(idParam);
+        if (chara == null)
         {
-            Debug.LogWarning($"Chara not found: {_idParam[NAME_INDEX]}");
+            Debug.LogWarning($"Chara not found: {data.ID}");
             onComplete?.Invoke();
             return;
         }
 
-        Animator animator = targetChara.GetComponent<Animator>();
-        animator.Play(data.ID);
+        Animator animator = chara.GetComponent<Animator>();
+        if (animator != null) animator.Play(data.ID);
 
+        string command = FindCommand(idParam);
 
-        switch (_idParam[COMMAND_INDEX])
+        switch (command)
         {
             case WALK:
-                _pos = float.Parse(data.Param);
-                _skipEV = _move.ExecuteImmediate;
-                _move.WalkTo(_pos, animator, targetChara, OnArrived);
-                break;
             case DUSH:
-                _pos = float.Parse(data.Param);
-                _skipEV = _move.ExecuteImmediate;
-                _move.DushTo(_pos, animator, targetChara, OnArrived);
+                if (!float.TryParse(data.Param, NumberStyles.Float, CultureInfo.InvariantCulture, out float pos))
+                {
+                    Debug.LogWarning($"座標が読めない: {data.Param}");
+                    onComplete?.Invoke();
+                    return;
+                }
+                bool isWalk = command == WALK;
+                Run(cb =>
+                {
+                    if (isWalk) _move.WalkTo(pos, animator, chara, cb);
+                    else _move.DushTo(pos, animator, chara, cb);
+                }, _move.ExecuteImmediate, wait, onComplete);
                 break;
+
+            case STAND:
+                Run(cb => _stand.Execute(data, context, cb), null, wait, onComplete);
+                break;
+
             case WAIT:
-                //_wait.Execute(data.ID, targetChara, onComplete);
                 onComplete?.Invoke();
                 break;
-            case STAND:
-                _stand.Execute(data, context, onComplete);
-                break;
-            default:
+
+            default: // コマンド名が見つからなかった（null）
                 Debug.LogWarning($"Unknown EV command: {data.ID}");
                 onComplete?.Invoke();
                 break;
         }
     }
 
-    /*private void IDParamHolder()
+    // IDの NAME_INDEX の位置からキャラを探す（なければ null）
+    private Transform FindChara(string[] idParam)
     {
-        
-    }*/
+        if (idParam.Length <= NAME_INDEX) return null;
+        _charaByName.TryGetValue(idParam[NAME_INDEX], out Transform chara);
+        return chara;
+    }
 
-    private void OnArrived()
+    // 区切ったIDの中から、最初に見つかったコマンド名を返す（なければnull）
+    private static string FindCommand(string[] idParam)
     {
-        var cb = _onComplete;
-        _onComplete = null;
-        cb?.Invoke();
+        foreach (var part in idParam)
+            if (COMMANDS.Contains(part))
+                return part;
+        return null;
+    }
+
+    private bool ShouldWaitForEnd(ScenarioLine data)
+    {
+        return data.EventWaitFlag == 1;
+    }
+
+    // 待つ・待たないの分岐をまとめたもの
+    private void Run(Action<Action> start, Action skip, bool wait, Action onComplete)
+    {
+        if (wait)
+        {
+            _pendingComplete = onComplete;
+            _skipEV = skip;
+            int id = ++_waitId;
+            start(() => FinishIfCurrent(id));
+        }
+        else
+        {
+            start(null);            // イベントは裏で動かしたまま
+            onComplete?.Invoke();   // すぐ次の行へ
+        }
     }
 
     public void HandleAdvanceInput()
     {
-        if(_skipEV != null)
-        {
-            _skipEV();
-        }
+        // 待機中のクリックでは進めない（イベントの終了でのみ進む）
+        // スキップを復活させたいときは、以下のコメントを外す
+        // if (_pendingComplete == null || _skipEV == null) return;
+        // _skipEV();
+        // Finish();
     }
 
+    private void FinishIfCurrent(int id)
+    {
+        if (id != _waitId) return;
+        Finish();
+    }
 
+    private void Finish()
+    {
+        var cb = _pendingComplete;
+        ClearWait();
+        cb?.Invoke();
+    }
+
+    private void ClearWait()
+    {
+        _pendingComplete = null;
+        _skipEV = null;
+    }
 }

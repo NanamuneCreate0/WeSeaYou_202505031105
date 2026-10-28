@@ -3,80 +3,78 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI; // ← Image を使うのに必要
 
 public class PicExecutor : MonoBehaviour, IScenarioCommand
 {
     public string CommandType => "PIC";
     public bool IsAutoAdvance => true;
-    // コマンドを実行する
-    // onComplete: 完了時に呼ぶコールバック
-    [SerializeField] private List<Transform> _PICParts; // 例: 顔画像やボディ画像などのTransformリスト
+    public bool IsDebugLog = false;
+
+    [SerializeField] private List<Image> _PICParts; // Transform → Image
+
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
         string id = data.ID;
-        Debug.Log($"PICコマンドを実行: {data.Number}:{id}");
-    
+        if (IsDebugLog) Debug.Log($"PICコマンドを実行: {data.Number}:{id}");
+
         foreach (var part in _PICParts)
         {
-            if (id.Contains(part.name)) // 例: "CHARACTER1_FACE_HAPPY"が"FACE"を含む場合
+            if (!id.Contains(part.name)) continue;
+
+            if (part.name.Contains("EMO"))
             {
-                if(part.name.Contains("EMO"))
-                {
-                    StartCoroutine(ActionEmotionCoroutine(part, id)); // 表情を変更する処理を呼び出す
-                }
-                else
-                {
-                    Debug.Log($"画像を表示: {id}");
-                    Transform targetPart = part; // 例: 対応する画像のTransformを取得する
-                    ChangePicturePart(id, targetPart); // 画像を変更する処理を呼び出す
-                }
-                break; // 一致する部分が見つかったらループを抜ける
+                StartCoroutine(ActionEmotionCoroutine(part, id));
             }
+            else
+            {
+                ChangePicturePart(id, part);
+            }
+            break;
         }
         onComplete?.Invoke();
     }
 
-    private void ChangePicturePart(string id, Transform part)
+    private void ChangePicturePart(string id, Image image)
     {
-        // ここでpartの画像をidに基づいて変更する処理を実装する
-        // 例: SpriteRendererのspriteを変更するなど
-        SpriteRenderer renderer = part.GetComponent<SpriteRenderer>();
-        if (renderer != null)
+        Sprite newSprite = Resources.Load<Sprite>($"Sprites/CharaParts/{id}");
+        if (newSprite == null)
         {
-            Sprite newSprite = Resources.Load<Sprite>($"Sprites/CharaParts/{id}"); // 例: "Pictures/CHARACTER1_FACE_HAPPY"
-            if (newSprite != null)
-            {
-                renderer.sprite = newSprite;
-                Debug.Log($"画像を変更: {id}");
-            }
-            else
-            {
-                Debug.LogWarning($"画像が見つかりません: {id}");
-            }
+            Debug.LogWarning($"画像が見つかりません: {id}");
+            return;
         }
-        else
-        {
-            Debug.LogWarning($"SpriteRendererが見つかりません: {part.name}");
-        }
+
+        image.sprite = newSprite;
+        if (IsDebugLog) Debug.Log($"画像を変更: {id}");
     }
-    
-    private IEnumerator ActionEmotionCoroutine(Transform emotionTransform, String emotionID)
+
+    private IEnumerator ActionEmotionCoroutine(Image emotionImage, string emotionID)
     {
-        SpriteRenderer emotionSprite = emotionTransform.GetComponent<SpriteRenderer>();
-        Animator animator = emotionTransform.GetComponent<Animator>();
-        emotionSprite.gameObject.SetActive(true);
-        Animation clip = Resources.Load<Animation>($"Animations/EMOAnimators/{emotionID}"); // 例: "Animations/Emotions/CHARACTER1_FACE_HAPPY"
-        if (animator != null && clip != null)
+        Animator animator = emotionImage.GetComponent<Animator>();
+
+        // 前回のフェードを止めて、透明度を戻してから表示
+        emotionImage.DOKill();
+        Color c = emotionImage.color;
+        c.a = 1f;
+        emotionImage.color = c;
+        emotionImage.gameObject.SetActive(true);
+
+        if (animator != null)
         {
-            animator.Play(clip.name);
-            Debug.Log($"表情を変更: {emotionID}");
+            animator.Play(emotionID, 0, 0f); // Animator内のステート名で再生
+            if (IsDebugLog) Debug.Log($"表情を変更: {emotionID}");
         }
         else
         {
-            Debug.LogWarning($"アニメーターまたはアニメーションクリップが見つかりません: {emotionID}");
+            Debug.LogWarning($"Animatorが見つかりません: {emotionImage.name}");
         }
+
         yield return new WaitForSeconds(2f);
-        emotionSprite.DOFade(0f, 1f).OnComplete(() => emotionSprite.gameObject.SetActive(false)); // 例: 表情をフェードアウトして非表示にする
-        yield return null; // 処理が完了するまで待機する
+
+        yield return emotionImage.DOFade(0f, 1f)
+            .SetLink(emotionImage.gameObject)
+            .WaitForCompletion();
+
+        emotionImage.gameObject.SetActive(false);
     }
 }

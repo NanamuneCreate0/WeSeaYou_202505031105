@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 426258c23ca9a094299c758336e73e4f
+guid: e227188d3c7e8cc4888b438a8f1f81b9
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8213707074672091645
     second: PIC_FACE_SEA_N_HAPPY_01_0
+  - first:
+      213: -2411175569075985636
+    second: PIC_FACE_SEA_N_HAPPY_01_1
+  - first:
+      213: 4165449961133899324
+    second: PIC_FACE_SEA_N_HAPPY_01_2
+  - first:
+      213: 7062370850234473488
+    second: PIC_FACE_SEA_N_HAPPY_01_3
+  - first:
+      213: -4382373906161015389
+    second: PIC_FACE_SEA_N_HAPPY_01_4
+  - first:
+      213: -2463502965872488842
+    second: PIC_FACE_SEA_N_HAPPY_01_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,19 +145,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 588
-        height: 962
-      alignment: 6
+        y: 0
+        width: 800
+        height: 984
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30e9e050fec030e80800000000000000
-      internalID: -8213707074672091645
+      spriteID: 751518902630f9b4bab0094ab67cb8bc
+      internalID: -1396732883
       vertices: []
       indices: 
       edges: []
@@ -151,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 808922ef5784361498c5dc37e395430d
+    spriteID: b488bd61a68759b4f8f621e8a52fa67a
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PIC_FACE_SEA_N_HAPPY_01_0: -8213707074672091645
+      PIC_FACE_SEA_N_HAPPY_01_0: -1396732883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

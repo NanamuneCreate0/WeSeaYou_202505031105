@@ -3,10 +3,15 @@ using UnityEngine;
 public class FollowEvent : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
-    private Transform _target;
-    private float _offsetX;   // 追従開始時のカメラとキャラの距離
+    [SerializeField] private float _centerTime = 0.5f; // 中心に寄るまでのおおよその時間（0なら即座）
 
-    public void StartFollowSetting(Transform target)
+    private Transform _target;
+    private float _offsetX;
+    private float _targetOffsetX;
+    private float _offsetVelocity;
+
+    // keepOffset: true なら今の距離を保ったまま追従、false なら中心に寄せる
+    public void StartFollowSetting(Transform target, bool keepOffset = false)
     {
         if (target == null)
         {
@@ -14,7 +19,9 @@ public class FollowEvent : MonoBehaviour
             return;
         }
         _target = target;
-        _offsetX = _camera.position.x - target.position.x;   // 今の距離を覚える
+        _offsetX = _camera.position.x - target.position.x;
+        _targetOffsetX = keepOffset ? _offsetX : 0f;
+        _offsetVelocity = 0f;
     }
 
     public void ResetFollowSetting() => _target = null;
@@ -23,8 +30,12 @@ public class FollowEvent : MonoBehaviour
     {
         if (_target == null) return;
 
+        _offsetX = _centerTime > 0f
+            ? Mathf.SmoothDamp(_offsetX, _targetOffsetX, ref _offsetVelocity, _centerTime)
+            : _targetOffsetX;
+
         var pos = _camera.position;
-        pos.x = _target.position.x + _offsetX;   // 距離を保ったまま追従
+        pos.x = _target.position.x + _offsetX;
         _camera.position = pos;
     }
 }

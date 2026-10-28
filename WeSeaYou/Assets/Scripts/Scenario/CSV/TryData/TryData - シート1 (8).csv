@@ -1,0 +1,89 @@
+0,カテゴリー (Category),表示(ID),数値 (Param),終了待ち(EventWait),補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】,,
+1,EV,PIX_BACK_CH00_FORE,-,0,-,CH0T_MS_000,SEA,,,
+2,EV,PIX_CARA_SEA_P_WAIT_R_DTIE,-,0,-,CH0T_MS_001,FKMARE,祝！　うみいこ体験版！　いえー！,,
+3,EV,PIX_CARA_MARE_P_WAIT_L_TIE,-,0,-,CH0T_MS_002,FKMARE,本作は！　文明崩壊後の地球を舞台に、\nボクこと宇宙人シーと！,,
+4,WAIT,-,1,0,-,CH0T_MS_003,FKSEA,地球人マーレが,,
+5,CINEMASCOPE,CS_IN,-,0,-,CH0T_MS_004,FKMARE,海を目指して旅をする\nアクションパズルゲームです！　やったー！,,
+6,WAIT,-,1,0,-,CH0T_MS_005,FKSEA,テンション高いな,,
+7,BGM,BGM_TAIKEN_01,-,0,TEXT同,CH0T_MS_006,FKMARE,だって、体験版だよ体験版！　,,
+8,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,CH0T_MS_007,FKMARE,苦節八年、山あり谷ありアクションあり\nパズルあり感動あり爆発オチあり、 \n数多の苦難の末に辿り着いた約束の地だよ！,,
+9,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,CH0T_MS_008,FKSEA,なかった記憶を作るんじゃない,,
+10,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_009,FKMARE,えへー,,
+11,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,CH0T_MS_010,FKSEA,ああもう、ぱたぱたするから\nネクタイ曲がってるぞ,,
+12,TEXT,CH0T_MS_001,-,0,-,CH0T_MS_011,FKMARE,ありがとう、マーレ！,,
+13,TEXT,CH0T_MS_000,-,0,-,CH0T_MS_012,FKSEA,シー。名札間違ってた,,
+14,SE,SE_DOMPUF,-,1,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされた場合その時点で再生停止",CH0T_MS_013,FKMARE,コホン,,
+15,PIC,PIC_FACE_SEA_N_HAPPY_01,-,0,TEXT同,CH0T_MS_014,FKMARE,いや、名札は間違ってないぞ！,,
+16,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_015,FKSEA,え？,,
+17,TEXT,CH0T_MS_002,-,0,-,CH0T_MS_016,FKMARE,さあ、いくぞ、シー！　\nボクこと地球人マーレに付いてくるんだ！,,
+18,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,CH0T_MS_017,FKSEA,おい、ちょっと待て、シー！　\nそれぼくのマネか!?,,
+19,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,CH0T_MS_018,FKMARE,冒険の始まりだー！,,
+20,TEXT,CH0T_MS_003,-,0,-,,,,,
+21,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,,
+22,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,,
+23,PIC,PIC_EMO_SEA_KIRA,-,0,TEXT同,,,,,
+24,TEXT,CH0T_MS_004,-,0,-,,,,,
+25,TEXT,CH0T_MS_000,-,0,-,,,,,
+26,SE,SE_DOMPUF,,1,"TEXT終了後、シネマスコープのみ出た状態で再生クリックされたらその時点で再生停止",,,,,
+27,EV,PIX_CARA_MARE_STAND_STUNNED_01_TIE,-,0,TEXT同,,,,,
+28,PIC,PIC_FACE_MARE_N_SULLEN_05,-,0,TEXT同,,,,,
+29,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,,,
+30,TEXT,CH0T_MS_005,-,0,-,,,,,
+31,EV,PIX_CARA_SEA_P_WAIT_R_DTIE,-,0,TEXT同,,,,-,-
+32,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,-,-
+33,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,-,-
+34,TEXT,CH0T_MS_006,-,0,-,,,,-,-
+35,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,-,-
+36,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,,-,-
+37,TEXT,CH0T_MS_007,-,0,"行数の関係で分割したセリフなので立ち絵CH0T_MS_006と同じです",,,,-,-
+38,PIC,PIC_FACE_MARE_N_SULLEN_05,-,0,TEXT同,,,,-,-
+39,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,,-,-
+40,TEXT,CH0T_MS_008,-,0,-,,,-,-,-
+41,PIC,PIC_FACE_SEA_N_HAPPY_08,-,0,TEXT同,,,-,-,-
+42,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,,,-,-,-
+43,TEXT,CH0T_MS_009,-,0,-,,,-,-,-
+44,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,,,-,-,-
+45,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,-,-,-
+46,TEXT,CH0T_MS_010,-,0,-,,,-,-,-
+47,TEXT,CH0T_MS_000,-,0,-,,,,,
+48,EV,PIX_CARA_W_TIE,-,1,"""ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ""",,,-,-,-
+49,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,,,-,-,-
+50,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,,
+51,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+52,TEXT,CH0T_MS_011,-,0,-,,,,,
+53,TEXT,CH0T_MS_000,-,0,-,,,,,
+54,EV,PIX_CARA_MARE_STAND_SUPRISED_01_TIE,-,1,"ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ",,,,,
+55,EV,PIX_CARA_MARE_NAMECHANGE_01,-,0,TEXT同,,,,,
+56,PIC,PIC_FACE_MARE_N_SERIOUS_04,-,0,TEXT同,,,,,
+57,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,,,,,
+58,TEXT,CH0T_MS_012,-,0,-,,,,,
+59,PIC,PIC_FACE_SEA_N_HAPPY_15,-,0,TEXT同,,,,,
+60,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+61,TEXT,CH0T_MS_013,-,0,-,,,,,
+62,TEXT,CH0T_MS_000,-,0,-,,,,,
+63,EV,PIX_CARA_SEA_GLASSESTIE,-,1,"ドットアニメーションが終わるまで、シネマスコープのみで待機終わったら自動的に次TEXTへ",,,,,
+64,EV,PIX_CARA_MARE_NAMECHANGE_02,-,0,TEXT同,,,,,
+65,PIC,PIC_FACE_SEA_N_HAPPY_10_GLASSES,-,0,TEXT同,,,,,
+66,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+67,TEXT,CH0T_MS_014,-,0,-,,,,,
+68,PIC,PIC_FACE_MARE_N_PANIC_01,-,0,TEXT同,,,,,
+69,PIC,PIC_BODY_MARE_N_0T_TIE,-,0,TEXT同,,,,,
+70,TEXT,CH0T_MS_015,-,0,-,,,,,
+71,EV,PIX_CARA_SEA_STAND_HAPPY_01_TIE_GLASSES,-,0,TEXT同,,,,,
+72,PIC,PIC_FACE_SEA_N_HAPPY_02_GLASSES,-,0,TEXT同,,,,,
+73,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+74,TEXT,CH0T_MS_016,-,0,-,,,,,
+75,PIC,PIC_FACE_MARE_N_PANIC_07,,0,TEXT同,,,,,
+76,PIC,PIC_BODY_MARE_N_06_TIE,-,0,TEXT同,,,,,
+77,TEXT,CH0T_MS_017,-,0,-,,,,,
+78,PIC,PIC_FACE_SEA_N_HAPPY_02_GLASSES,-,0,TEXT同,,,,,
+79,PIC,PIC_BODY_SEA_N_08_TIE,-,0,TEXT同,,,,,
+80,TEXT,CH0T_MS_018,-,0,-,,,,,
+81,EV,PIX_CARA_SEA_P_DUSH_R_TIE_GLASSES,10,0,"フェードアウトするまで走らせたいですシーンアウト",,,,,
+82,CAMERA,CARA_FOLLOW_SEA,1,0,宇宙くんに合わせて(真ん中にしたまま)カメラ移動してください,,,,,
+83,FADEOUT,-,1.5,0,"宇宙くんが走り始めたらフェードアウトドット背景を延長できるのが4マス分なので、それを越えないようフェードアウトのスピードを調節してほしいです",,,,,
+84,WAIT,-,1,0,間をおいてから地球くんを走らせて、追いかけてる感を出したいです,,,,,
+85,EV,PIX_CARA_MARE_P_DUSH_PANIC_01_TIE,10,0,-,,,,,
+86,WAIT,-,1,0,-,,,,,
+87,CAMERA,CARA_FOLLOW,0,0,-,,,,,
+88,TRANSITION,ActionScene_Nana2,-,0,-,,,,,

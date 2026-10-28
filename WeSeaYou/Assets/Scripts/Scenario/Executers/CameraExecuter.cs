@@ -1,61 +1,68 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class CameraExecuter : MonoBehaviour, IScenarioCommand
-
 {
     public string CommandType => "CAMERA";
     public bool IsAutoAdvance => true;
 
     [SerializeField] private Transform[] _charas;
     [SerializeField] private FollowEvent _followEvent;
-    private string[] _idParam;
+
+    private readonly Dictionary<string, Transform> _charaByName = new Dictionary<string, Transform>();
     private Action _reset;
-    private Dictionary<Transform, string> _charaID = new Dictionary<Transform, string>();
 
+    // IDの形式:
+    //   CARA_FOLLOW_(キャラ名) → [0] CARA [1] FOLLOW [2] キャラ名 → 中心に寄せて追従
+    //   PAN_RIGHT_(キャラ名)   → [0] PAN  [1] RIGHT  [2] キャラ名 → 今の距離を保って追従
     private const string FOLLOW = "FOLLOW";
-    private const int EVENT_INDEX = 0;
-    private const int NAME_INDEX = 1;
-    enum CameraCommandType
-    {
-        None,
-        MoveTo,
-        RotateTo,
-        ZoomTo,
-        FollowTo
+    private const string PAN = "PAN";
+    private const int NAME_INDEX = 2;
 
-    };
-    CameraCommandType _cameraType = CameraCommandType.None;
+    enum CameraCommandType { None, MoveTo, RotateTo, ZoomTo, FollowTo }
+    private CameraCommandType _cameraType = CameraCommandType.None;
+
     private void Awake()
     {
         foreach (var chara in _charas)
-        {
-            _charaID.Add(chara, chara.name);
-            Debug.Log($"Chara ID: {chara.name}");
-        }
+            _charaByName[chara.name] = chara;
     }
+
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
-        int param = int.Parse(data.Param);
+        if (!int.TryParse(data.Param, out int param))
+        {
+            Debug.LogWarning($"CAMERAのParamが読めない: {data.Param}");
+            onComplete?.Invoke();
+            return;
+        }
+
         if (param == 0)
         {
             ResetCamera();
         }
         else if (param == 1)
         {
-            _idParam = data.ID.Split('_');
-            switch (_idParam[EVENT_INDEX])
+            string[] idParam = data.ID.Split('_');
+            if (idParam.Length <= NAME_INDEX)
             {
-                case FOLLOW:
-                    FollowMode();
-                    break;
-                default:
-                    Debug.LogWarning($"Unknown camera command: {_idParam[EVENT_INDEX]}");
-                    break;
+                Debug.LogWarning($"CAMERAのIDの形式が不正: {data.ID}");
+            }
+            else if (idParam[0] == PAN)
+            {
+                FollowMode(idParam[NAME_INDEX], keepOffset: true);   // 距離を保って追従
+            }
+            else if (idParam[1] == FOLLOW)
+            {
+                FollowMode(idParam[NAME_INDEX], keepOffset: false);  // 中心に寄せて追従
+            }
+            else
+            {
+                Debug.LogWarning($"Unknown camera command: {data.ID}");
             }
         }
+
         onComplete?.Invoke();
     }
 
@@ -64,23 +71,18 @@ public class CameraExecuter : MonoBehaviour, IScenarioCommand
         _cameraType = CameraCommandType.None;
         _reset?.Invoke();
         _reset = null;
-        Debug.Log("Executing NONE command in CameraExecuter");
     }
 
-    private void FollowMode()
+    private void FollowMode(string charaName, bool keepOffset)
     {
-        Transform target = null;
-        foreach (var chara in _charas)
+        if (!_charaByName.TryGetValue(charaName, out Transform target))
         {
-            if (_charaID.TryGetValue(chara, out string id) && id == _idParam[NAME_INDEX])
-            {
-                target = chara;
-                break;
-            }
+            Debug.LogWarning($"Chara not found: {charaName}");
+            return;
         }
+
         _cameraType = CameraCommandType.FollowTo;
         _reset = _followEvent.ResetFollowSetting;
-        _followEvent.StartFollowSetting(target);
-        Debug.Log($"Executing FOLLOW command for character: {_idParam[NAME_INDEX]}");
+        _followEvent.StartFollowSetting(target, keepOffset);
     }
 }

@@ -37,6 +37,8 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
         }
     }
 
+    
+
     public void SetupData(List<ScenarioLine> data)
     {
         _currentIndex = 0; // 最初は0にして、最初のAdvanceで0から始まるように
@@ -46,6 +48,7 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
 
     void OnEnable()
     {
+        InputManager.Instance.actions.UI.Enable();
         // Instanceが存在するか、actionsがセットされているかを確認
         if (InputManager.Instance != null && InputManager.Instance.actions != null)
         {
@@ -59,6 +62,7 @@ public class ScenarioSystem : MonoBehaviour, IScenarioContext
 
     void OnDisable()
     {
+        InputManager.Instance.actions.UI.Disable();
         InputManager.Instance.actions.UI.AdvanceText.performed -= OnScenario;
     }
 
