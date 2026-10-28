@@ -16,7 +16,7 @@ MonoBehaviour:
   bombHitboxPrefab2: {fileID: 4931762435143190446, guid: c998b527cdd014042a7ff5798be04eec, type: 3}
   operableObjViewPrefab: {fileID: 7484785666829772145, guid: 51e32770ead1e3e44840ea31c7702158, type: 3}
   landingSE: {fileID: 8300000, guid: ffa4bf559b6066e4fbb90aa17bcee58b, type: 3}
-  bombSE: {fileID: 8300000, guid: 291740d37c1fa85439dd90d087361960, type: 3}
+  bombSE: {fileID: 8300000, guid: 9480b4dd4bb96f94eacc7bf64df4d4e9, type: 3}
   getSE: {fileID: 8300000, guid: e2a431b9cb7a62e4082de7e93ce6d325, type: 3}
   MenuSE: {fileID: 8300000, guid: e5c47fb7dae53f94194f27d34ed5cd61, type: 3}
   cursorSE: {fileID: 8300000, guid: cd1149bb9b5ae08469967f5d749fb732, type: 3}
