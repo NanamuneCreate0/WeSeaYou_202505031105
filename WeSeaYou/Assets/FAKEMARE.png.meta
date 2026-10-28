@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FAKEMARE_0: -6258355113157137128
+      FAKEMARE_1: 8473731965047247086
+      FAKEMARE_2: -3384844065444507281
+      FAKEMARE_3: 4271502933667922103
+      FAKEMARE_4: 5502340653185859237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
