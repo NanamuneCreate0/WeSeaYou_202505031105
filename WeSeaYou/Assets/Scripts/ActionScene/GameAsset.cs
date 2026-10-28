@@ -6,6 +6,7 @@ public class GameAssets : ScriptableObject
     [Header("Prefabs")]
     public GameObject bombHitboxPrefab;
     public GameObject bombHitboxPrefab2;
+    public GameObject operableObjViewPrefab;
     [Header("SE")]
     public AudioClip landingSE;
     public AudioClip bombSE;
@@ -15,4 +16,5 @@ public class GameAssets : ScriptableObject
     public AudioClip decideSE;
     public AudioClip seaSkillSE;
     public AudioClip stepSE;
+    public AudioClip propellerSE;
 }

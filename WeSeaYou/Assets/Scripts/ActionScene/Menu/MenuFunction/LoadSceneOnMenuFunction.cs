@@ -9,7 +9,7 @@ public class LoadSceneOnMenuFunction : MonoBehaviour, IMenuFunction
     private PublicStaticStatus.Chapter chapter;
     public void Execute()
     {
-        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action);
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action,true);
         PublicStaticStatus.ClearedChapter=chapter;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

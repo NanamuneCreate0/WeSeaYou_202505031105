@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5025335223540045366}
-  - component: {fileID: 4478244024196340402}
+  - component: {fileID: 5037006550394932468}
   - component: {fileID: 4483236691159557266}
   - component: {fileID: 5385734001260693744}
   m_Layer: 6
@@ -29,13 +29,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.13, y: 1.13, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 660282732392481173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &4478244024196340402
-CapsuleCollider2D:
+--- !u!61 &5037006550394932468
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -68,9 +68,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_Size: {x: 0.7, y: 2}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.226}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.57629997, y: 2.0679}
+  m_EdgeRadius: 0.113
 --- !u!114 &4483236691159557266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c87efe9eb0d734dab2cd93d4f09b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landingSE: {fileID: 8300000, guid: 04be9270496f5bf41b209cd2ef063b2e, type: 3}
 --- !u!1 &3958047062440773298
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 3958047062440773298}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.29, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,7 +154,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 0.05
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2

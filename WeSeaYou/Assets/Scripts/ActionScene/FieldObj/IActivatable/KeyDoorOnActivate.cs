@@ -7,6 +7,7 @@ public class KeyDoorOnActivate : MonoBehaviour, IActivatable
     public void Activate()
     {
         Debug.Log(PublicStaticItem.ContainsStageItem(keyItem));
+        SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.decideSE);
         if (!PublicStaticItem.ContainsStageItem(keyItem))
         {
             return;

@@ -35,15 +35,27 @@ public class GameModeController_ActionScene : MonoBehaviour
                 break;
         }
     }
-    public void ChangeGameMode(GameMode gm)
+    public void ChangeGameMode(GameMode gm, bool executeImmediately = false)//InputSystemのPerformedを二重誘発させないため1f待つ//他シーンを呼ぶなら即実行
     {
-        StartCoroutine(ChangeGameModeCoroutine(gm));//InputSystemのPerformedを二重誘発させないため1f待つ
+        if (executeImmediately)
+        {
+            ChangeGameModeImmediate(gm);
+        }
+        else
+        {
+            StartCoroutine(ChangeGameModeCoroutine(gm));
+        }
     }
 
     private IEnumerator ChangeGameModeCoroutine(GameMode gm)
     {
         yield return null;
 
+        ChangeGameModeImmediate(gm);
+    }
+
+    private void ChangeGameModeImmediate(GameMode gm)
+    {
         // Input.actionsを変更するのはGameModeの責務
         gameMode = gm;
 

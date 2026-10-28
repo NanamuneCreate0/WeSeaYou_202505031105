@@ -32,7 +32,7 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action);
+        gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action, true);
         actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.Neutral, ActionModeChanger.ActionModeType.Neutral);
         DebugFunction();
         //Chapter‚É‘Š“–‚·‚éStage‚ð—LŒø‰»
@@ -73,14 +73,13 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void DebugFunction()
     {
         //Item‘«‚·
-        if (PublicStaticItem.ChikyuSkillItemList.Count == 0)
+        PublicStaticItem.ChikyuSkillItemList.Clear();
+        Debug.Log("Get Item for Debug");
+        foreach (ChikyuSkillItemData item in debugItems)
         {
-            Debug.Log("Get Item for Debug");
-            foreach (ChikyuSkillItemData item in debugItems)
-            {
-                PublicStaticItem.ChikyuSkillItemList.Add(item);
-            }
+            PublicStaticItem.ChikyuSkillItemList.Add(item);
         }
+
 
     }
 }

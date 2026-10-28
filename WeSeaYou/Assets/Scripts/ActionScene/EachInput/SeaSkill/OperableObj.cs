@@ -3,14 +3,11 @@ using UnityEngine;
 public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯‚ÄF‚ğ•Ï‚¦‚é//IOperable‚Íinterface‚Æ‚µ‚Ä‚Ì‘¶İ‰¿’l‚È‚¢‚©‚à
 {
     [SerializeField] private SeaSkillExecutor _seaSkillExecutor;
-
-    [SerializeField] private Color candidateColor = new Color(1f, 0.4f, 0.7f);
-    [SerializeField] private Color targetColor = Color.yellow;
+    private static readonly Color candidateColor = new Color(1f, 0.4f, 0.7f, 0.3f);
+    private static readonly Color targetColor = new Color(Color.yellow.r, Color.yellow.g, Color.yellow.b, 0.3f);
 
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
-
-    private Color _originalColor;
 
     private bool _isCandidate;
     private bool _isTarget;
@@ -20,8 +17,6 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯
         _seaSkillExecutor = GameObject.Find("SeaSkillExcutor").GetComponent<SeaSkillExecutor>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _collider = GetComponentInChildren<Collider2D>();
-
-        _originalColor = _spriteRenderer.color;
     }
 
     private void OnEnable()
@@ -61,7 +56,7 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯
 
         UpdateColor();
     }
-
+    /*
     public void UpdateColor(Color? color = null)
     {
         if (color != null)
@@ -83,5 +78,45 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuter‚Ìó‘Ô‚ğó‚¯
                 _spriteRenderer.color = _originalColor;
             }
         }
+    }*/
+    private GameObject _operableObjView;
+
+public void UpdateColor(Color? color = null)
+{
+    if (_operableObjView == null)
+    {
+        _operableObjView = Instantiate(
+            GameAssetManager.Instance.GameAssets.operableObjViewPrefab,
+            transform);
     }
+
+    OperableObjView view = _operableObjView.GetComponent<OperableObjView>();
+
+    if (view == null)
+    {
+        return;
+    }
+
+    Color displayColor;
+
+    if (color != null)
+    {
+        displayColor = color.Value;
+    }
+    else if (_isTarget)
+    {
+        displayColor = targetColor;
+    }
+    else if (_isCandidate)
+    {
+        displayColor = candidateColor;
+    }
+    else
+    {
+        displayColor = Color.clear;
+    }
+
+    view.ReflectUpdateColor(displayColor);
+}
+     
 }

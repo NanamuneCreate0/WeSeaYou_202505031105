@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PressToLoadScene_StartScene : MonoBehaviour
 {
+    [SerializeField] private AudioClip BGM;
     [SerializeField] Animator fadeAnimator;
     private System.IDisposable buttonPressListener;
     private bool hasPressed = false;
@@ -18,6 +19,8 @@ public class PressToLoadScene_StartScene : MonoBehaviour
 
         buttonPressListener =
             InputSystem.onAnyButtonPress.Call(OnAnyButtonPressed);
+
+        BGMManager_ActionScene.Instance.PlayBGM(BGM);
     }
 
     private void OnDisable()
@@ -37,8 +40,7 @@ public class PressToLoadScene_StartScene : MonoBehaviour
             return;
         }
         hasPressed = true;
-
-        PublicStaticStatus.ClearedChapter=PublicStaticStatus.Chapter.ChapterA;
+        DebugFunction();
         StartCoroutine(GameStartCoroutine());
 
     }
@@ -52,5 +54,10 @@ public class PressToLoadScene_StartScene : MonoBehaviour
         yield return new WaitForSeconds(constFloat);
 
         SceneManager.LoadScene("StillScene01");
+    }
+    private void DebugFunction()
+    {
+        PublicStaticItem.CollectionItemList.Clear();
+        PublicStaticStatus.ClearedChapter = PublicStaticStatus.Chapter.ChapterA;
     }
 }

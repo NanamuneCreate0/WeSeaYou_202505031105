@@ -12,11 +12,9 @@ HandDisplayCellsはItemを表示する用の枠だね。回転するからこれが出てきたり消滅した
 また円形UIが回転する時、ハイライトがずれて表示アイテムがその範囲表示される（アイテム数回すと一周）
  */
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class ChikyuSkillHand : MonoBehaviour
 {

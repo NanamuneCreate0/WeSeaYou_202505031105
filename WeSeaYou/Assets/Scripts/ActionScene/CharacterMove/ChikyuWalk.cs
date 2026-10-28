@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -90,6 +91,12 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     //Event
     void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
+        StartCoroutine(DelayUpdateDirection());// ChikyuUtyuSwitcher‚Ìˆ—‚ªI‚í‚Á‚½Ÿ‚ÌƒtƒŒ[ƒ€‚Å•ûŒü‚ğXV‚·‚é
+    }
+
+    IEnumerator DelayUpdateDirection()
+    {
+        yield return null;
         UpdateDirection(true);
     }
 
@@ -385,6 +392,35 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
             {
                 animationName = "UtyuSkillWaitLeft";
             }
+
+
+            int stateHash = Animator.StringToHash(animationName);
+
+            if (!animator.HasState(0, stateHash))
+            {
+                Debug.LogWarning("Animator‚ÉƒXƒe[ƒg‚ª‚ ‚è‚Ü‚¹‚ñ: " + animationName);
+                animationName = originalAnimationName;
+            }
+        }
+        if (actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
+        {
+            if (animationName == "WalkRight")
+            {
+                animationName = "ChikyuSkillWalkRight";
+            }
+            else if (animationName == "WalkLeft")
+            {
+                animationName = "ChikyuSkillWalkLeft";
+            }
+            else if (animationName == "WaitRight")
+            {
+                animationName = "ChikyuSkillWaitRight";
+            }
+            else if (animationName == "WaitLeft")
+            {
+                animationName = "ChikyuSkillWaitLeft";
+            }
+
 
             int stateHash = Animator.StringToHash(animationName);
 

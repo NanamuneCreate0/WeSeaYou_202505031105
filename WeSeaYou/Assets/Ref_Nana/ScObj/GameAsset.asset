@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombHitboxPrefab: {fileID: 4931762435143190446, guid: 74bfdce4b711b6146aaf0b8b885d3090, type: 3}
   bombHitboxPrefab2: {fileID: 4931762435143190446, guid: c998b527cdd014042a7ff5798be04eec, type: 3}
+  operableObjViewPrefab: {fileID: 7484785666829772145, guid: 51e32770ead1e3e44840ea31c7702158, type: 3}
   landingSE: {fileID: 8300000, guid: ffa4bf559b6066e4fbb90aa17bcee58b, type: 3}
-  bombSE: {fileID: 8300000, guid: 60a036663f72c164cb68c93aed76e709, type: 3}
-  getSE: {fileID: 8300000, guid: 646779e5dfe035f4dbe80104087b4af1, type: 3}
+  bombSE: {fileID: 8300000, guid: 9480b4dd4bb96f94eacc7bf64df4d4e9, type: 3}
+  getSE: {fileID: 8300000, guid: e2a431b9cb7a62e4082de7e93ce6d325, type: 3}
   MenuSE: {fileID: 8300000, guid: e5c47fb7dae53f94194f27d34ed5cd61, type: 3}
   cursorSE: {fileID: 8300000, guid: cd1149bb9b5ae08469967f5d749fb732, type: 3}
   decideSE: {fileID: 8300000, guid: a1459608a1cd0ac4f90c62fb2049616b, type: 3}
-  seaSkillSE: {fileID: 8300000, guid: df159867bafc0454896e12d2fca7e930, type: 3}
-  stepSE: {fileID: 8300000, guid: 051df120b412b82418ccb4442e5f597b, type: 3}
+  seaSkillSE: {fileID: 8300000, guid: c53775ca5cf3bc44982a47efa39a2d1a, type: 3}
+  stepSE: {fileID: 8300000, guid: 3de9258f67656d04dafc54d11133d45d, type: 3}
+  propellerSE: {fileID: 8300000, guid: 931a23f03613e084eb199d6c65663514, type: 3}
