@@ -28,6 +28,7 @@ public class LoadSceneOnActivate : MonoBehaviour, IActivatable
 
         yield return new WaitForSeconds(constFloat);
 
+        Debug.Log(PublicStaticStatus.ClearedChapter + "adfad");
         SceneManager.LoadScene("StillScene01");
     }
 }
