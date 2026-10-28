@@ -15,7 +15,7 @@ public class ScenarioStarter : MonoBehaviour
     void Start()
     {
         Debug.Log("シナリオを開始します");
-        _currentTriggerIndex = 1 + (int)PublicStaticStatus.ClearedChapter;
+        _currentTriggerIndex = (int)PublicStaticStatus.ClearedChapter;
         _currentTriggerIndex--;
         _scenarioTrigger[_currentTriggerIndex].StartScenario(_scenarioLoader, _textExecutor, _scenarioSystem);
     }
