@@ -25,7 +25,7 @@ public class BalkWalkEvent : MonoBehaviour, ISpecialEvent
         }
 
         _animator_mare.Play("PIX_CARA_MARE_WALK_01_NOMAL_R");
-        yield return _mare.DOMoveX(10f, 4f).WaitForCompletion();
+        yield return _mare.DOMoveX(_destination.transform.position.x, 4f).WaitForCompletion();
 
         _animator_mare.Play("PIX_CARA_MARE_WAIT_01_R");
 
