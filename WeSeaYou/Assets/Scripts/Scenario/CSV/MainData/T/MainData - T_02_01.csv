@@ -24,3 +24,4 @@
 23,TEXT,CH0T_MS_027,-,0,-,,,
 24,WAIT,-,2,0,-,,,
 25,FADEOUT,-,1,0,-,,,
+26,TRANSITION,ActionScene_Nana2,-,0,-,,,,,

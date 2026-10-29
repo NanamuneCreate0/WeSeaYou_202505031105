@@ -129,10 +129,10 @@ TextureImporter:
       name: PIX_CARA_MARE_NAMECHANGE_02_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 43
-        height: 89
+        width: 64
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c00df9ab7ca9e7b408494f13faf892ce
     internalID: 0
     vertices: []
     indices: 

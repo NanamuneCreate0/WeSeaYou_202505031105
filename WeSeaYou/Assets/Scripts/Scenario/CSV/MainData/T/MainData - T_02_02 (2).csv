@@ -70,3 +70,5 @@
 69,PIC,PIC_FACE_MARE_N_PANIC_01,-,0,TEXT同,,,
 71,PIC,PIC_BODY_MARE_N_06,-,0,TEXT同,,,
 72,TEXT,CH0T_MS_041,-,0,スチル上なので、シネマスコープの上部分は要りません,,,
+73,FADEOUT,-,2,0,-,,,
+74,TRANSITION,EndScene,-,0,-,,,,,
