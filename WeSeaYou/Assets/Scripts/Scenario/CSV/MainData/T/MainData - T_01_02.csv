@@ -1,0 +1,23 @@
+No.,カテゴリー (Category),表示(ID),数値 (Param),"終了待ち(EventWait)",補足（Comment）,セリフ(ID),NAME,日本語 (JP)【プロローグ】,英語 (EN),中国語 (CH)
+1,FADEOUT,-,0,0,-,CH0T_MS_019,FKMARE,むふー。ボクこと地球人マーレのおかげで\nこの難所も突破できたな！,-,-
+2,EV,PIX_BACK_CH00_FOREST,-,0,-,CH0T_MS_020,FKSEA,それ続けるのか？,-,-
+3,EV,PIX_CARA_SEA_STAND_PROUD_01,-,0,-,CH0T_MS_021,FKMARE,さあ、次の冒険だ！　いこう、シー！,-,-
+4,EV,PIX_CARA_MARE_STAND_STUNNED_01,-,0,-,CH0T_MS_022,FKSEA,はいはい、マーレマーレ。\nなんだか新鮮ではあるよ,-,-
+5,FADEIN,-,0.5,0,短め,,,,-,-
+6,PIC,PIC_FACE_SEA_N_HAPPY_10,-,0,-,,,,-,-
+7,PIC,PIC_BODY_SEA_N_08,-,0,TEXT同,,,,-,-
+8,CINEMASCOPE,CS_IN,-,0,TEXT同,,,,-,-
+9,WAIT,-,1,0,TEXT同,,,,-,-
+10,TEXT,CH0T_MS_019,-,0,-,,,,-,-
+11,PIC,PIC_FACE_MARE_N_PANIC_01,-,0,TEXT同,,,,-,-
+12,PIC,PIC_BODY_MARE_N_06,-,0,TEXT同,,,,-,-
+13,TEXT,CH0T_MS_020,-,0,-,,,,-,-
+14,EV,PIX_CARA_SEA_STAND_HAPPY_01,-,0,TEXT同,,,,-,-
+15,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,,,,-,-
+16,PIC,PIC_BODY_SEA_N_08,-,0,TEXT同,,,,-,-
+17,TEXT,CH0T_MS_021,-,0,-,,,,-,-
+18,PIC,PIC_FACE_MARE_N_SERIOUS_05,-,0,TEXT同,,,,-,-
+19,PIC,PIC_BODY_MARE_N_06,-,0,TEXT同,,,,-,-
+20,TEXT,CH0T_MS_022,-,0,-,,,,-,-
+21,WAIT,-,1,0,-,,,,-,-
+22,FADEOUT,-,0.75,0,-,,,,,

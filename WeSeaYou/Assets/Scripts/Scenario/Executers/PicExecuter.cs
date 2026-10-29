@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI; // ← Image を使うのに必要
+using UnityEngine.UI;
 
 public class PicExecutor : MonoBehaviour, IScenarioCommand
 {
@@ -11,7 +9,22 @@ public class PicExecutor : MonoBehaviour, IScenarioCommand
     public bool IsAutoAdvance => true;
     public bool IsDebugLog = false;
 
-    [SerializeField] private List<Image> _PICParts; // Transform → Image
+    private const string EMPTY_STATE = "Empty"; // EMO の Animator に作る空ステート
+
+    [SerializeField] private List<Image> _PICParts;
+    [SerializeField] private TextExecutor _textExecutor; // TEXT の合図を聞くため
+
+    private readonly HashSet<Image> _activeEmotions = new();
+
+    private void OnEnable()
+    {
+        if (_textExecutor != null) _textExecutor.OnTextAdvanced += HideAllEmotions;
+    }
+
+    private void OnDisable()
+    {
+        if (_textExecutor != null) _textExecutor.OnTextAdvanced -= HideAllEmotions;
+    }
 
     public void Execute(ScenarioLine data, IScenarioContext context, Action onComplete)
     {
@@ -24,7 +37,7 @@ public class PicExecutor : MonoBehaviour, IScenarioCommand
 
             if (part.name.Contains("EMO"))
             {
-                StartCoroutine(ActionEmotionCoroutine(part, id));
+                ShowEmotion(part, id);
             }
             else
             {
@@ -48,33 +61,32 @@ public class PicExecutor : MonoBehaviour, IScenarioCommand
         if (IsDebugLog) Debug.Log($"画像を変更: {id}");
     }
 
-    private IEnumerator ActionEmotionCoroutine(Image emotionImage, string emotionID)
+    private void ShowEmotion(Image emotionImage, string emotionID)
     {
+        emotionImage.enabled = true;
+        _activeEmotions.Add(emotionImage);
+
         Animator animator = emotionImage.GetComponent<Animator>();
-
-        // 前回のフェードを止めて、透明度を戻してから表示
-        emotionImage.DOKill();
-        Color c = emotionImage.color;
-        c.a = 1f;
-        emotionImage.color = c;
-        emotionImage.gameObject.SetActive(true);
-
         if (animator != null)
         {
-            animator.Play(emotionID, 0, 0f); // Animator内のステート名で再生
+            animator.Play(emotionID, 0, 0f);
             if (IsDebugLog) Debug.Log($"表情を変更: {emotionID}");
         }
         else
         {
             Debug.LogWarning($"Animatorが見つかりません: {emotionImage.name}");
         }
+    }
 
-        yield return new WaitForSeconds(2f);
+    private void HideAllEmotions()
+    {
+        foreach (var emo in _activeEmotions)
+        {
+            emo.enabled = false;
 
-        yield return emotionImage.DOFade(0f, 1f)
-            .SetLink(emotionImage.gameObject)
-            .WaitForCompletion();
-
-        emotionImage.gameObject.SetActive(false);
+            Animator animator = emo.GetComponent<Animator>();
+            if (animator != null) animator.Play(EMPTY_STATE, 0, 0f);
+        }
+        _activeEmotions.Clear();
     }
 }

@@ -34,6 +34,8 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
 
     private bool IsTyping { get; set; } = false;
 
+    public event Action OnTextAdvanced;
+
     private void Awake()
     {
         //_table = new TextTable(_scenarioText);
@@ -93,6 +95,7 @@ public class TextExecutor : MonoBehaviour, IScenarioCommand, IInputReceiver
         {
             var cb = _onComplete;
             _onComplete = null;   // êÊÇ…null(ìÒèdî≠âŒÉKÅ[Éh)
+            OnTextAdvanced?.Invoke();
             cb();
         }
     }

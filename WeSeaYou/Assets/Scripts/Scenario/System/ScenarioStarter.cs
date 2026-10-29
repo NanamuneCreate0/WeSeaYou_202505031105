@@ -8,6 +8,7 @@ public class ScenarioStarter : MonoBehaviour
     [SerializeField] private ScenarioLoader _scenarioLoader;
     [SerializeField] private TextExecutor _textExecutor;
     [SerializeField] private ScenarioSystem _scenarioSystem;
+    [SerializeField] private GameObject[] Areas;
 
     private int _currentTriggerIndex = 0;
 
@@ -18,5 +19,6 @@ public class ScenarioStarter : MonoBehaviour
         _currentTriggerIndex = (int)PublicStaticStatus.ClearedChapter;
         _currentTriggerIndex--;
         _scenarioTrigger[_currentTriggerIndex].StartScenario(_scenarioLoader, _textExecutor, _scenarioSystem);
+        Areas[_currentTriggerIndex].SetActive(true);
     }
 }
