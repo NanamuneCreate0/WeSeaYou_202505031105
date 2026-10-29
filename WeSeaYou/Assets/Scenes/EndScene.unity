@@ -1547,7 +1547,7 @@ MonoBehaviour:
   thankAnim: {fileID: 611838090}
   youGetAnim: {fileID: 1394275486}
   audioSource: {fileID: 917357621}
-  pafSE: {fileID: 8300000, guid: 62ae893c582b2e643aa4ac3e4301b6d6, type: 3}
+  pafSE: {fileID: 8300000, guid: 4b2e47e2c790bfe4695231d7cbb5d973, type: 3}
   completeSE: {fileID: 8300000, guid: 1a95585f6cd03d4449cb8e062b19d6e5, type: 3}
   endSE: {fileID: 8300000, guid: a0ee785bf292c12418c59ab7d939e946, type: 3}
 --- !u!4 &1872020735
@@ -1602,7 +1602,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.112997904, b: 0.2905661, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
