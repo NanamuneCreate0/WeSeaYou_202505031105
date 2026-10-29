@@ -68,7 +68,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     {
         UpdateGrounding();
         UpdateAirState();//‹ó’†ƒAƒjƒ‚ğ”½‰f
-        UpdateRunState();
+        UpdateContinuousWalkState();
         ApplyMovement();
     }
 
@@ -152,23 +152,8 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
         previousVelocityY = rb.linearVelocityY;
     }
 
-    void UpdateRunState()
+    void UpdateContinuousWalkState()
     {
-        // Neutral‚Ì‚Æ‚«‚¾‚¯‘–‚é
-        if (actionModeChanger.ActionMode != ActionModeChanger.ActionModeType.Neutral)
-        {
-            if (isRunning)
-            {
-                isRunning = false;
-                UpdateDirection(true);
-            }
-
-            walkTime = 0f;
-            stepTime = 0f;
-            return;
-        }
-
-        // ’nã‚ÅˆÚ“®“ü—Í‚ª‚ ‚éŠÔ‚¾‚¯ŠÔ‚ği‚ß‚é
         if (IsGrounding && Mathf.Abs(inputX) > 0)
         {
             // –Ú‚Ì‘O‚É•Ç‚ª‚ ‚éŠÔ‚Í‘–‚é‚½‚ß‚ÌŠÔ‚ği‚ß‚È‚¢
@@ -185,25 +170,42 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
                 return;
             }
 
-            walkTime += Time.fixedDeltaTime;
-            stepTime += Time.fixedDeltaTime;
-
-            // 1•b•à‚«‘±‚¯‚½‚ç‘–‚é
-            if (!isRunning && walkTime >= 1f)
-            {
-                isRunning = true;
-                UpdateDirection(true);
-            }
-            //0.4•b•à‚­‚²‚Æ‚ÉSE
-            if (stepTime >= 0.4f)
+            //•à‚­SE
+            if (!isRunning) { stepTime += Time.fixedDeltaTime; }
+            else { stepTime += Time.fixedDeltaTime * 2f; }
+            if (stepTime >= 0.6f)//0.8•b•à‚­‚²‚Æ‚ÉSE
             {
                 SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.stepSE);
-                stepTime -= 0.4f;
+                stepTime -= 0.6f;
+            }
+
+
+            // Neutral‚Ì‚Æ‚«‚¾‚¯‘–‚é
+            if (actionModeChanger.ActionMode != ActionModeChanger.ActionModeType.Neutral)
+            {
+                if (isRunning)
+                {
+                    isRunning = false;
+                    UpdateDirection(true);
+                }
+
+                walkTime = 0f;
+            }
+            else if(actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.Neutral)
+            {
+
+                walkTime += Time.fixedDeltaTime;
+
+                // 1•b•à‚«‘±‚¯‚½‚ç‘–‚é
+                if (!isRunning && walkTime >= 1f)
+                {
+                    isRunning = true;
+                    UpdateDirection(true);
+                }
             }
         }
-        else
+        else//“ü—Í‚ª–³‚¢‚©‹ó’†
         {
-            // “ü—Í‚ğ—£‚µ‚½‚ç‘–sŠÔ‚ğƒŠƒZƒbƒg
             if (isRunning)
             {
                 isRunning = false;

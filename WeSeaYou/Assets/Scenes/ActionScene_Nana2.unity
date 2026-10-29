@@ -107474,7 +107474,7 @@ MonoBehaviour:
   chapterBObj: {fileID: 886991816}
   chapterCObj: {fileID: 20089092}
   otherObj: {fileID: 1371341220}
-  BGM: {fileID: 8300000, guid: ddb61ba63b2791e4aa92da14b89068d8, type: 3}
+  BGM: {fileID: 8300000, guid: 05b320e306b9f1c468f578ca4a9e947e, type: 3}
   BGM2: {fileID: 8300000, guid: afab76c2014bbc04db062f3805c64982, type: 3}
   gameModeController: {fileID: 2012713258}
   actionModeChanger: {fileID: 878130752}
@@ -214527,7 +214527,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -35,9 +35,12 @@ public class OnGroundSE : MonoBehaviour
     {
         if (rb != null && rb.mass >= 7f)
         {
-            //èdÇ¢SEÇ†ÇÍÇŒ
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.heavyLandingSE);
         }
-        SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.landingSE);
+        else
+        {
+            SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.landingSE);
+        }
     }
 
 }
