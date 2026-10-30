@@ -21,3 +21,4 @@ No.,カテゴリー (Category),表示(ID),数値 (Param),"終了待ち(EventWait
 20,TEXT,CH0T_MS_022,-,0,-,,,,-,-
 21,WAIT,-,1,0,-,,,,-,-
 22,FADEOUT,-,0.75,0,-,,,,,
+23,TRANSITION,ActionScene_Nana2,-,0,-,,,,,

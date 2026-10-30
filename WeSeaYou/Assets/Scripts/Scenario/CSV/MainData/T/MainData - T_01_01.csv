@@ -86,3 +86,4 @@
 85,EV,PIX_CARA_MARE_P_DUSH_PANIC_01_TIE,10,0,-,,,,,
 86,WAIT,-,1,0,-,,,,,
 87,CAMERA,CARA_FOLLOW,0,0,-,,,,,
+88,TRANSITION,ActionScene_Nana2,-,0,-,,,,,
