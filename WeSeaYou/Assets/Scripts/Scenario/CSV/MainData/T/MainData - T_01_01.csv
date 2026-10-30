@@ -7,7 +7,7 @@
 6,WAIT,-,1,0,-,CH0T_MS_005,FKSEA,テンション高いな,,
 7,CINEMASCOPE,CS_IN,-,0,-,CH0T_MS_006,FKMARE,だって、体験版だよ体験版！　,,
 8,WAIT,-,1,0,-,CH0T_MS_007,FKMARE,苦節八年、山あり谷ありアクションあり\nパズルあり感動あり爆発オチあり、 \n数多の苦難の末に辿り着いた約束の地だよ！,,
-9,BGM,BGM_TAIKEN_01,-,0,TEXT同,CH0T_MS_008,FKSEA,なかった記憶を作るんじゃない,,
+9,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,CH0T_MS_008,FKSEA,なかった記憶を作るんじゃない,,
 10,EV,PIX_CARA_SEA_STAND_HAPPY_01_DTIE,-,0,TEXT同,CH0T_MS_009,FKMARE,えへー,,
 11,PIC,PIC_FACE_SEA_N_HAPPY_02,-,0,TEXT同,CH0T_MS_010,FKSEA,ああもう、ぱたぱたするから\nネクタイ曲がってるぞ,,
 12,PIC,PIC_BODY_SEA_N_08_DTIE,-,0,TEXT同,CH0T_MS_011,FKMARE,ありがとう、マーレ！,,
