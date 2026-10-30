@@ -6,6 +6,7 @@ public class SeaSkillActivator : MonoBehaviour
 {
     [SerializeField] private SeaSkillExecutor seaSkillExecuter;
     [SerializeField] private SeaSkillAura seaSkillAura;
+    [SerializeField] private GameObject seaSkillUI;
     [SerializeField] private ShockWaveManager _shockWaveManager;
 
     private void OnEnable()
@@ -24,6 +25,7 @@ public class SeaSkillActivator : MonoBehaviour
             seaSkillExecuter.ActivateSkill();
             seaSkillAura.ActivateSkill();
             _shockWaveManager.StartShockWave();
+            seaSkillUI.SetActive(true);
             SEManager_Nana.Instance.PlaySE(GameAssetManager.Instance.GameAssets.seaSkillSE);
         }
         if (b == ActionModeChanger.ActionModeType.UtyuSkill)
@@ -31,6 +33,7 @@ public class SeaSkillActivator : MonoBehaviour
             if (a != ActionModeChanger.ActionModeType.Neutral && a != ActionModeChanger.ActionModeType.ChikyuSkill) { Debug.LogWarning("ëzíËäOÇÃActionModeïœçX"); }
             seaSkillExecuter.EndSkill();
             seaSkillAura.EndSkill();
+            seaSkillUI.SetActive(false);
         }
 
     }
