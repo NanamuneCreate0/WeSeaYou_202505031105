@@ -3,7 +3,7 @@
 2,EV,PIX_BACK_CH00_FOREST,-,0,-,CH0T_MS_028,MARE,これで完成だな
 3,EV,PIX_SPE_CH0T_HIGHLEMON,-,0,"シナリオ開始時、レモンの木のみ画面外カメラが少し右に寄るとレモンが映る位置に置いてください",CH0T_MS_029,SEA,わぁ！　すごいよ、マーレ！　\nこんなにあっさり！
 4,EV,PIX_CARA_SEA_STAND_HAPPY_01,-,0,-,CH0T_MS_030,MARE,もういいのか？
-5,EV,PIX_CARA_MARE_P_WAIT_L_TIE,-,0,-,CH0T_MS_031,SEA,うん。ボクじゃマーレの代わりは\nできなかったから……
+5,EV,PIX_CARA_MARE_WAIT_L,-,0,-,CH0T_MS_031,SEA,うん。ボクじゃマーレの代わりは\nできなかったから……
 6,EV,PIX_SPE_CH0T_MIXER,-,0,ミキサーを挟んで、キャラを左右に配置してください,CH0T_MS_032,MARE,あー、のど乾いたなー。でも、木の上じゃ\nレモン取れないなー。困ったなー。\n誰か宇宙人パワーで助けてくれないかなー
 7,FADEIN,-,1,0,-,CH0T_MS_033,MARE,いないかなー？
 8,PIC,PIC_BODY_SEA_N_08,-,0,TEXT同,CH0T_MS_034,MARE,……おい。なんか言ってくれよ

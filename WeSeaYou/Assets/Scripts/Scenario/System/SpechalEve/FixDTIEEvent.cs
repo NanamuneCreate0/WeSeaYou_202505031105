@@ -40,7 +40,7 @@ public class FixDTIEEvent : MonoBehaviour, ISpecialEvent
         W.gameObject.SetActive(false);
         animator_mare.Play("PIX_CARA_MARE_WALK_01_NOMAL_R");
         animator_sea.Play("PIX_CARA_SEA_STAND_HAPPY_01_W");
-        yield return _mare.DOMoveX(2.69f, 2).WaitForCompletion();
+        yield return _mare.DOMoveX(1.48f, 2).WaitForCompletion();
 
         animator_mare.Play("PIX_CARA_MARE_STAND_STUNNED_01_TIE");
         onComplete?.Invoke();

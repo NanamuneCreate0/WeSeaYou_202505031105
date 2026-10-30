@@ -9,7 +9,6 @@ public class ScenarioStarter : MonoBehaviour
     [SerializeField] private TextExecutor _textExecutor;
     [SerializeField] private ScenarioSystem _scenarioSystem;
     [SerializeField] private GameObject[] Areas;
-
     private int _currentTriggerIndex = 0;
 
 
