@@ -9,6 +9,7 @@ public class GameAssets : ScriptableObject
     public GameObject operableObjViewPrefab;
     [Header("SE")]
     public AudioClip landingSE;
+    public AudioClip heavyLandingSE;
     public AudioClip bombSE;
     public AudioClip getSE;
     public AudioClip MenuSE;
