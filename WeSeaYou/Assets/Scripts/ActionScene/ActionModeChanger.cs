@@ -23,15 +23,39 @@ public class ActionModeChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.Instance.actions.Player.SeaSkill.started+=ActivateSeaSkill;
-        InputManager.Instance.actions.Player.ChikyuSkill.started += ActivateChikyuSkill;
+        PublicStaticStatus.ChangeKeyConfig += OnChangeKeyConfig;
+        SubscribeInputEvents();
     }
     private void OnDisable()
     {
-        InputManager.Instance.actions.Player.SeaSkill.started -=ActivateSeaSkill;
+        PublicStaticStatus.ChangeKeyConfig -= OnChangeKeyConfig;
+        UnsubscribeInputEvents();
+    }
+    private void OnChangeKeyConfig()
+    {
+        UnsubscribeInputEvents();
+        SubscribeInputEvents();
+    }
+    private void SubscribeInputEvents()
+    {
+        if(PublicStaticStatus.SkillRoutine_Config)
+        {
+            InputManager.Instance.actions.Player.SkillRoutine.started += RoutineSkill;
+        }
+        else
+        {
+            InputManager.Instance.actions.Player.SeaSkill.started += ActivateSeaSkill;
+            InputManager.Instance.actions.Player.ChikyuSkill.started += ActivateChikyuSkill;
+        }
+    }
+
+    private void UnsubscribeInputEvents()
+    {
+        InputManager.Instance.actions.Player.SkillRoutine.started -= RoutineSkill;
+        InputManager.Instance.actions.Player.SeaSkill.started -= ActivateSeaSkill;
         InputManager.Instance.actions.Player.ChikyuSkill.started -= ActivateChikyuSkill;
-    }                                        
-                                             
+    }
+
     void Start()
     {
         ActionMode = ActionModeType.Neutral;
@@ -81,6 +105,22 @@ public class ActionModeChanger : MonoBehaviour
         if (ActionMode == ActionModeType.Neutral)
         {
             ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.Neutral);
+        }
+        else if (ActionMode == ActionModeType.ChikyuSkill)
+        {
+            ChangeActionMode(ActionModeType.UtyuSkill, ActionModeType.ChikyuSkill);
+        }
+        else if (ActionMode == ActionModeType.UtyuSkill)
+        {
+            ChangeActionMode(ActionModeType.Neutral, ActionModeType.UtyuSkill);
+        }
+    }
+    private void RoutineSkill(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("RoutineSkill"); 
+        if (ActionMode == ActionModeType.Neutral)
+        {
+            ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.Neutral);
         }
         else if (ActionMode == ActionModeType.ChikyuSkill)
         {

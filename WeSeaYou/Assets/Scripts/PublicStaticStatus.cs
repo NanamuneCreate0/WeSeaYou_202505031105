@@ -19,6 +19,11 @@ public static class PublicStaticStatus
      * ななむねは、ステージゴール時にenumを+1する
      * はじめてのゲームスタート時、始めるボタンでNone→ChapterA
      */
+
+
+
+    //音量
+    public static event Action VolumeConfigChanged;
     private static int volume_Config = 5;
     public static int Volume_Config
     {
@@ -45,5 +50,44 @@ public static class PublicStaticStatus
             VolumeConfigChanged?.Invoke();
         }
     }
-    public static event Action VolumeConfigChanged;
+
+
+
+    //キーコンフィグ
+    public static bool FlipABXY = false;//未実装
+
+    public static event Action ChangeKeyConfig;
+
+    private static bool skillRoutine_Config = true;
+    public static bool SkillRoutine_Config
+    {
+        get { return skillRoutine_Config; }
+        set
+        {
+            skillRoutine_Config = value;
+            ChangeKeyConfig?.Invoke();
+        }
+    }
+
+    private static bool easyChikyuSkill_Config = true;
+    public static bool EasyChikyuSkill_Config
+    {
+        get { return easyChikyuSkill_Config; }
+        set
+        {
+            easyChikyuSkill_Config = value;
+            ChangeKeyConfig?.Invoke();
+        }
+    }
+
+    private static bool easyUtyuSkill_Config = true;
+    public static bool EasyUtyuSkill_Config
+    {
+        get { return easyUtyuSkill_Config; }
+        set
+        {
+            easyUtyuSkill_Config = value;
+            ChangeKeyConfig?.Invoke();
+        }
+    }
 }

@@ -62,14 +62,39 @@ public class ChikyuSkillHand : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.Instance.actions.Player.Decide.started += OnDecideStarted;
-        InputManager.Instance.actions.Player.SkillSelectRight.started += OnMoveRight;
-        InputManager.Instance.actions.Player.SkillSelectLeft.started += OnMoveLeft;
+        PublicStaticStatus.ChangeKeyConfig += OnChangeKeyConfig;
+        SubscribeInputEvents();
     }
 
     private void OnDisable()
     {
+        PublicStaticStatus.ChangeKeyConfig -= OnChangeKeyConfig;
+        UnsubscribeInputEvents();
+    }
+    private void OnChangeKeyConfig()
+    {
+        UnsubscribeInputEvents();
+        SubscribeInputEvents();
+    }
+    private void SubscribeInputEvents()
+    {
+        if (PublicStaticStatus.EasyChikyuSkill_Config)
+        {
+            InputManager.Instance.actions.Player.Decide.started += OnDecideStarted;
+            InputManager.Instance.actions.Player.Move.started += OnMove;
+        }
+        else
+        {
+            InputManager.Instance.actions.Player.Decide.started += OnDecideStarted;
+            InputManager.Instance.actions.Player.SkillSelectRight.started += OnMoveRight;
+            InputManager.Instance.actions.Player.SkillSelectLeft.started += OnMoveLeft;
+        }
+    }
+
+    private void UnsubscribeInputEvents()
+    {
         InputManager.Instance.actions.Player.Decide.started -= OnDecideStarted;
+        InputManager.Instance.actions.Player.Move.started -= OnMove;
         InputManager.Instance.actions.Player.SkillSelectRight.started -= OnMoveRight;
         InputManager.Instance.actions.Player.SkillSelectLeft.started -= OnMoveLeft;
     }
@@ -134,7 +159,19 @@ public class ChikyuSkillHand : MonoBehaviour
             }
         }
     }
+    private void OnMove(InputAction.CallbackContext ctx)
+    {
+        float moveX = ctx.ReadValue<Vector2>().x;
 
+        if (moveX > 0)
+        {
+            OnMoveRight(ctx);
+        }
+        else if (moveX < 0)
+        {
+            OnMoveLeft(ctx);
+        }
+    }
     private void OnMoveRight(InputAction.CallbackContext ctx)
     {
         if (direction == Direction.None)

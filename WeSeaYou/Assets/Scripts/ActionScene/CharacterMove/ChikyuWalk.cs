@@ -75,12 +75,30 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     // InputSystem
     void OnMove(InputAction.CallbackContext context)
     {
+        //AcctionMode‚ª•ÏX‚³‚ê‚½ê‡AOnMove©‘Ì‚ğ~‚ß‚é‚Ì‚ª‹Ø‚¾‚ªA‚ß‚ñ‚Ç‚¢‚Ì‚Åˆê’U‚±‚±‚Éreturnˆ—‚ğ’u‚­B
+        if (PublicStaticStatus.EasyChikyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
+        {
+            return;
+        }
+        if (PublicStaticStatus.EasyUtyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
+        {
+            return;
+        }
         inputX = context.ReadValue<Vector2>().x;
         UpdateDirection();
     }
 
     void OnJump(InputAction.CallbackContext context)
     {
+        //AcctionMode‚ª•ÏX‚³‚ê‚½ê‡AOnMove©‘Ì‚ğ~‚ß‚é‚Ì‚ª‹Ø‚¾‚ªA‚ß‚ñ‚Ç‚¢‚Ì‚Åˆê’U‚±‚±‚Éreturnˆ—‚ğ’u‚­B
+        if (PublicStaticStatus.EasyChikyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
+        {
+            return;
+        }
+        if (PublicStaticStatus.EasyUtyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
+        {
+            return;
+        }
         if (!IsGrounding) return;
 
         rb.AddForce(Vector2.up * jumpPower * rb.mass);
@@ -98,6 +116,8 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     {
         yield return null;
         UpdateDirection(true);
+
+
     }
 
     // Ú’n”»’è

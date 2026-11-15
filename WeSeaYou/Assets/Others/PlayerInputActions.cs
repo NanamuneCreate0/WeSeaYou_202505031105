@@ -1688,6 +1688,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillRoutine"",
+                    ""type"": ""Button"",
+                    ""id"": ""68374cbf-c163-4236-99a7-69329f754a7f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1932,6 +1941,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1fc93516-925d-4fa0-b56a-079df531e69c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillRoutine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -2051,6 +2071,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Decide = m_Player.FindAction("Decide", throwIfNotFound: true);
         m_Player_StageReset = m_Player.FindAction("StageReset", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_SkillRoutine = m_Player.FindAction("SkillRoutine", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -2837,6 +2858,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Decide;
     private readonly InputAction m_Player_StageReset;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_SkillRoutine;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -2888,6 +2910,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SkillRoutine".
+        /// </summary>
+        public InputAction @SkillRoutine => m_Wrapper.m_Player_SkillRoutine;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -2944,6 +2970,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @SkillRoutine.started += instance.OnSkillRoutine;
+            @SkillRoutine.performed += instance.OnSkillRoutine;
+            @SkillRoutine.canceled += instance.OnSkillRoutine;
         }
 
         /// <summary>
@@ -2985,6 +3014,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @SkillRoutine.started -= instance.OnSkillRoutine;
+            @SkillRoutine.performed -= instance.OnSkillRoutine;
+            @SkillRoutine.canceled -= instance.OnSkillRoutine;
         }
 
         /// <summary>
@@ -3416,5 +3448,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SkillRoutine" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSkillRoutine(InputAction.CallbackContext context);
     }
 }
