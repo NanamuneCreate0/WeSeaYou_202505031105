@@ -50,18 +50,47 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
 
     void OnEnable()
     {
-        InputManager.Instance.actions.Player.Move.performed += OnMove;
-        InputManager.Instance.actions.Player.Move.canceled += OnMove;
-        InputManager.Instance.actions.Player.Jump.performed += OnJump;
         ActionModeChanger.ActionModeChangeEvent += GetActionModeChange;
+        PublicStaticStatus.ChangeKeyConfig += UpdateKeyConfig;
+        UpdateKeyConfig();//SetActiveFalse‚©‚çTrue‚É‚È‚Á‚½ê‡AƒRƒ“ƒtƒBƒO‚ª•Ï‚í‚Á‚Ä‚é‚©‚à
     }
 
     void OnDisable()
     {
+        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
+        PublicStaticStatus.ChangeKeyConfig -= UpdateKeyConfig;
+        UnsubscribeInputEvents();
+    }
+    private void UpdateKeyConfig()
+    {
+        UnsubscribeInputEvents();
+        SubscribeInputEvents();
+    }
+    private void SubscribeInputEvents()
+    {
+        if (PublicStaticStatus.EasyChikyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
+        {
+            inputX = 0;
+        }
+        else if (PublicStaticStatus.EasyUtyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
+        {
+            InputManager.Instance.actions.Player.Jump.performed += OnJump;
+            inputX = 0;
+        }
+        else
+        {
+            InputManager.Instance.actions.Player.Move.performed += OnMove;
+            InputManager.Instance.actions.Player.Move.canceled += OnMove;
+            InputManager.Instance.actions.Player.Jump.performed += OnJump;
+            inputX = InputManager.Instance.actions.Player.Move.ReadValue<Vector2>().x;
+        }
+    }
+
+    private void UnsubscribeInputEvents()
+    {
         InputManager.Instance.actions.Player.Move.performed -= OnMove;
         InputManager.Instance.actions.Player.Move.canceled -= OnMove;
         InputManager.Instance.actions.Player.Jump.performed -= OnJump;
-        ActionModeChanger.ActionModeChangeEvent -= GetActionModeChange;
     }
 
     void FixedUpdate()
@@ -75,30 +104,12 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     // InputSystem
     void OnMove(InputAction.CallbackContext context)
     {
-        //AcctionMode‚ª•ÏX‚³‚ê‚½ê‡AOnMove©‘Ì‚ğ~‚ß‚é‚Ì‚ª‹Ø‚¾‚ªA‚ß‚ñ‚Ç‚¢‚Ì‚Åˆê’U‚±‚±‚Éreturnˆ—‚ğ’u‚­B
-        if (PublicStaticStatus.EasyChikyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
-        {
-            return;
-        }
-        if (PublicStaticStatus.EasyUtyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
-        {
-            return;
-        }
         inputX = context.ReadValue<Vector2>().x;
         UpdateDirection();
     }
 
     void OnJump(InputAction.CallbackContext context)
     {
-        //AcctionMode‚ª•ÏX‚³‚ê‚½ê‡AOnMove©‘Ì‚ğ~‚ß‚é‚Ì‚ª‹Ø‚¾‚ªA‚ß‚ñ‚Ç‚¢‚Ì‚Åˆê’U‚±‚±‚Éreturnˆ—‚ğ’u‚­B
-        if (PublicStaticStatus.EasyChikyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.ChikyuSkill)
-        {
-            return;
-        }
-        if (PublicStaticStatus.EasyUtyuSkill_Config && actionModeChanger.ActionMode == ActionModeChanger.ActionModeType.UtyuSkill)
-        {
-            return;
-        }
         if (!IsGrounding) return;
 
         rb.AddForce(Vector2.up * jumpPower * rb.mass);
@@ -109,6 +120,7 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     //Event
     void GetActionModeChange(ActionModeChanger.ActionModeType a, ActionModeChanger.ActionModeType b)
     {
+        UpdateKeyConfig();
         StartCoroutine(DelayUpdateDirection());// ChikyuUtyuSwitcher‚Ìˆ—‚ªI‚í‚Á‚½Ÿ‚ÌƒtƒŒ[ƒ€‚Å•ûŒü‚ğXV‚·‚é
     }
 
@@ -116,10 +128,9 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
     {
         yield return null;
         UpdateDirection(true);
-
-
     }
 
+    //Update‚Ì’†g
     // Ú’n”»’è
     void UpdateGrounding()
     {
@@ -216,8 +227,8 @@ public class ChikyuWalk : MonoBehaviour//////Chikyu‚Æ‘‚¢‚Ä‚é‚¯‚ÇAÀÛ‚É‚Í‚Ç‚Á‚
 
                 walkTime += Time.fixedDeltaTime;
 
-                // 1•b•à‚«‘±‚¯‚½‚ç‘–‚é
-                if (!isRunning && walkTime >= 1f)
+                //0.5•b•à‚«‘±‚¯‚½‚ç‘–‚é
+                if (!isRunning && walkTime >= 0.65f)
                 {
                     isRunning = true;
                     UpdateDirection(true);

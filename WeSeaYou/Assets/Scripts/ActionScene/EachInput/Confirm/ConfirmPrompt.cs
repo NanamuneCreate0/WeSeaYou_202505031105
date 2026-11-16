@@ -25,7 +25,6 @@ public class ConfirmPrompt : MonoBehaviour
     {
         _target = target;
         SetVisible(true);
-
         //transform.position = target.transform.position + offset;
     }
 
@@ -36,6 +35,7 @@ public class ConfirmPrompt : MonoBehaviour
     }
     private void SetVisible(bool visible)
     {
+        Debug.Log("SetVisible");
         if (promptText == null)
             return;
 

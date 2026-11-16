@@ -28,7 +28,7 @@ public class GameModeController_ActionScene : MonoBehaviour
                 break;
 
             case GameMode.Menu:
-                if (InputManager.Instance.actions.UI_Nana.Pause.WasPressedThisFrame())
+                if (InputManager.Instance.actions.UI_Nana.Pause.WasPressedThisFrame()|| InputManager.Instance.actions.UI_Nana.Cancel.WasPressedThisFrame())
                 {
                     ChangeGameMode(GameMode.Action);
                 }

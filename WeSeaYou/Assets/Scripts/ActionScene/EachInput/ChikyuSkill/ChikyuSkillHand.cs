@@ -82,6 +82,8 @@ public class ChikyuSkillHand : MonoBehaviour
         {
             InputManager.Instance.actions.Player.Decide.started += OnDecideStarted;
             InputManager.Instance.actions.Player.Move.started += OnMove;
+            InputManager.Instance.actions.Player.SkillSelectRight.started += OnMoveRight;
+            InputManager.Instance.actions.Player.SkillSelectLeft.started += OnMoveLeft;
         }
         else
         {

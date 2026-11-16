@@ -59,5 +59,9 @@ public class PressToLoadScene_StartScene : MonoBehaviour
     {
         PublicStaticItem.CollectionItemList.Clear();
         PublicStaticStatus.ClearedChapter = PublicStaticStatus.Chapter.ChapterA;
+        PublicStaticStatus.SkillRoutine_Config = true;
+        PublicStaticStatus.EasyChikyuSkill_Config = true;
+        PublicStaticStatus.EasyUtyuSkill_Config = true;
+        PublicStaticStatus.SwapABXY=true;
     }
 }

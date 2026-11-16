@@ -7,7 +7,7 @@ public class SeaSkillExecutor : MonoBehaviour
 {
     public event Action<Collider2D, bool> CandidateStateChanged;
     public event Action<Collider2D, bool> TargetStateChanged;
-    [SerializeField] public float SkillRadius { get; private set; } = 5f;
+    [SerializeField] public float SkillRadius { get; private set; } = 8f;
     [SerializeField] private GameObject _player;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] float resistance;
@@ -255,7 +255,15 @@ public class SeaSkillExecutor : MonoBehaviour
     }
     private void HandleJump()
     {
-        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        Vector2 input = Vector2.zero;
+        if(PublicStaticStatus.EasyUtyuSkill_Config)
+        {
+            input = InputManager.Instance.actions.Player.Move.ReadValue<Vector2>();
+        }
+        else
+        {
+            input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        }
         IsGrounding = GroundUtil.CheckGrounded(
             target,
             out Collider2D col,
@@ -329,7 +337,15 @@ public class SeaSkillExecutor : MonoBehaviour
         Rigidbody2D rb = target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>();
         if (rb == null) { return; }
 
-        Vector2 input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        Vector2 input = Vector2.zero;
+        if (PublicStaticStatus.EasyUtyuSkill_Config)
+        {
+            input = InputManager.Instance.actions.Player.Move.ReadValue<Vector2>();
+        }
+        else
+        {
+            input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        }
 
         //à⁄ìÆè∞Ç…ÇÊÇÈë¨ìx
         float groundVelocityX = 0f;

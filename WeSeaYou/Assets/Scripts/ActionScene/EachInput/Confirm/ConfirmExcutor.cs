@@ -83,16 +83,12 @@ public class ConfirmExecutor : MonoBehaviour//Excuter‚ÍInputŒn“‚Ì–½–¼ƒ‹[ƒ‹‚É‚æ
             return;
 
         _targets.Add(target);
+        RefreshTarget();
     }
 
     public void RemoveTarget(ConfirmActivator target)
     {
         _targets.Remove(target);
-
-        if (_currentTarget == target)
-        {
-            _currentTarget = null;
-            confirmPrompt.ClearTarget();
-        }
+        RefreshTarget();
     }
 }

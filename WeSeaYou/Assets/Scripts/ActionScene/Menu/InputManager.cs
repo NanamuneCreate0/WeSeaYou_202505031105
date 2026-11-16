@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
         actions = new PlayerInputActions();
     }
 
+    //—á
     /*void OnEnable()
     {
         actions.Player.Enable();

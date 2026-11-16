@@ -117,7 +117,6 @@ public class ActionModeChanger : MonoBehaviour
     }
     private void RoutineSkill(InputAction.CallbackContext ctx)
     {
-        Debug.Log("RoutineSkill"); 
         if (ActionMode == ActionModeType.Neutral)
         {
             ChangeActionMode(ActionModeType.ChikyuSkill, ActionModeType.Neutral);
