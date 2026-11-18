@@ -35,7 +35,6 @@ public class ConfirmPrompt : MonoBehaviour
     }
     private void SetVisible(bool visible)
     {
-        Debug.Log("SetVisible");
         if (promptText == null)
             return;
 

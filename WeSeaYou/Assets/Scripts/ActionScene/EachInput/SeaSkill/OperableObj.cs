@@ -45,6 +45,7 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuterÇÃèÛë‘ÇéÛÇØ
         _isCandidate = isCandidate;
 
         UpdateColor();
+        UpdateSize(false);
     }
 
     public void OnTargetStateChanged(Collider2D target, bool isTarget)
@@ -55,68 +56,65 @@ public class OperableObj : MonoBehaviour, IOperable//SeaSkillExcuterÇÃèÛë‘ÇéÛÇØ
         _isTarget = isTarget;
 
         UpdateColor();
+        UpdateSize(false);
     }
-    /*
+
+    private GameObject _operableObjView;
+
     public void UpdateColor(Color? color = null)
     {
+        if (_operableObjView == null)
+        {
+            _operableObjView = Instantiate(
+                GameAssetManager.Instance.GameAssets.operableObjViewPrefab,
+                transform);
+        }
+
+        OperableObjView view = _operableObjView.GetComponent<OperableObjView>();
+
+        if (view == null)
+        {
+            return;
+        }
+
+        Color displayColor;
+
         if (color != null)
         {
-            _spriteRenderer.color = color.Value;
+            displayColor = color.Value;
+        }
+        else if (_isTarget)
+        {
+            displayColor = targetColor;
+        }
+        else if (_isCandidate)
+        {
+            displayColor = candidateColor;
         }
         else
         {
-            if (_isTarget)
-            {
-                _spriteRenderer.color = targetColor;
-            }
-            else if (_isCandidate)
-            {
-                _spriteRenderer.color = candidateColor;
-            }
-            else
-            {
-                _spriteRenderer.color = _originalColor;
-            }
+            displayColor = Color.clear;
         }
-    }*/
-    private GameObject _operableObjView;
 
-public void UpdateColor(Color? color = null)
-{
-    if (_operableObjView == null)
+        view.ReflectUpdateColor(displayColor);
+    }
+    public void UpdateSize(bool isShrink)
     {
-        _operableObjView = Instantiate(
-            GameAssetManager.Instance.GameAssets.operableObjViewPrefab,
-            transform);
+        float height = _collider.bounds.size.y;
+
+        if (isShrink)
+        {
+            transform.localScale = new Vector3(1.05f, 0.8f, 1);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
+
+        float newHeight = _collider.bounds.size.y*transform.localScale.y;
+
+        transform.position -= Vector3.up * (height - newHeight) * 0.5f;
+        Debug.Log(Vector3.up * (height - newHeight) * 0.5f);
     }
 
-    OperableObjView view = _operableObjView.GetComponent<OperableObjView>();
-
-    if (view == null)
-    {
-        return;
-    }
-
-    Color displayColor;
-
-    if (color != null)
-    {
-        displayColor = color.Value;
-    }
-    else if (_isTarget)
-    {
-        displayColor = targetColor;
-    }
-    else if (_isCandidate)
-    {
-        displayColor = candidateColor;
-    }
-    else
-    {
-        displayColor = Color.clear;
-    }
-
-    view.ReflectUpdateColor(displayColor);
-}
-     
 }

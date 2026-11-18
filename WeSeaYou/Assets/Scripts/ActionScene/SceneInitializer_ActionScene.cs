@@ -32,6 +32,10 @@ public class SceneInitializer_ActionScene : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        //各ボタンの初期化は各々Scriptがやるが、ボタン割り当ては初期化する。
+        PublicStaticStatus.SwapABXY = PublicStaticStatus.SwapABXY;
+
         gameModeController.ChangeGameMode(GameModeController_ActionScene.GameMode.Action, true);
         actionModeChanger.ChangeActionMode(ActionModeChanger.ActionModeType.Neutral, ActionModeChanger.ActionModeType.Neutral);
         DebugFunction();
@@ -79,7 +83,5 @@ public class SceneInitializer_ActionScene : MonoBehaviour
         {
             PublicStaticItem.ChikyuSkillItemList.Add(item);
         }
-
-
     }
 }

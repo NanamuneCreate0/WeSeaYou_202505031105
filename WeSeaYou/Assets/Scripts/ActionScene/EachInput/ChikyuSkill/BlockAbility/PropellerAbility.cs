@@ -23,6 +23,19 @@ public class PropellerAbility : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //‰º“ü—Í‚È‚çreturn
+        Vector2 input = Vector2.zero;
+        if (PublicStaticStatus.EasyUtyuSkill_Config)
+        {
+            input = InputManager.Instance.actions.Player.Move.ReadValue<Vector2>();
+        }
+        else
+        {
+            input = InputManager.Instance.actions.Player.SeaSkillMove.ReadValue<Vector2>();
+        }
+        if (input.y <= -0.7f) return;
+
+
         Vector2 velocity = _rb.linearVelocity;
 
         // —Ž‰º’†‚¾‚¯“K—p

@@ -142,6 +142,21 @@ public class ChikyuSkillHand : MonoBehaviour
         }
 
     }
+    public void ActivationEnd()
+    {
+        // HandDisplayCell関連
+        int removeCount = transform.childCount - 5;
+
+        for (int i = 0; i < removeCount; i++)
+        {
+            GameObject go = transform.GetChild(i).gameObject;
+
+            HandDisplayCells.Remove(go);
+            Destroy(go);
+        }
+        //「動く」ということ、をキャンセルする処理の略
+        moveTimer = 0;
+    }
     private void OnDecideStarted(InputAction.CallbackContext ctx)
     {
         if (direction == Direction.None)

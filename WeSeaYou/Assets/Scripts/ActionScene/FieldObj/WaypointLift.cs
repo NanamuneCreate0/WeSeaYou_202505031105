@@ -8,7 +8,7 @@ public class WaypointLift : MonoBehaviour, IVelocityProvider, IActivatable
     [SerializeField] private bool isPowered = true;
 
     [Header("Movement")]
-    [SerializeField] private List<Vector2> waypoints = new();
+    [SerializeField] private List<Vector2> waypoints = new();//(0,0)‚ÍŽ©“®’Ç‰Á‚È‚Ì‚ÅŠÔˆá‚¦‚¸
     [SerializeField] private float speed = 1f;
 
     private Rigidbody2D _rb;
@@ -64,5 +64,9 @@ public class WaypointLift : MonoBehaviour, IVelocityProvider, IActivatable
     public void Activate()
     {
         isPowered = true;
+    }
+    public void SetPowered(bool active)
+    {
+        this.isPowered = active;
     }
 }

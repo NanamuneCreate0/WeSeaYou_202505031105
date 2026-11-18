@@ -301,6 +301,7 @@ public class SeaSkillExecutor : MonoBehaviour
                 chargeLevel = 1;
                 /////////////色を変える黄色
                 target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor(new Color(1f, 1f, 1f, 0.3f));
+                target.transform.parent.GetComponentInChildren<OperableObj>().UpdateSize(true);
             }
             else
             {
@@ -324,6 +325,7 @@ public class SeaSkillExecutor : MonoBehaviour
             chargeLevel = 0;
             /////////////色を変える元の色
             target.transform.parent.GetComponentInChildren<OperableObj>().UpdateColor();
+            target.transform.parent.GetComponentInChildren<OperableObj>().UpdateSize(false);
             (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>())
                 .AddForce(Vector2.up * jumpForce* (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>()).mass, ForceMode2D.Impulse);
 
@@ -372,7 +374,7 @@ public class SeaSkillExecutor : MonoBehaviour
             : 0.7f;
 
         rb.AddForce(
-            Vector2.right * input.x * moveSpeed * moveMultiplier
+            Vector2.right * input.x * moveSpeed * moveMultiplier* (target.transform.parent != null ? target.transform.parent.GetComponentInChildren<Rigidbody2D>() : target.GetComponent<Rigidbody2D>()).mass
         );
 
         float resistanceForce =

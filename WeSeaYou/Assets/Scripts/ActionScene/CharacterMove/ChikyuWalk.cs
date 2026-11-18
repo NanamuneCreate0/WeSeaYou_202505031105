@@ -164,6 +164,9 @@ public class ChikyuWalk : MonoBehaviour//////ChikyuÇ∆èëÇ¢ÇƒÇÈÇØÇ«ÅAé¿ç€Ç…ÇÕÇ«Ç¡Ç
         if (!wasGrounding && IsGrounding)
         {
             UpdateDirection(true);
+            rb.AddForce(
+                Vector2.right * inputX * rb.mass * 200
+            );
         }
         wasGrounding = IsGrounding;
     }
